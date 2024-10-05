@@ -140,6 +140,7 @@ website:
     
 format:
   html:
+    smooth-scroll: true
     theme:
       light: [lux, theme.scss]
       dark: [sketchy, theme-dark.scss]
