@@ -1,16 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Madhav Kadam",
-    "section": "",
-    "text": "Hello, I am Madhav Kadam. My friends call me Maddy, and my sister calls me mad! I’m a final year undergraduate at the Department of Computer Science, IIT Indore, and I am also pursuing a minor in Economics. I have a keen interest in theoretical computer science and the development of applications. Advances in Generative AI were fascinating as well as intriguing to me in terms of privacy and impact on social networks. I am actively trying to expand my understanding in these areas. I express myself with a pen a lot. So I try to write poems and jot down my diary regularly. I put a few of my thoughts and notes on the internet. I spend a lot of time reading all kinds of books. This has led me to have an eye for spotting inefficiencies, and I think of ways to terminate them. I enjoy engaging in thought-provoking debates and discussions. I’m a big-time foodie and nature lover, always seeking new culinary experiences(vegetarian) and outdoor adventures.",
-    "crumbs": [
-      "Home",
-      "Madhav Kadam"
-    ]
-  },
-  {
     "objectID": "Resources/resources.html",
     "href": "Resources/resources.html",
     "title": "Notes",
@@ -290,6 +279,17 @@
       "MyBlog",
       "Blogs",
       "Guardrails"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Madhav Kadam",
+    "section": "",
+    "text": "Hello, I am Madhav Kadam. My friends call me Maddy, and my sister calls me mad! I’m a final year undergraduate at the Department of Computer Science, IIT Indore, and I am also pursuing a minor in Economics. I have a keen interest in theoretical computer science and the development of applications. Advances in Generative AI were fascinating as well as intriguing to me in terms of privacy and impact on social networks. I am actively trying to expand my understanding in these areas. I express myself with a pen a lot. So I try to write poems and jot down my diary regularly. I put a few of my thoughts and notes on the internet. I spend a lot of time reading all kinds of books. This has led me to have an eye for spotting inefficiencies, and I think of ways to terminate them. I enjoy engaging in thought-provoking debates and discussions. I’m a big-time foodie and nature lover, always seeking new culinary experiences(vegetarian) and outdoor adventures.",
+    "crumbs": [
+      "Home",
+      "Madhav Kadam"
     ]
   },
   {
