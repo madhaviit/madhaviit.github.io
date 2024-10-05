@@ -1,0 +1,69 @@
+---
+title: "Resume Tips"
+author: Madhav Kadam
+date: 2023-05-11
+date-modified: 2023-05-11
+slug: audit-1
+# image: 
+categories: 
+  - Talk
+  - Seniors
+  - Resume
+# alias:
+#   - /blog/2021-a11y-website/01-wave-audit-1/
+subtitle: "A very crisp guideline, full of tips from outgoing seniors for building impressive resume."
+excerpt: ""
+---
+
+> **Tips from seniors**
+
+I hope this message finds you well and enjoying your vacation. You are probably running around, barely having enough time to breathe. However, this is an excellent opportunity to begin creating your resume, CV, cover letter, letter of motivation, research statement, SOP, and all the other things you will need when seeking opportunities. Remember, this is not a one-time, done deal. It is about presenting yourself on paper over a period of time. You must update it continuously throughout your career. The term “resume” means to begin again after a pause. Your resume is a reflection of yourself. It’s not just a document, it’s a representation of who you are. If provided with an opportunity, your resume should indicate to the reader the context from which you will be resuming. Your resume is the most important document in your career. Recruiters spend an average of six seconds reviewing a resume before they make the initial decision on candidates.
+
+Today, in this post, we will cover some do’s and don’ts critical for a good resume and some great cheats shared by our senior colleagues from final year, Niyati Totala and Amogh Dixit.
+
+Here are a few tips to keep in mind:
+
+- *Verify that all links are working correctly.*
+- *Include CPI, as well as 10th and 12th grades.*
+- *If it is applicable, include your B.Tech minor.*
+- *In the experience section, list your previous internships along with the skills you used and briefly describe them.*
+- *Complete 80% of the line so your resume does not appear blank.*
+- *Begin with action words.*
+- *Create simpler resumes that can pass through ATS easily.*
+- *Mention how many people you impacted, such as “Developed a website that was used by 2000 people” or “Improved interaction with customers/stakeholders by 50% (mention figures).”*
+
+## Work Experience:
+
+- *For work experience bullet points, utilize the STAR method — Situation, Task, Action, Result.*
+
+## Skills:
+
+- *Technical skills can be listed as Strong, Weak, or through frameworks.*
+- *Include all of the mathematics courses you have taken. Honesty is key. Do not fabricate anything on your resume.*
+
+## Projects:
+- *Since college is offline, it is challenging to obtain internships. Instead, showcase your projects (including GitHub repo or hosted link).*
+- *Place relevant projects at the top.*
+
+## Internships:
+- *Put internships in chronological order.*
+- *In the case of research internships, foster relationships with professors, as their letters of recommendation can significantly benefit you.*
+- *Building a resume takes time. Keep updating it and approach professors as often as possible. Referrals are vital. Complete the things. If you do so, you are already ahead of the curve.*
+- *Do not be afraid to contact professors for research internships outside campus.*
+
+## POR:
+- *POR should be listed in order of relevance.*
+
+## Competitions:
+- *Include your JEE rank and how many people took the exam.*
+- *Include your Codeforces or CodeChef ranking. Do not include trivial information.*
+- *Describe what you have accomplished during college.*
+
+## General:
+- *Be familiar with every word on your resume.*
+- *Use bullet points whenever possible.*
+- *Do not leave any white spaces on your resume.*
+- *Your resume should be one page only.*
+- *Proofread and ask your friends for assistance.*
+
+Special thanks to [Sairaj Loke](https://medium.com/u/64a0c4751026) for helping me organize my notes from the senior interaction. You can also find this blog on [medium](https://madhavkadam.medium.com/is-your-resume-ready-28d7da5d67a4)

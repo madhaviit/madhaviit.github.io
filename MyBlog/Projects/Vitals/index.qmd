@@ -1,0 +1,62 @@
+---
+title: "Vitals extraction from ICU monitors"
+author: Madhav Kadam
+date: 2023-01-03
+date-modified: 2023-01-03
+slug: vitals-extraction
+categories: 
+  - Computer Vision
+  - InterIIT
+  - Machine Learning
+subtitle: "Cracking the Vital Extraction Challenge: Our Journey to Gold at Inter IIT Tech Meet 11.0"
+excerpt: "Join us on our thrilling journey through the Adobe Behaviour Simulation Challenge at Inter IIT Tech Meet 12.0, where we tackled the complexities of predicting tweet engagement and generating compelling content."
+---
+
+As a member of the IIT Indore team that clinched gold at the Inter IIT Tech Meet 11.0, I'm excited to share our journey through the Vital Extraction Challenge. This competition, sponsored by Cloudphysician, pushed us to develop an innovative solution for extracting patient vitals from ICU monitor images. Our team's dedication and ingenuity not only secured us the top spot but also resulted in a solution that was nearly five times faster than the runner-up, with a 2% edge in accuracy!
+
+## The Challenge: Bridging the Gap in ICU Monitoring
+
+In an ideal world, ICUs would have a 1:6 nurse-to-patient ratio. However, the reality often falls short. Our challenge was to create a system that could extract vital signs from images of ICU monitors, effectively augmenting existing setups without requiring a complete overhaul of infrastructure.
+
+## Our Approach: A Three-Pronged Attack
+
+We tackled this complex problem with a three-step pipeline:
+
+1. Preprocessing
+2. Vital Detection
+3. Optical Character Recognition (OCR)
+
+Let's dive into each stage and explore the techniques that set our solution apart.
+
+### Preprocessing: Setting the Stage
+
+The first hurdle was isolating the monitor screen from its surroundings. We employed the YOLO v8-n model for this task, achieving impressive results.After segmentation, we applied a perspective transformation to standardize the monitor's orientation and size, crucial for the subsequent stages.
+
+### Vital Detection: The Heart of the Matter
+
+This stage in the pipeline aims to detect the appropriate vitals in the cropped and transformed monitor screen. However, there was a lot of unlabelled data, and manually annotating all 9000 images was not an option. And it will never be a good solution in any real-world scenario. We identified two methods to deal with the vast amount of unlabelled data.
+
+One approach was to use a customized Semi-Supervised Learning Model, which would learn from the small amount of labelled data and use it to generate pseudo labels and then true labels for the unlabelled data.
+
+Another approach was to intelligently pick and manually annotate a small amount of unlabelled data and then add it to the training dataset in order to bring maximum diversity and representation to the training data without much effort. This approach was chosen because of its better results and lesser computational requirement.
+
+For vital detection, we utilized the YOLO v8-s model, which delivered outstanding performance.
+
+### OCR: Deciphering the Digits
+
+The final step was extracting the actual vital sign values. We opted for PaddleOCR, known for its accuracy and speed. However, this stage wasn't without its challenges. We encountered issues like:
+
+- Misreading similar characters (e.g., "0" as "O")
+- Detecting extraneous characters (like brackets)
+- Losing digits due to segmentation errors
+
+To address these, we implemented a series of logic-based checks and corrections, ensuring the most probable correct value was returned.
+
+##HR Graph Digitization
+Initially, we converted the HR graph segmented image into binary. In order to selectively obtain only the graph, the longest connected pixels row-wise were saved, and the rest discarded. The 2-D binary image was then projected into a 1-D Time Series. The plot was further rescaled in the x and y variables.
+
+## Conclusion: Lessons Learned and Future Directions
+
+Our journey through the Vital Extraction Challenge was as enlightening as it was rewarding. We learned the importance of balancing innovation with practicality, and how sometimes the most straightforward approach, executed exceptionally well, can outperform more complex solutions. The potential impact of this technology extends far beyond a competition. By enabling more efficient monitoring of ICU patients, solutions like ours could help bridge the gap in healthcare resources, potentially saving lives in the process.
+
+Find more about this project at : [Github](https://github.com/CynapticsAI/Cloudphysician-InterIIT2023.git)

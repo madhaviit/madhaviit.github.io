@@ -1,0 +1,60 @@
+/*-- scss:defaults --*/
+
+@import 'https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari&display=swap');
+
+$font-family: "Atkinson Hyperlegible", sans-serif;
+$body-bg: #ecdfce;
+$body-color : black;
+$link-color: rgb(255,103,31);
+/* $secondary : black; */
+/* $body-secondary-color : black; */
+
+
+$footer-bg: #ecdfce;
+
+/*  $sidebar-bg: #303030; */
+$sidebar-bg: #ecdfce;
+
+
+$code-block-bg-alpha: -.8;
+
+
+.hindi-kalam{
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size:larger;
+  -webkit-user-select: none; /* For Safari */
+  -moz-user-select: none; /* For Firefox */
+  -ms-user-select: none; /* For Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version */
+  cursor: default; /* Change the cursor to arrow */
+}
+/*-- scss:rules --*/
+
+.render-commit-push {
+  padding: 0.5em 0.5em 0em 3em;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background: #f8f8f8 5px center/3em no-repeat;
+  border-top: 1px solid #5B888C;
+  border-bottom: 1px solid #5B888C;
+  background-image: url("images/github-action-orange.png");
+  background-size: 2em;
+  background-position: 0.5em 0.5em;
+}
+
+.pull {
+  padding: 0.5em 0.5em 0em 3em;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background: #f8f8f8 5px center/3em no-repeat;
+  border-top: 1px solid #E0A890;
+  border-bottom: 1px solid #E0A890;
+  background-image: url("images/github-action-orange.png");
+  background-size: 1em;
+  background-position: 1em 0.5em;
+}
+
+.temp{
+  background-color: red;
+}

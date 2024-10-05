@@ -1,0 +1,22 @@
+[
+  {
+    "listing": "/MyBlog/Blogs/index.html",
+    "items": [
+      "/MyBlog/Blogs/BlogFull/index.html",
+      "/MyBlog/Blogs/How-to-CSE/index.html",
+      "/MyBlog/Blogs/Guardrails/index.html",
+      "/MyBlog/Blogs/Talk-by-Sayak/index.html",
+      "/MyBlog/Blogs/India@75/index.html",
+      "/MyBlog/Blogs/Seniors-talk-2/index.html",
+      "/MyBlog/Blogs/Seniors-talk/index.html",
+      "/MyBlog/Blogs/Varkari/index.html"
+    ]
+  },
+  {
+    "listing": "/MyBlog/Projects/index.html",
+    "items": [
+      "/MyBlog/Projects/Adobe Behaviour Simulation Challenge/index.html",
+      "/MyBlog/Projects/Vitals/index.html"
+    ]
+  }
+]

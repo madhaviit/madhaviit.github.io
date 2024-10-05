@@ -1,0 +1,74 @@
+---
+title: "Behaviour Simulation on Social Networks by Adobe"
+author: Madhav Kadam
+date: 2024-01-04
+date-modified: 2024-01-04
+slug: adobe-behaviour-simulation
+categories: 
+  - Multimodal
+  - InterIIT
+  - Machine Learning
+  - Social Media Analytics
+subtitle: "Cracking the Code of Social Media Engagement: Our Journey with Adobe's Behaviour Simulation Challenge"
+excerpt: "Join us on our thrilling journey through the Adobe Behaviour Simulation Challenge at Inter IIT Tech Meet 12.0, where we tackled the complexities of predicting tweet engagement and generating compelling content."
+---
+
+## The Challenge That Sparked Our Curiosity
+
+As the team leader of Team 22 at the Inter IIT Tech Meet 12.0, I can't help but feel a surge of pride as I reflect on our journey through the Adobe Behaviour Simulation Challenge. In today's digital marketing landscape, understanding and predicting user engagement is the holy grail. Adobe threw down the gauntlet, challenging us to not only predict the likes a tweet might get based on its content but also to create tweets that could hit specific engagement targets.
+
+## Our Two-Pronged Attack
+
+We divided our approach into two main tasks:
+
+1. Predicting the number of likes for a given tweet
+2. Generating tweets to achieve targeted engagement levels
+
+<!-- Little did we know that this challenge would take us on a rollercoaster ride through the world of natural language processing, computer vision, and machine learning. -->
+
+## Task 1: Cracking the Code of Tweet Popularity
+
+### The Data Dilemma
+
+Our first hurdle? The dataset was as skewed as a politician's promise. We knew we needed more data to train a robust model. So, we went on a data hunt, integrating tweets from the top 20 Twitter accounts and a massive dataset from Hugging Face. We set our sights high, filtering for tweets with over 5,000 likes in English.
+
+### Embedding Our Way to Success
+
+Enter BERTweet, our knight in shining armor. We used it to extract embeddings from the tweet content, considering everything from the inferred company to the username and date. It was like giving our model a pair of super-powered glasses to see the intricate details of each tweet.
+
+### The Classifier-Regressor Dream Team
+
+We trained a classifier to categorize tweets into engagement classes, ranging from the humble "0-100 likes" to the viral "100,000-1,000,000 likes". But we didn't stop there. We crafted six specialized regressors, one for each engagement class, using an Artificial Neural Network (ANN) architecture. It was like having a team of experts, each specializing in a different level of tweet popularity.
+
+### A Novel Approach to Evaluation
+
+Here's where we got creative. Instead of just looking at RMSE, we focused on predicting the order of likes. Why? Because in the real world, knowing if your tweet will be a big hit or a small ripple is often more valuable than knowing the exact number of likes.
+
+## Task 2: The Art of Tweet Generation
+
+### A Picture is Worth a Thousand Likes
+
+We realized that tweets aren't just about text. Images and videos play a huge role in engagement. So, we built a two-stage pipeline:
+
+1. Caption Generation: We deployed Visual Language Models (VLMs) like LLaVa and CLIP to generate detailed captions for images.
+2. LLM Fine-tuning: We then fine-tuned Large Language Models (LLMs) with these textual representations.
+
+### The Audio Twist
+
+For videos, we took an innovative approach. Instead of traditional video captioning, we used audio captioning. It was faster and compute-efficient.
+
+### The LLM Showdown
+
+After an exhaustive evaluation of various LLMs, we settled on LLaMA. We fine-tuned it with our dataset, turning it into a tweet-generating powerhouse.
+
+## Challenges and Insights
+
+Our journey wasn't without its bumps. We grappled with:
+
+- Audience Dynamics: Why do some memes get more likes than carefully crafted corporate posts?
+- Content Bias: News posts, especially about local disasters, seemed to garner more engagement.
+- Evaluation Metrics: Traditional metrics like BLEU and ROUGE struggled with the informal nature of tweets.
+
+## The Road Ahead
+
+As we wrap up this challenge, I'm filled with excitement about the possibilities we've uncovered. We've not just built models; we've gained insights into the very nature of social media engagement.The digital landscape is ever-changing, and so too must our approaches evolve.To all the marketers, content creators, and social media enthusiasts out there – watch this space. The future of digital engagement is being written, one tweet at a time.

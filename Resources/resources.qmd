@@ -1,0 +1,26 @@
+---
+title: Notes
+# sidebar: false
+toc: false
+
+---
+
+<div onmousedown='return false;' onselectstart="return false;" oncopy="return false;" onpaste="return false;" oncut="return false;">
+Though there is dark but as you are lying in our minds the bark of dogs will show us the way 
+
+Though there is extremism but as you are lying in our minds the shots of gun will teach us tolerance 
+
+Though many in Indian villages sleep without dinner but as you are lying in our mind we will be winner against hunger
+
+Though we have reached the Mars the world is still under the threat of wars but as you are lying in our minds the kind and sensible people will come together 
+
+Bapu though many of us are blind but as you are lying in our mind the kind god will blow the wind and we will find our way
+
+-Avikskhit Nachiketa
+</div>
+
+<!-- # Bapu -->
+
+
+    
+

@@ -1,0 +1,33 @@
+---
+title: "Blogs" 
+description: |
+  This is my blog where I share everything that I deem fit for sharing. <br> Mostly I talk about my learnings, some techical stuff and others are just my thoughts. 
+
+listing: 
+  contents: 
+    - "**/index.qmd"
+    - "**/index.markdown"
+    - "**/index.md"
+  sort: "date desc"
+  type: default
+  categories: false
+  sort-ui: false
+  filter-ui: false
+  fields: [title, author, categories, date, image]
+#   image-placeholder: sidebar.jpg
+#   image-align: right
+  page-size: 15
+  # feed : true
+citation: false
+toc: true
+comments: false
+format: 
+  html: 
+    page-layout: full
+title-block-banner: false
+
+header-includes: >
+  <link rel="stylesheet" href="../../assets/listing-default.css">
+resources:
+  - ../../assets/listing-default.css 
+---

@@ -1,0 +1,68 @@
+---
+# title: ""
+# pagetitle: ""
+# subtitle: ""
+# image: images/sideprof.png
+# image-alt: "AI modified image of Madhav"
+
+# twitter-card:
+#     title: Madhav Kadam
+#     description: |
+#       Researcher, Developer and AI enthusiast.
+#     image: images/sideprof.png
+about:
+  template: solana
+  image-width: 28em
+  id: hero-heading
+  # links:
+    # - text: "{{< fa universal-access >}}"
+    #   aria-label: "Accessibility statement"
+    #   href: accessibility.qmd
+    # - icon: mastodon
+    #   href: https://hachyderm.io/@spcanelon
+    # - icon: github
+    #   aria-label: GitHub
+    #   href: https://github.com/madhaviit
+    # - text: "{{< ai orcid >}}"
+    #   href: https://orcid.org/0000-0003-1709-1394
+    # - text: "{{< ai google-scholar >}}"
+    #   aria-label: "Google Scholar"
+    #   href: https://scholar.google.com/citations?user=GAzkvpcAAAAJ&hl=en&oi=ao
+    # - icon: linkedin
+    #   aria-label: "LinkedIn"
+    #   href: https://linkedin.com/in/madhaviit
+page-layout: full
+
+# execute: 
+#   freeze: false
+#   echo: false
+#   warning: false
+
+header-includes: >
+  <link rel="stylesheet" href="assets/index.css">
+resources:
+  - assets/index.css
+---
+
+Hello, I am Madhav Kadam. My friends call me Maddy, and my sister calls me mad! I'm a final year undergraduate at the Department of Computer Science, IIT Indore, and I am also pursuing a minor in Economics. I have a keen interest in theoretical computer science and the development of applications. Advances in Generative AI were fascinating as well as intriguing to me in terms of privacy and impact on social networks. I am actively trying to expand my understanding in these areas.
+I express myself with a pen a lot. So I ~try~ ~to~ write poems and jot down my diary regularly. I put a few of my thoughts and notes on the internet. I spend a lot of time reading all kinds of books. This has led me to have an eye for spotting inefficiencies, and I think of ways to terminate them. I enjoy engaging in thought-provoking debates and discussions. I'm a big-time foodie and nature lover, always seeking new culinary experiences(vegetarian) and outdoor adventures.
+
+
+
+<!-- I a with a keen interest in development, Artificial Intelligence, and Machine Learning. Apart from Computer Science, I love to explore Economics, Law and History. I am currently a MAGPIE Summer Intern at [Samsung Research Institute Banglore](https://research.samsung.com/sri-b). Know professional side of me from [CV](CV.qmd). Apart from technical blogs, I also ~~try to~~ write poems. The structure of this website is inspired by [Sayak's site](https://sayak.dev/).
+
+- I love exploring new technologies in order to solve real-world problems.  I have an eye to spot and terminate inefficieny.
+- I am amazed by Generative AI. Eventually intrigued by the privacy and security aspects of it, both in its development and application. Actively trying to expand my understanding in these areas.
+- Many of my projects are available on [GitHub](https://github.com/madhaviit?tab=repositories). Feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/madhav-kadam/) for collaborations or engaging discussions. I don't post frequently on my official [twitter](https://twitter.com/kpmadhav18) account, but I do follow very interesting set of people.
+- In my free time, I mostly enjoy reading books.   -->
+
+
+
+<!-- ### News -->
+
+<!-- I plan to populate this section once I do things that are newsworthy -->
+
+
+
+
+

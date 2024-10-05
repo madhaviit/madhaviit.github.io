@@ -1,0 +1,45 @@
+---
+title: "Sayak Paul from Hugging Face"
+author: Madhav Kadam
+date: 2024-04-11
+date-modified: 2024-04-11
+slug: audit-1
+# image: sayak.jpg
+categories: 
+  - Talk
+  - ML
+  - Hugging Face
+# alias:
+#   - /blog/2021-a11y-website/01-wave-audit-1/
+subtitle: "Notes from the talk by Sayak Paul at IIT Indore during Neural Nexus 2024"
+excerpt: ""
+---
+
+> **What Sayak talked about??**
+
+Diffusers library is his recent work. He loves wasting GPU hours and he thinks Vision Transformers are very Robust Learners. Take everything with grain of salt since he is highly optiniated. When he learned the stuff, No Fast.ai then, Andrew Ng course was start. How school maths meant the things in ML was initial hook for him. He didn't dabble in other subjects. 
+
+Andrej Karpathy [Andrej Karpathy](https://karpathy.ai/) says:- Spend 10000 hours quote, He wasn't dubious in his choice, he was 100 percent sure that he wanted to just go into ML. Surface level knowledge just leads to suffering in which case if you are even able to build models, Models might fail silently and you won’t be able to understand why if you are not learning in deep. Spend time with subject you like, Maths is necessary but not university level, Calculus Linear Alg Prob, CS231n, Andrew NG, FastAI, Deep Learning Book Ean Goodfellow, Deep Learning with python, Grokking Machine Learning.
+
+Implementation is crux of most of the things, (Which paper did he implement?) Implementing the papers that align/ some part of those paper, gives a lot of learning, Balancing off understanding, intution, and how things work in practice, grokking/cramming alone never help, deep learning is often alchemy than science, Curious mind is necessary.
+
+He didn’t start with a ML heavy job but it was clear to him totally that he will eventually. Having public record of our understanding is important so he started to write technical blogs, one way to write blog is write self reference, It was public record that got attention of employees (Where did he write ?) Forced himself on engineering side of ML, like deploying the mode, Docker/Kubernetes, Mentor at GSoC at TensorFlow, Publishing the tier-1 paper is really crazy, Got into hugging face because of public work, Open-Source,
+
+He was not interested more education, He didn’t want to be research scientist, non-trivial public portfolio is really a thing that always helps, Matured Work Experience >>> academic affliaition, Someone who have tensorflow contributions will always get more pref over stanford grad, Difficult Stuff => learning opportunities, You will always feel overwhelmed but carry on with those moments, Do not settle, Don’t be complecent, Sharpening the Sword - Have the same mindset as the one you had at the beginning. Reach out to other collaborators,
+
+A very nice doc of faqs he compiled, can be found at [bit.ly/sayak-faqs](https://docs.google.com/document/d/1iQlsGOZX0UA3U58gEtwV5-9moolOvZ5HosjDee6jVck/edit)
+
+
+Questions :
+
+1. He was working with Roberta and Bert sized model, He got comfortable then with codebase so he contributed to open issues, Connext took it him inside and after 6 months they reached out to him>
+2. Doing things for open source is crux of HF
+3. You have to build your case for yourself, make something that you can show to tell that I have expertise, Interview is not the way to go.
+4. On his personal site he used to post blogs, it helps your own understanding and articulate it properly.
+5. Inception you need to go deeper, regularization, SAM, 2018, High threshold for patience,
+6. Project should have enough thickness to show your expertize,
+7. Ex: Finetuning is really easy but you can show maturity if you can tell why did you finetune> Like prompt engineering didn’t work, RAG didn’t suffice then You curated custom dataset, then finetuned/
+8. Kaggling is good, but focus on learning aspect rather than winning aspects.
+9. How to Flash-Attention 2, Why not in C? How to find papers to be implemented. Youwill learn with time . During intital time randomly kicling a paper alinging with your field.
+
+No cracked failure, its a Back and forth process, Focus on representativeness, no corruptions, check and check again. Tuning CV models with task rewards, RAG is beneficial for factuality, Do a Blog on YOLO, D2L.ai. Detection is far from saturation, contribute detection model to transformer. 

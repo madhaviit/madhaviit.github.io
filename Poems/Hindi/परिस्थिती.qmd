@@ -1,0 +1,27 @@
+---
+title: <span class="hindi-kalam">परिस्थिती</span>
+# sidebar: false
+toc: false
+--- 
+  <div class="hindi-kalam" onmousedown='return false;' onselectstart="return false;" oncopy="return false;" onpaste="return false;" oncut="return false;">
+<!-- # परिस्थिती -->
+
+लक्ष्मी देवी का जिन पर वरदान नहीं होता
+
+शिक्षण उनका आसान नहीं होता
+
+मां-बाप दिन में कमाते हैं तब रात को खाते हैं
+
+झुग्गियों में पौष्टिक पकवान नहीं होता
+
+मानता हूं हर इंसान समान नहीं होता
+
+किंतु इम्तिहान में परिस्थिती प्रमाण नहीं होता
+
+कैसे स्पर्धा करें उनसे जो पलंगतकिये पे सोते हैं
+
+बेचारों के पास छोटा सा मकान नहीं होता
+
+-अविक्षित नचिकेत 
+
+</div>

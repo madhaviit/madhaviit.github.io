@@ -1,0 +1,199 @@
+project: 
+  type: website
+  output-dir: docs
+
+
+      
+website: 
+  open-graph: true
+  favicon: "images/favicon.ico"
+  page-navigation: true
+  title: "Madhav Kadam" 
+  site-url: "https://madhaviit.github.io/madhaviit" 
+  repo-url: https://github.com/madhaviit/
+  # repo-actions: [edit, issue]
+  bread-crumbs: false
+  # reader-mode: true
+  # page-footer:
+  #   right: "This page is built with [Quarto](https://quarto.org/)."
+    # left: "&copy; CC-By Openscapes, 2024"
+  navbar:
+    background: primary
+    search: true
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "CV"
+        href: https://drive.google.com/file/d/1hnqTi8Y-63If0PUq-HJ09X44cnxxqlXD/view?usp=sharing
+        target: _blank
+      # - text: "Projects"
+      #   href: Projects/index.qmd
+      - text: "Poems"
+        href: Poems/disclaimer.qmd
+      # - text: "Articles"
+      #   href: Articles/index.qmd
+      - text: "Blogs"
+        menu: 
+          - href: MyBlog/Blogs/index.qmd
+          - href: MyBlog/Projects/index.qmd
+        
+  sidebar:
+    - title: "Poems"
+      contents: Poems/
+      reader-mode: true
+      search: true
+      background: "none"
+      border: false
+      pinned: true
+      align: center
+      style: "docked"
+      collapse-level: 1
+    # - title: "Blog"
+    #   contents: Blogs/
+    #   reader-mode: true
+    #   search: true
+    #   background: "none"
+    #   border: false
+    #   pinned: true
+    #   align: center
+    #   style: "docked"
+      # search: true
+      # collapse-level: 1
+    - title: "My Blogs"
+      contents: MyBlog/
+      reader-mode: true
+      search: true
+      background: "none"
+      border: false
+      pinned: true
+      align: center
+      style: "docked"
+      # search: true
+      collapse-level: 1
+    # - title: "Projects"
+    #   contents: Projects/
+    #   reader-mode: true
+    #   search: true
+    #   background: "none"
+    #   border: false
+    #   pinned: true
+    #   align: center
+    #   style: "docked"
+    #   # search: true
+    #   collapse-level: 1
+    # - title: "Articles"
+    #   contents: Articles/
+    #   reader-mode: true
+    #   search: true
+    #   background: "none"
+    #   border: false
+    #   pinned: true
+    #   align: center
+    #   style: "docked"
+      # search: true
+      # collapse-level: 1
+    - title: "Home"
+      contents:
+      - href: index.qmd
+        text: Madhav Kadam
+      - href: https://drive.google.com/file/d/1hnqTi8Y-63If0PUq-HJ09X44cnxxqlXD/view?usp=sharing
+        text: CV
+        target: _blank
+      - href: Poems/disclaimer.qmd
+        text: Poems
+      # - text: Blog
+      #   aria-label: "Blog"
+      #   href: Blogs/index.qmd
+      # - text: Articles
+      #   aria-label: "Articles"
+      #   href: Articles/index.qmd
+      - text: My Blogs
+        aria-label: "My Blogs"
+        href: MyBlog/Blogs/index.qmd
+      logo: "images/ProfPic.png"
+      background: "none"
+      border: false
+      pinned: true
+      reader-mode: false
+      align: center
+      tools: 
+        # - icon: globe
+        #   href: https://medium.com/@madhavkadam
+        #   text: "Openscapes.org"
+        - icon: github
+          href: https://github.com/madhaviit
+          text: "Github"
+        - icon: twitter
+          href: https://twitter.com/kpmadhav18
+          text: "Twitter"  
+        - icon: linkedin
+          href: https://linkedin.com/in/madhav-kadam
+          text: "LinkedIn"         
+
+      style: "docked"
+      search: true
+      collapse-level: 1
+  page-footer:  
+    left: >-
+     &#169; 2024 Madhav Kadam
+
+    
+format:
+  html:
+    theme:
+      light: [lux, theme.scss]
+      dark: [sketchy, theme-dark.scss]
+      
+      # dark: sketchy
+      # light: lux
+    grid:
+      sidebar-width: 300px
+      body-width: 1800px
+      margin-width: 300px
+      gutter-width: 1.5rem # from https://github.com/sta210-s22/website/blob/main/_quarto.yml
+      
+    code-copy: true
+    code-overflow: wrap
+    toc: true
+    fontsize: 1.2em
+    linestretch: 1.6
+
+    # toc-title: Table of contents
+    # toc-location: right
+
+
+filters:
+  - include-files.lua
+  - quarto
+
+# page:
+#   # Specific settings for index.qmd
+#   Poems/Pe.qmd:
+#     sidebar: false
+  
+# default
+# cerulean
+# cosmo
+# cyborg
+# darkly
+# flatly
+# journal
+# litera
+# lumen
+# lux
+# materia
+# minty
+# morph
+# pulse
+# quartz
+# sandstone
+# simplex
+# sketchy
+# slate
+# solar
+# spacelab
+# superhero
+# united
+# vapor
+# yeti
+# zephyr
