@@ -1,8 +1,8 @@
 ---
 title: "How to manage Academics in CSE engineering?"
 author: Madhav Kadam
-date: 2024-05-20
-date-modified: 2024-05-20
+date: 2024-07-25
+date-modified: 2024-07-25
 slug: audit-1
 # image: 
 categories: 

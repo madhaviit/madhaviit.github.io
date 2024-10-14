@@ -1,8 +1,8 @@
 ---
 title:  <span class="hindi-kalam">वारकरी संप्रदाय:एक समृद्ध जीवनधारा</span>
 author: Madhav Kadam
-date: 2023-05-11
-date-modified: 2023-05-11
+date: 2019-01-07
+date-modified: 2019-01-07
 slug: audit-1
 # image: 
 categories: 
