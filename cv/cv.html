@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Madhav Kadam | Resume – Madhav Kadam</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+
+
+<link href="../images/favicon.ico" rel="icon">
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-html-abba60c7b863426f1dd778d2b3fd6e6d.min.css" rel="stylesheet" append-hash="true" data-mode="light">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="styles.css">
+<meta property="og:title" content="Madhav Kadam | Resume">
+<meta property="og:site_name" content="Madhav Kadam">
+</head>
+
+<body>
+
+
+
+
+
+<style>
+  /* --- GLOBAL VARIABLES & RESET --- */
+  :root {
+    --sidebar-bg: #1e293b; /* Slate 800 */
+    --sidebar-text: #f1f5f9; /* Slate 100 */
+    --accent: #3b82f6; /* Blue 500 */
+    --text-main: #334155;    /* Slate 700 */
+    --text-muted: #64748b; /* Slate 500 */
+    --bg-main: #ffffff;
+  }
+
+  * { box-sizing: border-box; }
+  
+  body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    background-color: #f8fafc; color: var(--text-main);
+    line-height: 1.6;
+  }
+
+  a { text-decoration: none; color: var(--accent); transition: color 0.2s; }
+  a:hover { color: #1d4ed8; }
+
+  /* --- LAYOUT GRID --- */
+  .cv-grid {
+    display: grid; grid-template-columns: 300px 1fr; /* Fixed sidebar, fluid main */
+    min-height: 100vh;
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+  }
+
+  /* --- SIDEBAR STYLING --- */
+  .cv-sidebar {
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    padding: 2rem; display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  /* Profile Area */
+  .profile-container {
+    text-align: center;
+  }
+  
+  .profile-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 4px solid rgba(255,255,255,0.1); object-fit: cover;
+    margin-bottom: 1rem;
+  }
+
+  .name { font-size: 1.8rem; font-weight: 700; color: white; margin: 0; line-height: 1.2; }
+  .tagline { font-size: 1rem; color: #94a3b8; margin-top: 0.5rem; font-weight: 500; }
+
+  /* Sidebar Sections */
+  .sidebar-section h3 {
+    color: #94a3b8;
+    font-size: 0.85rem;
+    text-transform: uppercase; letter-spacing: 1.5px;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Contact List */
+  .contact-list { list-style: none; padding: 0; margin: 0; }
+  .contact-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+    color: #cbd5e1;
+  }
+  .contact-list i { width: 20px; text-align: center; color: var(--accent); }
+  .contact-list a { color: inherit; }
+  .contact-list a:hover { color: white; }
+
+  /* Education & Honors Items */
+  .info-item { margin-bottom: 1.2rem; }
+  .info-title { display: block; font-weight: 600; color: white; font-size: 1rem; }
+  .info-meta { display: block; font-size: 0.85rem; color: #94a3b8; margin-top: 2px; }
+  .info-score { 
+    display: inline-block; 
+    background: rgba(59, 130, 246, 0.15); color: #60a5fa; 
+    font-size: 0.8rem; 
+    padding: 2px 6px; 
+    border-radius: 4px; 
+    margin-top: 4px; 
+    font-weight: 600;
+  }
+
+  /* Skill Badges */
+  .skill-container { display: flex; flex-wrap: wrap; gap: 6px; }
+  .skill-badge {
+    background: rgba(255,255,255,0.08);
+    color: #e2e8f0;
+    font-size: 0.8rem;
+    padding: 4px 10px;
+    border-radius: 6px; transition: background 0.2s;
+  }
+  .skill-badge:hover { background: rgba(255,255,255,0.15); }
+
+  /* --- MAIN CONTENT STYLING --- */
+  .cv-main {
+    background-color: var(--bg-main); padding: 3rem 4rem;
+  }
+
+  .main-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem; border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.5rem;
+  }
+  
+  .main-header i { font-size: 1.5rem; color: var(--accent); }
+  .main-header h2 { 
+    font-size: 1.5rem; 
+    color: #1e293b; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    margin: 0;
+  }
+
+  /* Experience & Project Cards */
+  .timeline-item {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 2.5rem; border-left: 2px solid #e2e8f0;
+  }
+  
+  .timeline-item:last-child { border-left: none; }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 6px;
+    width: 10px;
+    height: 10px; background: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px white;
+  }
+
+  .job-header {
+    display: flex; justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+  }
+
+  .job-role { font-size: 1.2rem; font-weight: 700; color: #1e293b; }
+  .job-company { font-size: 1rem; color: var(--text-muted); font-weight: 500; }
+  .job-date { font-size: 0.9rem; font-weight: 600; color: var(--accent); }
+
+  .job-details ul { margin: 0.5rem 0; padding-left: 1.2rem; }
+  .job-details li { margin-bottom: 0.4rem; color: var(--text-main); }
+
+  /* Project specific */
+  .project-link {
+    font-size: 0.8rem;
+    border: 1px solid var(--accent);
+    border-radius: 12px; padding: 2px 8px;
+    margin-left: 10px;
+    vertical-align: middle;
+  }
+  .project-link:hover { background: var(--accent); color: white; }
+
+  /* Coursework Block */
+  .course-block {
+    font-size: 0.9rem;
+    color: var(--text-main);
+    margin-bottom: 1rem;
+  }
+  .course-block strong { color: #1e293b; }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .cv-grid { grid-template-columns: 1fr; }
+    .cv-sidebar { text-align: center; padding: 3rem 1.5rem; }
+    .contact-list li { justify-content: center; }
+    .skill-container { justify-content: center; }
+    .cv-main { padding: 2rem 1.5rem; }
+    .job-header { flex-direction: column; gap: 0.2rem; }
+  }
+</style>
+<p><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></p>
+<div class="cv-grid">
+<aside class="cv-sidebar">
+<div class="profile-container">
+<img src="../images/ProfPic2.png" class="profile-img" alt="Madhav Kadam">
+<h1 class="name">
+Madhav Kadam
+</h1>
+<div class="tagline">
+Software Engineer
+</div>
+</div>
+<div class="sidebar-section">
+<ul class="contact-list">
+<li>
+<i class="fa-solid fa-envelope"></i> <a href="mailto:madhavkp18@gmail.com">madhavkp18@gmail.com</a>
+</li>
+<li>
+<i class="fa-brands fa-linkedin"></i> <a href="https://linkedin.com" target="_blank">LinkedIn Profile</a>
+</li>
+<li>
+<i class="fa-brands fa-github"></i> <a href="https://github.com" target="_blank">GitHub Profile</a>
+</li>
+<li>
+<i class="fa-solid fa-location-dot"></i> Bengaluru, India
+</li>
+<li>
+<i class="fa-solid fa-file-pdf"></i> <a href="Resume_Madhav.pdf" target="_blank">Download PDF</a>
+</li>
+</ul>
+</div>
+<div class="sidebar-section">
+<h3>
+Education
+</h3>
+<div class="info-item">
+<p><span class="info-title">IIT Indore</span> <span class="info-meta">B.Tech Computer Science </span> <span class="info-meta">Minor in Economics </span> <span class="info-score">GPA: 9.39/10 </span></p>
+</div>
+<div class="info-item">
+<p><span class="info-title">Sanjay Godawat Jr.&nbsp;College</span> <span class="info-meta">HSC (12th Grade)</span> <span class="info-score">97.17% </span></p>
+</div>
+<div class="info-item">
+<p><span class="info-title">SK Pant Walavalkar School</span> <span class="info-meta">SSC (10th Grade)</span> <span class="info-score">97.60% </span></p>
+</div>
+</div>
+<div class="sidebar-section">
+<h3>
+Skills
+</h3>
+<div class="skill-container">
+<span class="skill-badge">C++</span> <span class="skill-badge">Python</span> <span class="skill-badge">SQL</span> <span class="skill-badge">PyTorch</span> <span class="skill-badge">TensorFlow</span> <span class="skill-badge">LLMs</span> <span class="skill-badge">RAG</span> <span class="skill-badge">Computer Vision</span> <span class="skill-badge">YOLOv8</span> <span class="skill-badge">Mask RCNN</span> <span class="skill-badge">Segformer</span> <span class="skill-badge">Retinanet</span> <span class="skill-badge">DETR</span> <span class="skill-badge">PaddleOCR</span> <span class="skill-badge">Docker</span> <span class="skill-badge">React</span> <span class="skill-badge">VHDL</span>
+</div>
+</div>
+<div class="sidebar-section">
+<h3>
+Honors
+</h3>
+<div class="info-item">
+<p><span class="info-title">President of India Gold Medal</span> <span class="info-meta">Best academic performance (UG) </span></p>
+</div>
+<div class="info-item">
+<p><span class="info-title">Inter-IIT Tech Meets</span> <span class="info-meta">Gold (11.0) &amp; Bronze (12.0) </span></p>
+</div>
+<div class="info-item">
+<p><span class="info-title">NUS Young Fellowship</span> <span class="info-meta">Study Award 2024 </span></p>
+</div>
+<div class="info-item">
+<p><span class="info-title">Goldman Sachs Hackathon</span> <span class="info-meta">National Finalist </span></p>
+</div>
+<div class="info-item">
+<p><span class="info-title">Amazon ML Summer School</span> <span class="info-meta">Selected 2023 </span></p>
+</div>
+<div class="info-item">
+<p><span class="info-title">JEE Advanced</span> <span class="info-meta">AIR 1140 (Top 1%) </span></p>
+</div>
+<div class="info-item">
+<p><span class="info-title">Competitive Programming</span> <span class="info-meta">Codeforces Expert, Leetcode Knight </span></p>
+</div>
+</div>
+</aside>
+<main class="cv-main"><header id="title-block-header" class="quarto-title-block"></header>
+<div class="main-header">
+<i class="fa-solid fa-briefcase"></i>
+<h2>
+Experience
+</h2>
+</div>
+<div class="timeline-item">
+<div class="job-header">
+<div>
+<div class="job-role">
+Software Engineer
+</div>
+<div class="job-company">
+Samsung Research (Digital Wallet Team)
+</div>
+</div>
+<div class="job-date">
+July 2025 - Present
+</div>
+</div>
+<div class="job-details">
+<ul>
+<li>
+Developed POC for OCR-based “Add Anything to Wallet” tool as an independent project and integrated it with Samsung Wallet.
+</li>
+<li>
+Developed LLM as an on-device judge pipeline for multimodal usecases.
+</li>
+<li>
+Implemented solution for digitizing NFC-based Office IDs for internal use.
+</li>
+</ul>
+</div>
+</div>
+<div class="timeline-item">
+<div class="job-header">
+<div>
+<div class="job-role">
+Research Intern (SURI)
+</div>
+<div class="job-company">
+Arizona State University
+</div>
+</div>
+<div class="job-date">
+May 2025 - July 2025
+</div>
+</div>
+<div class="job-details">
+<ul>
+<li>
+Conducted literature reviews on Privacy and Network Security of various categories of Android applications.
+</li>
+<li>
+Applied static and dynamic analysis methodologies to evaluate and report on the network security and privacy posture of shortlisted rental applications.
+</li>
+</ul>
+</div>
+</div>
+<div class="timeline-item">
+<div class="job-header">
+<div>
+<div class="job-role">
+Summer Intern
+</div>
+<div class="job-company">
+Samsung Research (Digital Wallet Team)
+</div>
+</div>
+<div class="job-date">
+June 2024 - Aug 2024
+</div>
+</div>
+<div class="job-details">
+<ul>
+<li>
+<strong>Received Advanced Developer PPO.</strong>
+</li>
+<li>
+Developed AI-driven image generation models that align with Samsung themes for NRU promotion campaign.
+</li>
+<li>
+Automated entire end-to-end promotional pipeline; Researched and proposed a plan to develop an LLM agent capable of performing tasks for the Samsung Wallet.
+</li>
+</ul>
+</div>
+</div>
+<div class="timeline-item">
+<div class="job-header">
+<div>
+<div class="job-role">
+Research Intern
+</div>
+<div class="job-company">
+University of Tartu, Estonia
+</div>
+</div>
+<div class="job-date">
+Dec 2023 - Dec 2024
+</div>
+</div>
+<div class="job-details">
+<ul>
+<li>
+Engineered datasets by scraping and post-processing 15K+ Facebook/Threads posts and 2M+ comments.
+</li>
+<li>
+Analyzed and selected from various Spam detection and Toxicity quantification models.
+</li>
+<li>
+Conducted in-depth descriptive analysis across 10 key criteria.
+</li>
+</ul>
+</div>
+</div>
+<div class="main-header">
+<i class="fa-solid fa-code"></i>
+<h2>
+Projects
+</h2>
+</div>
+<div class="timeline-item">
+<div class="job-header">
+<div>
+<p><span class="job-role">Adobe Behaviour Simulation Challenge</span> <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Code</a></p>
+</div>
+<div class="job-company">
+Inter-IIT Tech Meet 12.0 (Bronze Medal)
+</div>
+</div>
+<div class="job-details">
+<ul>
+<li>
+Led a team on predicting tweet engagement; Developed a Classifier-Regressor approach using BERTweet embeddings.
+</li>
+<li>
+Employed fine-tuned SOTA language models (LLaMA-2, NeuralHermes-2.5) with RAG for tweet generation.
+</li>
+<li>
+Proposed LogRMSE as an improved evaluation metric for social media engagement.
+</li>
+</ul>
+</div>
+</div>
+<div class="timeline-item">
+<div class="job-header">
+<div>
+<p><span class="job-role">Vitals Extraction Challenge</span> <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Code</a></p>
+</div>
+<div class="job-company">
+Cloudphysician Healthcare (Gold Medal)
+</div>
+</div>
+<div class="job-details">
+<ul>
+<li>
+Developed the fastest pipeline (96% accuracy) for identifying and digitizing ICU monitor vitals.
+</li>
+<li>
+Implemented SOTA models like YOLOv8, Mask RCNN, Segformer, Retinanet, and DETR on a custom dataset of 9000 images.
+</li>
+<li>
+Enhanced accuracy with PaddleOCR, SCAN algorithm, and semi-supervised learning.
+</li>
+</ul>
+</div>
+</div>
+<div class="timeline-item">
+<div class="job-header">
+<p><span class="job-role">Other Key Projects</span></p>
+</div>
+<div class="job-details">
+<ul>
+<li>
+<strong>IITIHub:</strong> Application for Streamlined Campus Services.
+</li>
+<li>
+<strong>Natural Language to SQL:</strong> NLP project.
+</li>
+<li>
+<strong>MIPS 16-bit Processor:</strong> Implemented architecture in VHDL.
+</li>
+<li>
+<strong>OpenGL Amusement Park:</strong> 3D graphics simulation project.
+</li>
+<li>
+<strong>Efficient Mixed-Integer Planning:</strong> For UAVs in Cluttered Environments.
+</li>
+<li>
+<strong>Finnacio &amp; RoastIn:</strong> Web development projects.
+</li>
+</ul>
+</div>
+</div>
+<div class="main-header">
+<i class="fa-solid fa-book"></i>
+<h2>
+Publications
+</h2>
+</div>
+<div class="timeline-item">
+<div class="job-header">
+<div>
+<div class="job-role">
+Scalable Distributed Laplacian Score for Feature Selection
+</div>
+<div class="job-company">
+International Conference on Neural Information Processing (ICONIP)
+</div>
+</div>
+<div class="job-date">
+Dec 2024
+</div>
+</div>
+</div>
+<div class="main-header">
+<i class="fa-solid fa-graduation-cap"></i>
+<h2>
+Relevant Coursework
+</h2>
+</div>
+<div class="timeline-item">
+<div class="job-details">
+<div class="course-block">
+<strong>Computer Science:</strong> Distributed Network Algorithms, Parallel Computing, Computational Intelligence, Data Structures &amp; Algorithms, Operating Systems, Compiler Techniques, Computer Networks, Computer Graphics, Database Systems, Blockchain, Computer Vision, Cryptography &amp; Network Security, Machine Learning.
+</div>
+<div class="course-block">
+<strong>Mathematics:</strong> Optimization Algorithms, Differential Equations, Calculus, Linear Algebra, Complex Analysis, Numerical Methods, Algebraic Graph Theory.
+</div>
+<div class="course-block">
+<strong>Economics:</strong> Intermediate Microeconomics, Indian Economy, Development Economics, International Economics.
+</div>
+</div>
+</div>
+<div class="main-header">
+<i class="fa-solid fa-users"></i>
+<h2>
+Leadership &amp; Extracurriculars
+</h2>
+</div>
+<div class="job-details">
+<ul>
+<li>
+<strong>Co-Head, Cynaptics (AI/ML Club):</strong> Led a team of 60+ students in research, projects, and competitions.
+</li>
+<li>
+<strong>Placement Coordinator:</strong> CS Department, Training and Placement Cell, IIT Indore.
+</li>
+<li>
+<strong>Member, Academic Council:</strong> IIT Indore (A.Y. 2022-2023).
+</li>
+<li>
+<strong>Co-Head, Debating Society:</strong> Mentored 100+ students; Winner of Annual Debating Championship.
+</li>
+<li>
+<strong>Social Impact:</strong> Taught in government schools of underprivileged localities (AVANA Club).
+</li>
+<li>
+<strong>Speaker:</strong> Delivered a talk on “Interpretable, Explainable &amp; Trustworthy AI” (Apr 2023).
+</li>
+</ul>
+</div>
+</main>
+</div>
+
+
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+    tabsets.forEach(function(tabset) {
+      const tabby = new Tabby('#' + tabset.id);
+    });
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/madhaviit\.github\.io\/madhaviit");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'light-border',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
