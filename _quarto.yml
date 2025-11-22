@@ -3,7 +3,6 @@ project:
   output-dir: docs
 
 
-      
 website: 
   open-graph: true
   favicon: "images/favicon.ico"
@@ -48,17 +47,7 @@ website:
       align: center
       style: "docked"
       collapse-level: 1
-    # - title: "Blog"
-    #   contents: Blogs/
-    #   reader-mode: true
-    #   search: true
-    #   background: "none"
-    #   border: false
-    #   pinned: true
-    #   align: center
-    #   style: "docked"
-      # search: true
-      # collapse-level: 1
+    
     - title: "My Blogs"
       contents: MyBlog/
       reader-mode: true
@@ -70,28 +59,6 @@ website:
       style: "docked"
       # search: true
       collapse-level: 1
-    # - title: "Projects"
-    #   contents: Projects/
-    #   reader-mode: true
-    #   search: true
-    #   background: "none"
-    #   border: false
-    #   pinned: true
-    #   align: center
-    #   style: "docked"
-    #   # search: true
-    #   collapse-level: 1
-    # - title: "Articles"
-    #   contents: Articles/
-    #   reader-mode: true
-    #   search: true
-    #   background: "none"
-    #   border: false
-    #   pinned: true
-    #   align: center
-    #   style: "docked"
-      # search: true
-      # collapse-level: 1
     - title: "Home"
       contents:
       - href: index.qmd
@@ -110,7 +77,7 @@ website:
       - text: My Blogs
         aria-label: "My Blogs"
         href: MyBlog/Blogs/index.qmd
-      logo: "images/ProfPic.png"
+      logo: "./images/ProfPic2.png"
       background: "none"
       border: false
       pinned: true
@@ -135,7 +102,7 @@ website:
       collapse-level: 1
   page-footer:  
     left: >-
-     &#169; 2024 Madhav Kadam
+     &#169; 2025 Madhav Kadam
 
     
 format:
@@ -166,35 +133,3 @@ format:
 filters:
   - include-files.lua
   - quarto
-
-# page:
-#   # Specific settings for index.qmd
-#   Poems/Pe.qmd:
-#     sidebar: false
-  
-# default
-# cerulean
-# cosmo
-# cyborg
-# darkly
-# flatly
-# journal
-# litera
-# lumen
-# lux
-# materia
-# minty
-# morph
-# pulse
-# quartz
-# sandstone
-# simplex
-# sketchy
-# slate
-# solar
-# spacelab
-# superhero
-# united
-# vapor
-# yeti
-# zephyr

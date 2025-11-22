@@ -43,9 +43,11 @@ header-includes: >
 resources:
   - assets/index.css
 ---
+Have recently joined Samsung R&D Institute India Bangalore as a Software Engineer after completing my B.Tech. in Computer Science and Engineering from the Indian Institute of Technology, Indore. 
 
-Hello, I am Madhav Kadam. My friends call me Maddy, and my sister calls me mad! I'm a final year undergraduate at the Department of Computer Science, IIT Indore, and I am also pursuing a minor in Economics. I have a keen interest in theoretical computer science and the development of applications. Advances in Generative AI were fascinating as well as intriguing to me in terms of privacy and impact on social networks. I am actively trying to expand my understanding in these areas.
-I express myself with a pen a lot. So I ~try~ ~to~ write poems and jot down my diary regularly. I put a few of my thoughts and notes on the internet. I spend a lot of time reading all kinds of books. This has led me to have an eye for spotting inefficiencies, and I think of ways to terminate them. I enjoy engaging in thought-provoking debates and discussions. I'm a big-time foodie and nature lover, always seeking new culinary experiences(vegetarian) and outdoor adventures.
+Like to read. The reading spectrum stretches from math-heavy research papers to fictional novels. Both extremes of this spectrum help me understand everything in between much better. Focus my research on significant challenges and topics that amuse me. Find coding and debugging very engrossing. Generative AI, robotics and computer vision fascinate me, and at the same time, inclined to study the privacy and security aspects of its development as well as applications.  
+
+Express myself with a pen a lot resulting in ~~attempts~~ ~~for~~ writing poems and jotting down thoughts regularly. Put a few of them on the internet too. Spend a lot of time reading all kinds of books. All this has led me to have an eye for spotting inefficiencies, and come up with ways to terminate them. Constantly try to keep myself updated on my domains of keen interest (a few are economics, algorithms, literature, law, and technology). Enjoy engaging in thought-provoking debates and discussions. A big-time foodie and nature lover, always seeking new culinary experiences(vegetarian) and outdoor adventures.
 
 
 
