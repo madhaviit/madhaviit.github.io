@@ -2,7 +2,7 @@
 # title: ""
 # pagetitle: ""
 # subtitle: ""
-# image: images/sideprof.png
+# image: images/ProfPic2.png
 # image-alt: "AI modified image of Madhav"
 
 # twitter-card:
@@ -12,7 +12,7 @@
 #     image: images/sideprof.png
 about:
   template: solana
-  image-width: 28em
+  image-width: 10em
   id: hero-heading
   # links:
     # - text: "{{< fa universal-access >}}"

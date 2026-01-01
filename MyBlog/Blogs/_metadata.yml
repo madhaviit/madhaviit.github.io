@@ -2,6 +2,22 @@
 execute: 
   freeze: true
 
+filters:
+  - watermark
+
+watermark:
+  text: "Madhav Kadam"
+  size: 1
+  angle: 20
+  color: "grey"
+  opacity: 0.08
+  cols: 15
+  rows: 70
+  col-space: 3
+  row-space: 3
+  z-index: -4
+  html-font: "system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'"
+
 # Enable banner style title blocks
 title-block-banner: true
 

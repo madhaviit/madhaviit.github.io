@@ -4,7 +4,7 @@ author: Madhav Kadam
 date: 2024-10-01
 date-modified: 2024-10-01
 slug: audit-1
-# image: 
+# image: "img/singapore.jpg"
 categories: 
   - Experience
   - GenAI

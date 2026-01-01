@@ -59,25 +59,26 @@ website:
       style: "docked"
       # search: true
       collapse-level: 1
-    - title: "Home"
+    - title: Home
+      logo-href: images/ProfPic2.png
       contents:
-      - href: index.qmd
-        text: Madhav Kadam
-      - href: https://drive.google.com/file/d/1hnqTi8Y-63If0PUq-HJ09X44cnxxqlXD/view?usp=sharing
-        text: CV
-        target: _blank
-      - href: Poems/disclaimer.qmd
-        text: Poems
-      # - text: Blog
-      #   aria-label: "Blog"
-      #   href: Blogs/index.qmd
-      # - text: Articles
-      #   aria-label: "Articles"
-      #   href: Articles/index.qmd
-      - text: My Blogs
-        aria-label: "My Blogs"
-        href: MyBlog/Blogs/index.qmd
-      logo: "./images/ProfPic2.png"
+        - href: index.qmd
+          text: Madhav Kadam
+        - href: https://drive.google.com/file/d/1hnqTi8Y-63If0PUq-HJ09X44cnxxqlXD/view?usp=sharing
+          text: CV
+          target: _blank
+        - href: Poems/disclaimer.qmd
+          text: Poems
+        # - text: Blog
+        #   aria-label: "Blog"
+        #   href: Blogs/index.qmd
+        # - text: Articles
+        #   aria-label: "Articles"
+        #   href: Articles/index.qmd
+        - text: My Blogs
+          aria-label: "My Blogs"
+          href: MyBlog/Blogs/index.qmd
+      
       background: "none"
       border: false
       pinned: true
@@ -133,3 +134,4 @@ format:
 filters:
   - include-files.lua
   - quarto
+

@@ -4,7 +4,7 @@ author: Madhav Kadam
 date: 2024-07-25
 date-modified: 2024-07-25
 slug: audit-1
-# image: 
+# image: "howtocse.jpg"
 categories: 
   - Opinion
   - Thought
