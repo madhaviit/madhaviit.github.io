@@ -1,7 +1,7 @@
 # Freeze computed outputs
 execute: 
   freeze: true
-
+sidebar: Blogs
 filters:
   - watermark
 

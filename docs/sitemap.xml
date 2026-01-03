@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://madhaviit.github.io/madhaviit/MyBlog/Projects/index.html</loc>
-    <lastmod>2025-10-25T14:35:20.518Z</lastmod>
+    <lastmod>2026-01-02T17:09:43.804Z</lastmod>
   </url>
   <url>
     <loc>https://madhaviit.github.io/madhaviit/MyBlog/Projects/Vitals/index.html</loc>
@@ -13,16 +13,20 @@
     <lastmod>2025-10-25T14:35:20.517Z</lastmod>
   </url>
   <url>
-    <loc>https://madhaviit.github.io/madhaviit/MyBlog/Blogs/Seniors-talk/index.html</loc>
+    <loc>https://madhaviit.github.io/madhaviit/MyBlog/Blogs/Talk-by-Sayak/index.html</loc>
     <lastmod>2025-10-25T14:35:20.517Z</lastmod>
   </url>
   <url>
-    <loc>https://madhaviit.github.io/madhaviit/MyBlog/Blogs/India@75/index.html</loc>
-    <lastmod>2025-10-25T14:35:20.517Z</lastmod>
+    <loc>https://madhaviit.github.io/madhaviit/MyBlog/Blogs/index.html</loc>
+    <lastmod>2026-01-02T17:58:41.378Z</lastmod>
   </url>
   <url>
-    <loc>https://madhaviit.github.io/madhaviit/MyBlog/Blogs/Guardrails/index.html</loc>
-    <lastmod>2025-10-25T14:35:20.517Z</lastmod>
+    <loc>https://madhaviit.github.io/madhaviit/MyBlog/Blogs/Varkari/index.html</loc>
+    <lastmod>2025-11-19T16:40:07.157Z</lastmod>
+  </url>
+  <url>
+    <loc>https://madhaviit.github.io/madhaviit/MyBlog/Blogs/India@100/index.html</loc>
+    <lastmod>2026-01-02T07:57:04.801Z</lastmod>
   </url>
   <url>
     <loc>https://madhaviit.github.io/madhaviit/Poems/Marathi/विटी.html</loc>
@@ -49,36 +53,44 @@
     <lastmod>2025-10-25T14:35:20.518Z</lastmod>
   </url>
   <url>
-    <loc>https://madhaviit.github.io/madhaviit/Poems/Hindi/परिस्थिती.html</loc>
-    <lastmod>2025-10-25T14:35:20.518Z</lastmod>
-  </url>
-  <url>
-    <loc>https://madhaviit.github.io/madhaviit/Poems/Hindi/असफलता.html</loc>
-    <lastmod>2025-10-25T14:35:20.518Z</lastmod>
-  </url>
-  <url>
-    <loc>https://madhaviit.github.io/madhaviit/cv/cv.html</loc>
-    <lastmod>2025-11-22T11:35:16.079Z</lastmod>
-  </url>
-  <url>
-    <loc>https://madhaviit.github.io/madhaviit/Resources/resources.html</loc>
-    <lastmod>2025-10-25T14:35:20.519Z</lastmod>
-  </url>
-  <url>
-    <loc>https://madhaviit.github.io/madhaviit/index.html</loc>
-    <lastmod>2025-11-23T08:13:22.032Z</lastmod>
-  </url>
-  <url>
-    <loc>https://madhaviit.github.io/madhaviit/Poems/Hindi/औकात.html</loc>
-    <lastmod>2025-10-25T14:35:20.518Z</lastmod>
+    <loc>https://madhaviit.github.io/madhaviit/Poems/index.html</loc>
+    <lastmod>2026-01-03T21:56:05.552Z</lastmod>
   </url>
   <url>
     <loc>https://madhaviit.github.io/madhaviit/Poems/Hindi/मोहन.html</loc>
     <lastmod>2025-10-25T14:35:20.518Z</lastmod>
   </url>
   <url>
-    <loc>https://madhaviit.github.io/madhaviit/Poems/disclaimer.html</loc>
+    <loc>https://madhaviit.github.io/madhaviit/Poems/Hindi/औकात.html</loc>
+    <lastmod>2026-01-03T22:16:56.682Z</lastmod>
+  </url>
+  <url>
+    <loc>https://madhaviit.github.io/madhaviit/index.html</loc>
+    <lastmod>2026-01-04T22:45:08.164Z</lastmod>
+  </url>
+  <url>
+    <loc>https://madhaviit.github.io/madhaviit/Resources/CleanIndia/index.html</loc>
+    <lastmod>2026-01-02T20:15:00.245Z</lastmod>
+  </url>
+  <url>
+    <loc>https://madhaviit.github.io/madhaviit/Resources/resources.html</loc>
     <lastmod>2025-10-25T14:35:20.519Z</lastmod>
+  </url>
+  <url>
+    <loc>https://madhaviit.github.io/madhaviit/cv/cv.html</loc>
+    <lastmod>2025-11-22T11:35:16.079Z</lastmod>
+  </url>
+  <url>
+    <loc>https://madhaviit.github.io/madhaviit/Poems/Hindi/असफलता.html</loc>
+    <lastmod>2026-01-02T18:52:33.066Z</lastmod>
+  </url>
+  <url>
+    <loc>https://madhaviit.github.io/madhaviit/Poems/Hindi/परिस्थिती.html</loc>
+    <lastmod>2025-10-25T14:35:20.518Z</lastmod>
+  </url>
+  <url>
+    <loc>https://madhaviit.github.io/madhaviit/Poems/disclaimer.html</loc>
+    <lastmod>2026-01-02T18:17:03.670Z</lastmod>
   </url>
   <url>
     <loc>https://madhaviit.github.io/madhaviit/Poems/Marathi/दिवाळी.html</loc>
@@ -86,7 +98,7 @@
   </url>
   <url>
     <loc>https://madhaviit.github.io/madhaviit/Poems/Marathi/गणेशोत्सव.html</loc>
-    <lastmod>2025-10-25T14:35:20.519Z</lastmod>
+    <lastmod>2026-01-03T22:19:15.643Z</lastmod>
   </url>
   <url>
     <loc>https://madhaviit.github.io/madhaviit/Poems/Marathi/महाराष्ट्रभूमी.html</loc>
@@ -105,16 +117,20 @@
     <lastmod>2026-01-01T17:15:25.152Z</lastmod>
   </url>
   <url>
-    <loc>https://madhaviit.github.io/madhaviit/MyBlog/Blogs/Varkari/index.html</loc>
-    <lastmod>2025-11-19T16:40:07.157Z</lastmod>
-  </url>
-  <url>
-    <loc>https://madhaviit.github.io/madhaviit/MyBlog/Blogs/index.html</loc>
-    <lastmod>2026-01-01T17:18:04.369Z</lastmod>
-  </url>
-  <url>
-    <loc>https://madhaviit.github.io/madhaviit/MyBlog/Blogs/Talk-by-Sayak/index.html</loc>
+    <loc>https://madhaviit.github.io/madhaviit/MyBlog/Blogs/Guardrails/index.html</loc>
     <lastmod>2025-10-25T14:35:20.517Z</lastmod>
+  </url>
+  <url>
+    <loc>https://madhaviit.github.io/madhaviit/MyBlog/Blogs/India@75/index.html</loc>
+    <lastmod>2025-10-25T14:35:20.517Z</lastmod>
+  </url>
+  <url>
+    <loc>https://madhaviit.github.io/madhaviit/MyBlog/Blogs/Seniors-talk/index.html</loc>
+    <lastmod>2025-10-25T14:35:20.517Z</lastmod>
+  </url>
+  <url>
+    <loc>https://madhaviit.github.io/madhaviit/MyBlog/Blogs/Broken-Silence/index.html</loc>
+    <lastmod>2026-01-02T20:42:52.001Z</lastmod>
   </url>
   <url>
     <loc>https://madhaviit.github.io/madhaviit/MyBlog/Blogs/BlogFull/index.html</loc>
@@ -123,9 +139,5 @@
   <url>
     <loc>https://madhaviit.github.io/madhaviit/MyBlog/Projects/Adobe Behaviour Simulation Challenge/index.html</loc>
     <lastmod>2025-10-25T14:35:20.518Z</lastmod>
-  </url>
-  <url>
-    <loc>https://madhaviit.github.io/madhaviit/MyBlog/Blogs/India@100/index.html</loc>
-    <lastmod>2026-01-01T17:22:30.836Z</lastmod>
   </url>
 </urlset>

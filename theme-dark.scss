@@ -1,13 +1,14 @@
 /*-- scss:defaults --*/
 
 @import 'https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap';
-@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari&display=swap');
 /* @import 'https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Serif+Devanagari&display=swap'; */
 /* /@import 'https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap';*/
 $font-family: "Atkinson Hyperlegible", sans-serif;
 $font-family: "Noto Serif Devanagari", serif;
 $font-family: "Kalam";
+$headings-color: white;
 /* $font-family: "Kalam",sans-serif; */
 $body-bg: #181818;
 $body-color: white;

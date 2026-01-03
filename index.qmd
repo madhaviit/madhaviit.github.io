@@ -1,4 +1,5 @@
 ---
+sidebar: Home
 # title: ""
 # pagetitle: ""
 # subtitle: ""
@@ -43,11 +44,13 @@ header-includes: >
 resources:
   - assets/index.css
 ---
-Have recently joined Samsung R&D Institute India Bangalore as a Software Engineer after completing my B.Tech. in Computer Science and Engineering from the Indian Institute of Technology, Indore. 
+I am working as SWE at Samsung R&D Institute India Bangalore in Samsung Pay / Digital Wallet team after completing my B.Tech. in Computer Science and Engineering from the Indian Institute of Technology, Indore. 
 
-Like to read. The reading spectrum stretches from math-heavy research papers to fictional novels. Both extremes of this spectrum help me understand everything in between much better. Focus my research on significant challenges and topics that amuse me. Find coding and debugging very engrossing. Generative AI, robotics and computer vision fascinate me, and at the same time, inclined to study the privacy and security aspects of its development as well as applications.  
+I am an avid reader. My reading spectrum stretches from math-heavy research papers to fictional novels. Both extremes of this spectrum help me understand everything in between much better. I focus my research on significant challenges and topics that amuse me. I find coding and debugging very engrossing. Generative AI, robotics and computer vision fascinate me, and at the same time, I am inclined to study the privacy and security aspects of its development as well as applications.  
 
-Express myself with a pen a lot resulting in ~~attempts~~ ~~for~~ writing poems and jotting down thoughts regularly. Put a few of them on the internet too. Spend a lot of time reading all kinds of books. All this has led me to have an eye for spotting inefficiencies, and come up with ways to terminate them. Constantly try to keep myself updated on my domains of keen interest (a few are economics, algorithms, literature, law, and technology). Enjoy engaging in thought-provoking debates and discussions. A big-time foodie and nature lover, always seeking new culinary experiences(vegetarian) and outdoor adventures.
+I express myself with a pen a lot resulting in ~~attempts~~ ~~for~~ writing poems and jotting down thoughts regularly. Have put a few of them here too. 
+
+All this has led me to have an eye for spotting inefficiencies, and come up with ways to terminate them. I constantly try to keep myself updated on my domains of keen interest (Economics, Literature, Algorithms, Biology, Law and Technology). I enjoy engaging in thought-provoking debates and discussions. I am big-time foodie and nature lover, always seeking new culinary experiences(vegetarian) and outdoor adventures.
 
 
 

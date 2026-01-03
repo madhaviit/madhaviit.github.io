@@ -1,0 +1,32 @@
+---
+title: "Poems" 
+description: |
+  <br><br> I share few of my poems with Pen Name of Avikshit Nahciketa. 
+  
+sidebar: Poems
+listing: 
+  contents: 
+    - "**/**.qmd"
+  sort: "date desc"
+  type: grid
+  categories: false
+  sort-ui: false
+  filter-ui: false
+  fields: [title]
+#   image-placeholder: sidebar.jpg
+#   image-align: right
+  page-size: 100
+  # feed : true
+citation: false
+toc: true
+comments: false
+format: 
+  html: 
+    page-layout: full
+title-block-banner: false
+
+header-includes: >
+  <link rel="stylesheet" href="../assets/listing-default.css">
+resources:
+  - ../assets/listing-default.css 
+---

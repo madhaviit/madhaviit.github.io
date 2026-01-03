@@ -15,6 +15,6 @@ If by chance they cause any pain,
 
 It was never the intent of this humble brain.
 
-
+Use Sidebar or [Index](./index.qmd)
 
 

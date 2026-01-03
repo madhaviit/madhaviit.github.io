@@ -2,7 +2,7 @@
 title: "Blogs" 
 description: |
   This is my blog where I share few of the experiences and thoughts that I deem fit for sharing. <br> Mostly I talk about my learnings, some techical stuff and others are just my thoughts. 
-
+sidebar: Blogs
 listing: 
   contents: 
     - "**/index.qmd"
