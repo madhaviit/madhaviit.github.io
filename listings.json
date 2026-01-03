@@ -10,6 +10,7 @@
     "listing": "/MyBlog/Blogs/index.html",
     "items": [
       "/MyBlog/Blogs/India@100/index.html",
+      "/MyBlog/Blogs/Broken-Silence/index.html",
       "/MyBlog/Blogs/BlogFull/index.html",
       "/MyBlog/Blogs/How-to-CSE/index.html",
       "/MyBlog/Blogs/Guardrails/index.html",
@@ -18,6 +19,27 @@
       "/MyBlog/Blogs/Seniors-talk/index.html",
       "/MyBlog/Blogs/India@75/index.html",
       "/MyBlog/Blogs/Varkari/index.html"
+    ]
+  },
+  {
+    "listing": "/Poems/index.html",
+    "items": [
+      "/Poems/English/Bapu.html",
+      "/Poems/Hindi/असफलता.html",
+      "/Poems/Hindi/औकात.html",
+      "/Poems/Hindi/परिस्थिती.html",
+      "/Poems/Hindi/मोहन.html",
+      "/Poems/Marathi/कर्मर्तव्य.html",
+      "/Poems/Marathi/कविता खरंच काय असते.html",
+      "/Poems/Marathi/गणेशोत्सव.html",
+      "/Poems/Marathi/दिवाळी.html",
+      "/Poems/Marathi/धर्मवीर.html",
+      "/Poems/Marathi/महाराष्ट्रभूमी.html",
+      "/Poems/Marathi/मी शेतकरी.html",
+      "/Poems/Marathi/विटी.html",
+      "/Poems/Marathi/शिवबा.html",
+      "/Poems/Marathi/शेतकऱ्याचे मनोगत.html",
+      "/Poems/disclaimer.html"
     ]
   }
 ]
