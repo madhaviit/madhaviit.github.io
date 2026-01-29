@@ -6,7 +6,7 @@ toc: false
   <div class="hindi-kalam" onmousedown='return false;' onselectstart="return false;" oncopy="return false;" onpaste="return false;" oncut="return false;">
 <!-- # गणेशोत्सव -->
 
-टिळकांनी सुरू केले जायला तो खरा गणेशोत्सव चाललाय लयाला
+टिळकांनी सुरू केले जयाला तो खरा गणेशोत्सव चाललाय लयाला
 
 ढोल ताशे गायब झाले तेथे डॉल्बी साहेब आले
 
