@@ -2,7 +2,7 @@
 .Rhistory
 .RData
 .Ruserdata
-.gitconfig
+
 /.quarto/
 *_cache/
 _site/
@@ -10,3 +10,5 @@ _site/
 .DS_Store
 cv
 **/*.quarto_ipynb
+
+.gitconfig
