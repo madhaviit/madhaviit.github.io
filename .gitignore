@@ -2,7 +2,7 @@
 .Rhistory
 .RData
 .Ruserdata
-
+.gitconfig
 /.quarto/
 *_cache/
 _site/
