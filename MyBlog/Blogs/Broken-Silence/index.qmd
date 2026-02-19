@@ -15,7 +15,7 @@ excerpt: "पटलं तर घ्या"
 
 
 ::: {layout="[3, 1]"}
-At the nest's edge, she cooed, when her baby’s chirps pierced through the dawn’s silence as it cracked through the eggshell. Days turned to weeks listening to rustling leaves and flapping wings as she guided him — flight lessons, worm hunts, predator evasion. Eventually, silence returned — except for the sobs of the gusts.
+At the nest's edge, she cooed, when her baby’s chirps pierced through the dawn’s silence as it cracked through the eggshell. Days turned to weeks listening to rustling leaves and flapping wings as she guided him flight lessons, worm hunts, predator evasion. Eventually, silence returned except for the sobs of the gusts.
 
 ![](referenceImg.jpeg){height="10%"}
 :::

@@ -6,7 +6,7 @@ toc: false
   <div class="hindi-kalam"  onmousedown='return false;' onselectstart="return false;" oncopy="return false;" onpaste="return false;" oncut="return false;">
 <!-- # मी शेतकरी -->
 
-राबतो मी शेतात रचतो सरीवर सरी माझे दुःख हो मांडण्या लिहितोय मी शेतकरी 
+राबतो मी शेतात कसतो सरीवर सरी माझे दुःख मांडण्या लिहितोय मी शेतकरी 
 
 मी पहाटं उठतो काकडं देवाच गातो कांदा भाकर खातो काळ्या मातीत रातो 
 
