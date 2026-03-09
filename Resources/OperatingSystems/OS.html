@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Madhav Kadam">
 
-<title>असफलता – Madhav Kadam</title>
+<title>Operating Systems – Madhav Kadam</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,8 +30,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../Poems/Hindi/औकात.html" rel="next">
-<link href="../../Poems/English/Bapu.html" rel="prev">
 <link href="../../images/favicon.ico" rel="icon">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -47,7 +46,6 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/bootstrap/bootstrap-5ccc96adb09d5b52e0554916306515a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/bootstrap/bootstrap-dark-330f588d2fe9f70006310632f726b655.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../../site_libs/bootstrap/bootstrap-5ccc96adb09d5b52e0554916306515a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script src="../../site_libs/quarto-contrib/watermark-1.0.11/watermark.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -86,14 +84,51 @@ gtag('config', 'G-B6Z44LN64S', { 'anonymize_ip': true});
 </script>
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta property="og:title" content="असफलता – Madhav Kadam">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="Operating Systems – Madhav Kadam">
+<meta property="og:description" content="Basics of OS notes">
+<meta property="og:image" content="https://madhaviit.github.io/madhaviit/Resources/OperatingSystems/images/image.png">
 <meta property="og:site_name" content="Madhav Kadam">
-<meta name="twitter:title" content="असफलता – Madhav Kadam">
-<meta name="twitter:card" content="summary">
+<meta property="og:image:height" content="667">
+<meta property="og:image:width" content="838">
+<meta name="twitter:title" content="Operating Systems – Madhav Kadam">
+<meta name="twitter:description" content="Basics of OS notes">
+<meta name="twitter:image" content="https://madhaviit.github.io/madhaviit/Resources/OperatingSystems/images/image.png">
+<meta name="twitter:image-height" content="667">
+<meta name="twitter:image-width" content="838">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-sidebar docked nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -258,225 +293,9 @@ gtag('config', 'G-B6Z44LN64S', { 'anonymize_ip': true});
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">Madhav Kadam</span>
-    </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
-<span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="https://drive.google.com/file/d/1hnqTi8Y-63If0PUq-HJ09X44cnxxqlXD/view?usp=sharing" target="_blank"> 
-<span class="menu-text">CV</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="../../Poems/disclaimer.html" aria-current="page"> 
-<span class="menu-text">Poems</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../MyBlog/index.html"> 
-<span class="menu-text">Blog</span></a>
-  </li>  
-</ul>
-          </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-</div>
-      </div> <!-- /container-fluid -->
-    </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title"><span class="hindi-kalam">असफलता</span></h1>
-        </a>     
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
-</header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-center sidebar-header sidebar-header-stacked">
-      <a href="../../index.html" class="sidebar-logo-link">
-      </a>
-      <div class="sidebar-tools-main">
-    <a href="../../Poems/disclaimer.html" title="Poems" class="quarto-navigation-tool px-1" aria-label="Poems"><i class="bi bi-book"></i></a>
-</div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../Poems/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Poems</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../Poems/disclaimer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Disclaimer</span></a>
-  </div>
-</li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
- <span class="menu-text">English</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../Poems/English/Bapu.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span onmousedown="return false;" data-onselectstart="return false;" oncopy="return false;" onpaste="return false;" oncut="return false;"> Bapu </span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Hindi</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../Poems/Hindi/असफलता.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="hindi-kalam">असफलता</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../Poems/Hindi/औकात.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="hindi-kalam">औकात</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../Poems/Hindi/परिस्थिती.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="hindi-kalam">परिस्थिती</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../Poems/Hindi/मोहन.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="hindi-kalam">मोहन</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
- <span class="menu-text">Marathi</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../Poems/Marathi/कर्मर्तव्य.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="hindi-kalam">कर्मर्तव्य</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../Poems/Marathi/कविता खरंच काय असते.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="hindi-kalam">कविता खरंच काय असते</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../Poems/Marathi/गणेशोत्सव.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="hindi-kalam">गणेशोत्सव</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../Poems/Marathi/दिवाळी.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="hindi-kalam">दिवाळी</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../Poems/Marathi/धर्मवीर.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="hindi-kalam">धर्मवीर</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../Poems/Marathi/महाराष्ट्रभूमी.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="hindi-kalam">महाराष्ट्रभूमी</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../Poems/Marathi/मी शेतकरी.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="hindi-kalam">मी शेतकरी</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../Poems/Marathi/विटी.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="hindi-kalam">विटी</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../Poems/Marathi/विशाद.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="hindi-kalam">विशाद</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../Poems/Marathi/शिवबा.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="hindi-kalam">शिवबा</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../Poems/Marathi/शेतकऱ्याचे मनोगत.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="hindi-kalam">शेतकऱ्याचे मनोगत</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-      </ul>
-  </li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     
 <!-- main -->
@@ -485,9 +304,10 @@ gtag('config', 'G-B6Z44LN64S', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="hindi-kalam">असफलता</span></h1>
+<h1 class="title">Operating Systems</h1>
+<p class="subtitle lead">Basics of OS notes</p>
   <div class="quarto-categories">
-    <div class="quarto-category">Hindi</div>
+    <div class="quarto-category">CS</div>
   </div>
   </div>
 
@@ -495,11 +315,17 @@ gtag('config', 'G-B6Z44LN64S', { 'anonymize_ip': true});
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Madhav Kadam </p>
+          </div>
+  </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">Sep 2023</p>
+      <p class="date">Oct 2023</p>
     </div>
   </div>
   
@@ -511,29 +337,165 @@ gtag('config', 'G-B6Z44LN64S', { 'anonymize_ip': true});
 </header>
 
 
-<div class="hindi-kalam" onmousedown="return false;" data-onselectstart="return false;" oncopy="return false;" onpaste="return false;" oncut="return false;">
-<p><br> पहली दफा जब असफलता को चूमा था</p>
-<p>अश्कों की बारिशों में दिल खोलकर मैं झूमा था</p>
-<p><br></p>
-<p>पहली दफा चुकी थी अटकले</p>
-<p>और शर्म से झुकी हुईं थी नजर</p>
-<p>डर से रुकी थी धड़कने</p>
-<p>और आंसुओं की सूखी हुईं थी नहर</p>
-<p><br></p>
-<p>स्वयं पर अविश्वास में मन मेरा डूबा था</p>
-<p>बदला हुआ लोकमन समय का अजूबा था</p>
-<p>लोकमान्यता के लिए मैं भूखा था</p>
-<p>अंदर से टूटा और बाहर से मैं रूखा था</p>
-<p><br></p>
-<p>दिल को समझाया यह वक्त भी निकल जायेगा</p>
-<p>असफलता का सख्त लोहा भी पिघल जायेगा</p>
-<p>उसके लिए कई गुना ज्यादा तपना होगा</p>
-<p>तभी तो पहला पायदान फिरसे अपना होगा</p>
-<p>-अविक्षित नचिकेत</p>
+<section id="operating-systems" class="level1">
+<h1>Operating Systems</h1>
+<p>A program that acts as an intermediary between a user and a computer and its hardware. <strong>Computer Hardware → Operating System → System and application programs → Users.</strong> Operating system is a resource allocator and a control program. Kernel is the one program that runs at all the times on a computer. A bootstrap program which is stored in ROM/EPROM [Erasable Programmable Read Only Memory]/EEPROM [Electrically EPROM] is loaded by kernel at power-up or reboot. CMOS [Complimentary metal oxide semiconductor] is a small memory in motherboard that stores BIOS [basic Input/output System] settings.</p>
+<p>Now, I/O and CPU can execute concurrently. Direct memory access (DMA) [DMA is direct memory access] There are device controllers which are in-charge of particular device type and each of such device controller have its own local buffer. Each device controller has a device driver to manage I/O. I/O is from device to local buffer of controller where as CPU works between main memory and local buffers. Completion of I/O is informed to CPU causing interrupt. Interrupt transfer control to ISR [Interrupt Service Routine] using interrupt vector [Contains addresses of all the service routines]. A trap/exception [Exceptions are interrupts triggered by the CPU itself wich can further be clsassified as Aborts and Traps. Aborts are things that prevent the interrupted code from continuing. These are things that indicate a major problem - e.g.&nbsp;division by zero, hardware failures, etc. Whereas Traps are things that don’t prevent the interrupted code from continuing. These can be used for debugging, for virtual memory management, etc.] is software generated interrupt. Operating system is said to be interrupt driven. After an interrupt, OS preserves state of CPU by storing registers and Program counter. I/O subsystem is responsible for spooling [Overlapping og output of one job with input of other jobs], buffering and caching. There are two possible I/O structures : After I/O starts control returns to user program can be either be given only upon completion or can be returned without waiting for I/O completion. In the later case, OS uses 1) System calls are basically request to OS to allow user to wait for I/O completion and 2) Device status tables contains entry for each I/O device indicating its type, address and state.</p>
+<p>Storage Structure : 1) RAM : Volatile, random access, storage media that CPU can access directly 2) Secondary storage is non-volatile extension of Main memory. Caching is copying information into a faster storage system temporarily. Magnetic Tapes → Optical Disks → Hard disks → Solid-state disks → Main memory → cache → registers. Cache is smaller than storage that is being cached and its management is a important design problem.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/image.png" class="img-fluid figure-img" style="width:40.0%"></p>
+<figcaption>Von neumann Architecture</figcaption>
+</figure>
 </div>
-<!-- # असफलता -->
+<p>Von neumann Architecture</p>
+<p>Multiprocessor systems are also known as parallel or tightly coupled systems. These have higher throughput, economy of scale and increase reliability because of graceful degradation and fault tolerance. In Asymmetric Multiprocessing each processor performs specific task whereas in symmetric each processor performs all the tasks. There are clustered systems which share storage via a SAN [Storage Area Network]. Asymmetric clustering is when one machine stays in hot stand-by mode whereas in symmetric all machines look after each other. Clustering can be used for HPC [High Performance Computing] using parallelisation. There is DLM [Distributed Lock Manager] mechanism to avoid conflicting operations. Cache coherency [all the CPUs shall have the most recent values in their cache] is required.</p>
+<p><strong>Multiprogramming and Multitasking</strong> : Multiprogramming is batch system where job scheduling is done so that single user cannot keep CPU and I/O busy at all the times and ensures that CPU always has one to execute. For ex, when I/O happens, we have to wait, so for that time OS switches to another Job that is kept in memory. Batch interfaces thus are non-interactive where user specifies all the details in advance for a batch job and receives output when all the processing is done. Multitasking on other hand is timesharing which is logical extension in which CPU switches job so frequently that users can interact with each job while it is running creating pretence of interactive computing. Swapping, virtual memory, CPU scheduling, managing response time are all part of multitasking.</p>
+<p>Operating systems do have dual mode - 1) User Mode 2) Kernel Mode. Mode bit is provided by hardware. Now a days more and more CPUs are also supporting multi-mode operations.</p>
+<p>A process is a program in execution. It is a unit of work within system. Each thread has a program counter specifying the location of next instruction to execute.</p>
+<p>Kernals have singly linked list, doubly, circular linked list, binary search tree or even hash maps and bit maps. Computing environments can be traditional, mobile (android), distributed (Network Operating System), Client-Server, Peer-to-peer (Gnutella, Voice over IP, Napster), Virtualized (Citrix XenServer, VMware Elastic Sky X), cloud computing [Loda balancing is essential along with firwalls and cloud custome interface.] (Logical extension of virtualization ex, Amazon Elastic Compute Cloud (EC2) : Now, these can be SaaS (software), PaaS (platform), IaaS (infrastructure) ), Real time embedded systems. There are various open source OSes which counter to copy protection and Digital Rights Management (DRM) systems.</p>
+<p>Operating System Services include a) User interface b) Program execution c) I/O operations d) File system manipulations e) Communications f) Error detection g) Resource allocation h) Accounting i) Protection and Security</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/image 1.png" class="img-fluid figure-img" style="width:40.0%"></p>
+<figcaption>image.png</figcaption>
+</figure>
+</div>
+<p>System call is a programming interface to service provided by OS which are typically written in C/C++ and accessed by programs via a high-level API calls rather than direct use. Typically a number is associated with each system call, system call interface maintain a table indexed according to this number.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/image 2.png" class="img-fluid figure-img" style="width:40.0%"></p>
+<figcaption>API working of system calls</figcaption>
+</figure>
+</div>
+<p>API working of system calls</p>
+<p>Some systems have a program known as registry which is used to store and retrieve configuration information. Policy is what to do and mechanism is how to do?</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/image 3.png" class="img-fluid figure-img" style="width:40.0%"></p>
+<figcaption>Types of System Calls</figcaption>
+</figure>
+</div>
+<p>Types of System Calls</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/image 4.png" class="img-fluid figure-img" style="width:40.0%"></p>
+<figcaption>Android Architecture</figcaption>
+</figure>
+</div>
+<p>Android Architecture</p>
+<p>Debugging in OS is finding and fixing errors/bugs. Log files are generated containing error info. Core dump [When Application fails] and Crash dump [When OS fails/crashes] and trace listing. Profiling is periodic sampling of instruction pointer to look for statstical trends. Kernighan s Law: Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it. Dtrace tool allows live instrumentation on production systems by firing probes within a provider and captures state data and sends it to consumers of these probes. SYSGEN program obtains information concerning configs of hardware and compiles system-tuned kernal which is more efficient for that particular set of hardware. GRUB [<strong>GNU GRand Unified Bootloader</strong>] allows selection of kernal from multiple disks, versions and options.</p>
+<section id="process" class="level3">
+<h3 class="anchored" data-anchor-id="process">Process</h3>
+<p>In batch systems, processes are usually called jobs and in time-shared systems tasks. A process has multiple parts, viz.&nbsp;text section which is program code, program counter, process registers, stack for temporary data and data section with global variables and heap which is dynamically allocated memory during runtime. Thanks to virtualisation, each process has its own address space. Information associated with each process is stored in PCB (Process control block).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/image 5.png" class="img-fluid figure-img" style="width:40.0%"></p>
+<figcaption>States of a process</figcaption>
+</figure>
+</div>
+<p>States of a process</p>
+<p>PCB also contains CPU scheduling info, memory management info, accounting info, I/O status information. Process number (PID)</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/image 6.png" class="img-fluid figure-img" style="width:40.0%"></p>
+<figcaption>image.png</figcaption>
+</figure>
+</div>
+<p>Context of a process is stored by virtue of registers and PCB. So here one process have a single program counter i.e single thread. <code>task_struct</code> is used for representing a process in C. Process scheduler have Job Queue, ready queue, device queue and processes migrate among these queues.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/image 7.png" class="img-fluid figure-img" style="width:40.0%"></p>
+<figcaption>image.png</figcaption>
+</figure>
+</div>
+<p>Short term scheduler is frequently invoked to select next process for CPU allocation. Long term scheduler (Job scheduler) selects which processes shall be brought into ready queue in turn controlling degree of multiprogramming. The long term scheduler strives to maintain a good mix of I/O bound and CPU bound processes. If degree of multiprogramming needs to be decreased, a medium term scheduler can be added which swaps processes in and out of memory.</p>
+<p>Parent processes can create children, forming a tree of processes. A child duplicates parent’s address space. System calls associated are,<code>fork()</code>→creation of child process, <code>exec()</code>→replace the process memory with new program <code>exit()</code>→a process calls after execution of last statement <code>wait()</code>→provides the status information and return pid, <code>abort()</code>→can terminate child process. Zombie: Whenever a child process is started an entry is added in process table and that entry is removed only after the child exits and parent gets this status of exit via wait system call which is called reaping, but if that wait call is not invoked, then this entry stays there called as zombie (even if wait is invoked small time period between exit and removing entry, that process is a zombie). Often parent is yet to invoke wait. Zombies are usually transferred to init for dealing. Orphan: If parent terminates without invoking wait the child is called orphan.</p>
+<p>Processes within a system may be indpendent or cooperating. IPC [Interprocess communication] required. Shared memory and message passing are two models for IPC. Producer-Consumer problem deals shared memory model. Bounded buffer only Buffersize-1 item shared. In message passing <code>send()</code> and <code>recieve()</code> are used on a communication link which can be physical like bus, network, shared memory or logical (direct, indirect, synchronous/asyn, automatic/explicit buffering). Indirect uses mailboxes (ports). Blocking is used in synchronous IPC. If both sender and reciever are blocking we have a rendezvous. Buffering is not required in case of rendezvous. Buffering can be boudned or unbounded capacity. In windows message passing uses advanced local procedure calls (LPC).</p>
+<p>In client server case, RPCs( remote procedure calls), pipes, sockets and remote method invocation (java) are used. Socket is defined as endpoints of communication. Concat IP and port to get socket. RPC abstracts procedure calls between processes on networked systems using ports for service differentiation. S<strong>tubs are used.</strong> Client-side stub: locates server, marshals parameters and Server-side stub: receives message, unpacks parameters, performs procedure. Windows: stub code compiled from MIDL (Msft Interface defn lang) specification and Data representation: XDL (external data representation) format to handle different architectures (big-endian, little-endian). OS provides rendezvous (matchmaker) service to connect client and server. Pipes are conduit. They can be ordinary where parent child relation required (unidirectional also called anonymous pipes), or named where it is not required (bidirectional).</p>
+</section>
+<section id="threads" class="level3">
+<h3 class="anchored" data-anchor-id="threads">Threads</h3>
+<p>A thread is a lightweight process that runs within the context of a parent process. Threads share the same memory space as the parent process. Threads are lightweight, requiring fewer resources to create and manage. Communication between threads is simpler and more efficient, as they share the same memory space. Ex,&nbsp;A web browser with multiple tabs, where each tab runs in a separate thread.</p>
+<p>Amdahl’s law : <span class="math inline">\(speedup\)</span> ≤ <span class="math inline">\(\frac{1}{S+\frac{(1-s)}{N}}\)</span> where S is non-parallelizable portion.</p>
+<p>Threads are of two types, user threads and kernel threads. Many user level threads are mapped to single kernel threads which might result in blocking. One to one mapping provides more concurrency but number of processes per thread is restricted because of overhead. Many to many model allows OS to create a sufficient number of kernel threads. Two level Many to many models allows to bound a user thread to particular kernel thread. POSIX is a library that provides API for managing and creating threads. Runnable in java allows to create threads. Thread pool can be created where threads await for work. Threads can be terminated before it finishes called thread cancellation which can be asynchronous (immediate) or deferred (periodic check for cancellation). A thread can be created with cancellation option disabled as well. Signals are used to notify a process that a event has occurred. Each thread can have TLS (Thread Local Storage) to have own copy of data.</p>
+<p><strong>Lightweight Process (LWP)</strong>: An intermediate data structure between user and kernel threads. LWPs appear as virtual processors, allowing processes to schedule user threads to run.Each LWP is attached to a kernel thread. Scheduler activations provide a communication mechanism from the kernel to the thread library. This mechanism, called an <strong>upcall</strong>, allows the application to maintain the correct number of kernel threads.</p>
+</section>
+<section id="process-synchronisation" class="level3">
+<h3 class="anchored" data-anchor-id="process-synchronisation">Process Synchronisation</h3>
+<p><code>counter++</code> and <code>counter--</code> concurrent execution enters in a race condition. Such part of the code where we change common variables, update tables, write files, etc are critical sections. General structure of process <code>do { entry section → critical section → exit section → remainder section} while(true);</code> . Solution of critical section problem requires 4 things, 1. Mutual exclusion 2. Progress and 3. Bounded waiting. OS handles CSP [Critical Section Problem] depending on if kernal is preemptive or not.</p>
+<p>Peterson’s Solution : For two processes</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/image 8.png" class="img-fluid figure-img" style="width:40.0%"></p>
+<figcaption>image.png</figcaption>
+</figure>
+</div>
+<p>Hardware support for CSP comes with locking and atomic (non-interruptable) hardware instruction.</p>
+<ol type="1">
+<li>Test and Set approach : Shared boolean variable lock is initialised to false.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/image 9.png" class="img-fluid figure-img" style="width:40.0%"></p>
+<figcaption>image.png</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/image 10.png" class="img-fluid figure-img" style="width:40.0%"></p>
+<figcaption>image.png</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/image 11.png" class="img-fluid figure-img" style="width:40.0%"></p>
+<figcaption>Bounded wait in test and set</figcaption>
+</figure>
+</div>
+<p>Bounded wait in test and set</p>
+<ol type="1">
+<li>Compare and Swap Approach :</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/image 12.png" class="img-fluid figure-img" style="width:40.0%"></p>
+<figcaption>image.png</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/image 13.png" class="img-fluid figure-img" style="width:40.0%"></p>
+<figcaption>image.png</figcaption>
+</figure>
+</div>
+<ol type="1">
+<li>Mutex Locks : software solution implemented using hardware atomic instructions <code>acquire()</code> and <code>release()</code> . It requires busy waiting and thus called spinlock.</li>
+<li>Semaphore : S is an integer variable. Only 2 <code>wait()</code> and <code>signal()</code> atomic operations can use it. Wait call waits till S becomes positive and decrements it. Signal just increments it. Semaphore can be binary or counting. Semaphore with no busy waiting have a value and list or queue. It also has two operations <code>block()</code> and <code>wakeup().</code></li>
+</ol>
+</section>
+<section id="cpu-scheduling" class="level3">
+<h3 class="anchored" data-anchor-id="cpu-scheduling">CPU scheduling</h3>
+<p>Dispatcher module gives control of the CPU to the process selected by short-term scheduler. It switches context, switches to user mode and jumps to proper location to restart that program. The time taken to do this is called dispatch latency. Gantt Chart is useful depiction of processes.</p>
+<p>Scheduling Criteria : 1. CPU Utilisation : Percentage of time the CPU is busy executing processes. 2. Throughput : Number of processes completed per unit of time. 3. Turnaround Time : Time taken to execute a process from start to finish. 4. Waiting Time : Time spent by a process in the ready queue waiting for CPU access. 5. Response Time : Time taken to produce the first response after a request is submitted (for time-sharing environments).</p>
+<ol type="1">
+<li>FCFS : Convoy effect : Short processes behind long processes increase waiting time. (Like when a convoy has to pass, traffic stops)</li>
+<li>Shortest Job First (SJF) : Processes with shortest length of next CPU burst executed. minimum average waiting time is achieved. Length of next CPU burst can be estimated using exponential averaging with <span class="math inline">\(\alpha\)</span> set to 0.5 (usually).</li>
+<li>Shortest Remaining time first : Preemptive version of SJF.</li>
+<li>Priority Scheduling : An integer associated with each process, smaller is given higher priority. Starvation might be a problem and aging is a solution for the same.</li>
+<li>Round Robin : Time quantum q is given. q should be large enough to respect context switching time. Higher turnaround but lower response time.</li>
+<li>Multilevel Queue : foreground (interactive -RR) and background (batch - fcfs). Time slicing is done for each queue.</li>
+</ol>
+<p>Threads are scheduled within PCS (process contention space). Kernel threads are scheduled in SCS (system-contention space).</p>
+<p>In case of multiple processors, asymmetric scheduling ( one processor does for all) or symmetric (every processor does its own scheduling). Process has a affinity for processor on which it is currently running. Soft affinity comes from baggage of previous instance already in queue. Hard affinity comes when process joins only one specific queue. NUMA is non-uniform memory access. Little’s law : n = λ × W where <code>n</code> is the average queue length <code>λ</code> is the average arrival rate into the queue <code>W</code> is the average waiting time in the queue. In steady state, the number of processes leaving the queue must equal the number of processes arriving.</p>
+<p>For additional resources and reference :</p>
+<p>https://os-book.com/</p>
+<p>https://os-book.com/OS10/study-guide/Study-Guide.pdf</p>
+<p>Disclaimer : All the figures I added to my notes are from the “Operating System Concepts by Avi Silberschatz, Peter Baer Galvin, Greg Gagne”. They hold the copyrights.</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -949,18 +911,6 @@ gtag('config', 'G-B6Z44LN64S', { 'anonymize_ip': true});
     }
   });
   </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../../Poems/English/Bapu.html" class="pagination-link" aria-label="<span onmousedown='return false;' onselectstart=&quot;return false;&quot; oncopy=&quot;return false;&quot; onpaste=&quot;return false;&quot; oncut=&quot;return false;&quot;> Bapu </span>">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span onmousedown="return false;" data-onselectstart="return false;" oncopy="return false;" onpaste="return false;" oncut="return false;"> Bapu </span></span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../../Poems/Hindi/औकात.html" class="pagination-link" aria-label="<span class=&quot;hindi-kalam&quot;>औकात</span>">
-        <span class="nav-page-text"><span class="hindi-kalam">औकात</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -975,26 +925,6 @@ gtag('config', 'G-B6Z44LN64S', { 'anonymize_ip': true});
     </div>
   </div>
 </footer>
-<script>
-    const baseFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
-    const watermark = new XWatermark.XWatermark();
-    watermark.init("Madhav Kadam", {
-      parentSelector: "body",
-      prevent: true,
-      observer: true,
-      mode: "normal",
-      font: "system-ui, -apple-system, ‘Segoe UI’, Roboto, ‘Helvetica Neue’, ‘Noto Sans’, ‘Liberation Sans’, Arial, sans-serif, ‘Apple Color Emoji’, ‘Segoe UI Emoji’, ‘Segoe UI Symbol’, ‘Noto Color Emoji’",
-      fontsize: baseFontSize * 1.000000,
-      angle: -20.000000,
-      color: "grey",
-      alpha: 0.080000,
-      cols: 15,
-      rows: 70,
-      xSpace: baseFontSize * 3.000000,
-      ySpace: baseFontSize * 3.000000,
-      zIndex: -4
-    });
-    </script>
 
 
 
