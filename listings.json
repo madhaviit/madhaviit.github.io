@@ -1,5 +1,26 @@
 [
   {
+    "listing": "/MyBlog/index.html",
+    "items": [
+      "/MyBlog/India@100/index.html",
+      "/MyBlog/Broken-Silence/index.html",
+      "/MyBlog/BlogFull/index.html",
+      "/MyBlog/How-to-CSE/index.html",
+      "/MyBlog/Guardrails/index.html",
+      "/MyBlog/Talk-by-Sayak/index.html",
+      "/MyBlog/Seniors-talk/index.html",
+      "/MyBlog/India@75/index.html",
+      "/MyBlog/Varkari/index.html"
+    ]
+  },
+  {
+    "listing": "/Resources/Projects/index.html",
+    "items": [
+      "/Resources/Projects/Adobe Behaviour Simulation Challenge/index.html",
+      "/Resources/Projects/Vitals/index.html"
+    ]
+  },
+  {
     "listing": "/Poems/index.html",
     "items": [
       "/Poems/Marathi/विशाद.html",
@@ -18,28 +39,6 @@
       "/Poems/Marathi/दिवाळी.html",
       "/Poems/Marathi/महाराष्ट्रभूमी.html",
       "/Poems/Marathi/गणेशोत्सव.html"
-    ]
-  },
-  {
-    "listing": "/Resources/Projects/index.html",
-    "items": [
-      "/Resources/Projects/Adobe Behaviour Simulation Challenge/index.html",
-      "/Resources/Projects/Vitals/index.html"
-    ]
-  },
-  {
-    "listing": "/MyBlog/index.html",
-    "items": [
-      "/MyBlog/India@100/index.html",
-      "/MyBlog/Broken-Silence/index.html",
-      "/MyBlog/BlogFull/index.html",
-      "/MyBlog/How-to-CSE/index.html",
-      "/MyBlog/Guardrails/index.html",
-      "/MyBlog/Talk-by-Sayak/index.html",
-      "/MyBlog/Seniors-talk-2/index.html",
-      "/MyBlog/Seniors-talk/index.html",
-      "/MyBlog/India@75/index.html",
-      "/MyBlog/Varkari/index.html"
     ]
   }
 ]

@@ -68,7 +68,7 @@
 } */
 
 /* mobile query up for screens up to ~992px wide */
-@media screen and (max-width: 720.00px) {
+@media screen and (max-width: 992.00px) {
     /* move text up & left */
     .entity-contents {
       order: 2 !important;
