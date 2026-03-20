@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>travel – Madhav Kadam</title>
+<title>books – Madhav Kadam</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -82,7 +82,6 @@ gtag('js', new Date());
 gtag('config', 'G-B6Z44LN64S', { 'anonymize_ip': true});
 </script>
 <style>html{ scroll-behavior: smooth; }</style>
-<script src="https://unpkg.com/globe.gl@2.27.2/dist/globe.gl.min.js"></script>
 
 
 <meta property="og:title" content="– Madhav Kadam">
@@ -260,9 +259,7 @@ gtag('config', 'G-B6Z44LN64S', { 'anonymize_ip': true});
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
-    </div>
+    
 <!-- main -->
 <main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
@@ -271,589 +268,626 @@ gtag('config', 'G-B6Z44LN64S', { 'anonymize_ip': true});
 
 
 <style>
-  html, body {
-    background: #07090f !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
 
-  #quarto-header, nav.navbar, #quarto-sidebar,
-  #quarto-margin-sidebar, footer.footer,
-  .quarto-title-block, #title-block-header {
-    display: none !important;
-  }
+/* ── Kill Quarto chrome ───────────────────────────────────────── */
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100%;
+  min-height: 100%;
+  /* Force monospace on every device — overrides Quarto's mainfont */
+  font-family: ui-monospace, "Courier New", monospace !important;
+}
 
-  #quarto-content, .page-full, .page-columns,
-  main.content, div.quarto-container, #quarto-document-content {
-    padding: 0 !important;
-    margin: 0 !important;
-    max-width: 100% !important;
-    width: 100% !important;
-    background: #07090f !important;
-  }
+#quarto-header, nav.navbar, #quarto-sidebar,
+#quarto-margin-sidebar, footer.footer,
+.quarto-title-block, #title-block-header,
+.nav-footer, #quarto-footer {
+  display: none !important;
+}
 
-  #globe-wrap {
-    position: fixed;
-    inset: 0;
-    width: 100vw;
-    height: 100vh;
-    background: #07090f;
-    overflow: hidden;
-  }
+#quarto-content, .page-full, .page-columns,
+main.content, div.quarto-container, #quarto-document-content {
+  padding: 0 !important;
+  margin: 0 !important;
+  max-width: 100% !important;
+  width: 100% !important;
+}
 
-  #globe-mount {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-  }
+/* ── FONTS ───────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap');
 
-  /* ── Shared token ───────────────────────────────── */
-  .mono { font-family: ui-monospace, monospace; }
+/* ── TOKENS ──────────────────────────────────────────────────── */
+:root {
+  --bg:       #0e0b07;
+  --bg2:      #181210;
+  --ink:      #f0e6d0;
+  --ink2:     rgba(240,230,208,0.40);
+  --ember:    rgb(255,103,31);
+  --gold:     #c9a84c;
+  --border:   rgba(255,255,255,0.07);
+  --overlay:  rgba(6,3,1,0.72);
+  --modal-bg: #181210;
+  --shadow:   rgba(0,0,0,0.6);
+  --font-s:   'Playfair Display', Georgia, serif;
+  --font-m:   ui-monospace, 'Courier Prime', 'Courier New', monospace;
+  --gap:      25px;
+}
 
-  /* ── Stats ──────────────────────────────────────── */
-  #globe-stats {
-    position: absolute;
-    top: 20px; left: 24px;
-    z-index: 10;
-    display: flex;
-    gap: 24px;
-  }
+/* ── WRAP ────────────────────────────────────────────────────── */
+#books-wrap {
+  font-family: ui-monospace, 'Courier Prime', 'Courier New', monospace;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--ink);
+  transition: background 0.35s ease, color 0.25s ease;
+}
 
-  /* ── Continent filter ───────────────────────────── */
-  #cont-filter {
-    position: absolute;
-    top: 20px; left: 50%;
-    transform: translateX(-50%);
-    display: flex; gap: 6px;
-    z-index: 20;
-  }
-  .cf-btn {
-    font-family: ui-monospace, monospace;
-    font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
-    padding: 4px 11px; border-radius: 4px; cursor: pointer;
-    border: 1px solid rgba(255,255,255,0.15);
-    background: rgba(255,255,255,0.06);
-    color: rgba(232,227,213,0.45);
-    transition: all 0.2s;
-    white-space: nowrap;
-  }
-  .cf-btn:hover  { background: rgba(255,255,255,0.13); color: #e8e3d5; }
-  .cf-btn.active { background: rgba(255,255,255,0.18); color: #e8e3d5;
-                   border-color: rgba(255,255,255,0.35); }
+/* ── MASONRY ─────────────────────────────────────────────────── */
+/* ── JS MASONRY — absolute positioning, zero cascade possible ── */
+.masonry {
+  position: relative;
+  /* height set by JS */
+  flex: 1;
+  padding: var(--gap);
+}
+/* no media queries needed — JS recalculates on resize */
 
-  /* ── City detail card ───────────────────────────── */
-  /* #city-card {
-    position: absolute;
-    top: 20px; right: 20px;
-    width: 210px;
-    background: rgba(7, 9, 15, 0.88);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 8px;
-    padding: 14px 16px;
-    z-index: 20;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    font-family: ui-monospace, monospace;
-    opacity: 0;
-    transform: translateY(-6px);
-    transition: opacity 0.25s, transform 0.25s;
-    pointer-events: none;
-  }
-  #city-card.visible {
-    opacity: 1; transform: translateY(0); pointer-events: auto;
-  }
-  #city-card .card-city  { font-size: 14px; font-weight: 500; color: #e8e3d5; margin-bottom: 2px; }
-  #city-card .card-meta  { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
-                           color: rgba(232,227,213,0.35); margin-bottom: 10px; }
-  #city-card .card-note  { font-size: 12px; color: rgba(232,227,213,0.65); line-height: 1.65;
-                           font-style: italic; border-top: 0.5px solid rgba(255,255,255,0.08);
-                           padding-top: 9px; }
-  #city-card .card-close { position: absolute; top: 10px; right: 12px; cursor: pointer;
-                           color: rgba(232,227,213,0.3); font-size: 14px; line-height: 1; }
-  #city-card .card-close:hover { color: rgba(232,227,213,0.75); } */
-  /* ── City detail card ───────────────────────────── */
-#city-card {
-  position: absolute;
-  top: 50%; right: 20px;
-  transform: translateY(calc(-50% - 6px));
-  width: 210px;
-  background: rgba(7, 9, 15, 0.88);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 8px;
-  padding: 14px 16px;
+/* ── BOOK CARD ───────────────────────────────────────────────── */
+/*
+  KEY FIX: Each card is wrapped in a padding container so that:
+  1. The recommended box-shadow lives inside the wrapper padding
+     and never bleeds into adjacent column space
+  2. No scale transform is used — scaling expands layout and
+     nudges other cards, causing the cascade hover bug
+*/
+.book-card {
+  position: absolute; /* JS sets top/left/width */
+  cursor: pointer;
+  border-radius: 3px;
+}
+.book-card.hidden { display: none; }
+
+/* inner wrapper clips cover image */
+.book-card-inner {
+  position: relative;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.book-cover {
+  width: 100%; display: block; border-radius: 3px;
+  transition: filter 0.38s ease;
+  box-shadow: 0 3px 10px var(--shadow);
+}
+.book-no-cover {
+  width: 100%; aspect-ratio: 2/3;
+  background: var(--bg2); border-radius: 3px;
+  display: flex; align-items: center; justify-content: center;
+  padding: 0.6rem; font-size: 0.6rem; color: var(--ink);
+  opacity: 0.4; text-align: center; line-height: 1.4;
+  transition: filter 0.38s ease;
+}
+
+/* ── HOVER OVERLAY ───────────────────────────────────────────── */
+.hover-overlay {
+  position: absolute; inset: 0; border-radius: 3px;
+  background: var(--overlay);
+  padding: 0.8rem 0.7rem;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  opacity: 0; transition: opacity 0.28s ease; pointer-events: none;
+}
+.book-card:hover .hover-overlay       { opacity: 1; }
+.book-card:hover .book-cover,
+.book-card:hover .book-no-cover       { filter: brightness(0.45); }
+
+.hov-title  {
+  font-family: var(--font-s); font-size: 0.78rem; font-weight: 700;
+  line-height: 1.25; color: var(--ember); margin-bottom: 0.12rem;
+}
+.hov-author {
+  font-size: 0.55rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: #f0e6d0; opacity: 0.48; margin-bottom: 0.38rem;
+}
+.hov-rating { font-size: 0.65rem; color: var(--gold); margin-bottom: 0.22rem; }
+.hov-cta    {
+  font-size: 0.5rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: #f0e6d0; opacity: 0.22;
+}
+
+/* ── RECOMMENDED GLOW ────────────────────────────────────────── */
+/* With grid layout each cell is isolated — glow stays within cell */
+.book-card.recommended .book-card-inner {
+  box-shadow:
+    0 0 0 1px rgba(201,168,76,0.5),
+    0 0 10px 2px rgba(201,168,76,0.2),
+    0 0 22px 4px rgba(201,168,76,0.08);
+}
+
+.hov-recommended {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  font-size: 0.52rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold); border: 1px solid rgba(201,168,76,0.45);
+  border-radius: 2px; padding: 0.18rem 0.5rem; margin-bottom: 0.45rem;
+  align-self: flex-start; background: rgba(201,168,76,0.08);
+}
+
+/* ── BOTTOM BAR ──────────────────────────────────────────────── */
+#bottom-bar {
   z-index: 20;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  font-family: ui-monospace, monospace;
-  opacity: 0;
-  transition: opacity 0.25s, transform 0.25s;
-  pointer-events: none;
-}
-#city-card.visible {
-  opacity: 1; transform: translateY(-50%); pointer-events: auto;
-}
-#city-card .card-city  { font-size: 14px; font-weight: 500; color: #e8e3d5; margin-bottom: 2px; }
-#city-card .card-meta  { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
-                         color: rgba(232,227,213,0.35); margin-bottom: 10px; }
-#city-card .card-note  { font-size: 12px; color: rgba(232,227,213,0.65); line-height: 1.65;
-                         font-style: italic; border-top: 0.5px solid rgba(255,255,255,0.08);
-                         padding-top: 9px; }
-#city-card .card-close { position: absolute; top: 10px; right: 12px; cursor: pointer;
-                         color: rgba(232,227,213,0.3); font-size: 14px; line-height: 1; }
-#city-card .card-close:hover { color: rgba(232,227,213,0.75); }
-
-  /* ── Page label — bottom left ───────────────────── */
-  #page-title {
-    position: absolute;
-    bottom: 28px; left: 20px;
-    z-index: 20;
-    font-family: ui-monospace, monospace;
-    cursor: pointer;
-  }
-  
-  #page-title .pt-name,
-#page-title .pt-label {
-  transition: color 0.2s;
+  padding: 0.7rem 1.6rem 0.8rem;
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 0.7rem;
+  transition: border-color 0.35s ease;
 }
 
-#page-title:hover .pt-name {
-  color: #e8c36a;
+#bar-left { display: flex; flex-direction: column; gap: 0.3rem; }
+#page-label { text-decoration: none; }
+#page-label:hover .pl-name { color: var(--ember); }
+.pl-name {
+  font-size: 13px; font-weight: 500; color: var(--ink);
+  letter-spacing: 0.06em; font-family: var(--font-m); transition: color 0.2s ease;
+}
+.pl-sub {
+  font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink2); font-family: var(--font-m); transition: color 0.35s ease;
 }
 
-#page-title:hover .pt-label {
-  color: rgba(232,195,106,0.6);
+#stats-row {
+  display: flex; gap: 1.4rem; flex-wrap: wrap; align-items: center;
 }
-  #page-title .pt-name  { font-size: 13px; font-weight: 500; color: rgba(232,227,213,0.9);
-                          letter-spacing: 0.06em; }
-  #page-title .pt-label { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
-                          color: rgba(232,227,213,0.3); margin-top: 2px; }
+.stat { text-align: center; cursor: default; }
+.stat.filterable { cursor: pointer; }
+.stat-value {
+  font-family: var(--font-s); font-size: 1.1rem; font-weight: 700;
+  line-height: 1; color: var(--ink); transition: color 0.2s ease;
+}
+.stat.filterable:hover .stat-value,
+.stat.filterable.active .stat-value { color: var(--ember); }
+.stat-label {
+  font-size: 0.52rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--ink2); margin-top: 0.18rem; transition: color 0.2s ease;
+}
+.stat.filterable.active .stat-label { color: var(--ember); opacity: 0.7; }
+.stat.filterable.active .stat-value::after { content: ' ×'; font-size: 0.9rem; opacity: 0.5; }
 
-  /* ── City pills — bottom center ─────────────────── */
-  #location-pills {
-    position: absolute;
-    bottom: 28px; left: 50%;
-    transform: translateX(-50%);
-    display: flex; gap: 7px; flex-wrap: wrap;
-    justify-content: center;
-    z-index: 10; max-width: 60%;
-  }
+/* ── MODAL BACKDROP ──────────────────────────────────────────── */
+.modal-backdrop {
+  position: fixed; inset: 0; background: rgba(4,2,1,0.88);
+  z-index: 900; display: flex; align-items: center; justify-content: center;
+  padding: 1.5rem; opacity: 0; pointer-events: none; transition: opacity 0.25s ease;
+}
+.modal-backdrop.open { opacity: 1; pointer-events: all; }
 
-  /* ── Loading — bottom right ─────────────────────── */
-  #globe-loading {
-    position: absolute;
-    bottom: 28px; right: 20px;
-    color: rgba(232,227,213,0.3); font-size: 11px; letter-spacing: 0.1em;
-    font-family: ui-monospace, monospace; z-index: 10;
-  }
+/* ── MODAL ───────────────────────────────────────────────────── */
+.modal {
+  background: var(--modal-bg); border: 1px solid var(--border);
+  border-radius: 4px; max-width: 580px; width: 100%; max-height: 88vh;
+  display: flex; transform: translateY(18px) scale(0.97);
+  transition: transform 0.28s ease, background 0.35s ease, border-color 0.35s ease;
+  position: relative; box-shadow: 0 28px 70px rgba(0,0,0,0.4); overflow: hidden;
+}
+.modal-backdrop.open .modal { transform: translateY(0) scale(1); }
 
-  /* ════════════════════════════════════════════════
-     MOBILE  (portrait ≤ 600px)
-     Layout changes:
-       - Stats move to bottom, above pills
-       - Continent filters collapse into a row below stats
-       - City card goes full-width at bottom, above everything
-       - Pills hidden on mobile (card is the interaction)
-       - Page label hidden (saves space)
-     ════════════════════════════════════════════════ */
-  @media (max-width: 600px) {
+.modal-cover {
+  width: 115px; flex-shrink: 0; background: var(--bg2);
+  display: flex; flex-direction: column;
+  justify-content: space-between; align-items: stretch;
+  transition: background 0.35s ease;
+}
+.modal-cover img { width: 100%; height: auto; display: block; border-radius: 4px 0 0 0; }
+.modal-cover .no-cover-ph {
+  flex: 1; display: flex; align-items: center;
+  justify-content: center; padding: 0.7rem; font-size: 0.58rem;
+  color: var(--ink2); text-align: center; line-height: 1.5;
+}
+.modal-cover-link {
+  display: block; padding: 0.5rem 0.4rem;
+  font-size: 0.48rem; letter-spacing: 0.12em;
+  text-transform: uppercase; text-align: center;
+  color: var(--ink2); text-decoration: none;
+  border-top: 1px solid var(--border);
+  transition: color 0.2s ease; line-height: 1.5; flex-shrink: 0;
+}
+.modal-cover-link:hover { color: var(--ember); }
 
-    /* Stats — horizontal strip, bottom */
-    #globe-stats {
-      top: auto;
-      bottom: 100px;
-      left: 50%;
-      transform: translateX(-50%);
-      gap: 20px;
-      background: rgba(7,9,15,0.6);
-      padding: 8px 18px;
-      border-radius: 8px;
-      border: 1px solid rgba(255,255,255,0.08);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-    }
+.modal-body {
+  flex: 1; min-width: 0; padding: 1.5rem 1.4rem 1.4rem 1.1rem;
+  display: flex; flex-direction: column; overflow-y: auto;
+  scrollbar-width: thin; scrollbar-color: var(--ember) transparent;
+}
+.modal-body::-webkit-scrollbar       { width: 3px; }
+.modal-body::-webkit-scrollbar-thumb { background: var(--ember); }
 
-    /* Continent filter — top, full width, scrollable */
-    #cont-filter {
-      top: 14px;
-      left: 0; right: 0;
-      transform: none;
-      justify-content: center;
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      padding: 0 12px;
-      gap: 6px;
-      /* hide scrollbar visually */
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-    }
-    #cont-filter::-webkit-scrollbar { display: none; }
+.modal-title {
+  font-family: var(--font-s); font-size: 1.2rem; font-weight: 400; font-style: italic;
+  line-height: 1.2; color: var(--ink); margin-bottom: 0.28rem; transition: color 0.35s ease;
+}
+.modal-author {
+  font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--ember); opacity: 0.72; margin-bottom: 0.75rem;
+}
+.modal-rating { font-size: 0.82rem; color: var(--gold); margin-bottom: 0.85rem; }
+.modal-divider {
+  height: 1px; background: var(--border); margin-bottom: 0.85rem;
+  transition: background 0.35s ease;
+}
+.modal-section-label {
+  font-size: 0.5rem; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--ink2); margin-bottom: 0.5rem; transition: color 0.35s ease;
+}
+.modal-review {
+  font-size: 0.78rem; line-height: 1.75; color: var(--ink);
+  white-space: pre-wrap; transition: color 0.35s ease;
+}
+.modal-no-review { font-size: 0.7rem; font-style: italic; color: var(--ink2); }
+.modal-desc-divider {
+  height: 1px; background: var(--border);
+  margin: 1rem 0 0.85rem; transition: background 0.35s ease;
+}
+.modal-description {
+  font-size: 0.72rem; line-height: 1.72; color: var(--ink2);
+  transition: color 0.35s ease;
+}
+.modal-close {
+  position: absolute; top: 0.65rem; right: 0.7rem; background: transparent; border: none;
+  color: var(--ink2); font-size: 0.9rem; cursor: pointer; padding: 0.25rem 0.4rem;
+  line-height: 1; font-family: var(--font-m); z-index: 2; transition: color 0.2s ease;
+}
+.modal-close:hover { color: var(--ink); }
 
-    /* City card — full width bottom sheet */
-    #city-card {
-      top: auto;
-      bottom: 0; right: 0; left: 0;
-      width: 100%;
-      border-radius: 12px 12px 0 0;
-      transform: translateY(10px);
-      padding: 16px 20px 28px;
-    }
-    #city-card.visible { transform: translateY(0); }
+@media (max-width: 480px) {
+  .modal { flex-direction: column; }
+  .modal-cover { width: 100%; height: 130px; overflow: hidden; flex-direction: row; }
+  .modal-cover img { width: auto; height: 130px; object-fit: cover; border-radius: 4px 4px 0 0; }
+  .modal-cover-link { border-top: none; border-left: 1px solid var(--border); writing-mode: vertical-rl; padding: 0.5rem 0.3rem; }
+}
 
-    /* Hide pills and page label on mobile — card covers it */
-    #location-pills { display: none; }
-    #page-title     { display: none; }
+/* ── PAGE FOOTER ─────────────────────────────────────────────── */
+#page-footer {
+  padding: 1.4rem 1.6rem 1.8rem;
+  border-top: 1px solid var(--border);
+  transition: border-color 0.35s ease;
+  /* margin-top set by JS to sit below the absolute-positioned masonry */
+}
+#footer-tagline {
+  font-size: 0.72rem; font-style: italic; color: var(--ink2);
+  letter-spacing: 0.04em; line-height: 1.6; transition: color 0.35s ease;
+}
 
-    /* Loading — top right, small */
-    #globe-loading {
-      bottom: auto;
-      top: 50px; right: 14px;
-      font-size: 10px;
-    }
-  }
 </style>
 
-<div id="globe-wrap">
-
-  <div id="globe-mount"></div>
-
-  <!-- Stats -->
-  <div id="globe-stats"></div>
-
-  <!-- Continent filter -->
-  <div id="cont-filter"></div>
-
-  <!-- City card -->
-  <div id="city-card">
-    <span class="card-close" id="card-close">✕</span>
-    <div class="card-city" id="card-city"></div>
-    <div class="card-meta" id="card-meta"></div>
-    <div class="card-note" id="card-note"></div>
+<div id="books-wrap">
+  <div id="bottom-bar">
+    <div id="bar-left">
+      <a href="./" id="page-label" style="text-decoration:none;">
+        <div class="pl-name">Madhav Kadam</div>
+        <div class="pl-sub">// books.log</div>
+      </a>
+    </div>
+    <div id="stats-row">
+      <div class="stat">
+        <div class="stat-value" id="stat-total">—</div>
+        <div class="stat-label">Books Read</div>
+      </div>
+      <div class="stat filterable" id="filter-5" data-filter="5">
+        <div class="stat-value" id="stat-5star">—</div>
+        <div class="stat-label">Five Stars</div>
+      </div>
+      <div class="stat filterable" id="filter-4" data-filter="4">
+        <div class="stat-value" id="stat-4star">—</div>
+        <div class="stat-label">Four Stars</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value" id="stat-authors">—</div>
+        <div class="stat-label">Authors</div>
+      </div>
+    </div>
   </div>
 
-  <!-- Page label -->
-  <a href="./" id="page-title" style="text-decoration:none;">
-    <div class="pt-name">Madhav Kadam</div>
-    <div class="pt-label">// travel.log</div>
-  </a>
+  <div class="masonry" id="masonry-grid"></div>
 
-  <!-- Loading -->
-  <div id="globe-loading">locating cities...</div>
+  <footer id="page-footer">
+    <span id="footer-tagline"><em>These are the ones I'd lend to a stranger.</em></span>
+  </footer>
+</div>
 
-  <!-- City pills -->
-  <div id="location-pills"></div>
-
+<!-- MODAL -->
+<div class="modal-backdrop" id="modal-backdrop">
+  <div class="modal">
+    <button class="modal-close" id="modal-close">✕</button>
+    <div class="modal-cover" id="modal-cover"></div>
+    <div class="modal-body">
+      <div class="modal-title" id="modal-title"></div>
+      <div class="modal-author" id="modal-author"></div>
+      <div class="modal-rating" id="modal-rating"></div>
+      <div class="modal-divider"></div>
+      <div class="modal-section-label">Review</div>
+      <div id="modal-review-text"></div>
+      <div id="modal-desc-section" style="display:none">
+        <div class="modal-desc-divider"></div>
+        <div class="modal-section-label">Goodreads Description</div>
+        <div class="modal-description" id="modal-description"></div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script>
-/* ═══════════════════════════════════════════════════════════
-   EDIT ONLY THIS BLOCK
-   ═══════════════════════════════════════════════════════════ */
-const STARTED_YEAR = 2024;
+(function () {
 
-const DATA = {
-  Asia: {
-    color: "#eb6d1f",
-    cities: [
-      { name: "Mumbai",    country: "India",     note: "माझी मुंबई, best city in the India." },
-      { name: "Delhi",     country: "India",     note: "Architecturally Beautiful. Calm yet chaotic" },
-      { name: "Bengaluru", country: "India",     note: "Namma Bengaluru" },
-      { name: "Indore",    country: "India",     note: "4 years of my life" },
-      { name: "Chennai",   country: "India" },
-      { name: "Shimla",    country: "India",     note: "One city where I am willing to live forever!" },
-      { name: "Hyderabad", country: "India" },
-      { name: "Pune",      country: "India",     note: "Pune tithe kay une!" },
-      { name: "Singapore", country: "Singapore", note: "City in gardens" },
-    ]
-  },
-  Americas: {
-    color: "#25f38f",
-    cities: [
-      { name: "Phoenix",   country: "USA",       note: "Efficient but hot" },
-      { name: "New York",  country: "USA",       note: "Peak of humanity!" },
-    ]
-  },
-  Europe: {
-    color: "#4ec7f3",
-    cities: [
-      { name: "London",    country: "UK",        note: "Accent and Sun-shine" },
-      { name: "Paris",     country: "France",    note: "la maison du modernisme" },
-    ]
-  },
-};
-/* ═══════════════════════════════════════════════════════════ */
-
-const TEXTURES = {
-  day:   'https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg',
-  night: 'https://unpkg.com/three-globe/example/img/earth-night.jpg',
-  bump:  'https://unpkg.com/three-globe/example/img/earth-topology.png',
-};
-
-function isDark() {
-  const bsTheme = document.documentElement.getAttribute('data-bs-theme');
-  if (bsTheme === 'dark')  return true;
-  if (bsTheme === 'light') return false;
-  if (document.body.classList.contains('quarto-dark'))  return true;
-  if (document.body.classList.contains('quarto-light')) return false;
-  return window.matchMedia('(prefers-color-scheme: dark)').matches;
-}
-
-async function geocode(name, country) {
-  const q = encodeURIComponent(`${name}, ${country}`);
-  try {
-    const res  = await fetch(
-      `https://nominatim.openstreetmap.org/search?q=${q}&format=json&limit=1`,
-      { headers: { 'Accept-Language': 'en' } }
-    );
-    const data = await res.json();
-    if (data.length) return { lat: parseFloat(data[0].lat), lng: parseFloat(data[0].lon) };
-  } catch (_) {}
-  return null;
-}
-
-async function init() {
-  const allCities = Object.entries(DATA)
-    .flatMap(([cont, d]) => d.cities.map(c => ({ ...c, continent: cont, color: d.color })));
-
-  const coords = await Promise.all(allCities.map(c => geocode(c.name, c.country)));
-  coords.forEach((coord, i) => {
-    if (coord) { allCities[i].lat = coord.lat; allCities[i].lng = coord.lng; }
-  });
-  const resolved = allCities.filter(c => c.lat != null);
-  document.getElementById('globe-loading').style.display = 'none';
-
-  /* ── Stats ──────────────────────────────────────── */
-  const numCountries  = new Set(resolved.map(c => c.country)).size;
-  const numContinents = new Set(resolved.map(c => c.continent)).size;
-  const statsEl = document.getElementById('globe-stats');
-  [
-    [numCountries,    'countries'],
-    [resolved.length, 'cities'],
-    [numContinents,   'continents'],
-    [STARTED_YEAR,    'since'],
-  ].forEach(([n, l]) => {
-    const d = document.createElement('div');
-    d.innerHTML = `
-      <div style="font-size:1.4rem;font-weight:300;line-height:1;color:#e8e3d5;
-                  font-family:ui-monospace,monospace;letter-spacing:-0.02em;">${n}</div>
-      <div style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;
-                  color:rgba(232,227,213,0.35);margin-top:3px;
-                  font-family:ui-monospace,monospace;">${l}</div>`;
-    statsEl.appendChild(d);
-  });
-
-  // /* ── Arcs (within continent only) ──────────────── */
-  // const arcs = [];
-  // Object.entries(DATA).forEach(([cont, d]) => {
-  //   const cities = resolved.filter(c => c.continent === cont);
-  //   cities.slice(0, -1).forEach((c, i) => {
-  //     arcs.push({
-  //       startLat: c.lat, startLng: c.lng,
-  //       endLat: cities[i+1].lat, endLng: cities[i+1].lng,
-  //       color: [d.color + '70', d.color + '70'],
-  //       continent: cont,
-  //     });
-  //   });
-  // });
-
-  /* ── Arcs ───────────────────────────────────────── */
-const arcs = [];
-
-// Within-continent arcs (always shown, colored per continent)
-Object.entries(DATA).forEach(([cont, d]) => {
-  const cities = resolved.filter(c => c.continent === cont);
-  cities.slice(0, -1).forEach((c, i) => {
-    arcs.push({
-      startLat: c.lat, startLng: c.lng,
-      endLat: cities[i+1].lat, endLng: cities[i+1].lng,
-      color: [d.color + '70', d.color + '70'],
-      continent: cont,
-      intercontinental: false,
-    });
-  });
-});
-
-// // Intercontinental arcs — one per continent pair, hub city is first city of each
-// const continentKeys = Object.keys(DATA);
-// for (let i = 0; i < continentKeys.length - 1; i++) {
-//   for( let j=i+1; j!=i; j=(j+1)%continentKeys.length ){
-//     const contA = continentKeys[i];
-//     const contB = continentKeys[j];
-//     const cityA = resolved.find(c => c.continent === contA);
-//     const cityB = resolved.find(c => c.continent === contB);
-//     if (cityA && cityB) {
-//       arcs.push({
-//         startLat: cityA.lat, startLng: cityA.lng,
-//         endLat:   cityB.lat, endLng:   cityB.lng,
-//         color: ['rgba(255,255,255,0.18)', 'rgba(255,255,255,0.18)'],
-//         continent: 'intercontinental',
-//         intercontinental: true,
-//       });
-//     }
-//   }
-// }
-
-
-const continentKeys = Object.keys(DATA);
-for (let i = 0; i < continentKeys.length; i++) {
-  for (let j = 0; j < continentKeys.length; j++) {
-    if (i === j) continue; // skip same continent
-
-    const citiesA = resolved.filter(c => c.continent === continentKeys[i]);
-    const citiesB = resolved.filter(c => c.continent === continentKeys[j]);
-
-    const firstOfA = citiesA[0];                    // first city of continent i
-    const lastOfB  = citiesB[citiesB.length - 1];   // last city of continent j
-
-    if (firstOfA && lastOfB) {
-      arcs.push({
-        startLat: firstOfA.lat, startLng: firstOfA.lng,
-        endLat:   lastOfB.lat,  endLng:   lastOfB.lng,
-        color: ['rgba(255, 255, 255, 0.09)', 'rgba(255, 255, 255, 0.09)'],
-        continent: 'intercontinental',
-        intercontinental: true,
-      });
-    }
+  /* ── THEME ───────────────────────────────────────────────── */
+  function isDark() {
+    var bsTheme = document.documentElement.getAttribute('data-bs-theme');
+    if (bsTheme === 'dark')  return true;
+    if (bsTheme === 'light') return false;
+    if (document.body.classList.contains('quarto-dark'))  return true;
+    if (document.body.classList.contains('quarto-light')) return false;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
   }
-}
-  /* ── Globe ──────────────────────────────────────── */
-  const mount = document.getElementById('globe-mount');
-  const globe = Globe({ rendererConfig: { antialias: true, alpha: true } })(mount);
-  globe.renderer().setPixelRatio(window.devicePixelRatio);
 
-  globe
-    .width(window.innerWidth).height(window.innerHeight)
-    .backgroundColor('#07090f')
-    .globeImageUrl(isDark() ? TEXTURES.night : TEXTURES.day)
-    .bumpImageUrl(TEXTURES.bump)
-    .atmosphereColor(isDark() ? '#c88b28' : '#4a8cbf')
-    .atmosphereAltitude(0.20)
-    .pointsData(resolved).pointLat('lat').pointLng('lng')
-    .pointColor('color').pointAltitude(0.07).pointRadius(0.6)
-    .pointResolution(18).pointLabel('name')
-    .arcsData(arcs).arcColor('color')
-    .arcAltitude(arc => {
-  if (!arc.intercontinental) return 0.15;
-  // great-circle angle between the two endpoints
-  const toRad = d => d * Math.PI / 180;
-  const dLat = toRad(arc.endLat - arc.startLat);
-  const dLng = toRad(arc.endLng - arc.startLng);
-  const a = Math.sin(dLat/2)**2 +
-            Math.cos(toRad(arc.startLat)) *
-            Math.cos(toRad(arc.endLat)) *
-            Math.sin(dLng/2)**2;
-  const angle = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-  // scale: opposite sides of Earth (π) → altitude 0.8, nearby → 0.3
-  return 0.15 + (angle / Math.PI) * 0.5;
-}).arcStroke(0.4)
-    .arcCurveResolution(64)
-    .arcDashLength(0.4).arcDashGap(0.2).arcDashAnimateTime(3000)
-    .onPointClick(city => showCard(city));
-
-  globe.scene().children
-    .filter(o => o.type === 'AmbientLight')
-    .forEach(l => l.intensity = 1.4);
-
-  globe.controls().autoRotate      = true;
-  globe.controls().autoRotateSpeed = 0.2;
-  globe.pointOfView({ lat: 20, lng: 60, altitude: 2.2 });
-
-  window.addEventListener('resize', () => {
-    globe.width(window.innerWidth).height(window.innerHeight);
-    globe.renderer().setPixelRatio(window.devicePixelRatio);
-  });
-
-  /* ── Theme watcher ──────────────────────────────── */
-  function applyTexture() {
-    const dark = isDark();
-    globe.globeImageUrl(dark ? TEXTURES.night : TEXTURES.day);
-    globe.atmosphereColor(dark ? '#c88b28' : '#4a8cbf');
-  }
-  new MutationObserver(applyTexture).observe(
-    document.documentElement, { attributes: true, attributeFilter: ['data-bs-theme', 'class'] }
-  );
-  new MutationObserver(applyTexture).observe(
-    document.body, { attributes: true, attributeFilter: ['class'] }
-  );
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTexture);
-
-  /* ── City card ──────────────────────────────────── */
-  const card = document.getElementById('city-card');
-  function showCard(city) {
-    globe.controls().autoRotate = false;
-    globe.pointOfView({ lat: city.lat, lng: city.lng, altitude: 1.6 }, 1000);
-    setTimeout(() => globe.controls().autoRotate = true, 5000);
-    document.getElementById('card-city').textContent = city.name;
-    document.getElementById('card-meta').textContent = `${city.country} · ${city.continent}`;
-    const noteEl = document.getElementById('card-note');
-    if (city.note) { noteEl.textContent = city.note; noteEl.style.display = 'block'; }
-    else           { noteEl.style.display = 'none'; }
-    card.classList.add('visible');
-  }
-  document.getElementById('card-close').onclick = () => card.classList.remove('visible');
-
-  /* ── Continent filter ───────────────────────────── */
-  const filterEl = document.getElementById('cont-filter');
-  const allBtn   = document.createElement('span');
-  allBtn.className   = 'cf-btn active';
-  allBtn.textContent = 'all';
-  allBtn.dataset.cont = 'all';
-  filterEl.appendChild(allBtn);
-
-  Object.keys(DATA).forEach(cont => {
-    const btn = document.createElement('span');
-    btn.className   = 'cf-btn';
-    btn.textContent = cont.toLowerCase();
-    btn.dataset.cont = cont;
-    filterEl.appendChild(btn);
-  });
-
-  function applyFilter(cont) {
-    document.querySelectorAll('.cf-btn').forEach(b =>
-      b.classList.toggle('active', b.dataset.cont === cont)
-    );
-    const filtered     = cont === 'all' ? resolved : resolved.filter(c => c.continent === cont);
-    const filteredArcs = cont === 'all' ? arcs     : arcs.filter(a => a.continent === cont);
-    globe.pointsData(filtered).arcsData(filteredArcs);
-    if (cont !== 'all') {
-      const avg = {
-        lat: filtered.reduce((s,c) => s + c.lat, 0) / filtered.length,
-        lng: filtered.reduce((s,c) => s + c.lng, 0) / filtered.length,
-      };
-      globe.controls().autoRotate = false;
-      globe.pointOfView({ lat: avg.lat, lng: avg.lng, altitude: 1.8 }, 1200);
-      setTimeout(() => globe.controls().autoRotate = true, 5000);
+  function applyTheme() {
+    var dark = isDark();
+    var el   = document.documentElement;
+    var wrap = document.getElementById('books-wrap');
+    if (dark) {
+      el.style.setProperty('--bg',       '#0e0b07');
+      el.style.setProperty('--bg2',      '#181210');
+      el.style.setProperty('--ink',      '#f0e6d0');
+      el.style.setProperty('--ink2',     'rgba(240,230,208,0.40)');
+      el.style.setProperty('--gold',     '#c9a84c');
+      el.style.setProperty('--border',   'rgba(255,255,255,0.07)');
+      el.style.setProperty('--overlay',  'rgba(6,3,1,0.72)');
+      el.style.setProperty('--modal-bg', '#181210');
+      el.style.setProperty('--shadow',   'rgba(0,0,0,0.6)');
     } else {
-      globe.pointOfView({ lat: 20, lng: 60, altitude: 2.2 }, 1000);
+      el.style.setProperty('--bg',       '#1c1610');
+      el.style.setProperty('--bg2',      '#261e14');
+      el.style.setProperty('--ink',      '#e8dcc8');
+      el.style.setProperty('--ink2',     'rgba(232,220,200,0.42)');
+      el.style.setProperty('--gold',     '#c9a84c');
+      el.style.setProperty('--border',   'rgba(255,255,255,0.09)');
+      el.style.setProperty('--overlay',  'rgba(8,5,2,0.72)');
+      el.style.setProperty('--modal-bg', '#1c1610');
+      el.style.setProperty('--shadow',   'rgba(0,0,0,0.45)');
     }
+    var bg = dark ? '#0e0b07' : '#1c1610';
+    document.documentElement.style.background = bg;
+    document.body.style.background = bg;
+    if (wrap) wrap.style.background = bg;
+    ['quarto-content','quarto-document-content'].forEach(function(id) {
+      var node = document.getElementById(id);
+      if (node) node.style.background = bg;
+    });
+    document.querySelectorAll('.page-full,.page-columns,main.content').forEach(function(n) {
+      n.style.background = bg;
+    });
   }
 
-  filterEl.addEventListener('click', e => {
-    if (e.target.classList.contains('cf-btn')) applyFilter(e.target.dataset.cont);
+  applyTheme();
+  new MutationObserver(applyTheme).observe(document.documentElement, { attributes: true, attributeFilter: ['data-bs-theme','class'] });
+  new MutationObserver(applyTheme).observe(document.body, { attributes: true, attributeFilter: ['class'] });
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme);
+
+  /* ── HELPERS ─────────────────────────────────────────────── */
+  var NO_PHOTO     = "nophoto/book";
+  var allBooks     = [];
+  var activeFilter = null;
+
+  function safe(s) {
+    return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+  }
+  function stars(r) {
+    var n = parseInt(r,10);
+    if (!n||n<1) return "";
+    return "★".repeat(n)+"☆".repeat(5-n);
+  }
+  function realCover(url) { return url && !url.includes(NO_PHOTO); }
+
+  /* ── JS MASONRY LAYOUT ENGINE ───────────────────────────────
+     Absolutely positions each card into the shortest column.
+     Cards are fully isolated — hover on one cannot affect another.
+  ─────────────────────────────────────────────────────────── */
+  function getColCount(width) {
+    if (width >= 1100) return 5;
+    if (width >= 750)  return 4;
+    if (width >= 480)  return 3;
+    return 2;
+  }
+
+  function layoutMasonry() {
+    var grid  = document.getElementById("masonry-grid");
+    var cards = Array.from(grid.querySelectorAll(".book-card:not(.hidden)"));
+    if (!cards.length) return;
+
+    var gap     = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--gap')) || 14;
+    var padding = gap; /* matches .masonry { padding: var(--gap) } */
+    var total   = grid.offsetWidth;
+    var cols    = getColCount(total);
+    var colW    = (total - padding * 2 - gap * (cols - 1)) / cols;
+
+    /* Split cards into N equal columns sequentially —
+       col 0 gets cards 0..chunk-1, col 1 gets chunk..2chunk-1, etc. */
+    var chunk   = Math.ceil(cards.length / cols);
+    var colH    = new Array(cols).fill(padding);
+
+    cards.forEach(function(card, i) {
+      var colIdx = Math.min(Math.floor(i / chunk), cols - 1);
+      var left   = padding + colIdx * (colW + gap);
+
+      card.style.width = colW + "px";
+      card.style.left  = left + "px";
+      card.style.top   = colH[colIdx] + "px";
+
+      colH[colIdx] += card.offsetHeight + gap;
+    });
+
+    var gridHeight = Math.max.apply(null, colH) + padding;
+    grid.style.height = gridHeight + "px";
+
+    /* Push footer below the absolutely positioned grid */
+    var footer = document.getElementById("page-footer");
+    if (footer) footer.style.marginTop = gridHeight + "px";
+  }
+
+  /* Re-layout on window resize */
+  var _layoutTimer;
+  window.addEventListener("resize", function() {
+    clearTimeout(_layoutTimer);
+    _layoutTimer = setTimeout(layoutMasonry, 80);
   });
 
-  /* ── City pills (desktop only — hidden on mobile) ── */
-  const pillContainer = document.getElementById('location-pills');
-  resolved.forEach(city => {
-    const pill = document.createElement('span');
-    pill.textContent = city.name;
-    pill.style.cssText = `
-      background: rgba(255,255,255,0.08); color: #e8e3d5;
-      border: 1px solid rgba(255,255,255,0.15); padding: 4px 12px;
-      border-radius: 4px; font-size: 11px; letter-spacing: 0.05em;
-      cursor: pointer; font-family: ui-monospace, monospace; transition: background 0.2s;
-    `;
-    pill.onmouseenter = () => pill.style.background = 'rgba(255,255,255,0.18)';
-    pill.onmouseleave = () => pill.style.background = 'rgba(255,255,255,0.08)';
-    pill.onclick = () => showCard(city);
-    pillContainer.appendChild(pill);
-  });
-}
+  /* ── FILTER ──────────────────────────────────────────────── */
+  function applyFilter(rating) {
+    activeFilter = activeFilter === rating ? null : rating;
+    document.querySelectorAll(".stat.filterable").forEach(function(el) {
+      el.classList.toggle("active", el.dataset.filter === activeFilter);
+    });
+    document.querySelectorAll(".book-card").forEach(function(card) {
+      if (!activeFilter) { card.classList.remove("hidden"); return; }
+      card.classList.toggle("hidden", parseInt(card.dataset.rating,10) !== parseInt(activeFilter,10));
+    });
+    layoutMasonry();
+  }
 
-window.addEventListener('load', init);
+  document.getElementById("filter-5").addEventListener("click", function(){ applyFilter("5"); });
+  document.getElementById("filter-4").addEventListener("click", function(){ applyFilter("4"); });
+
+  /* ── MODAL ───────────────────────────────────────────────── */
+  var backdrop = document.getElementById("modal-backdrop");
+
+  function openModal(book) {
+    document.getElementById("modal-title").textContent  = book.title  || "";
+    document.getElementById("modal-author").textContent = book.author || "";
+    document.getElementById("modal-rating").textContent = stars(book.rating);
+    var revEl = document.getElementById("modal-review-text");
+    var rev   = (book.review||"").trim();
+    revEl.className   = rev ? "modal-review" : "modal-no-review";
+    revEl.textContent = rev || "No review written yet.";
+    var desc    = (book.description||"").trim();
+    var descSec = document.getElementById("modal-desc-section");
+    if (desc) {
+      document.getElementById("modal-description").textContent = desc;
+      descSec.style.display = "";
+    } else {
+      descSec.style.display = "none";
+    }
+    var coverEl  = document.getElementById("modal-cover");
+    var imgHtml  = realCover(book.cover)
+      ? '<img src="'+safe(book.cover)+'" alt="'+safe(book.title)+'" loading="lazy">'
+      : '<div class="no-cover-ph">'+safe(book.title)+'</div>';
+    var linkHtml = '<a class="modal-cover-link" href="'+(book.link||"#")+'" target="_blank" rel="noopener">View on<br>Goodreads ↗</a>';
+    coverEl.innerHTML = imgHtml + linkHtml;
+    backdrop.classList.add("open");
+  }
+
+  function closeModal() {
+    backdrop.classList.remove("open");
+  }
+
+  document.getElementById("modal-close").addEventListener("click", closeModal);
+  backdrop.addEventListener("click", function(e){ if(e.target===backdrop) closeModal(); });
+  document.addEventListener("keydown", function(e){ if(e.key==="Escape") closeModal(); });
+
+  /* ── BUILD CARD ──────────────────────────────────────────── */
+  function buildCard(book) {
+    var card = document.createElement("div");
+    card.className = "book-card";
+    card.dataset.rating = book.rating || "0";
+
+    var isRecommended = book.recommended === true;
+    if (isRecommended) card.classList.add("recommended");
+
+    var r     = stars(book.rating);
+    var cover = realCover(book.cover)
+      ? '<img class="book-cover" src="'+safe(book.cover)+'" alt="'+safe(book.title)+'" loading="lazy" decoding="async">'
+      : '<div class="book-no-cover">'+safe(book.title)+'</div>';
+
+    var badge = isRecommended ? '<div class="hov-recommended">★ Recommended</div>' : '';
+
+    /* NOTE: .book-card-inner wraps the cover+overlay so overflow:hidden
+       clips the image correctly without clipping the outer glow */
+    card.innerHTML =
+      '<div class="book-card-inner">'
+      + cover
+      + '<div class="hover-overlay">'
+      + badge
+      + '<div class="hov-title">'+safe(book.title)+'</div>'
+      + '<div class="hov-author">'+safe(book.author)+'</div>'
+      + (r ? '<div class="hov-rating">'+r+'</div>' : '')
+      + '<div class="hov-cta">click for review</div>'
+      + '</div>'
+      + '</div>';
+
+    card.addEventListener("click", function(){ openModal(book); });
+    return card;
+  }
+
+  /* ── STATS ───────────────────────────────────────────────── */
+  function computeStats(books) {
+    var ratings  = books.map(function(b){ return parseInt(b.rating,10); }).filter(function(n){ return n>0; });
+    var fiveStar = ratings.filter(function(n){ return n===5; }).length;
+    var fourStar = ratings.filter(function(n){ return n===4; }).length;
+    var authors  = new Set(books.map(function(b){ return (b.author||"").trim().toLowerCase(); }).filter(Boolean)).size;
+    document.getElementById("stat-total").textContent   = books.length;
+    document.getElementById("stat-5star").textContent   = fiveStar;
+    document.getElementById("stat-4star").textContent   = fourStar;
+    document.getElementById("stat-authors").textContent = authors;
+  }
+
+  /* ── FETCH ───────────────────────────────────────────────── */
+  fetch("books-data.json")
+    .then(function(r){
+      if(!r.ok) throw new Error("books-data.json not found (HTTP "+r.status+")");
+      return r.json();
+    })
+    .then(function(books){
+      if(!Array.isArray(books)||!books.length) throw new Error("books-data.json is empty.");
+      allBooks = books;
+      computeStats(books);
+      var grid = document.getElementById("masonry-grid");
+      var frag = document.createDocumentFragment();
+
+      /* ── Sort by author, fill columns sequentially ────────────
+         Books sorted A→Z by author, then split into N equal chunks,
+         one chunk per column. Column 0 fills top-to-bottom first,
+         then column 1, etc. Same author stays in same column.
+      ────────────────────────────────────────────────────────── */
+      var sorted = books.slice().sort(function(a,b){
+        return (a.author||"").localeCompare(b.author||"");
+      });
+      /* Original RSS order (uncomment to revert):
+      // var sorted = books; */
+
+      sorted.forEach(function(b){ frag.appendChild(buildCard(b)); });
+      grid.appendChild(frag);
+
+      /* Layout once immediately, then again after images load for accurate heights */
+      layoutMasonry();
+      var imgs = grid.querySelectorAll("img");
+      var loaded = 0;
+      if (imgs.length) {
+        imgs.forEach(function(img) {
+          if (img.complete) {
+            loaded++;
+            if (loaded === imgs.length) layoutMasonry();
+          } else {
+            img.addEventListener("load",  function() { loaded++; if (loaded === imgs.length) layoutMasonry(); });
+            img.addEventListener("error", function() { loaded++; if (loaded === imgs.length) layoutMasonry(); });
+          }
+        });
+      }
+    })
+    .catch(function(err){
+      document.getElementById("masonry-grid").innerHTML =
+        '<p style="padding:3rem 2rem;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;opacity:0.35;">✕ &nbsp;'+err.message+'</p>';
+      console.error("[books]", err);
+    });
+
+})();
 </script>
 
 
