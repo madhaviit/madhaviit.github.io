@@ -1,0 +1,1720 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Madhav Kadam">
+<meta name="dcterms.date" content="2018-02-10">
+
+<title>TRAI – Madhav Kadam</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/favicon.ico" rel="icon">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-2b454536a190732ebf2f95c4f11e6530.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-9b097c31a9caec86beae4783e147e129.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-2b454536a190732ebf2f95c4f11e6530.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-B6Z44LN64S"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-B6Z44LN64S', { 'anonymize_ip': true});
+</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<meta property="og:title" content="TRAI – Madhav Kadam">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="Madhav Kadam">
+<meta name="twitter:title" content="TRAI – Madhav Kadam">
+<meta name="twitter:description" content="">
+<meta name="twitter:card" content="summary">
+</head>
+
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Madhav Kadam</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://drive.google.com/file/d/1hnqTi8Y-63If0PUq-HJ09X44cnxxqlXD/view?usp=sharing" target="_blank"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../Poems/disclaimer.html"> 
+<span class="menu-text">Poems</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../MyBlog/index.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../books.html"> 
+<span class="menu-text">Library</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../travel.html"> 
+<span class="menu-text">Atlas</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#workera-elo-sage-assessment-study-notes" id="toc-workera-elo-sage-assessment-study-notes" class="nav-link active" data-scroll-target="#workera-elo-sage-assessment-study-notes">Workera ELO / SAGE Assessment: Study Notes</a>
+  <ul class="collapse">
+  <li><a href="#explainability-interpretability-fairness-reliability-privacy-safety" id="toc-explainability-interpretability-fairness-reliability-privacy-safety" class="nav-link" data-scroll-target="#explainability-interpretability-fairness-reliability-privacy-safety">Explainability, Interpretability, Fairness, Reliability, Privacy &amp; Safety</a></li>
+  </ul></li>
+  <li><a href="#part-1-explainability-and-interpretability" id="toc-part-1-explainability-and-interpretability" class="nav-link" data-scroll-target="#part-1-explainability-and-interpretability">PART 1: EXPLAINABILITY AND INTERPRETABILITY</a>
+  <ul class="collapse">
+  <li><a href="#module-1-foundations-of-explainability" id="toc-module-1-foundations-of-explainability" class="nav-link" data-scroll-target="#module-1-foundations-of-explainability">MODULE 1: FOUNDATIONS OF EXPLAINABILITY</a>
+  <ul class="collapse">
+  <li><a href="#when-is-explainability-needed" id="toc-when-is-explainability-needed" class="nav-link" data-scroll-target="#when-is-explainability-needed">1.1 When Is Explainability Needed?</a></li>
+  <li><a href="#matching-explanation-purpose-to-appropriate-audiences" id="toc-matching-explanation-purpose-to-appropriate-audiences" class="nav-link" data-scroll-target="#matching-explanation-purpose-to-appropriate-audiences">1.2 Matching Explanation Purpose to Appropriate Audiences</a></li>
+  <li><a href="#core-explainability-terms" id="toc-core-explainability-terms" class="nav-link" data-scroll-target="#core-explainability-terms">1.3 Core Explainability Terms</a></li>
+  <li><a href="#assessing-explanation-quality-fidelity-clarity-stability-and-usefulness" id="toc-assessing-explanation-quality-fidelity-clarity-stability-and-usefulness" class="nav-link" data-scroll-target="#assessing-explanation-quality-fidelity-clarity-stability-and-usefulness">1.4 Assessing Explanation Quality: Fidelity, Clarity, Stability, and Usefulness</a></li>
+  </ul></li>
+  <li><a href="#module-2-applying-explanation-methods" id="toc-module-2-applying-explanation-methods" class="nav-link" data-scroll-target="#module-2-applying-explanation-methods">MODULE 2: APPLYING EXPLANATION METHODS</a>
+  <ul class="collapse">
+  <li><a href="#lime-local-interpretable-model-agnostic-explanations" id="toc-lime-local-interpretable-model-agnostic-explanations" class="nav-link" data-scroll-target="#lime-local-interpretable-model-agnostic-explanations">2.1 LIME — Local Interpretable Model-agnostic Explanations</a></li>
+  <li><a href="#shap-shapley-additive-explanations" id="toc-shap-shapley-additive-explanations" class="nav-link" data-scroll-target="#shap-shapley-additive-explanations">2.2 SHAP — SHapley Additive exPlanations</a></li>
+  <li><a href="#visualization-techniques-for-interpreting-model-behavior" id="toc-visualization-techniques-for-interpreting-model-behavior" class="nav-link" data-scroll-target="#visualization-techniques-for-interpreting-model-behavior">2.3 Visualization Techniques for Interpreting Model Behavior</a></li>
+  <li><a href="#surrogate-models" id="toc-surrogate-models" class="nav-link" data-scroll-target="#surrogate-models">2.4 Surrogate Models</a></li>
+  <li><a href="#post-training-model-analysis" id="toc-post-training-model-analysis" class="nav-link" data-scroll-target="#post-training-model-analysis">2.5 Post-Training Model Analysis</a></li>
+  <li><a href="#counterfactual-and-randomized-tests-for-feature-sensitivity" id="toc-counterfactual-and-randomized-tests-for-feature-sensitivity" class="nav-link" data-scroll-target="#counterfactual-and-randomized-tests-for-feature-sensitivity">2.6 Counterfactual and Randomized Tests for Feature Sensitivity</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#part-2-technical-fairness-interventions" id="toc-part-2-technical-fairness-interventions" class="nav-link" data-scroll-target="#part-2-technical-fairness-interventions">PART 2: TECHNICAL FAIRNESS INTERVENTIONS</a>
+  <ul class="collapse">
+  <li><a href="#module-3-diagnosis-of-fairness-issues" id="toc-module-3-diagnosis-of-fairness-issues" class="nav-link" data-scroll-target="#module-3-diagnosis-of-fairness-issues">MODULE 3: DIAGNOSIS OF FAIRNESS ISSUES</a>
+  <ul class="collapse">
+  <li><a href="#detecting-bias-in-data" id="toc-detecting-bias-in-data" class="nav-link" data-scroll-target="#detecting-bias-in-data">3.1 Detecting Bias in Data</a></li>
+  <li><a href="#risks-in-labels-feature-selection-and-representation" id="toc-risks-in-labels-feature-selection-and-representation" class="nav-link" data-scroll-target="#risks-in-labels-feature-selection-and-representation">3.2 Risks in Labels, Feature Selection, and Representation</a></li>
+  <li><a href="#formulating-questions-to-uncover-hidden-assumptions" id="toc-formulating-questions-to-uncover-hidden-assumptions" class="nav-link" data-scroll-target="#formulating-questions-to-uncover-hidden-assumptions">3.3 Formulating Questions to Uncover Hidden Assumptions</a></li>
+  </ul></li>
+  <li><a href="#module-4-fixing-fairness-in-the-workflow" id="toc-module-4-fixing-fairness-in-the-workflow" class="nav-link" data-scroll-target="#module-4-fixing-fairness-in-the-workflow">MODULE 4: FIXING FAIRNESS IN THE WORKFLOW</a>
+  <ul class="collapse">
+  <li><a href="#pre-processing-methods-for-bias-mitigation" id="toc-pre-processing-methods-for-bias-mitigation" class="nav-link" data-scroll-target="#pre-processing-methods-for-bias-mitigation">4.1 Pre-processing Methods for Bias Mitigation</a></li>
+  <li><a href="#causal-and-adversarial-techniques" id="toc-causal-and-adversarial-techniques" class="nav-link" data-scroll-target="#causal-and-adversarial-techniques">4.2 Causal and Adversarial Techniques</a></li>
+  <li><a href="#fairness-aware-training-methods" id="toc-fairness-aware-training-methods" class="nav-link" data-scroll-target="#fairness-aware-training-methods">4.3 Fairness-Aware Training Methods</a></li>
+  <li><a href="#post-processing-calibration-on-group-specific-thresholds" id="toc-post-processing-calibration-on-group-specific-thresholds" class="nav-link" data-scroll-target="#post-processing-calibration-on-group-specific-thresholds">4.4 Post-processing: Calibration on Group-Specific Thresholds</a></li>
+  <li><a href="#multi-accuracy-auditing-across-subgroups" id="toc-multi-accuracy-auditing-across-subgroups" class="nav-link" data-scroll-target="#multi-accuracy-auditing-across-subgroups">4.5 Multi-Accuracy Auditing Across Subgroups</a></li>
+  </ul></li>
+  <li><a href="#module-5-monitoring-fairness-over-time" id="toc-module-5-monitoring-fairness-over-time" class="nav-link" data-scroll-target="#module-5-monitoring-fairness-over-time">MODULE 5: MONITORING FAIRNESS OVER TIME</a>
+  <ul class="collapse">
+  <li><a href="#fairness-unit-and-smoke-tests" id="toc-fairness-unit-and-smoke-tests" class="nav-link" data-scroll-target="#fairness-unit-and-smoke-tests">5.1 Fairness Unit and Smoke Tests</a></li>
+  <li><a href="#continuously-evaluating-models-against-fairness-metrics" id="toc-continuously-evaluating-models-against-fairness-metrics" class="nav-link" data-scroll-target="#continuously-evaluating-models-against-fairness-metrics">5.2 Continuously Evaluating Models Against Fairness Metrics</a></li>
+  <li><a href="#updating-test-sets-as-user-bases-evolve" id="toc-updating-test-sets-as-user-bases-evolve" class="nav-link" data-scroll-target="#updating-test-sets-as-user-bases-evolve">5.3 Updating Test Sets as User Bases Evolve</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#part-3-reliability-privacy-and-safety" id="toc-part-3-reliability-privacy-and-safety" class="nav-link" data-scroll-target="#part-3-reliability-privacy-and-safety">PART 3: RELIABILITY, PRIVACY, AND SAFETY</a>
+  <ul class="collapse">
+  <li><a href="#module-6-building-robust-models" id="toc-module-6-building-robust-models" class="nav-link" data-scroll-target="#module-6-building-robust-models">MODULE 6: BUILDING ROBUST MODELS</a>
+  <ul class="collapse">
+  <li><a href="#designing-training-objectives-that-reflect-real-world-goals" id="toc-designing-training-objectives-that-reflect-real-world-goals" class="nav-link" data-scroll-target="#designing-training-objectives-that-reflect-real-world-goals">6.1 Designing Training Objectives That Reflect Real-World Goals</a></li>
+  <li><a href="#user-driven-testing-for-input-sensitivity" id="toc-user-driven-testing-for-input-sensitivity" class="nav-link" data-scroll-target="#user-driven-testing-for-input-sensitivity">6.2 User-Driven Testing for Input Sensitivity</a></li>
+  <li><a href="#identifying-and-managing-edge-cases" id="toc-identifying-and-managing-edge-cases" class="nav-link" data-scroll-target="#identifying-and-managing-edge-cases">6.3 Identifying and Managing Edge Cases</a></li>
+  </ul></li>
+  <li><a href="#module-7-privacy-and-legal-readiness" id="toc-module-7-privacy-and-legal-readiness" class="nav-link" data-scroll-target="#module-7-privacy-and-legal-readiness">MODULE 7: PRIVACY AND LEGAL READINESS</a>
+  <ul class="collapse">
+  <li><a href="#data-protection-principles-during-model-development" id="toc-data-protection-principles-during-model-development" class="nav-link" data-scroll-target="#data-protection-principles-during-model-development">7.1 Data Protection Principles During Model Development</a></li>
+  <li><a href="#regulatory-standards-gdpr-and-hipaa" id="toc-regulatory-standards-gdpr-and-hipaa" class="nav-link" data-scroll-target="#regulatory-standards-gdpr-and-hipaa">7.2 Regulatory Standards: GDPR and HIPAA</a></li>
+  <li><a href="#privacy-preserving-practices" id="toc-privacy-preserving-practices" class="nav-link" data-scroll-target="#privacy-preserving-practices">7.3 Privacy-Preserving Practices</a></li>
+  </ul></li>
+  <li><a href="#module-8-security-and-adversarial-defense" id="toc-module-8-security-and-adversarial-defense" class="nav-link" data-scroll-target="#module-8-security-and-adversarial-defense">MODULE 8: SECURITY AND ADVERSARIAL DEFENSE</a>
+  <ul class="collapse">
+  <li><a href="#identifying-security-threats" id="toc-identifying-security-threats" class="nav-link" data-scroll-target="#identifying-security-threats">8.1 Identifying Security Threats</a></li>
+  <li><a href="#defense-strategies" id="toc-defense-strategies" class="nav-link" data-scroll-target="#defense-strategies">8.2 Defense Strategies</a></li>
+  <li><a href="#evaluating-tradeoffs-between-security-interpretability-and-performance" id="toc-evaluating-tradeoffs-between-security-interpretability-and-performance" class="nav-link" data-scroll-target="#evaluating-tradeoffs-between-security-interpretability-and-performance">8.3 Evaluating Tradeoffs Between Security, Interpretability, and Performance</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#quick-reference-key-term-mappings" id="toc-quick-reference-key-term-mappings" class="nav-link" data-scroll-target="#quick-reference-key-term-mappings">QUICK REFERENCE: KEY TERM MAPPINGS</a></li>
+  <li><a href="#key-workflows-to-know-order-the-steps-questions" id="toc-key-workflows-to-know-order-the-steps-questions" class="nav-link" data-scroll-target="#key-workflows-to-know-order-the-steps-questions">KEY WORKFLOWS TO KNOW (Order-the-Steps Questions)</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="hindi-kalam">TRAI</span></h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Opinion</div>
+    <div class="quarto-category">Thought</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Madhav Kadam </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">February 10, 2018</p>
+    </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">February 10, 2018</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="workera-elo-sage-assessment-study-notes" class="level1">
+<h1>Workera ELO / SAGE Assessment: Study Notes</h1>
+<section id="explainability-interpretability-fairness-reliability-privacy-safety" class="level2">
+<h2 class="anchored" data-anchor-id="explainability-interpretability-fairness-reliability-privacy-safety">Explainability, Interpretability, Fairness, Reliability, Privacy &amp; Safety</h2>
+<hr>
+</section>
+</section>
+<section id="part-1-explainability-and-interpretability" class="level1">
+<h1>PART 1: EXPLAINABILITY AND INTERPRETABILITY</h1>
+<hr>
+<section id="module-1-foundations-of-explainability" class="level2">
+<h2 class="anchored" data-anchor-id="module-1-foundations-of-explainability">MODULE 1: FOUNDATIONS OF EXPLAINABILITY</h2>
+<section id="when-is-explainability-needed" class="level3">
+<h3 class="anchored" data-anchor-id="when-is-explainability-needed">1.1 When Is Explainability Needed?</h3>
+<p>Explainability is not always required, but certain conditions strongly call for it. Understanding <strong>when</strong> to apply it is crucial for the assessment.</p>
+<p><strong>High-stakes decision contexts</strong> — situations where model outputs directly affect people’s lives, rights, or well-being: - Credit scoring and loan approval - Medical diagnosis and treatment recommendations - Criminal recidivism prediction (e.g., COMPAS) - Hiring and promotion decisions - Insurance underwriting - Child welfare risk scoring</p>
+<p><strong>Regulatory and legal requirements</strong> — jurisdictions and industries with explicit mandates: - GDPR Article 22 (EU): Right to an explanation for automated decisions - ECOA (US): Adverse action notices for credit denial must list reasons - Healthcare regulations requiring model transparency - FINRA requirements for algorithmic trading explanations</p>
+<p><strong>Debugging and model improvement</strong> — when practitioners need to: - Understand why a model is underperforming - Identify spurious correlations learned from data - Detect data leakage (model relying on proxy variables) - Verify the model is using features for the right reasons</p>
+<p><strong>Trust and adoption</strong> — when end users or stakeholders need to: - Trust an AI system before acting on its outputs - Override model predictions when domain knowledge conflicts - Build confidence in a new deployed system</p>
+<p><strong>Accountability and contestability</strong> — when affected individuals need to: - Challenge or appeal automated decisions - Understand what they can change to receive a different outcome (actionability) - Identify discriminatory patterns affecting protected groups</p>
+<p><strong>When explainability is less critical:</strong> - Low-stakes automated decisions (e.g., movie recommendations) - Contexts where performance is the only goal and no human is affected - Purely internal research experiments without deployment</p>
+<hr>
+</section>
+<section id="matching-explanation-purpose-to-appropriate-audiences" class="level3">
+<h3 class="anchored" data-anchor-id="matching-explanation-purpose-to-appropriate-audiences">1.2 Matching Explanation Purpose to Appropriate Audiences</h3>
+<p>Different stakeholders have fundamentally different needs from explanations. A mismatch leads to confusion, misuse, or rejection of the explanation.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Audience</th>
+<th>Primary Goal</th>
+<th>Preferred Explanation Type</th>
+<th>Key Concerns</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Data Scientists / ML Engineers</strong></td>
+<td>Debug, improve model</td>
+<td>Feature importances, SHAP values, partial dependence plots, surrogate models</td>
+<td>Technical fidelity, statistical validity</td>
+</tr>
+<tr class="even">
+<td><strong>Domain Experts (Doctors, Lawyers)</strong></td>
+<td>Validate model behavior</td>
+<td>Case-based reasoning, rule extraction, attention maps</td>
+<td>Alignment with domain knowledge</td>
+</tr>
+<tr class="odd">
+<td><strong>Business Stakeholders / Managers</strong></td>
+<td>Justify deployment, understand risk</td>
+<td>Summary dashboards, high-level feature contributions</td>
+<td>Business impact, ROI, regulatory risk</td>
+</tr>
+<tr class="even">
+<td><strong>Regulators / Auditors</strong></td>
+<td>Ensure compliance</td>
+<td>Model cards, fairness metrics, global feature importance</td>
+<td>Reproducibility, legal compliance</td>
+</tr>
+<tr class="odd">
+<td><strong>End Users / Affected Individuals</strong></td>
+<td>Understand and contest decisions</td>
+<td>Contrastive/counterfactual explanations, natural language</td>
+<td>Clarity, actionability, fairness</td>
+</tr>
+<tr class="even">
+<td><strong>Legal / Compliance Teams</strong></td>
+<td>Regulatory review</td>
+<td>Documentation, adverse action reasons, audit trails</td>
+<td>Liability, right to explanation</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key principle — contrastive explanations for end users:</strong> People naturally ask “Why was I rejected instead of approved?” rather than “What caused my outcome?” Counterfactual explanations (“If your income were $5,000 higher, you would have been approved”) directly address this need.</p>
+<p><strong>Key principle — global vs.&nbsp;local explanations by audience:</strong> - Engineers → both global (model behavior overall) and local (individual predictions) - End users → primarily local explanations for their specific case - Regulators → primarily global explanations for systemic behavior</p>
+<hr>
+</section>
+<section id="core-explainability-terms" class="level3">
+<h3 class="anchored" data-anchor-id="core-explainability-terms">1.3 Core Explainability Terms</h3>
+<p>Master these definitions precisely — matching-the-pairs questions frequently test these.</p>
+<p><strong>Interpretability</strong> — the degree to which a human can understand the cause of a decision; an intrinsic property of a model (e.g., a linear model is inherently interpretable).</p>
+<p><strong>Explainability</strong> — the ability to present model behavior in human-understandable terms, often via post-hoc methods applied to opaque models. Broader than interpretability.</p>
+<p><strong>Transparency</strong> — openness about the model’s architecture, training data, and decision process; a property of the overall system, not just the model.</p>
+<p><strong>Accountability</strong> — the ability to attribute responsibility for model outcomes to specific actors (developers, deployers, regulators).</p>
+<p><strong>Fidelity</strong> — how accurately an explanation reflects the true behavior of the model it is explaining.</p>
+<p><strong>Global Explanation</strong> — describes the overall behavior of a model across all inputs (e.g., which features matter most on average).</p>
+<p><strong>Local Explanation</strong> — describes the model’s behavior for a specific input instance (e.g., why this particular loan was denied).</p>
+<p><strong>Model-agnostic method</strong> — an explanation technique that can be applied to any model regardless of its architecture (e.g., LIME, SHAP).</p>
+<p><strong>Model-specific method</strong> — an explanation technique that works only for a particular model type (e.g., attention weights for transformers, feature importances for tree models).</p>
+<p><strong>Intrinsic interpretability</strong> — a model that is interpretable by design (linear regression, decision trees, rule-based systems).</p>
+<p><strong>Post-hoc explainability</strong> — explanations generated after training, applied to an already-trained model (e.g., SHAP applied to a neural network).</p>
+<p><strong>Surrogate model</strong> — a simpler, interpretable model trained to approximate the behavior of a complex model.</p>
+<p><strong>Contrastive explanation</strong> — explains a decision relative to an alternative outcome (“Why A and not B?”).</p>
+<p><strong>Counterfactual explanation</strong> — a what-if explanation that identifies the minimum change to an input that would change the prediction.</p>
+<p><strong>Saliency map</strong> — a visualization highlighting which parts of an input (e.g., pixels in an image) most influenced the prediction.</p>
+<p><strong>Partial Dependence Plot (PDP)</strong> — shows the marginal effect of one or two features on the predicted outcome, averaged over all other features.</p>
+<p><strong>Individual Conditional Expectation (ICE) plot</strong> — like a PDP but shows the effect for each individual instance, revealing heterogeneous effects.</p>
+<p><strong>Feature importance</strong> — a score indicating how much a feature contributes to model predictions.</p>
+<p><strong>SHAP value</strong> — a value that quantifies the contribution of each feature to a specific prediction, based on Shapley values from game theory.</p>
+<hr>
+</section>
+<section id="assessing-explanation-quality-fidelity-clarity-stability-and-usefulness" class="level3">
+<h3 class="anchored" data-anchor-id="assessing-explanation-quality-fidelity-clarity-stability-and-usefulness">1.4 Assessing Explanation Quality: Fidelity, Clarity, Stability, and Usefulness</h3>
+<p>The four pillars of explanation quality. You may be asked to evaluate or rank explanations using these criteria.</p>
+<p><strong>Fidelity (Faithfulness)</strong> - Does the explanation accurately reflect what the model actually computes? - High fidelity: the explanation would lead you to correctly predict what the model would do in new cases - Measured by: how well the surrogate/explanation model matches the original model’s predictions - Risk of low fidelity: users make decisions based on a misleading explanation - Example failure: a saliency map highlights “dog’s face” in an image, but the model is actually relying on the collar to predict breed</p>
+<p><strong>Clarity (Comprehensibility)</strong> - Is the explanation understandable to its intended audience? - Measured by: user studies, task completion rates, comprehension tests - Tradeoff: technically accurate explanations can be incomprehensible to lay users - Best practice: tailor the explanation format to the audience (SHAP plots for engineers; natural language for patients)</p>
+<p><strong>Stability (Robustness)</strong> - Does the explanation remain consistent when the input changes slightly? - High stability: similar inputs produce similar explanations - Measured by: perturbation tests — slightly vary input, check if explanation changes drastically - Unstable explanations undermine trust and suggest the explanation method is unreliable - LIME is known to have stability issues due to its random sampling; SHAP is generally more stable</p>
+<p><strong>Usefulness (Actionability)</strong> - Does the explanation enable the recipient to take meaningful action? - For end users: can they understand what to change to get a different outcome? - For engineers: does the explanation help them improve the model? - For regulators: does the explanation help them assess compliance? - Usefulness is audience-dependent — same explanation can be useful for one group and useless for another</p>
+<p><strong>Summary table:</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Property</th>
+<th>Question It Answers</th>
+<th>Who Cares Most</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Fidelity</td>
+<td>Does it reflect the model?</td>
+<td>Engineers, auditors</td>
+</tr>
+<tr class="even">
+<td>Clarity</td>
+<td>Is it understandable?</td>
+<td>End users, managers</td>
+</tr>
+<tr class="odd">
+<td>Stability</td>
+<td>Is it consistent?</td>
+<td>Engineers, regulators</td>
+</tr>
+<tr class="even">
+<td>Usefulness</td>
+<td>Can you act on it?</td>
+<td>End users, domain experts</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="module-2-applying-explanation-methods" class="level2">
+<h2 class="anchored" data-anchor-id="module-2-applying-explanation-methods">MODULE 2: APPLYING EXPLANATION METHODS</h2>
+<section id="lime-local-interpretable-model-agnostic-explanations" class="level3">
+<h3 class="anchored" data-anchor-id="lime-local-interpretable-model-agnostic-explanations">2.1 LIME — Local Interpretable Model-agnostic Explanations</h3>
+<p><strong>What it does:</strong> LIME approximates the behavior of any black-box model locally around a specific prediction by training a simple interpretable model (usually linear regression) on perturbed samples near the input of interest.</p>
+<p><strong>How it works (step by step):</strong> 1. Take a specific input instance you want to explain (e.g., a loan application). 2. Generate perturbed versions of that instance (by randomly turning features on/off or adding noise). 3. Query the black-box model to get predictions for all perturbed samples. 4. Weight the perturbed samples by their proximity to the original instance. 5. Fit a simple interpretable model (e.g., linear regression, decision tree) on these weighted samples. 6. The coefficients of this simple model serve as the local explanation.</p>
+<p><strong>Key properties:</strong> - Model-agnostic: works with any classifier or regressor - Local: only explains one prediction at a time - Approximate: the explanation is an approximation, not the ground truth - Perturbation strategy varies by data type: - Tabular: randomly setting features to mean value or zero - Text: removing words/tokens - Images: “superpixel” segmentation — turning off coherent image regions</p>
+<p><strong>Strengths:</strong> - Easy to apply to any model - Produces human-readable explanations (feature weights) - Can handle text, images, and tabular data</p>
+<p><strong>Weaknesses:</strong> - Instability: random sampling means different runs produce different explanations - Kernel width sensitivity: the choice of neighborhood size heavily affects results - Sampling bias: perturbed samples may fall in unrealistic regions of input space - Explanation may not faithfully reflect global model behavior</p>
+<p><strong>LIME for text — key concept:</strong> Features are word presence/absence. A positive weight means the word pushes toward the predicted class; negative means it pushes against.</p>
+<p><strong>Code skeleton (tabular):</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> lime.lime_tabular <span class="im">import</span> LimeTabularExplainer</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>explainer <span class="op">=</span> LimeTabularExplainer(</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    X_train,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    feature_names<span class="op">=</span>feature_names,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    class_names<span class="op">=</span>class_names,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    mode<span class="op">=</span><span class="st">'classification'</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>explanation <span class="op">=</span> explainer.explain_instance(</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    X_test[i],          <span class="co"># single instance to explain</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    model.predict_proba, <span class="co"># black-box prediction function</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    num_features<span class="op">=</span><span class="dv">10</span>      <span class="co"># top features to show</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>explanation.show_in_notebook()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="shap-shapley-additive-explanations" class="level3">
+<h3 class="anchored" data-anchor-id="shap-shapley-additive-explanations">2.2 SHAP — SHapley Additive exPlanations</h3>
+<p><strong>Foundation — Shapley values from cooperative game theory:</strong> Shapley values fairly distribute a “payout” (the model’s prediction) among “players” (features) based on their marginal contributions across all possible feature coalitions.</p>
+<p><strong>The SHAP value for feature i</strong> is the average marginal contribution of feature i across all possible orderings of features being added to the model.</p>
+<p><strong>SHAP additive property:</strong> For any instance, the sum of all SHAP values equals the model’s prediction minus the base rate (expected model output):</p>
+<pre><code>f(x) = base_value + SHAP_1 + SHAP_2 + ... + SHAP_n</code></pre>
+<p>This makes SHAP values directly interpretable as signed contributions.</p>
+<p><strong>SHAP variants for different model types:</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variant</th>
+<th>Best For</th>
+<th>Speed</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>TreeSHAP</td>
+<td>Tree-based models (XGBoost, Random Forest)</td>
+<td>Very fast (exact)</td>
+</tr>
+<tr class="even">
+<td>DeepSHAP</td>
+<td>Neural networks</td>
+<td>Fast</td>
+</tr>
+<tr class="odd">
+<td>KernelSHAP</td>
+<td>Any model (model-agnostic)</td>
+<td>Slow</td>
+</tr>
+<tr class="even">
+<td>LinearSHAP</td>
+<td>Linear models</td>
+<td>Instant</td>
+</tr>
+</tbody>
+</table>
+<p><strong>SHAP visualizations — know each one:</strong></p>
+<ul>
+<li><strong>Force plot:</strong> Single prediction; shows features pushing prediction higher (red) or lower (blue) relative to base value.</li>
+<li><strong>Summary plot (beeswarm):</strong> All instances; shows distribution of SHAP values per feature, colored by feature value. Reveals global importance and direction of effect.</li>
+<li><strong>Dependence plot:</strong> SHAP value of one feature vs.&nbsp;its actual value; reveals non-linear effects and interactions (colored by another feature to reveal interactions).</li>
+<li><strong>Waterfall plot:</strong> Single prediction; shows step-by-step how each feature’s SHAP value builds up to the final prediction from the base value.</li>
+<li><strong>Bar plot:</strong> Global feature importance; average absolute SHAP values per feature.</li>
+</ul>
+<p><strong>Strengths:</strong> - Theoretically grounded (satisfies efficiency, symmetry, dummy, and additivity axioms) - Consistent: if a feature’s true contribution increases, its SHAP value never decreases - Provides both local and global explanations - More stable than LIME</p>
+<p><strong>Weaknesses:</strong> - Computationally expensive for KernelSHAP (exponential in features) - Assumes feature independence in some variants (can mislead with correlated features) - Can be hard to interpret for non-technical audiences - SHAP values can be manipulated by adversarial model design</p>
+<p><strong>Code skeleton:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> shap</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>explainer <span class="op">=</span> shap.TreeExplainer(model)          <span class="co"># or shap.Explainer(model)</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>shap_values <span class="op">=</span> explainer.shap_values(X_test)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>shap.summary_plot(shap_values, X_test)         <span class="co"># global summary</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>shap.force_plot(explainer.expected_value,      <span class="co"># local explanation</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>                shap_values[<span class="dv">0</span>], X_test.iloc[<span class="dv">0</span>])</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>shap.dependence_plot(<span class="st">"age"</span>, shap_values, X_test)  <span class="co"># feature interaction</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="visualization-techniques-for-interpreting-model-behavior" class="level3">
+<h3 class="anchored" data-anchor-id="visualization-techniques-for-interpreting-model-behavior">2.3 Visualization Techniques for Interpreting Model Behavior</h3>
+<p><strong>Partial Dependence Plots (PDP):</strong> - Show the marginal effect of a feature on the predicted outcome, averaged over all other features - Assumes feature independence (problematic with correlated features) - Best for: communicating overall direction and shape of feature effect to non-technical audiences - Plot shape interpretation: flat = feature has no effect; monotonic = consistent direction; non-monotonic = complex interaction</p>
+<p><strong>Individual Conditional Expectation (ICE) Plots:</strong> - Each line shows the effect of changing one feature for one specific instance - Reveals heterogeneity: some instances may respond oppositely to others - Centered ICE (c-ICE): all lines start at zero, making differences in slopes clearer - When to use over PDP: when you suspect interactions or subgroup-specific effects</p>
+<p><strong>Accumulated Local Effects (ALE) Plots:</strong> - Addresses PDP’s independence assumption by conditioning on neighborhoods - More reliable than PDP for correlated features - Less common but preferred in high-correlation settings</p>
+<p><strong>Saliency Maps (for images and text):</strong> - Gradient-based: compute gradient of output w.r.t. input pixels - GradCAM: uses gradients flowing into the last convolutional layer to produce coarse localization maps - Integrated Gradients: accumulates gradients along the path from a baseline to the input - Useful for: diagnosing whether a vision model is looking at the right region</p>
+<p><strong>Attention Visualization (for transformers):</strong> - Shows which input tokens a model attends to when producing an output - Caution: attention weights ≠ feature importance; models can attend to irrelevant tokens - Used for: initial inspection, not definitive explanation</p>
+<p><strong>Feature Importance Plots (tree models):</strong> - Mean Decrease in Impurity (MDI): fast but biased toward high-cardinality features - Permutation Importance: model-agnostic; measures drop in performance when feature is shuffled; can be computed on test set - SHAP-based importance: most reliable; addresses MDI’s bias</p>
+<hr>
+</section>
+<section id="surrogate-models" class="level3">
+<h3 class="anchored" data-anchor-id="surrogate-models">2.4 Surrogate Models</h3>
+<p><strong>Definition:</strong> A surrogate model is a simpler, interpretable model trained to mimic the predictions of a complex black-box model.</p>
+<p><strong>Global surrogate:</strong> 1. Generate a large dataset of inputs (can be original training data or new samples). 2. Query the black-box model to get predictions for all inputs. 3. Train an interpretable model (linear regression, decision tree) on these input-prediction pairs. 4. Interpret the surrogate as an approximation of the black-box.</p>
+<p><strong>Fidelity assessment:</strong> Measure R² or agreement rate between the surrogate and the black-box on held-out data. Higher fidelity = more trustworthy surrogate.</p>
+<p><strong>Choice of surrogate model type:</strong> - <strong>Decision tree:</strong> Provides rule-based explanations; easy to visualize; risk of overfitting if too deep - <strong>Linear regression:</strong> Provides coefficient-based explanations; best when relationship is approximately linear - <strong>Rule lists (if-then rules):</strong> Highly interpretable; sparse explanations</p>
+<p><strong>Limitations:</strong> - A surrogate is an approximation, not the true model — always report fidelity - If the surrogate has low fidelity, its explanation is misleading - Global surrogates may miss local behavior; use local surrogates (LIME) for individual predictions</p>
+<p><strong>When to use surrogates:</strong> - When the original model is a proprietary black box with no internal access - When regulatory requirements demand an interpretable model for audit - When you want to communicate model logic to non-technical stakeholders</p>
+<hr>
+</section>
+<section id="post-training-model-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="post-training-model-analysis">2.5 Post-Training Model Analysis</h3>
+<p><strong>Concept:</strong> After training, systematic analysis of model behavior using interpretability techniques to understand what the model has learned.</p>
+<p><strong>Steps in post-training analysis:</strong> 1. <strong>Global feature importance:</strong> Which features drive predictions overall? (SHAP summary plot, permutation importance) 2. <strong>Feature effect analysis:</strong> How does each feature affect the prediction? (PDP, ALE plots) 3. <strong>Subgroup analysis:</strong> Does the model behave differently for demographic subgroups? 4. <strong>Error analysis:</strong> Which types of inputs does the model get wrong? Are errors clustered? 5. <strong>Concept probing:</strong> Does the model represent human-interpretable concepts internally? (for neural networks) 6. <strong>Layer-wise analysis:</strong> For deep networks, what is each layer learning? (activation maximization)</p>
+<p><strong>Activation maximization:</strong> Synthesizes the input that maximally activates a neuron — reveals what a unit “detects.” Used in computer vision to understand convolutional filters.</p>
+<p><strong>Probing classifiers:</strong> Train a linear classifier on internal representations to test if a concept (e.g., sentiment, POS tag) is encoded in a layer.</p>
+<p><strong>Checklist for post-training analysis:</strong> - [ ] Feature importance computed and cross-validated - [ ] Effects visualized for top features - [ ] Subgroup performance compared - [ ] Failure cases examined and categorized - [ ] Explanation quality assessed (fidelity, stability)</p>
+<hr>
+</section>
+<section id="counterfactual-and-randomized-tests-for-feature-sensitivity" class="level3">
+<h3 class="anchored" data-anchor-id="counterfactual-and-randomized-tests-for-feature-sensitivity">2.6 Counterfactual and Randomized Tests for Feature Sensitivity</h3>
+<p><strong>Counterfactual explanations:</strong> - Answer: “What is the minimum change to this input that would change the prediction?” - Properties of a good counterfactual: - <strong>Validity:</strong> The counterfactual input actually receives the desired prediction - <strong>Proximity:</strong> The change from the original input is minimal - <strong>Sparsity:</strong> As few features changed as possible - <strong>Plausibility:</strong> The counterfactual is a realistic/realistic input (not out-of-distribution) - <strong>Actionability:</strong> Only features the user can actually change are modified (e.g., age is immutable)</p>
+<p><strong>Wachter counterfactuals:</strong> Minimize weighted distance between original and counterfactual subject to the prediction changing. Simple but may generate implausible instances.</p>
+<p><strong>DiCE (Diverse Counterfactual Explanations):</strong> Generates multiple diverse counterfactuals — useful for showing multiple paths to a different outcome.</p>
+<p><strong>Randomized feature sensitivity tests:</strong> - <strong>Feature permutation:</strong> Shuffle a feature across all instances; measure drop in performance. Larger drop = more important feature. - <strong>Feature ablation:</strong> Set a feature to zero or mean; measure performance change. - <strong>Input perturbation:</strong> Add small random noise to inputs; measure prediction stability (tests model robustness). - <strong>Interventional testing:</strong> Systematically vary one feature while holding others constant; verify the model responds as expected by domain knowledge.</p>
+<p><strong>Sensitivity analysis workflow:</strong> 1. Define the feature of interest. 2. Generate perturbed versions of test instances (vary only that feature). 3. Record model predictions for each perturbation level. 4. Plot the sensitivity curve (prediction vs.&nbsp;feature value). 5. Compare to domain expectations — does the model respond appropriately?</p>
+<p><strong>Why this matters for fairness:</strong> If the model is highly sensitive to race or gender (which should be irrelevant), this is detected through feature sensitivity tests.</p>
+<hr>
+</section>
+</section>
+</section>
+<section id="part-2-technical-fairness-interventions" class="level1">
+<h1>PART 2: TECHNICAL FAIRNESS INTERVENTIONS</h1>
+<hr>
+<section id="module-3-diagnosis-of-fairness-issues" class="level2">
+<h2 class="anchored" data-anchor-id="module-3-diagnosis-of-fairness-issues">MODULE 3: DIAGNOSIS OF FAIRNESS ISSUES</h2>
+<section id="detecting-bias-in-data" class="level3">
+<h3 class="anchored" data-anchor-id="detecting-bias-in-data">3.1 Detecting Bias in Data</h3>
+<p><strong>Types of bias in data — know each precisely:</strong></p>
+<p><strong>Historical bias:</strong> The data reflects historical human prejudice. Even if the data collection process was unbiased, the underlying social patterns encode discrimination. Example: historical hiring data reflecting gender discrimination in STEM.</p>
+<p><strong>Representation bias (Underrepresentation):</strong> Some groups are sampled at lower rates than their true population frequency. The model has less data about these groups, leading to higher error rates. Example: clinical trial data overrepresenting white males; facial recognition datasets underrepresenting darker-skinned faces.</p>
+<p><strong>Measurement bias:</strong> Different groups are measured with different accuracy or instruments. Example: using arrest records as a proxy for crime — arrest rate reflects policing intensity, not actual crime, and policing is historically biased.</p>
+<p><strong>Aggregation bias:</strong> Combining data from different subgroups and fitting a single model ignores within-group variation. The model fails to capture group-specific patterns. Example: one diabetes prediction model for all ethnicities when the relationship between HbA1c and diabetes differs by ethnicity.</p>
+<p><strong>Label bias:</strong> The labels themselves are biased, even if the features are not. Example: loan default labels reflecting discriminatory lending practices (loans were denied to minorities so we have fewer default/repayment labels for them).</p>
+<p><strong>Temporal bias:</strong> Training data from a past time period does not reflect current population distributions or fairness standards.</p>
+<p><strong>Stereotype reinforcement:</strong> When training data encodes cultural stereotypes, the model learns and perpetuates them. Example: word embeddings placing “homemaker” closer to “woman” than “man.”</p>
+<p><strong>How to detect data bias:</strong> - Compute group-level statistics: mean, variance, missing data rate, label rates by demographic - Visualize distributions using histograms and density plots stratified by group - Check label rates: is the positive label rate similar across groups? - Check feature distributions: are there systematic differences? - Use demographic parity tests on the raw labels - Check for proxy variables: features highly correlated with protected attributes</p>
+<hr>
+</section>
+<section id="risks-in-labels-feature-selection-and-representation" class="level3">
+<h3 class="anchored" data-anchor-id="risks-in-labels-feature-selection-and-representation">3.2 Risks in Labels, Feature Selection, and Representation</h3>
+<p><strong>Label risks:</strong></p>
+<ul>
+<li><strong>Subjective labeling:</strong> Human annotators introduce bias when labeling subjective tasks (toxicity, sentiment, risk)</li>
+<li><strong>Feedback loops:</strong> If labels are derived from system decisions (e.g., hiring outcomes), and the system was biased, labels reflect that bias</li>
+<li><strong>Missing labels:</strong> Differential missingness across groups can bias training</li>
+</ul>
+<p><strong>Feature selection risks:</strong></p>
+<ul>
+<li><strong>Proxy features:</strong> Features not directly protected but highly correlated with protected attributes (zip code ↔︎ race; credit score ↔︎ SES; name ↔︎ ethnicity/gender). Removing the protected attribute doesn’t help if proxies remain.</li>
+<li><strong>Disparate impact through feature selection:</strong> Some features may have unequal predictive power across groups, causing unequal treatment when used</li>
+<li><strong>Irrelevant features that encode group membership:</strong> Including name, photo, or other identifying information</li>
+</ul>
+<p><strong>Representation risks:</strong></p>
+<ul>
+<li><strong>Class imbalance:</strong> If a protected group is a small minority, the model optimizes for majority-group performance</li>
+<li><strong>Intersection blindness:</strong> Looking only at gender OR race separately misses harm to intersectional groups (Black women may face unique discrimination not captured by either margin)</li>
+<li><strong>Distributional shift:</strong> Training data doesn’t represent the deployment population</li>
+</ul>
+<hr>
+</section>
+<section id="formulating-questions-to-uncover-hidden-assumptions" class="level3">
+<h3 class="anchored" data-anchor-id="formulating-questions-to-uncover-hidden-assumptions">3.3 Formulating Questions to Uncover Hidden Assumptions</h3>
+<p>A critical skill for the assessment. Before training, systematically question the model design.</p>
+<p><strong>Questions about the task definition:</strong> - What does the model’s output actually mean? What is being predicted, and does it capture what we care about? - Is the proxy outcome we’re predicting a fair proxy? (e.g., predicting “creditworthiness” using “repayment” — is repayment access affected by systemic factors?) - Who decided what the “correct” outcome is?</p>
+<p><strong>Questions about the data:</strong> - Who is represented in this dataset? Who is missing? - Over what time period was data collected? Does it reflect current reality? - How were labels assigned? By whom? With what incentives? - Are there features that should not be used? Why are they included?</p>
+<p><strong>Questions about the model:</strong> - What does the model optimize? Is accuracy the right metric here? - Does the model perform equally across demographic subgroups? - What are the consequences of false positives vs.&nbsp;false negatives for different groups?</p>
+<p><strong>Questions about deployment:</strong> - Who will use this model? In what contexts? - What happens to people who receive incorrect predictions? - Who can contest a decision? What recourse exists?</p>
+<hr>
+</section>
+</section>
+<section id="module-4-fixing-fairness-in-the-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="module-4-fixing-fairness-in-the-workflow">MODULE 4: FIXING FAIRNESS IN THE WORKFLOW</h2>
+<section id="pre-processing-methods-for-bias-mitigation" class="level3">
+<h3 class="anchored" data-anchor-id="pre-processing-methods-for-bias-mitigation">4.1 Pre-processing Methods for Bias Mitigation</h3>
+<p>Pre-processing interventions modify the training data before model training begins. They are model-agnostic — the corrected dataset can be used with any model.</p>
+<p><strong>Resampling:</strong> - <strong>Oversampling underrepresented groups:</strong> Duplicate instances from minority groups (e.g., SMOTE — Synthetic Minority Oversampling Technique). Ensures equal representation. - <strong>Undersampling majority groups:</strong> Remove instances from overrepresented groups. Risks losing information. - <strong>Stratified sampling:</strong> Ensure training data proportionally represents all subgroups.</p>
+<p><strong>Reweighting:</strong> - Assign higher training weights to underrepresented groups or incorrectly labeled instances - The model pays more attention to these examples during training - Reweighting factor: inverse of group probability — groups with lower representation get higher weights</p>
+<p><strong>Label flipping / Relabeling:</strong> - Identify and correct mislabeled instances, especially for groups where labeling was historically biased - Kamiran &amp; Calders (2012): flip labels for borderline instances to achieve parity</p>
+<p><strong>Feature transformation:</strong> - <strong>Suppression:</strong> Remove protected attributes and their proxies - <strong>Fair representations:</strong> Learn a new feature space that removes group information while preserving predictive information (Zemel et al., Variational Fair Autoencoder) - <strong>Data augmentation:</strong> Generate synthetic data for underrepresented groups</p>
+<p><strong>Disparate impact remover:</strong> - Transforms feature values to remove correlation with the protected attribute while preserving rank ordering within groups - Adjusts features to achieve the “80% rule” (disparate impact threshold)</p>
+<hr>
+</section>
+<section id="causal-and-adversarial-techniques" class="level3">
+<h3 class="anchored" data-anchor-id="causal-and-adversarial-techniques">4.2 Causal and Adversarial Techniques</h3>
+<p><strong>Causal approaches:</strong></p>
+<p><strong>Causal graphs (DAGs):</strong> Model the causal relationships between variables, including protected attributes. Identify paths through which protected attributes affect predictions.</p>
+<ul>
+<li><strong>Direct discrimination:</strong> Protected attribute → prediction (direct causal path)</li>
+<li><strong>Indirect discrimination:</strong> Protected attribute → mediator → prediction (causal path through a feature)</li>
+<li><strong>Counterfactual fairness</strong> (Kusner et al.): A prediction is counterfactually fair if it would be the same for an individual in a counterfactual world where their protected attribute was different, with all causally downstream variables adjusted accordingly. More rigorous than standard fairness metrics.</li>
+</ul>
+<p><strong>Path-specific counterfactual fairness:</strong> Block only the illegitimate causal paths (direct discrimination) while allowing legitimate paths (e.g., education level can mediate gender effects if we consider it legitimate).</p>
+<p><strong>Adversarial debiasing:</strong></p>
+<p>Architecture: Two-component network 1. <strong>Predictor:</strong> Learns to predict the target label Y from features X 2. <strong>Adversary:</strong> Attempts to predict the protected attribute A from the predictor’s output</p>
+<p>Training: The predictor is trained to minimize prediction loss while also maximizing the adversary’s prediction error (minimax game). This forces the predictor to make predictions from which the protected attribute cannot be recovered.</p>
+<pre><code>Predictor loss = prediction_loss - λ * adversary_accuracy
+Adversary loss = adversary_prediction_loss</code></pre>
+<p>The hyperparameter λ controls the fairness-accuracy tradeoff.</p>
+<p><strong>Fairness VAE / Fair representation learning:</strong> - Encode data into a latent space where protected attribute information is removed - Decoder can reconstruct data without protected attribute information - Downstream models trained on fair representations inherit fairness properties</p>
+<hr>
+</section>
+<section id="fairness-aware-training-methods" class="level3">
+<h3 class="anchored" data-anchor-id="fairness-aware-training-methods">4.3 Fairness-Aware Training Methods</h3>
+<p>In-processing methods incorporate fairness constraints directly into the model training objective.</p>
+<p><strong>Fairness constraints as regularization:</strong> - Add a fairness penalty term to the loss function - Loss = prediction_loss + λ * fairness_violation - The model minimizes both prediction error and fairness violation simultaneously</p>
+<p><strong>Types of fairness constraints (know the definitions):</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Fairness Criterion</th>
+<th>Definition</th>
+<th>Formula</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Demographic Parity</strong></td>
+<td>Prediction rate equal across groups</td>
+<td>P(Ŷ=1|A=0) = P(Ŷ=1|A=1)</td>
+</tr>
+<tr class="even">
+<td><strong>Equalized Odds</strong></td>
+<td>Equal TPR and FPR across groups</td>
+<td>P(Ŷ=1|Y=y, A=0) = P(Ŷ=1|Y=y, A=1) for y ∈ {0,1}</td>
+</tr>
+<tr class="odd">
+<td><strong>Equal Opportunity</strong></td>
+<td>Equal TPR across groups (relaxed equalized odds)</td>
+<td>P(Ŷ=1|Y=1, A=0) = P(Ŷ=1|Y=1, A=1)</td>
+</tr>
+<tr class="even">
+<td><strong>Predictive Parity</strong></td>
+<td>Equal PPV (precision) across groups</td>
+<td>P(Y=1|Ŷ=1, A=0) = P(Y=1|Ŷ=1, A=1)</td>
+</tr>
+<tr class="odd">
+<td><strong>Individual Fairness</strong></td>
+<td>Similar individuals receive similar predictions</td>
+<td>d(x,x’) small → d(f(x),f(x’)) small</td>
+</tr>
+<tr class="even">
+<td><strong>Calibration</strong></td>
+<td>Predicted probabilities match actual rates within each group</td>
+<td>P(Y=1|Ŷ=p, A=a) = p for all groups a</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The impossibility theorem (Chouldechova 2017, Kleinberg et al.&nbsp;2016):</strong> When base rates differ between groups, you cannot simultaneously satisfy calibration, equal FPR, and equal FPR. Fairness criteria are mutually exclusive under certain conditions. This means you must choose which criterion to prioritize based on the context and the costs of different types of errors.</p>
+<p><strong>Reduction approaches (Agarwal et al., Reductions framework):</strong> - Reduce fairness-constrained classification to a sequence of standard cost-sensitive classification problems - Iteratively re-weight training examples to satisfy fairness constraints - Implemented in Fairlearn (Microsoft)</p>
+<p><strong>Prejudice Remover (Kamishima et al.):</strong> - Adds a regularizer to logistic regression that penalizes mutual information between predictions and the protected attribute</p>
+<hr>
+</section>
+<section id="post-processing-calibration-on-group-specific-thresholds" class="level3">
+<h3 class="anchored" data-anchor-id="post-processing-calibration-on-group-specific-thresholds">4.4 Post-processing: Calibration on Group-Specific Thresholds</h3>
+<p>Post-processing methods modify model outputs after training to improve fairness. They don’t require access to model internals.</p>
+<p><strong>Threshold optimization:</strong> - Different decision thresholds for different demographic groups - Choose thresholds to equalize a target fairness metric (e.g., equalized odds) - Steps: 1. Get predicted probabilities from the trained model 2. For each group, find the threshold that achieves the fairness target 3. Apply group-specific thresholds at decision time</p>
+<p><strong>Reject option classification:</strong> - For predictions near the decision boundary, the model is uncertain - Give the favorable outcome to disadvantaged group members in the uncertain zone - Reduces discrimination in borderline cases</p>
+<p><strong>Calibration:</strong> - Platt scaling or isotonic regression to align predicted probabilities with actual frequencies - Apply separately per group to achieve within-group calibration - Relevant for COMPAS-style risk scores where calibration was achieved but other fairness criteria were violated</p>
+<p><strong>Roth-Morwitz algorithm (Equalized Odds Post-processing, Hardt et al.&nbsp;2016):</strong> - Find a randomized threshold policy that equalizes TPR and FPR across groups - Operates only on predictions and protected attribute, not original features - Model-agnostic, easy to apply as a final step</p>
+<hr>
+</section>
+<section id="multi-accuracy-auditing-across-subgroups" class="level3">
+<h3 class="anchored" data-anchor-id="multi-accuracy-auditing-across-subgroups">4.5 Multi-Accuracy Auditing Across Subgroups</h3>
+<p><strong>Multi-accuracy (Kim et al.&nbsp;2019):</strong> - A predictor is “multi-accurate” if it is accurate simultaneously across all subgroups in a rich class of groups (not just demographic groups) - Extends standard accuracy auditing from top-level groups to intersectional subgroups</p>
+<p><strong>Multi-calibration:</strong> - The model’s predicted probabilities are calibrated for all subgroups, not just the overall population - Stronger guarantee than simple calibration: even for the intersection of being female, over 40, and from a specific zip code, the probability estimates are accurate</p>
+<p><strong>Auditing workflow:</strong> 1. Define the set of subgroups to audit (demographic, intersectional, behavioral) 2. Compute the target metric (accuracy, calibration, fairness metric) for each subgroup 3. Identify subgroups where the metric falls below the overall level (or a defined threshold) 4. Diagnose the cause: representation gap, label noise, or model error 5. Apply targeted interventions (resampling, reweighting, threshold adjustment) 6. Re-audit to verify improvement</p>
+<p><strong>Fairness tools and libraries:</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tool</th>
+<th>Developer</th>
+<th>Key Features</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Fairlearn</td>
+<td>Microsoft</td>
+<td>Fairness metrics, reduction algorithms, dashboard</td>
+</tr>
+<tr class="even">
+<td>AI Fairness 360 (AIF360)</td>
+<td>IBM</td>
+<td>70+ fairness metrics, 10+ bias mitigation algorithms</td>
+</tr>
+<tr class="odd">
+<td>What-If Tool</td>
+<td>Google</td>
+<td>Interactive exploration of model behavior by subgroup</td>
+</tr>
+<tr class="even">
+<td>Aequitas</td>
+<td>University of Chicago</td>
+<td>Bias auditing toolkit for machine learning pipelines</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="module-5-monitoring-fairness-over-time" class="level2">
+<h2 class="anchored" data-anchor-id="module-5-monitoring-fairness-over-time">MODULE 5: MONITORING FAIRNESS OVER TIME</h2>
+<section id="fairness-unit-and-smoke-tests" class="level3">
+<h3 class="anchored" data-anchor-id="fairness-unit-and-smoke-tests">5.1 Fairness Unit and Smoke Tests</h3>
+<p><strong>Unit tests for fairness (individual components):</strong> - Test that a data preprocessing function does not introduce bias (e.g., imputation does not use group mean in a way that encodes group differences) - Test that feature encoding does not encode protected attribute information - Test that label assignment is consistent across groups</p>
+<p><strong>Smoke tests (basic sanity checks before deployment):</strong> - Does the model’s positive prediction rate differ by more than 20% across groups? (80% rule / four-fifths rule) - Does the model’s accuracy differ significantly across groups? - Does the model produce identical predictions for identical inputs regardless of protected attribute? - Is the model’s error rate stable across demographic subgroups?</p>
+<p><strong>Fairness testing frameworks:</strong> - Write fairness tests as part of CI/CD pipelines - Fail the pipeline if fairness metrics fall below thresholds - Use tools like Fairlearn’s <code>MetricFrame</code> to compute multiple metrics across multiple groups simultaneously</p>
+<p><strong>Counterfactual consistency test:</strong> - Generate pairs of inputs identical except for the protected attribute - Check that the model produces the same prediction for both - If not, the model uses the protected attribute (or a proxy) directly</p>
+<hr>
+</section>
+<section id="continuously-evaluating-models-against-fairness-metrics" class="level3">
+<h3 class="anchored" data-anchor-id="continuously-evaluating-models-against-fairness-metrics">5.2 Continuously Evaluating Models Against Fairness Metrics</h3>
+<p><strong>Key fairness metrics to monitor continuously:</strong></p>
+<ul>
+<li><strong>Demographic parity difference:</strong> |P(Ŷ=1|A=0) - P(Ŷ=1|A=1)|; target = 0</li>
+<li><strong>Equalized odds difference:</strong> Max difference in TPR and FPR across groups</li>
+<li><strong>Disparate impact ratio:</strong> P(Ŷ=1|A=minority) / P(Ŷ=1|A=majority); target ≥ 0.8 (four-fifths rule)</li>
+<li><strong>Calibration error by group:</strong> |P(Y=1|Ŷ=p, A=a) - p| for each group a</li>
+<li><strong>AUC-ROC by group:</strong> Measure discriminative power within each group</li>
+</ul>
+<p><strong>Monitoring pipeline:</strong> 1. Log predictions and (where available) outcomes along with group membership 2. Compute fairness metrics on a rolling window or fixed schedule 3. Alert when a metric crosses a predefined threshold 4. Investigate root causes (distribution shift, label drift, model degradation) 5. Retrain or recalibrate as needed</p>
+<p><strong>Concept/data drift and fairness:</strong> - Distributional shift affects groups unequally — a model that was fair at deployment may become unfair as the population changes - Monitoring for accuracy by group also detects fairness degradation - Covariate shift: input distribution changes; label shift: outcome rates change</p>
+<hr>
+</section>
+<section id="updating-test-sets-as-user-bases-evolve" class="level3">
+<h3 class="anchored" data-anchor-id="updating-test-sets-as-user-bases-evolve">5.3 Updating Test Sets as User Bases Evolve</h3>
+<p><strong>Why test sets become stale:</strong> - User demographics evolve as the product grows - Societal norms change (what was acceptable language may become unacceptable) - Edge cases become common over time - New protected groups emerge (e.g., gender identity categories)</p>
+<p><strong>Best practices:</strong> - <strong>Rolling test sets:</strong> Continuously collect new labeled examples from production; retire old examples - <strong>Diverse annotation:</strong> Include annotators from underrepresented groups; use annotation guidelines that reflect current norms - <strong>Adversarial test sets:</strong> Collect examples specifically designed to challenge the model (Dynabench approach) - <strong>Red-teaming:</strong> Actively probe for failure cases in new subpopulations - <strong>Regular refresh schedule:</strong> Audit test set demographics quarterly or after significant user growth events - <strong>Version control for test sets:</strong> Track changes in test set composition alongside model versions</p>
+<p><strong>Feedback loop management:</strong> - If the model’s outputs influence future training data (e.g., a content recommendation model creates filter bubbles), the training distribution will drift toward model biases - Detect feedback loops through diversity monitoring and user behavior analysis - Break feedback loops with randomization, exploration, and diverse data collection</p>
+<hr>
+</section>
+</section>
+</section>
+<section id="part-3-reliability-privacy-and-safety" class="level1">
+<h1>PART 3: RELIABILITY, PRIVACY, AND SAFETY</h1>
+<hr>
+<section id="module-6-building-robust-models" class="level2">
+<h2 class="anchored" data-anchor-id="module-6-building-robust-models">MODULE 6: BUILDING ROBUST MODELS</h2>
+<section id="designing-training-objectives-that-reflect-real-world-goals" class="level3">
+<h3 class="anchored" data-anchor-id="designing-training-objectives-that-reflect-real-world-goals">6.1 Designing Training Objectives That Reflect Real-World Goals</h3>
+<p><strong>The alignment problem in ML:</strong> The objective function optimized during training is rarely identical to the true goal. This gap causes models to find unexpected solutions.</p>
+<p><strong>Common misalignments:</strong></p>
+<ul>
+<li><strong>Optimizing accuracy vs.&nbsp;optimizing decision quality:</strong> Accuracy penalizes all errors equally, but false positives and false negatives often have very different costs.</li>
+<li><strong>Optimizing average performance vs.&nbsp;worst-case performance:</strong> A model with high average accuracy may fail catastrophically on rare but critical inputs.</li>
+<li><strong>Optimizing training distribution vs.&nbsp;deployment distribution:</strong> Training loss doesn’t measure deployment performance.</li>
+</ul>
+<p><strong>Solutions and design principles:</strong></p>
+<p><strong>Cost-sensitive loss functions:</strong> - Assign different weights to different error types - <code>loss = w_FP * FP_loss + w_FN * FN_loss</code> - Set weights based on real-world costs of each error type</p>
+<p><strong>Task-specific metrics as objectives:</strong> - For medical screening: optimize recall (sensitivity) subject to a precision constraint - For fraud detection: optimize F-β score with β &gt; 1 to weight recall more - For ranking: optimize NDCG or MAP rather than cross-entropy</p>
+<p><strong>Distributional robustness:</strong> - Optimize worst-case performance over a family of distributions (Distributionally Robust Optimization, DRO) - Ensures the model performs well even under distribution shift</p>
+<p><strong>Regularization for generalization:</strong> - L1/L2 regularization prevents overfitting to training distribution - Dropout, data augmentation, mixup improve robustness to input variation</p>
+<p><strong>Multi-objective optimization:</strong> - Define multiple objectives (accuracy, fairness, robustness) and find Pareto-optimal solutions - Use constrained optimization: maximize accuracy subject to fairness constraints</p>
+<hr>
+</section>
+<section id="user-driven-testing-for-input-sensitivity" class="level3">
+<h3 class="anchored" data-anchor-id="user-driven-testing-for-input-sensitivity">6.2 User-Driven Testing for Input Sensitivity</h3>
+<p><strong>Behavioral testing (Ribeiro et al., CheckList):</strong> A framework for systematic model testing that goes beyond accuracy on a held-out set.</p>
+<p><strong>Three test types in CheckList:</strong></p>
+<ol type="1">
+<li><strong>Minimum Functionality Tests (MFT):</strong> Test basic expected behaviors. Example: a sentiment model should classify “This is great!” as positive.</li>
+<li><strong>Invariance Tests (INV):</strong> Perturbations that should NOT change the prediction. Example: changing a name from “John” to “Jamal” should not change a sentiment prediction.</li>
+<li><strong>Directional Expectation Tests (DIR):</strong> Perturbations where prediction should change in a known direction. Example: adding “not” before a positive word should decrease positive sentiment score.</li>
+</ol>
+<p><strong>User-driven sensitivity testing:</strong> - Allow users to drag feature sliders and see how predictions change - Provide “what-if” interfaces (Google’s What-If Tool) - Show feature sensitivity curves for individual predictions - Let domain experts define test cases based on their knowledge</p>
+<p><strong>Stress testing:</strong> - Test on extreme values: minimum, maximum, boundary conditions - Test on adversarial examples (see Security section) - Test on out-of-distribution inputs (data from a different hospital, country, time period)</p>
+<hr>
+</section>
+<section id="identifying-and-managing-edge-cases" class="level3">
+<h3 class="anchored" data-anchor-id="identifying-and-managing-edge-cases">6.3 Identifying and Managing Edge Cases</h3>
+<p><strong>Definition:</strong> Edge cases are inputs that occur rarely but for which the model’s failure would be high-cost or high-risk.</p>
+<p><strong>Sources of edge cases:</strong> - Rare demographic groups or rare feature combinations - Unusual events (weather anomalies, market crashes, pandemics) - Adversarial inputs - Data from new distributions not present during training</p>
+<p><strong>Identifying edge cases:</strong> - <strong>Uncertainty quantification:</strong> Flag inputs where model confidence is low (high entropy, high predictive variance in ensemble models) - <strong>Anomaly detection:</strong> Detect out-of-distribution inputs before the model makes a prediction - <strong>Error analysis:</strong> Cluster misclassified examples to find systematic failure modes - <strong>Human-in-the-loop review:</strong> Route low-confidence predictions to human reviewers</p>
+<p><strong>Managing edge cases at deployment:</strong> - <strong>Abstention/rejection option:</strong> Allow the model to refuse to make a prediction if uncertainty is too high - <strong>Confidence thresholding:</strong> Only act on predictions above a minimum confidence level - <strong>Escalation policies:</strong> Define procedures for routing edge cases to human experts - <strong>Monitoring dashboards:</strong> Track edge case occurrence rates and model performance on them</p>
+<hr>
+</section>
+</section>
+<section id="module-7-privacy-and-legal-readiness" class="level2">
+<h2 class="anchored" data-anchor-id="module-7-privacy-and-legal-readiness">MODULE 7: PRIVACY AND LEGAL READINESS</h2>
+<section id="data-protection-principles-during-model-development" class="level3">
+<h3 class="anchored" data-anchor-id="data-protection-principles-during-model-development">7.1 Data Protection Principles During Model Development</h3>
+<p><strong>Core principles (aligned with GDPR and general best practice):</strong></p>
+<p><strong>Lawfulness, fairness, and transparency:</strong> Data must be collected and used lawfully; individuals must be informed.</p>
+<p><strong>Purpose limitation:</strong> Data collected for one purpose should not be used for an unrelated purpose without consent. Example: health data collected for treatment should not be used to train a commercial model without explicit consent.</p>
+<p><strong>Data minimization:</strong> Collect and retain only the data necessary for the specified purpose. Do not store more than needed.</p>
+<p><strong>Accuracy:</strong> Keep data up to date; have mechanisms to correct inaccurate data.</p>
+<p><strong>Storage limitation:</strong> Retain data only as long as necessary; have data deletion policies.</p>
+<p><strong>Integrity and confidentiality:</strong> Protect data against unauthorized access, loss, or destruction.</p>
+<p><strong>Accountability:</strong> Organizations must demonstrate compliance with these principles.</p>
+<hr>
+</section>
+<section id="regulatory-standards-gdpr-and-hipaa" class="level3">
+<h3 class="anchored" data-anchor-id="regulatory-standards-gdpr-and-hipaa">7.2 Regulatory Standards: GDPR and HIPAA</h3>
+<p><strong>GDPR (General Data Protection Regulation — EU):</strong></p>
+<p>Key provisions relevant to ML: - <strong>Article 5:</strong> Data protection principles (above) - <strong>Article 9:</strong> Special categories of sensitive data: health, racial/ethnic origin, political opinions, religious beliefs, sexual orientation, biometric data → require explicit consent or other legal basis - <strong>Article 13/14:</strong> Transparency — inform individuals about automated processing - <strong>Article 15:</strong> Right of access — individuals can request their data - <strong>Article 17:</strong> Right to erasure (“right to be forgotten”) — complicates model training (retraining without deleted data) - <strong>Article 20:</strong> Right to data portability - <strong>Article 22:</strong> Right not to be subject to solely automated decisions with significant effects; right to human review and to contest decisions - <strong>Recital 71:</strong> Automated decisions should use appropriate mathematical and statistical procedures; should not concern special categories of data</p>
+<p><strong>HIPAA (Health Insurance Portability and Accountability Act — US):</strong></p>
+<p>Key provisions for ML: - Applies to Protected Health Information (PHI): individually identifiable health data - <strong>18 de-identification identifiers</strong> must be removed for data to be considered de-identified (Safe Harbor method) - <strong>Expert determination:</strong> A statistician certifies that risk of re-identification is very small - <strong>Business Associate Agreement (BAA):</strong> Any third party (including cloud ML providers) handling PHI must sign a BAA - <strong>Minimum necessary rule:</strong> Only access the minimum PHI needed for the task - <strong>Security Rule:</strong> Technical safeguards for PHI (encryption, access controls, audit logs)</p>
+<p><strong>GDPR vs.&nbsp;HIPAA comparison:</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Aspect</th>
+<th>GDPR</th>
+<th>HIPAA</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Scope</td>
+<td>Any personal data, EU residents</td>
+<td>Health information, US covered entities</td>
+</tr>
+<tr class="even">
+<td>Geographic reach</td>
+<td>Global (if processing EU data)</td>
+<td>US-focused</td>
+</tr>
+<tr class="odd">
+<td>Right to explanation</td>
+<td>Yes (Article 22)</td>
+<td>Limited</td>
+</tr>
+<tr class="even">
+<td>Penalties</td>
+<td>Up to 4% global annual revenue</td>
+<td>Up to $1.9M per violation category</td>
+</tr>
+<tr class="odd">
+<td>Data subject rights</td>
+<td>Broad</td>
+<td>Limited</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="privacy-preserving-practices" class="level3">
+<h3 class="anchored" data-anchor-id="privacy-preserving-practices">7.3 Privacy-Preserving Practices</h3>
+<p><strong>Data minimization:</strong> - Collect only features needed for the model - Aggregate where possible (use zip code instead of full address) - Use feature selection to remove unnecessary variables early</p>
+<p><strong>Access control:</strong> - Role-based access: only authorized personnel access sensitive data - Audit logs: track who accessed what data and when - Data compartmentalization: sensitive attributes stored separately</p>
+<p><strong>Anonymization and pseudonymization:</strong> - <strong>Anonymization:</strong> True removal of identifying information; irreversible - <strong>Pseudonymization:</strong> Replace identifiers with pseudonyms; re-identification possible with key - <strong>k-anonymity:</strong> Every record is indistinguishable from at least k-1 other records on quasi-identifying attributes - <strong>l-diversity:</strong> Each equivalence class has at least l well-represented sensitive values - <strong>t-closeness:</strong> Distribution of sensitive attribute in each equivalence class is close to overall distribution</p>
+<p><strong>Differential Privacy (DP):</strong> - Mathematical definition: a mechanism M is ε-differentially private if for any dataset D and D’ differing by one record, and any output S: P(M(D) ∈ S) ≤ e^ε * P(M(D’) ∈ S) - Adding carefully calibrated noise to model training or outputs - <strong>DP-SGD:</strong> Add Gaussian noise to gradients during training; clip gradients to bound sensitivity - <strong>ε (epsilon):</strong> Privacy budget — smaller ε = stronger privacy guarantee = more noise = lower accuracy - Used by: Apple, Google for analytics; PyTorch Opacus library for ML</p>
+<p><strong>Federated Learning:</strong> - Train models across multiple decentralized devices without centralizing raw data - Each device trains locally on its data; only model updates (gradients) are shared - Aggregated on a central server (FedAvg algorithm) - Privacy benefit: raw data never leaves the device - Residual risk: gradient sharing can still leak information (gradient inversion attacks)</p>
+<p><strong>Secure Multi-Party Computation (MPC):</strong> - Multiple parties jointly compute a function over their combined data without revealing their individual data to each other - Example: hospitals jointly train a model without sharing patient records</p>
+<p><strong>Homomorphic Encryption:</strong> - Perform computation on encrypted data; decrypt only the final result - Currently too slow for large-scale ML, but improving</p>
+<hr>
+</section>
+</section>
+<section id="module-8-security-and-adversarial-defense" class="level2">
+<h2 class="anchored" data-anchor-id="module-8-security-and-adversarial-defense">MODULE 8: SECURITY AND ADVERSARIAL DEFENSE</h2>
+<section id="identifying-security-threats" class="level3">
+<h3 class="anchored" data-anchor-id="identifying-security-threats">8.1 Identifying Security Threats</h3>
+<p><strong>Adversarial attacks:</strong></p>
+<p><strong>Evasion attacks (inference time):</strong> Craft inputs that cause misclassification without being detected. - <strong>White-box attacks:</strong> Attacker has full knowledge of model architecture and parameters - FGSM (Fast Gradient Sign Method): add perturbation in the direction of gradient of loss w.r.t. input - PGD (Projected Gradient Descent): iterative FGSM with projection back onto ε-ball - C&amp;W attack: optimization-based; more powerful but slower - <strong>Black-box attacks:</strong> Attacker only has access to model outputs - Transfer attacks: generate adversarial examples on a substitute model; transfer to target - Query-based attacks: use model predictions to estimate gradients</p>
+<p><strong>Poisoning attacks (training time):</strong> Inject malicious examples into training data to corrupt the model. - <strong>Clean-label poisoning:</strong> Inject examples with correct labels but adversarial features - <strong>Backdoor/Trojan attacks:</strong> Inject examples with a trigger pattern that causes misclassification at inference</p>
+<p><strong>Model extraction / Stealing:</strong> Repeatedly query a model to reconstruct its parameters or decision boundary.</p>
+<p><strong>Model inversion:</strong> Use model outputs to reconstruct sensitive training data. Example: reconstructing a face from a face recognition model’s confidence scores.</p>
+<p><strong>Membership inference:</strong> Determine whether a specific record was in the training data. Enabled by models overfitting to training data.</p>
+<p><strong>Prompt injection (for LLMs):</strong> Craft inputs that override the model’s system instructions or cause unintended behavior.</p>
+<p><strong>Data poisoning via crowdsourced labeling:</strong> Compromise annotators to label data incorrectly.</p>
+<hr>
+</section>
+<section id="defense-strategies" class="level3">
+<h3 class="anchored" data-anchor-id="defense-strategies">8.2 Defense Strategies</h3>
+<p><strong>Input validation and preprocessing:</strong> - Detect out-of-distribution inputs before they reach the model - Feature squeeze: reduce input precision (e.g., color bit depth) to remove adversarial perturbations - Input transformation: JPEG compression, smoothing, resizing — destroy fine-grained adversarial patterns - Certifiable defenses: guarantee robustness within a defined ε-ball (randomized smoothing)</p>
+<p><strong>Adversarial training:</strong> - Include adversarial examples in training data - At each training step, generate adversarial examples for the current batch; train on both clean and adversarial - PGD adversarial training (Madry et al.) is the gold standard for robustness - Cost: significant training time increase; slight accuracy drop on clean data</p>
+<p><strong>Randomized smoothing:</strong> - Smooth the model’s predictions by averaging over Gaussian-noised copies of the input - Provides certified ℓ₂ robustness: guarantees that the prediction doesn’t change within a radius - Model-agnostic but requires many forward passes at inference time</p>
+<p><strong>Certified robustness:</strong> - Formally verify that no adversarial perturbation within a defined bound can change the prediction - Methods: interval bound propagation, Lipschitz-based bounds, linear programming relaxations - Currently practical only for small networks or tight ε bounds</p>
+<p><strong>Backdoor detection and mitigation:</strong> - Neural Cleanse: detect backdoors by finding small universal perturbations that flip predictions - STRIP (STRong Intentional Perturbation): detect backdoored inputs by superimposing random patterns - Fine-pruning: prune neurons that are unusually dormant on clean data but active on poisoned data</p>
+<p><strong>Differential privacy for defense:</strong> - DP training limits the influence of any single training point, making poisoning less effective - Also limits membership inference risk</p>
+<p><strong>Access controls and rate limiting:</strong> - Limit the number of queries a user can make (defends against model extraction and membership inference) - Add noise to predictions or return only top-k classes - Monitor for unusual query patterns</p>
+<hr>
+</section>
+<section id="evaluating-tradeoffs-between-security-interpretability-and-performance" class="level3">
+<h3 class="anchored" data-anchor-id="evaluating-tradeoffs-between-security-interpretability-and-performance">8.3 Evaluating Tradeoffs Between Security, Interpretability, and Performance</h3>
+<p><strong>The security-accuracy tradeoff:</strong> - Adversarially trained models are more robust but less accurate on clean data (typically 1–10% drop) - Defense mechanisms (input smoothing, randomized smoothing) add latency - Stronger privacy guarantees (smaller ε in DP) reduce model utility</p>
+<p><strong>The interpretability-performance tradeoff:</strong> - Complex models (deep nets, ensembles) generally outperform interpretable models - Requiring interpretability may constrain model choice (e.g., using a decision tree instead of a neural network) - Post-hoc explanations partially resolve this by explaining complex models — but with reduced fidelity</p>
+<p><strong>The interpretability-security tradeoff:</strong> - Highly interpretable models are more vulnerable to adversarial attack (attacker can understand the model’s decision boundary) - Obfuscating model internals can be a weak security measure (security through obscurity is not sufficient) - SHAP explanations can be manipulated: a model can produce biased decisions while showing fair explanations on a scrutiny dataset</p>
+<p><strong>The privacy-utility tradeoff:</strong> - Stronger data protection (more noise in DP, more anonymization) → less accurate models - Federated learning preserves privacy but convergence is slower and accuracy may suffer - De-identification reduces dataset richness</p>
+<p><strong>Decision framework for high-risk contexts:</strong> 1. Identify the most critical risk: safety failure, privacy breach, discrimination, or adversarial attack 2. Prioritize the mitigation for the highest-risk failure mode 3. Quantify the tradeoff: how much accuracy/interpretability do you sacrifice? 4. Document the decision and the rationale 5. Define monitoring and escalation procedures</p>
+<p><strong>Example high-risk tradeoff (medical AI):</strong> - Use an interpretable model (logistic regression) even if a neural network would be more accurate, because clinicians need to verify the model’s reasoning before acting - Accept the accuracy cost in exchange for clinical trust and regulatory compliance - Apply differential privacy even if it slightly reduces model performance, because patient privacy is legally and ethically paramount</p>
+<hr>
+</section>
+</section>
+</section>
+<section id="quick-reference-key-term-mappings" class="level1">
+<h1>QUICK REFERENCE: KEY TERM MAPPINGS</h1>
+<p>For match-the-pairs questions, master these pairings:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Term</th>
+<th>Definition / Association</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>LIME</td>
+<td>Local, model-agnostic, perturbation-based, linear surrogate</td>
+</tr>
+<tr class="even">
+<td>SHAP</td>
+<td>Shapley values, additive, global + local, game theory</td>
+</tr>
+<tr class="odd">
+<td>FGSM</td>
+<td>Adversarial attack, gradient sign, one-step, white-box</td>
+</tr>
+<tr class="even">
+<td>PGD</td>
+<td>Adversarial attack, iterative FGSM, projected gradient</td>
+</tr>
+<tr class="odd">
+<td>Differential Privacy</td>
+<td>ε-DP, noise injection, privacy budget</td>
+</tr>
+<tr class="even">
+<td>Federated Learning</td>
+<td>Decentralized training, gradient sharing, no raw data sharing</td>
+</tr>
+<tr class="odd">
+<td>Demographic Parity</td>
+<td>Equal positive prediction rate across groups</td>
+</tr>
+<tr class="even">
+<td>Equalized Odds</td>
+<td>Equal TPR and FPR across groups</td>
+</tr>
+<tr class="odd">
+<td>Equal Opportunity</td>
+<td>Equal TPR only across groups</td>
+</tr>
+<tr class="even">
+<td>GDPR Article 22</td>
+<td>Right to contest automated decisions</td>
+</tr>
+<tr class="odd">
+<td>Surrogate model</td>
+<td>Interpretable model approximating a black box</td>
+</tr>
+<tr class="even">
+<td>Counterfactual</td>
+<td>Minimum change for different outcome</td>
+</tr>
+<tr class="odd">
+<td>Adversarial training</td>
+<td>Include adversarial examples during training</td>
+</tr>
+<tr class="even">
+<td>k-anonymity</td>
+<td>Record indistinguishable from k-1 others</td>
+</tr>
+<tr class="odd">
+<td>Historical bias</td>
+<td>Data reflects past discrimination</td>
+</tr>
+<tr class="even">
+<td>Measurement bias</td>
+<td>Groups measured with different accuracy</td>
+</tr>
+<tr class="odd">
+<td>TreeSHAP</td>
+<td>Exact SHAP for tree models, fast</td>
+</tr>
+<tr class="even">
+<td>KernelSHAP</td>
+<td>Model-agnostic SHAP, slow</td>
+</tr>
+<tr class="odd">
+<td>PDPs</td>
+<td>Marginal effect of feature, assumes independence</td>
+</tr>
+<tr class="even">
+<td>ICE plots</td>
+<td>Per-instance effect; reveals heterogeneity</td>
+</tr>
+<tr class="odd">
+<td>Model inversion</td>
+<td>Reconstruct training data from model outputs</td>
+</tr>
+<tr class="even">
+<td>Membership inference</td>
+<td>Determine if record was in training set</td>
+</tr>
+<tr class="odd">
+<td>Backdoor attack</td>
+<td>Trigger pattern causes misclassification</td>
+</tr>
+<tr class="even">
+<td>Poisoning attack</td>
+<td>Inject malicious training data</td>
+</tr>
+<tr class="odd">
+<td>ALE plots</td>
+<td>Like PDP but handles correlated features</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="key-workflows-to-know-order-the-steps-questions" class="level1">
+<h1>KEY WORKFLOWS TO KNOW (Order-the-Steps Questions)</h1>
+<p><strong>LIME explanation workflow:</strong> 1. Select instance to explain 2. Generate perturbed samples around instance 3. Query black-box model on perturbed samples 4. Weight samples by proximity to original 5. Fit interpretable model on weighted samples 6. Interpret coefficients as explanation</p>
+<p><strong>SHAP analysis workflow:</strong> 1. Train model 2. Initialize SHAP explainer (match to model type) 3. Compute SHAP values for dataset 4. Generate summary plot for global importance 5. Generate force/waterfall plot for local explanation 6. Generate dependence plot for feature interactions</p>
+<p><strong>Bias audit workflow:</strong> 1. Define protected groups 2. Compute performance metrics per group 3. Compute fairness metrics (demographic parity, equalized odds) 4. Identify most problematic disparities 5. Diagnose root cause (data, features, labels, model) 6. Select and apply appropriate mitigation 7. Re-audit to verify improvement</p>
+<p><strong>Pre-processing bias mitigation workflow:</strong> 1. Identify underrepresented groups in training data 2. Choose mitigation strategy (resampling, reweighting, relabeling) 3. Apply mitigation to training set only (not test set) 4. Train model on mitigated data 5. Evaluate fairness and accuracy on original test set</p>
+<p><strong>Adversarial defense workflow:</strong> 1. Identify threat model (white-box vs.&nbsp;black-box, evasion vs.&nbsp;poisoning) 2. Evaluate model’s current robustness (accuracy on adversarial examples) 3. Select defense strategy (adversarial training, input preprocessing, certified defense) 4. Implement defense; retrain if necessary 5. Evaluate tradeoff: clean accuracy vs.&nbsp;robust accuracy 6. Deploy with monitoring for adversarial inputs</p>
+<hr>
+<p><em>These notes cover all learning objectives specified for the Workera ELO / SAGE assessment. Focus particularly on the term definitions for matching questions, the ordered workflows for sequence questions, and the code skeletons for code-completion questions.</em></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/madhaviit\.github\.io\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Madhav Kadam, All Rights Reserved.</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/madhaviit" target="_blank">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://x.com/kpmadhav18" target="_blank">
+      <i class="bi bi-twitter-x" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://linkedin.com/in/madhav-kadam" target="_blank">
+      <i class="bi bi-linkedin" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
