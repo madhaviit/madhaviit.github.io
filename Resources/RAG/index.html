@@ -1,0 +1,2451 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Madhav Kadam">
+<meta name="dcterms.date" content="2026-05-21">
+
+<title>RAG – Madhav Kadam</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/favicon.ico" rel="icon">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-2b454536a190732ebf2f95c4f11e6530.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-9b097c31a9caec86beae4783e147e129.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-2b454536a190732ebf2f95c4f11e6530.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-B6Z44LN64S"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-B6Z44LN64S', { 'anonymize_ip': true});
+</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<meta property="og:title" content="RAG – Madhav Kadam">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="Madhav Kadam">
+<meta name="twitter:title" content="RAG – Madhav Kadam">
+<meta name="twitter:description" content="">
+<meta name="twitter:card" content="summary">
+</head>
+
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Madhav Kadam</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://drive.google.com/file/d/1hnqTi8Y-63If0PUq-HJ09X44cnxxqlXD/view?usp=sharing" target="_blank"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../Poems/disclaimer.html"> 
+<span class="menu-text">Poems</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../MyBlog/index.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../books.html"> 
+<span class="menu-text">Library</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../travel.html"> 
+<span class="menu-text">Atlas</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#retrieval-augmented-generation-rag" id="toc-retrieval-augmented-generation-rag" class="nav-link active" data-scroll-target="#retrieval-augmented-generation-rag">Retrieval-Augmented Generation (RAG)</a></li>
+  <li><a href="#part-1-mastering-general-concepts-terminology-of-rag" id="toc-part-1-mastering-general-concepts-terminology-of-rag" class="nav-link" data-scroll-target="#part-1-mastering-general-concepts-terminology-of-rag">PART 1: MASTERING GENERAL CONCEPTS &amp; TERMINOLOGY OF RAG</a>
+  <ul class="collapse">
+  <li><a href="#module-1-introducing-rag" id="toc-module-1-introducing-rag" class="nav-link" data-scroll-target="#module-1-introducing-rag">MODULE 1: INTRODUCING RAG</a>
+  <ul class="collapse">
+  <li><a href="#define-retrieval-augmented-generation-rag-and-explain-its-purpose" id="toc-define-retrieval-augmented-generation-rag-and-explain-its-purpose" class="nav-link" data-scroll-target="#define-retrieval-augmented-generation-rag-and-explain-its-purpose">1.1 Define Retrieval-Augmented Generation (RAG) and Explain Its Purpose</a></li>
+  <li><a href="#why-rag-enhances-llms-by-retrieving-relevant-external-knowledge" id="toc-why-rag-enhances-llms-by-retrieving-relevant-external-knowledge" class="nav-link" data-scroll-target="#why-rag-enhances-llms-by-retrieving-relevant-external-knowledge">1.2 Why RAG Enhances LLMs by Retrieving Relevant External Knowledge</a></li>
+  </ul></li>
+  <li><a href="#module-2-comparing-rag-and-traditional-llms" id="toc-module-2-comparing-rag-and-traditional-llms" class="nav-link" data-scroll-target="#module-2-comparing-rag-and-traditional-llms">MODULE 2: COMPARING RAG AND TRADITIONAL LLMs</a>
+  <ul class="collapse">
+  <li><a href="#differentiating-rag-based-and-non-retrieval-based-generative-models" id="toc-differentiating-rag-based-and-non-retrieval-based-generative-models" class="nav-link" data-scroll-target="#differentiating-rag-based-and-non-retrieval-based-generative-models">2.1 Differentiating RAG-based and Non-Retrieval-Based Generative Models</a></li>
+  <li><a href="#identifying-scenarios-where-rag-is-beneficial-over-standard-llms" id="toc-identifying-scenarios-where-rag-is-beneficial-over-standard-llms" class="nav-link" data-scroll-target="#identifying-scenarios-where-rag-is-beneficial-over-standard-llms">2.2 Identifying Scenarios Where RAG Is Beneficial Over Standard LLMs</a></li>
+  </ul></li>
+  <li><a href="#module-3-describing-core-rag-components" id="toc-module-3-describing-core-rag-components" class="nav-link" data-scroll-target="#module-3-describing-core-rag-components">MODULE 3: DESCRIBING CORE RAG COMPONENTS</a>
+  <ul class="collapse">
+  <li><a href="#roles-of-the-retriever-retriever-store-and-generator" id="toc-roles-of-the-retriever-retriever-store-and-generator" class="nav-link" data-scroll-target="#roles-of-the-retriever-retriever-store-and-generator">3.1 Roles of the Retriever, Retriever Store, and Generator</a></li>
+  <li><a href="#how-these-components-interact-to-improve-response-quality" id="toc-how-these-components-interact-to-improve-response-quality" class="nav-link" data-scroll-target="#how-these-components-interact-to-improve-response-quality">3.2 How These Components Interact to Improve Response Quality</a></li>
+  </ul></li>
+  <li><a href="#module-4-using-vector-databases-embeddings" id="toc-module-4-using-vector-databases-embeddings" class="nav-link" data-scroll-target="#module-4-using-vector-databases-embeddings">MODULE 4: USING VECTOR DATABASES &amp; EMBEDDINGS</a>
+  <ul class="collapse">
+  <li><a href="#how-embeddings-work-and-their-role-in-similarity-based-retrieval" id="toc-how-embeddings-work-and-their-role-in-similarity-based-retrieval" class="nav-link" data-scroll-target="#how-embeddings-work-and-their-role-in-similarity-based-retrieval">4.1 How Embeddings Work and Their Role in Similarity-Based Retrieval</a></li>
+  <li><a href="#differentiating-various-embedding-models" id="toc-differentiating-various-embedding-models" class="nav-link" data-scroll-target="#differentiating-various-embedding-models">4.2 Differentiating Various Embedding Models</a></li>
+  </ul></li>
+  <li><a href="#module-5-applying-indexing-techniques" id="toc-module-5-applying-indexing-techniques" class="nav-link" data-scroll-target="#module-5-applying-indexing-techniques">MODULE 5: APPLYING INDEXING TECHNIQUES</a>
+  <ul class="collapse">
+  <li><a href="#comparing-bm25-faiss-and-chroma-for-indexing-and-retrieving-documents" id="toc-comparing-bm25-faiss-and-chroma-for-indexing-and-retrieving-documents" class="nav-link" data-scroll-target="#comparing-bm25-faiss-and-chroma-for-indexing-and-retrieving-documents">5.1 Comparing BM25, FAISS, and Chroma for Indexing and Retrieving Documents</a></li>
+  <li><a href="#how-indexing-strategies-affect-retrieval-speed-and-accuracy" id="toc-how-indexing-strategies-affect-retrieval-speed-and-accuracy" class="nav-link" data-scroll-target="#how-indexing-strategies-affect-retrieval-speed-and-accuracy">5.2 How Indexing Strategies Affect Retrieval Speed and Accuracy</a></li>
+  </ul></li>
+  <li><a href="#module-6-identifying-rag-pipeline-types" id="toc-module-6-identifying-rag-pipeline-types" class="nav-link" data-scroll-target="#module-6-identifying-rag-pipeline-types">MODULE 6: IDENTIFYING RAG PIPELINE TYPES</a>
+  <ul class="collapse">
+  <li><a href="#identifying-different-retrieval-strategies" id="toc-identifying-different-retrieval-strategies" class="nav-link" data-scroll-target="#identifying-different-retrieval-strategies">6.1 Identifying Different Retrieval Strategies</a></li>
+  <li><a href="#selecting-the-appropriate-retrieval-method-based-on-the-use-case" id="toc-selecting-the-appropriate-retrieval-method-based-on-the-use-case" class="nav-link" data-scroll-target="#selecting-the-appropriate-retrieval-method-based-on-the-use-case">6.2 Selecting the Appropriate Retrieval Method Based on the Use Case</a></li>
+  </ul></li>
+  <li><a href="#module-7-evaluating-retrieval-performance" id="toc-module-7-evaluating-retrieval-performance" class="nav-link" data-scroll-target="#module-7-evaluating-retrieval-performance">MODULE 7: EVALUATING RETRIEVAL PERFORMANCE</a>
+  <ul class="collapse">
+  <li><a href="#defining-precisionk-recallk-mrr-and-f1-score" id="toc-defining-precisionk-recallk-mrr-and-f1-score" class="nav-link" data-scroll-target="#defining-precisionk-recallk-mrr-and-f1-score">7.1 Defining Precision@K, Recall@K, MRR, and F1-score</a></li>
+  <li><a href="#choosing-the-right-metric-based-on-task-requirements" id="toc-choosing-the-right-metric-based-on-task-requirements" class="nav-link" data-scroll-target="#choosing-the-right-metric-based-on-task-requirements">7.2 Choosing the Right Metric Based on Task Requirements</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#part-2-implementing-rag-in-practice" id="toc-part-2-implementing-rag-in-practice" class="nav-link" data-scroll-target="#part-2-implementing-rag-in-practice">PART 2: IMPLEMENTING RAG IN PRACTICE</a>
+  <ul class="collapse">
+  <li><a href="#module-8-building-a-rag-pipeline" id="toc-module-8-building-a-rag-pipeline" class="nav-link" data-scroll-target="#module-8-building-a-rag-pipeline">MODULE 8: BUILDING A RAG PIPELINE</a>
+  <ul class="collapse">
+  <li><a href="#constructing-a-basic-rag-pipeline-using-langchain-llamaindex-or-custom-retrieval-logic" id="toc-constructing-a-basic-rag-pipeline-using-langchain-llamaindex-or-custom-retrieval-logic" class="nav-link" data-scroll-target="#constructing-a-basic-rag-pipeline-using-langchain-llamaindex-or-custom-retrieval-logic">8.1 Constructing a Basic RAG Pipeline Using LangChain, LlamaIndex, or Custom Retrieval Logic</a></li>
+  <li><a href="#implementing-a-simple-end-to-end-retrieval-and-generation-loop" id="toc-implementing-a-simple-end-to-end-retrieval-and-generation-loop" class="nav-link" data-scroll-target="#implementing-a-simple-end-to-end-retrieval-and-generation-loop">8.2 Implementing a Simple End-to-End Retrieval and Generation Loop</a></li>
+  <li><a href="#identifying-different-packages-to-construct-a-rag-pipeline" id="toc-identifying-different-packages-to-construct-a-rag-pipeline" class="nav-link" data-scroll-target="#identifying-different-packages-to-construct-a-rag-pipeline">8.3 Identifying Different Packages to Construct a RAG Pipeline</a></li>
+  </ul></li>
+  <li><a href="#module-9-selecting-embedding-model" id="toc-module-9-selecting-embedding-model" class="nav-link" data-scroll-target="#module-9-selecting-embedding-model">MODULE 9: SELECTING EMBEDDING MODEL</a>
+  <ul class="collapse">
+  <li><a href="#choosing-the-right-embedding-model-based-on-accuracy-cost-and-latency-trade-offs" id="toc-choosing-the-right-embedding-model-based-on-accuracy-cost-and-latency-trade-offs" class="nav-link" data-scroll-target="#choosing-the-right-embedding-model-based-on-accuracy-cost-and-latency-trade-offs">9.1 Choosing the Right Embedding Model Based on Accuracy, Cost, and Latency Trade-offs</a></li>
+  <li><a href="#comparing-the-effectiveness-of-pretrained-vs-fine-tuned-embedding-models" id="toc-comparing-the-effectiveness-of-pretrained-vs-fine-tuned-embedding-models" class="nav-link" data-scroll-target="#comparing-the-effectiveness-of-pretrained-vs-fine-tuned-embedding-models">9.2 Comparing the Effectiveness of Pretrained vs Fine-tuned Embedding Models</a></li>
+  </ul></li>
+  <li><a href="#module-10-optimizing-chunking-strategies" id="toc-module-10-optimizing-chunking-strategies" class="nav-link" data-scroll-target="#module-10-optimizing-chunking-strategies">MODULE 10: OPTIMIZING CHUNKING STRATEGIES</a>
+  <ul class="collapse">
+  <li><a href="#differentiating-between-fixed-size-and-semantic-chunking-approaches" id="toc-differentiating-between-fixed-size-and-semantic-chunking-approaches" class="nav-link" data-scroll-target="#differentiating-between-fixed-size-and-semantic-chunking-approaches">10.1 Differentiating Between Fixed-Size and Semantic Chunking Approaches</a></li>
+  <li><a href="#optimizing-chunk-size-for-better-retrieval-accuracy-while-minimizing-context-window-usage" id="toc-optimizing-chunk-size-for-better-retrieval-accuracy-while-minimizing-context-window-usage" class="nav-link" data-scroll-target="#optimizing-chunk-size-for-better-retrieval-accuracy-while-minimizing-context-window-usage">10.2 Optimizing Chunk Size for Better Retrieval Accuracy While Minimizing Context-Window Usage</a></li>
+  </ul></li>
+  <li><a href="#module-11-optimizing-retrieval-performance" id="toc-module-11-optimizing-retrieval-performance" class="nav-link" data-scroll-target="#module-11-optimizing-retrieval-performance">MODULE 11: OPTIMIZING RETRIEVAL PERFORMANCE</a>
+  <ul class="collapse">
+  <li><a href="#improving-retrieval-results-using-re-ranking-methods-or-hybrid-search" id="toc-improving-retrieval-results-using-re-ranking-methods-or-hybrid-search" class="nav-link" data-scroll-target="#improving-retrieval-results-using-re-ranking-methods-or-hybrid-search">11.1 Improving Retrieval Results Using Re-Ranking Methods or Hybrid Search</a></li>
+  <li><a href="#tuning-retriever-hyperparameters-to-boost-relevance" id="toc-tuning-retriever-hyperparameters-to-boost-relevance" class="nav-link" data-scroll-target="#tuning-retriever-hyperparameters-to-boost-relevance">11.2 Tuning Retriever Hyperparameters to Boost Relevance</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#quick-reference-key-term-mappings" id="toc-quick-reference-key-term-mappings" class="nav-link" data-scroll-target="#quick-reference-key-term-mappings">QUICK REFERENCE: KEY TERM MAPPINGS</a></li>
+  <li><a href="#key-workflows-to-know-order-the-steps-questions" id="toc-key-workflows-to-know-order-the-steps-questions" class="nav-link" data-scroll-target="#key-workflows-to-know-order-the-steps-questions">KEY WORKFLOWS TO KNOW (Order-the-Steps Questions)</a></li>
+  <li><a href="#scenario-cheatsheet-situational-questions" id="toc-scenario-cheatsheet-situational-questions" class="nav-link" data-scroll-target="#scenario-cheatsheet-situational-questions">SCENARIO CHEATSHEET (Situational Questions)</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="hindi-kalam">RAG</span></h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Study</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Madhav Kadam </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 21, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="retrieval-augmented-generation-rag" class="level1">
+<h1>Retrieval-Augmented Generation (RAG)</h1>
+<hr>
+</section>
+<section id="part-1-mastering-general-concepts-terminology-of-rag" class="level1">
+<h1>PART 1: MASTERING GENERAL CONCEPTS &amp; TERMINOLOGY OF RAG</h1>
+<hr>
+<section id="module-1-introducing-rag" class="level2">
+<h2 class="anchored" data-anchor-id="module-1-introducing-rag">MODULE 1: INTRODUCING RAG</h2>
+<section id="define-retrieval-augmented-generation-rag-and-explain-its-purpose" class="level3">
+<h3 class="anchored" data-anchor-id="define-retrieval-augmented-generation-rag-and-explain-its-purpose">1.1 Define Retrieval-Augmented Generation (RAG) and Explain Its Purpose</h3>
+<p><strong>Definition.</strong> Retrieval-Augmented Generation (RAG) is an architecture that augments a generative language model (LLM) with an external knowledge source at inference time. Instead of relying only on the parameters learned during pretraining, the model first <strong>retrieves</strong> relevant passages from an external corpus (documents, web pages, internal wikis, databases) and then <strong>generates</strong> an answer conditioned on both the user’s query and the retrieved context.</p>
+<p>The term was coined in the 2020 paper <em>“Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks”</em> (Lewis et al., Facebook AI). The original architecture combined a dense retriever (DPR) with a seq2seq generator (BART). Today, “RAG” is used as an umbrella term for any pipeline of the form:</p>
+<pre><code>user query  →  retrieve relevant context  →  prompt LLM with (query + context)  →  generated answer</code></pre>
+<p><strong>Purpose of RAG.</strong> RAG exists to decouple <strong>knowledge</strong> from <strong>language ability</strong>:</p>
+<ul>
+<li>The LLM provides the language-modeling capability (understanding the query, composing fluent answers, reasoning).</li>
+<li>The retrieval system provides the <strong>knowledge</strong>, kept outside the model weights so it can be updated, audited, scoped, and attributed without retraining.</li>
+</ul>
+<p>Concretely, a RAG system is designed to:</p>
+<ol type="1">
+<li>Ground generated answers in verifiable source documents (reducing hallucination).</li>
+<li>Inject knowledge the LLM never saw (private documents, post-training events, domain-specific corpora).</li>
+<li>Provide citations so users can audit each claim.</li>
+<li>Keep responses fresh by updating the index instead of retraining the model.</li>
+<li>Reduce cost compared with continually fine-tuning the LLM on new knowledge.</li>
+</ol>
+<p><strong>Mental model.</strong> Think of the LLM as an extremely well-spoken intern with no internet access, and the retriever as the librarian who hands them the three most relevant pages before they’re asked to write an answer.</p>
+<hr>
+</section>
+<section id="why-rag-enhances-llms-by-retrieving-relevant-external-knowledge" class="level3">
+<h3 class="anchored" data-anchor-id="why-rag-enhances-llms-by-retrieving-relevant-external-knowledge">1.2 Why RAG Enhances LLMs by Retrieving Relevant External Knowledge</h3>
+<p>A standalone LLM stores everything it “knows” inside its weights (parametric memory). This is powerful but has structural limitations that RAG directly addresses.</p>
+<p><strong>Problem 1 — Knowledge cutoff.</strong> An LLM is frozen at the date its training data was collected. Anything that happened after that date is invisible to the model. Retrieving from a continuously updated index gives access to current information without retraining.</p>
+<p><strong>Problem 2 — Hallucination.</strong> When asked about topics on which the LLM has weak or no memory, it fills the gap with plausible-sounding but fabricated content. By placing <strong>actual passages</strong> in the prompt and instructing the model to answer <strong>only from those passages</strong>, RAG converts open-ended generation into a constrained reading-comprehension task, which dramatically reduces fabrication.</p>
+<p><strong>Problem 3 — Lack of attribution.</strong> A pure LLM cannot reliably say <em>where</em> a fact came from. RAG returns explicit document IDs/URLs alongside each retrieved chunk, so the answer can carry citations.</p>
+<p><strong>Problem 4 — Private/proprietary knowledge.</strong> Most enterprise knowledge (internal wikis, contracts, support tickets, codebases) was never in the pretraining corpus. Putting that data behind a retriever is the cheapest, safest, most auditable way to make an LLM “know” it. Sensitive data stays in your store; only the relevant snippets enter the prompt.</p>
+<p><strong>Problem 5 — Long-tail facts.</strong> LLMs memorize popular facts well and rare facts poorly. Retrieval shines on the long tail because a document only needs to exist in the corpus — it does not need to have been seen many times during pretraining.</p>
+<p><strong>Problem 6 — Cost and freshness of fine-tuning.</strong> Continually fine-tuning a multi-billion-parameter model to absorb new knowledge is expensive, slow, brittle (catastrophic forgetting), and not auditable. Updating a vector index is cheap, instant, and revertible.</p>
+<p><strong>Problem 7 — Source control and governance.</strong> You can add, remove, or redact a document from the index in seconds. You cannot easily “remove” a fact from a model’s weights.</p>
+<p><strong>Why retrieval works at all (the mechanism in one line):</strong> the user’s query and each candidate document are projected into the same vector space; documents whose vectors lie closest to the query vector are semantically most related and are surfaced as context.</p>
+<hr>
+</section>
+</section>
+<section id="module-2-comparing-rag-and-traditional-llms" class="level2">
+<h2 class="anchored" data-anchor-id="module-2-comparing-rag-and-traditional-llms">MODULE 2: COMPARING RAG AND TRADITIONAL LLMs</h2>
+<section id="differentiating-rag-based-and-non-retrieval-based-generative-models" class="level3">
+<h3 class="anchored" data-anchor-id="differentiating-rag-based-and-non-retrieval-based-generative-models">2.1 Differentiating RAG-based and Non-Retrieval-Based Generative Models</h3>
+<p>A <em>non-retrieval-based</em> (vanilla) LLM answers using only its parametric memory. A <em>RAG-based</em> system augments the same LLM with a retrieval step that fetches grounding context from an external store.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Dimension</th>
+<th>Vanilla / Non-retrieval LLM</th>
+<th>RAG-based System</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Knowledge source</strong></td>
+<td>Frozen in model weights (parametric)</td>
+<td>External, indexed corpus (non-parametric) + parametric base</td>
+</tr>
+<tr class="even">
+<td><strong>Knowledge freshness</strong></td>
+<td>Stuck at training cutoff</td>
+<td>Updated by re-indexing documents</td>
+</tr>
+<tr class="odd">
+<td><strong>Hallucination risk</strong></td>
+<td>High, especially for long-tail / out-of-domain facts</td>
+<td>Lower; model is constrained to provided context</td>
+</tr>
+<tr class="even">
+<td><strong>Attribution</strong></td>
+<td>None (cannot cite sources reliably)</td>
+<td>Each chunk has an ID/URL → answer can carry citations</td>
+</tr>
+<tr class="odd">
+<td><strong>Updating cost</strong></td>
+<td>Fine-tuning or full retraining</td>
+<td>Re-embed and upsert documents</td>
+</tr>
+<tr class="even">
+<td><strong>Private data</strong></td>
+<td>Must be fine-tuned in (risky, leaks possible)</td>
+<td>Stays in your store; only relevant chunks enter prompt</td>
+</tr>
+<tr class="odd">
+<td><strong>Inference cost per query</strong></td>
+<td>One LLM call</td>
+<td>One (or more) embedding / retrieval call(s) + one LLM call with longer prompt</td>
+</tr>
+<tr class="even">
+<td><strong>Latency</strong></td>
+<td>Lower (single call)</td>
+<td>Higher (retrieval adds ~tens to hundreds of ms; longer prompt → more tokens to process)</td>
+</tr>
+<tr class="odd">
+<td><strong>Determinism / auditability</strong></td>
+<td>Opaque</td>
+<td>Retrieval logs show exactly which chunks were used</td>
+</tr>
+<tr class="even">
+<td><strong>Failure mode</strong></td>
+<td>Confident wrong answers</td>
+<td>“I don’t know” when context is missing or irrelevant</td>
+</tr>
+<tr class="odd">
+<td><strong>Best for</strong></td>
+<td>Style, reasoning, common knowledge</td>
+<td>Knowledge-intensive Q&amp;A, enterprise search, support bots</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Architectural difference in one line.</strong> Vanilla LLM = decoder over a query. RAG = retriever + decoder over (query, retrieved context).</p>
+<p><strong>Key vocabulary distinction.</strong></p>
+<ul>
+<li><strong>Parametric memory</strong> — knowledge baked into model weights during training.</li>
+<li><strong>Non-parametric memory</strong> — knowledge stored outside the model, retrieved on demand. RAG combines both.</li>
+</ul>
+<hr>
+</section>
+<section id="identifying-scenarios-where-rag-is-beneficial-over-standard-llms" class="level3">
+<h3 class="anchored" data-anchor-id="identifying-scenarios-where-rag-is-beneficial-over-standard-llms">2.2 Identifying Scenarios Where RAG Is Beneficial Over Standard LLMs</h3>
+<p>Choose RAG when one or more of these apply. These are the situational stems most likely to appear on the assessment.</p>
+<p><strong>Choose RAG when…</strong></p>
+<ol type="1">
+<li><strong>The knowledge changes often</strong> — news, prices, stock levels, schedules, regulations. The vanilla model goes stale; the index doesn’t.</li>
+<li><strong>The knowledge is private/proprietary</strong> — internal documentation, customer records, contracts, code. You don’t want to fine-tune it into weights you may need to share or revoke.</li>
+<li><strong>Citations are required</strong> — legal, medical, scientific, journalistic, compliance use cases where every claim must be traceable.</li>
+<li><strong>The domain is long-tail or specialized</strong> — rare diseases, niche statutes, obscure APIs. The base model never saw enough of it to memorize.</li>
+<li><strong>Hallucination is costly</strong> — customer-facing support, healthcare, finance. Grounding in retrieved text is the cheapest hallucination defense.</li>
+<li><strong>You need fine-grained access control</strong> — different users should see different subsets of knowledge. Filter the retriever by metadata; the LLM never sees what the user shouldn’t.</li>
+<li><strong>You have a large knowledge base that doesn’t fit in the context window</strong> — millions of pages of documentation. Retrieval picks the few relevant chunks per query.</li>
+<li><strong>You need fast iteration on knowledge</strong> — content changes daily; retraining every day is infeasible.</li>
+</ol>
+<p><strong>Prefer a standard (non-RAG) LLM when…</strong></p>
+<ul>
+<li>The task is purely stylistic or compositional (rewriting, summarization of the input itself, creative writing) — no external facts are needed.</li>
+<li>The required knowledge is general-purpose and stable, well within the model’s training distribution (e.g., “explain how a binary search works”).</li>
+<li>Latency budgets are extremely tight and the answer doesn’t depend on any external corpus.</li>
+<li>The corpus is so small that you can simply paste it into the prompt every time.</li>
+</ul>
+<p><strong>Prefer fine-tuning instead of (or in addition to) RAG when…</strong></p>
+<ul>
+<li>You need to change the <strong>style, format, or behaviour</strong> of the model, not its <strong>knowledge</strong>. RAG cannot teach a model to follow a new output schema or speak in a brand voice; fine-tuning can.</li>
+<li>The knowledge is so deeply intertwined with reasoning that retrieval cannot surface the right chunk reliably.</li>
+</ul>
+<p>In practice, mature systems often combine both: fine-tune for behaviour, RAG for knowledge.</p>
+<hr>
+</section>
+</section>
+<section id="module-3-describing-core-rag-components" class="level2">
+<h2 class="anchored" data-anchor-id="module-3-describing-core-rag-components">MODULE 3: DESCRIBING CORE RAG COMPONENTS</h2>
+<section id="roles-of-the-retriever-retriever-store-and-generator" class="level3">
+<h3 class="anchored" data-anchor-id="roles-of-the-retriever-retriever-store-and-generator">3.1 Roles of the Retriever, Retriever Store, and Generator</h3>
+<p>A RAG system has three core components. Know each by name and by responsibility — the assessment may test this with match-the-pairs or fill-in-the-blank items.</p>
+<p><strong>1. Retriever</strong></p>
+<ul>
+<li><strong>Role:</strong> Given a user query, return the top-k most relevant pieces of context from the store.</li>
+<li><strong>Responsibilities:</strong>
+<ul>
+<li>Convert the query into a representation comparable with stored documents (e.g., dense embedding, sparse term vector, or both).</li>
+<li>Execute a similarity search against the store.</li>
+<li>Apply any filters (metadata, recency, access control).</li>
+<li>Return ranked candidates, optionally with scores.</li>
+</ul></li>
+<li><strong>Implementations:</strong> dense retrievers (BERT-family bi-encoders, OpenAI/Cohere/BGE embedders), sparse retrievers (BM25, TF-IDF), or hybrid combinations.</li>
+</ul>
+<p><strong>2. Retriever store (a.k.a. document store, vector store, index)</strong></p>
+<ul>
+<li><strong>Role:</strong> Persist the corpus in a form the retriever can search efficiently.</li>
+<li><strong>Responsibilities:</strong>
+<ul>
+<li>Store the original document chunks (text + metadata such as source URL, author, timestamp, ACLs).</li>
+<li>Store the indexed representation: an <strong>inverted index</strong> for sparse retrieval (BM25), and/or a <strong>vector index</strong> for dense retrieval (FAISS, Chroma, etc.).</li>
+<li>Support insert / update / delete (so the corpus can evolve) and metadata filtering.</li>
+</ul></li>
+<li><strong>Examples:</strong> FAISS, Chroma, Elasticsearch (BM25), and similar.</li>
+</ul>
+<p><strong>3. Generator</strong></p>
+<ul>
+<li><strong>Role:</strong> Produce the final natural-language answer using the user’s query and the retrieved context.</li>
+<li><strong>Responsibilities:</strong>
+<ul>
+<li>Accept a prompt of the form “Use the following context to answer the question … <context> … <question>”.</question></context></li>
+<li>Synthesize an answer grounded in that context.</li>
+<li>Optionally produce citations referencing the chunks it used.</li>
+<li>Refuse / say “I don’t know” when the context is insufficient (when prompted to do so).</li>
+</ul></li>
+<li><strong>Implementations:</strong> any instruction-following LLM (GPT-4 family, Claude, Llama, Mistral, Gemini, etc.).</li>
+</ul>
+<hr>
+</section>
+<section id="how-these-components-interact-to-improve-response-quality" class="level3">
+<h3 class="anchored" data-anchor-id="how-these-components-interact-to-improve-response-quality">3.2 How These Components Interact to Improve Response Quality</h3>
+<p>The three components form a pipeline. There are two phases — <strong>indexing</strong> (offline) and <strong>querying</strong> (online).</p>
+<p><strong>Indexing phase (offline, run when documents are added or changed):</strong></p>
+<ol type="1">
+<li>Load raw documents from sources (PDFs, HTML, Markdown, databases).</li>
+<li>Split each document into chunks of manageable size.</li>
+<li>Embed each chunk using an embedding model (for dense retrieval) and/or tokenize it for the inverted index (for sparse retrieval).</li>
+<li>Write <code>(chunk_text, embedding, metadata)</code> into the retriever store.</li>
+</ol>
+<p><strong>Query phase (online, runs per user request):</strong></p>
+<ol type="1">
+<li><strong>User query</strong> arrives at the system.</li>
+<li><strong>Retriever</strong> embeds (or tokenizes) the query and searches the store for the top-k most similar chunks.</li>
+<li><strong>Retriever store</strong> returns those chunks plus their metadata.</li>
+<li>The pipeline constructs a <strong>prompt</strong> that contains the system instruction, the retrieved context, and the original query.</li>
+<li><strong>Generator</strong> (the LLM) reads the prompt and produces an answer, optionally with citations.</li>
+<li>The answer is returned to the user.</li>
+</ol>
+<p><strong>How each component improves response quality:</strong></p>
+<ul>
+<li>The <strong>retriever</strong> narrows the LLM’s attention to a small slice of highly relevant text, so the model spends its context window on signal rather than noise.</li>
+<li>The <strong>retriever store</strong>, by being external and updatable, keeps the knowledge fresh, scoped, and auditable.</li>
+<li>The <strong>generator</strong> turns retrieved snippets — which on their own are unstructured passages — into a coherent, contextual, query-specific answer.</li>
+</ul>
+<p><strong>Why all three are necessary.</strong> Drop the retriever and you’re back to a vanilla LLM that hallucinates on long-tail questions. Drop the store and the retriever has nothing to search. Drop the generator and you’ve built a search engine, not a conversational answer.</p>
+<p><strong>Interaction diagram (text form):</strong></p>
+<pre><code>                      ┌──────────────┐
+   user query  ───▶   │  Retriever   │  ──── embed query
+                      └──────┬───────┘
+                             │ similarity search
+                             ▼
+                      ┌──────────────┐
+                      │  Retriever   │  returns top-k chunks
+                      │    Store     │     + metadata
+                      └──────┬───────┘
+                             │
+                             ▼
+                      ┌──────────────┐
+   prompt builder ─▶  │  Generator   │ ──▶ grounded answer
+   (query + chunks)   │    (LLM)     │      (+ citations)
+                      └──────────────┘</code></pre>
+<hr>
+</section>
+</section>
+<section id="module-4-using-vector-databases-embeddings" class="level2">
+<h2 class="anchored" data-anchor-id="module-4-using-vector-databases-embeddings">MODULE 4: USING VECTOR DATABASES &amp; EMBEDDINGS</h2>
+<section id="how-embeddings-work-and-their-role-in-similarity-based-retrieval" class="level3">
+<h3 class="anchored" data-anchor-id="how-embeddings-work-and-their-role-in-similarity-based-retrieval">4.1 How Embeddings Work and Their Role in Similarity-Based Retrieval</h3>
+<p><strong>Definition.</strong> An embedding is a fixed-length numerical vector that represents the meaning of a piece of text (or image, audio, etc.) in a continuous vector space. Texts with similar meaning have vectors that lie close together; unrelated texts lie far apart.</p>
+<p>A good embedding model has the property that:</p>
+<pre><code>similarity(embed("how to reset my password"),
+           embed("steps for changing the login passcode"))   →  high
+
+similarity(embed("how to reset my password"),
+           embed("recipe for chocolate cake"))                →  low</code></pre>
+<p><strong>How they are produced.</strong> An embedding model is a neural network — typically a transformer encoder (e.g., BERT-family) — trained with a contrastive objective so that semantically related text pairs end up nearby in the output vector space and unrelated pairs end up far apart. The encoder reads the text and emits one vector (commonly 384, 768, 1024, 1536, or 3072 dimensions).</p>
+<p><strong>Similarity metrics used at retrieval time:</strong></p>
+<ul>
+<li><strong>Cosine similarity</strong> — <code>(a·b) / (‖a‖·‖b‖)</code>. Measures angle, not magnitude. Range [−1, 1]; higher is more similar. The default for most text embeddings (which are usually L2-normalized).</li>
+<li><strong>Dot product</strong> — <code>a·b</code>. Equivalent to cosine when vectors are normalized; otherwise also reflects magnitude. Common with FAISS for speed.</li>
+<li><strong>Euclidean (L2) distance</strong> — <code>‖a − b‖</code>. Smaller is more similar. Less common for text embeddings.</li>
+</ul>
+<p><strong>Role in similarity-based retrieval (the full mechanism):</strong></p>
+<ol type="1">
+<li><strong>Offline:</strong> embed every chunk in the corpus and store the vectors in a vector index.</li>
+<li><strong>Online:</strong> embed the incoming query with the <strong>same model</strong>.</li>
+<li>Use the similarity metric to find the top-k chunk vectors closest to the query vector.</li>
+<li>Return those chunks as the retrieval result.</li>
+</ol>
+<p>Because the comparison is over <strong>vectors</strong>, the retriever finds passages that are <strong>semantically</strong> related even when they share no surface words with the query — for example, <em>“how do I cancel my subscription”</em> matches a chunk about <em>“terminating membership”</em>.</p>
+<p><strong>Important practical rule.</strong> Always embed queries with the <strong>same embedding model</strong> that was used to embed the documents; otherwise the vectors are not comparable.</p>
+<hr>
+</section>
+<section id="differentiating-various-embedding-models" class="level3">
+<h3 class="anchored" data-anchor-id="differentiating-various-embedding-models">4.2 Differentiating Various Embedding Models</h3>
+<p>Embedding models differ along several axes that matter for choosing the right one (this is also exactly what skill 9.1 will ask you to weigh).</p>
+<p><strong>Differentiating axes:</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Axis</th>
+<th>What it means</th>
+<th>Why it matters</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Modality</strong></td>
+<td>Text-only, multimodal (text + image), code, etc.</td>
+<td>Must match your data.</td>
+</tr>
+<tr class="even">
+<td><strong>Architecture</strong></td>
+<td>Bi-encoder (one vector per text, fast) vs.&nbsp;cross-encoder (joint scoring of query+doc, slow but accurate)</td>
+<td>Bi-encoders for retrieval; cross-encoders for re-ranking.</td>
+</tr>
+<tr class="odd">
+<td><strong>Dimensionality</strong></td>
+<td>384, 768, 1024, 1536, 3072 …</td>
+<td>Higher dim = often higher accuracy, but more storage and slower search.</td>
+</tr>
+<tr class="even">
+<td><strong>Context length</strong></td>
+<td>Max tokens the model accepts</td>
+<td>Caps your chunk size.</td>
+</tr>
+<tr class="odd">
+<td><strong>Language coverage</strong></td>
+<td>English-only vs.&nbsp;multilingual</td>
+<td>Critical for non-English corpora.</td>
+</tr>
+<tr class="even">
+<td><strong>Domain specialization</strong></td>
+<td>General web text vs.&nbsp;code / biomedical / legal</td>
+<td>Domain-specific models often beat general ones in that domain.</td>
+</tr>
+<tr class="odd">
+<td><strong>Provider / hosting</strong></td>
+<td>API (OpenAI, Cohere, Voyage, Google) vs.&nbsp;self-hosted open-weight (BGE, E5, GTE, Instructor, SBERT/MiniLM)</td>
+<td>Trade off cost, latency, privacy.</td>
+</tr>
+<tr class="even">
+<td><strong>Licensing</strong></td>
+<td>Commercial-use? On-prem allowed?</td>
+<td>Matters for enterprise.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Two important model families:</strong></p>
+<ul>
+<li><strong>Bi-encoder (a.k.a. dual encoder).</strong> Encodes query and document independently into vectors; similarity is computed by a cheap dot product. Used as the actual retriever because the document vectors can be pre-computed and indexed. Examples: SBERT/MiniLM, BGE, E5, GTE, OpenAI <code>text-embedding-3-*</code>, Cohere <code>embed-*</code>.</li>
+<li><strong>Cross-encoder.</strong> Takes (query, document) as a single input and outputs a relevance score directly. Far more accurate but cannot pre-index — it must run a forward pass per candidate. Used for <strong>re-ranking</strong> the top-N from a bi-encoder. Examples: <code>cross-encoder/ms-marco-MiniLM</code>, BGE-reranker, Cohere Rerank.</li>
+</ul>
+<p><strong>General vs.&nbsp;specialized.</strong> A general embedding model trained on broad web text is a safe default. For very technical corpora (legal contracts, medical literature, source code), a domain-specialized embedder — or a general embedder <strong>fine-tuned</strong> on your domain — typically gives meaningfully better retrieval (covered in 9.2).</p>
+<p><strong>One-line picker.</strong> Start with a strong general bi-encoder, profile recall on your own evaluation set, and only switch to a heavier / domain-specific / fine-tuned model when the numbers demand it.</p>
+<hr>
+</section>
+</section>
+<section id="module-5-applying-indexing-techniques" class="level2">
+<h2 class="anchored" data-anchor-id="module-5-applying-indexing-techniques">MODULE 5: APPLYING INDEXING TECHNIQUES</h2>
+<section id="comparing-bm25-faiss-and-chroma-for-indexing-and-retrieving-documents" class="level3">
+<h3 class="anchored" data-anchor-id="comparing-bm25-faiss-and-chroma-for-indexing-and-retrieving-documents">5.1 Comparing BM25, FAISS, and Chroma for Indexing and Retrieving Documents</h3>
+<p>These three are the canonical names the syllabus calls out. They are <em>not</em> all the same kind of thing — knowing the category each falls into is the most common assessment trap.</p>
+<p><strong>BM25 — sparse, lexical, keyword-based.</strong></p>
+<ul>
+<li><strong>Category:</strong> A <em>ranking function</em> (not a database) built on top of an <strong>inverted index</strong> of terms. Implementations live in Lucene/Elasticsearch/OpenSearch, Whoosh, <code>rank_bm25</code>, etc.</li>
+<li><strong>How it works:</strong> For each document it stores which terms occur and how often. At query time, it scores each document by <code>Σ IDF(term) · TF-normalization(term, doc)</code>, rewarding documents that contain rare query terms many times while penalising over-long documents.</li>
+<li><strong>Strengths:</strong> No training; instantaneous to update; very fast; transparent (you can see exactly which terms matched); excellent on queries that rely on rare keywords, names, IDs, error codes.</li>
+<li><strong>Weaknesses:</strong> Purely lexical. A query about <em>“car”</em> will not match a document that only talks about <em>“automobile”</em>. No semantic understanding, no synonym handling, no paraphrase robustness.</li>
+<li><strong>Use it when:</strong> keywords matter (codes, legal terms, product SKUs); when you have no embeddings; or as the sparse half of a hybrid retriever.</li>
+</ul>
+<p><strong>FAISS — dense vector similarity search library (Facebook AI Similarity Search).</strong></p>
+<ul>
+<li><strong>Category:</strong> A <em>library</em> (not a managed database) for fast similarity search over large vector collections. You give it vectors; you get back nearest neighbors.</li>
+<li><strong>How it works:</strong> Builds an Approximate Nearest Neighbor (ANN) index over your embeddings. Supports many index types: flat (exact), IVF (Inverted File — clusters vectors and only searches a few clusters per query), HNSW (Hierarchical Navigable Small World graph — graph-based ANN, very fast), PQ (Product Quantization — compresses vectors to save memory).</li>
+<li><strong>Strengths:</strong> Extremely fast on millions–billions of vectors; many index types to trade speed for accuracy; runs on CPU or GPU; battle-tested.</li>
+<li><strong>Weaknesses:</strong> Pure search library — no persistence, no metadata filtering, no REST API, no built-in document storage. You have to maintain the original text and metadata yourself.</li>
+<li><strong>Use it when:</strong> you need maximum-performance ANN search and are willing to wire up your own storage / serving layer.</li>
+</ul>
+<p><strong>Chroma — dense vector database.</strong></p>
+<ul>
+<li><strong>Category:</strong> A <em>vector database</em> — an end-to-end system that stores embeddings together with the original text and metadata, and exposes a simple API.</li>
+<li><strong>How it works:</strong> Wraps an ANN backend (e.g., HNSW) and adds persistence, collections, metadata filtering, and a Python-first API. Includes a default embedding function so you can hand it raw text.</li>
+<li><strong>Strengths:</strong> Easy to get started; persists data; metadata filters; embedding function bundled; designed specifically for LLM/RAG workflows.</li>
+<li><strong>Weaknesses:</strong> Less raw throughput than tuned FAISS at very large scale; relatively young; fewer ANN knobs.</li>
+<li><strong>Use it when:</strong> you want a one-stop vector DB for a RAG prototype or small-to-medium production workload, with minimal plumbing.</li>
+</ul>
+<p><strong>Side-by-side comparison:</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Aspect</th>
+<th>BM25</th>
+<th>FAISS</th>
+<th>Chroma</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>What it is</strong></td>
+<td>Lexical ranking function over an inverted index</td>
+<td>ANN search library over dense vectors</td>
+<td>Vector database</td>
+</tr>
+<tr class="even">
+<td><strong>Representation</strong></td>
+<td>Sparse term vectors (TF-IDF-like)</td>
+<td>Dense embeddings</td>
+<td>Dense embeddings (+ stored text/metadata)</td>
+</tr>
+<tr class="odd">
+<td><strong>Matches on</strong></td>
+<td>Exact / stemmed keyword overlap</td>
+<td>Semantic similarity</td>
+<td>Semantic similarity</td>
+</tr>
+<tr class="even">
+<td><strong>Handles synonyms / paraphrase</strong></td>
+<td>No</td>
+<td>Yes (depends on embeddings)</td>
+<td>Yes (depends on embeddings)</td>
+</tr>
+<tr class="odd">
+<td><strong>Stores documents/metadata</strong></td>
+<td>Yes (e.g., via Lucene)</td>
+<td>No (vectors only)</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td><strong>Metadata filtering</strong></td>
+<td>Yes</td>
+<td>Manual / not built-in</td>
+<td>Built-in</td>
+</tr>
+<tr class="odd">
+<td><strong>Update cost</strong></td>
+<td>Cheap</td>
+<td>Cheap (or rebuild for some index types)</td>
+<td>Cheap</td>
+</tr>
+<tr class="even">
+<td><strong>Best at</strong></td>
+<td>Rare keywords, IDs, names</td>
+<td>Massive-scale ANN</td>
+<td>Easy-to-use RAG store</td>
+</tr>
+<tr class="odd">
+<td><strong>Typical role in RAG</strong></td>
+<td>Sparse retriever / hybrid component</td>
+<td>Underlying ANN engine</td>
+<td>Drop-in vector store</td>
+</tr>
+</tbody>
+</table>
+<p><strong>One-line rule.</strong> BM25 = keywords. FAISS = a fast ANN engine you wrap yourself. Chroma = a friendly vector DB built on top of an ANN engine.</p>
+<hr>
+</section>
+<section id="how-indexing-strategies-affect-retrieval-speed-and-accuracy" class="level3">
+<h3 class="anchored" data-anchor-id="how-indexing-strategies-affect-retrieval-speed-and-accuracy">5.2 How Indexing Strategies Affect Retrieval Speed and Accuracy</h3>
+<p>Every index choice is a point on the <strong>speed / accuracy / memory</strong> triangle. You cannot maximize all three at once.</p>
+<p><strong>Flat (exact) index.</strong> - <strong>How:</strong> Stores all vectors as-is; at query time computes similarity to every vector (brute force). - <strong>Accuracy:</strong> Perfect (top-k is exact). - <strong>Speed:</strong> Slow — <code>O(N · d)</code> per query, where N = number of vectors, d = dimensionality. - <strong>Memory:</strong> Highest — every full vector stored. - <strong>Use when:</strong> Corpus is small (≲10⁵ vectors) or you need a ground-truth baseline to evaluate ANN indexes against.</p>
+<p><strong>IVF (Inverted File) index.</strong> - <strong>How:</strong> Cluster the vectors into <code>nlist</code> partitions (centroids learned via k-means). At query time, look up the query’s nearest <code>nprobe</code> centroids and search only inside those partitions. - <strong>Accuracy:</strong> Tunable via <code>nprobe</code>. Higher <code>nprobe</code> = more clusters searched = higher recall, slower. - <strong>Speed:</strong> Much faster than flat (sub-linear in N). - <strong>Memory:</strong> Same as flat unless combined with PQ. - <strong>Use when:</strong> Mid-to-large corpora where you can afford a small recall loss for a big speedup.</p>
+<p><strong>HNSW (Hierarchical Navigable Small World) graph index.</strong> - <strong>How:</strong> Builds a multi-layer graph where each node is a vector connected to its nearest neighbors. Search greedily walks the graph from the top layer down. - <strong>Accuracy:</strong> Very high recall, often &gt;95% of exact at sensible parameters. - <strong>Speed:</strong> Extremely fast at query time — logarithmic-ish. - <strong>Memory:</strong> Higher than IVF because the graph itself is stored. - <strong>Use when:</strong> You want the best speed-vs-accuracy default. Used under the hood by Chroma and many vector DBs. - <strong>Knobs:</strong> <code>M</code> (graph degree — higher = more accurate but more memory) and <code>efSearch</code> (search effort at query time — higher = higher recall but slower).</p>
+<p><strong>Product Quantization (PQ) / IVF-PQ.</strong> - <strong>How:</strong> Compress each vector into a short code by quantizing sub-vectors against learned codebooks. Drastically reduces memory and speeds up distance computations. - <strong>Accuracy:</strong> Lossy — recall drops with stronger compression. - <strong>Speed:</strong> Very fast, especially when memory-bound. - <strong>Memory:</strong> The lowest — vectors can be 8–32× smaller. - <strong>Use when:</strong> Corpus is huge (10⁸+ vectors) and memory is the bottleneck.</p>
+<p><strong>Inverted index (BM25).</strong> - <strong>Speed:</strong> Very fast (postings lists per term). - <strong>Accuracy:</strong> Exact for the lexical scoring function. But its “accuracy” relative to <em>user intent</em> is limited because it only matches surface terms. - <strong>Memory:</strong> Modest — proportional to vocabulary × postings, far less than dense vectors.</p>
+<p><strong>How each strategy trades off — summary table:</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Index</th>
+<th>Recall vs.&nbsp;exact</th>
+<th>Query speed</th>
+<th>Memory</th>
+<th>Update friendliness</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Flat (brute force)</td>
+<td>1.0</td>
+<td>Slow</td>
+<td>Highest</td>
+<td>Trivial</td>
+</tr>
+<tr class="even">
+<td>IVF (flat)</td>
+<td>tunable, ~0.9–0.99</td>
+<td>Fast</td>
+<td>Same as flat</td>
+<td>Re-train centroids occasionally</td>
+</tr>
+<tr class="odd">
+<td>IVF-PQ</td>
+<td>lower (lossy)</td>
+<td>Very fast</td>
+<td>Very low</td>
+<td>Same</td>
+</tr>
+<tr class="even">
+<td>HNSW</td>
+<td>very high (&gt;0.95)</td>
+<td>Very fast</td>
+<td>High (graph)</td>
+<td>Incremental inserts supported</td>
+</tr>
+<tr class="odd">
+<td>BM25 (inverted)</td>
+<td>exact for lexical, but only lexical</td>
+<td>Very fast</td>
+<td>Low–medium</td>
+<td>Trivial inserts</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Practical guidance:</strong></p>
+<ul>
+<li>Small corpus (a few thousand chunks): a flat index is fine; you’ll never notice the cost.</li>
+<li>Medium corpus (10⁵–10⁷ chunks): HNSW (used by Chroma and most vector DBs) is the default sweet spot.</li>
+<li>Huge corpus (10⁸+ chunks): IVF-PQ or similar memory-aware index; accept a modest recall hit for tractable memory.</li>
+<li>Heavy keyword / ID lookups: keep BM25 alongside (hybrid — see 11.1).</li>
+</ul>
+<p><strong>The core trade-off in one sentence:</strong> moving from exact to approximate search buys you orders of magnitude in speed and memory at the cost of a small, controllable drop in recall.</p>
+<hr>
+</section>
+</section>
+<section id="module-6-identifying-rag-pipeline-types" class="level2">
+<h2 class="anchored" data-anchor-id="module-6-identifying-rag-pipeline-types">MODULE 6: IDENTIFYING RAG PIPELINE TYPES</h2>
+<section id="identifying-different-retrieval-strategies" class="level3">
+<h3 class="anchored" data-anchor-id="identifying-different-retrieval-strategies">6.1 Identifying Different Retrieval Strategies</h3>
+<p>“Retrieval strategy” = how the retriever decides which chunks to return. The main families, ordered from simplest to most elaborate:</p>
+<p><strong>1. Sparse / lexical retrieval (e.g., BM25, TF-IDF).</strong> Matches on terms in the query and document. Excellent on rare keywords (names, codes, identifiers); blind to synonyms and paraphrases.</p>
+<p><strong>2. Dense / semantic retrieval (embedding-based).</strong> Both query and documents are embedded with the same model; nearest-neighbor search returns semantically related chunks. Handles paraphrase and synonyms; can miss exact-keyword matches that don’t show up clearly in vector space.</p>
+<p><strong>3. Hybrid retrieval (sparse + dense).</strong> Run both retrievers in parallel and merge their results — commonly by score fusion (e.g., weighted sum after normalisation, or Reciprocal Rank Fusion). Captures the strengths of both: rare-term precision from BM25, semantic recall from embeddings. The default “strong” baseline in modern RAG.</p>
+<p><strong>4. Retrieve-then-rerank (two-stage retrieval).</strong> First stage: a fast bi-encoder (and/or BM25) returns a generous top-N (say 50–100). Second stage: a slow but accurate cross-encoder re-scores those N candidates and keeps the top-k (say 5–10) for the LLM. Big quality win for small latency cost because the cross-encoder only runs on N items, not the full corpus.</p>
+<p><strong>5. Filtered / metadata-aware retrieval.</strong> Apply structured filters (date range, document type, language, tenant, ACL) <strong>before or alongside</strong> the similarity search, so the LLM only sees chunks the user is allowed to see and that are relevant in time/source.</p>
+<p><strong>6. Query transformation strategies.</strong> Modify the query before retrieval to improve recall: - <strong>Query rewriting</strong> — the LLM rewrites a messy user question into a cleaner search query. - <strong>Multi-query</strong> — the LLM generates several paraphrased queries; results from all are merged. - <strong>Step-back / decomposition</strong> — for complex questions, break the query into sub-questions and retrieve for each. - <strong>HyDE (Hypothetical Document Embeddings)</strong> — ask the LLM to draft a plausible answer first, then embed and retrieve using that draft.</p>
+<p><strong>7. Multi-hop / iterative retrieval.</strong> The system retrieves, reads, decides what’s still missing, formulates a follow-up query, and retrieves again — repeating until enough evidence is assembled. Needed for questions that require chaining facts across documents.</p>
+<hr>
+</section>
+<section id="selecting-the-appropriate-retrieval-method-based-on-the-use-case" class="level3">
+<h3 class="anchored" data-anchor-id="selecting-the-appropriate-retrieval-method-based-on-the-use-case">6.2 Selecting the Appropriate Retrieval Method Based on the Use Case</h3>
+<p>A short decision guide; the assessment likes situational questions of the form <em>“Given this use case, which retrieval strategy fits best?”</em></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Use case / signal</th>
+<th>Recommended strategy</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Lookups dominated by exact codes, names, error IDs</td>
+<td><strong>BM25 / sparse</strong> (or hybrid leaning on BM25)</td>
+<td>Keywords are the strongest signal; embeddings can dilute them.</td>
+</tr>
+<tr class="even">
+<td>Free-form natural-language questions over prose</td>
+<td><strong>Dense / semantic</strong></td>
+<td>Handles paraphrase, synonyms, conceptual matches.</td>
+</tr>
+<tr class="odd">
+<td>Mixed traffic (some keyword, some natural language)</td>
+<td><strong>Hybrid (BM25 + dense)</strong></td>
+<td>Best general-purpose default.</td>
+</tr>
+<tr class="even">
+<td>Top-k must be tight and highly precise (long, expensive LLM call)</td>
+<td><strong>Retrieve-then-rerank</strong> with a cross-encoder</td>
+<td>Cross-encoder cleans up the top of the list.</td>
+</tr>
+<tr class="odd">
+<td>Multi-tenant, permissioned, or time-sensitive corpus</td>
+<td><strong>Filtered retrieval</strong> (dense or hybrid + metadata filters)</td>
+<td>Enforces access control and recency at the retriever.</td>
+</tr>
+<tr class="even">
+<td>Vague or messy user queries</td>
+<td>Add <strong>query rewriting / multi-query / HyDE</strong> in front of any base retriever</td>
+<td>Improves recall on poorly formed queries.</td>
+</tr>
+<tr class="odd">
+<td>Questions whose answer requires combining facts from multiple documents</td>
+<td><strong>Multi-hop / iterative retrieval</strong></td>
+<td>Single-shot retrieval cannot assemble the chain.</td>
+</tr>
+<tr class="even">
+<td>Tiny corpus (≲ a few hundred chunks)</td>
+<td>Just put it all in the prompt; or flat dense index</td>
+<td>Retrieval gymnastics aren’t needed.</td>
+</tr>
+<tr class="odd">
+<td>Huge corpus (10⁸+ chunks)</td>
+<td>Dense (IVF-PQ / HNSW) + hybrid + rerank</td>
+<td>Need ANN for scale, BM25 for precision, rerank for quality.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Selection heuristic in three questions:</strong></p>
+<ol type="1">
+<li>Do my users search with keywords or with natural language? → leans BM25 vs dense.</li>
+<li>Is the top of the result list good enough as-is, or do I need to clean it up? → decides whether to add a re-ranker.</li>
+<li>Does a single retrieval round contain enough evidence, or do I need to chain? → decides single-shot vs multi-hop.</li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="module-7-evaluating-retrieval-performance" class="level2">
+<h2 class="anchored" data-anchor-id="module-7-evaluating-retrieval-performance">MODULE 7: EVALUATING RETRIEVAL PERFORMANCE</h2>
+<section id="defining-precisionk-recallk-mrr-and-f1-score" class="level3">
+<h3 class="anchored" data-anchor-id="defining-precisionk-recallk-mrr-and-f1-score">7.1 Defining Precision@K, Recall@K, MRR, and F1-score</h3>
+<p>For each query, you have a <strong>ground-truth set of relevant documents</strong> and a <strong>ranked list of K returned documents</strong>.</p>
+<p>Let: - <code>K</code> = number of results examined. - <code>relevant@K</code> = number of returned items in the top-K that are actually relevant. - <code>total_relevant</code> = total number of relevant documents that exist for this query in the corpus.</p>
+<p><strong>Precision@K</strong> — <em>Of the K results I returned, what fraction are actually relevant?</em></p>
+<pre><code>Precision@K = relevant@K / K</code></pre>
+<ul>
+<li>Measures <strong>how clean</strong> the top-K list is.</li>
+<li>Range: [0, 1]. Higher is better.</li>
+<li>Insensitive to documents you missed outside the top-K.</li>
+<li>Use when the cost of showing irrelevant results is high (e.g., you can only feed 5 chunks to the LLM and noise hurts the answer).</li>
+</ul>
+<p><strong>Recall@K</strong> — <em>Of all the relevant documents that exist, what fraction did I surface in the top-K?</em></p>
+<pre><code>Recall@K = relevant@K / total_relevant</code></pre>
+<ul>
+<li>Measures <strong>how complete</strong> the retrieval is.</li>
+<li>Range: [0, 1]. Higher is better.</li>
+<li>Insensitive to how many irrelevant items are mixed in.</li>
+<li>Use when missing a relevant document is costly (e.g., legal discovery, compliance search, or any RAG step where a re-ranker / LLM downstream can ignore noise but cannot recover a missing fact).</li>
+</ul>
+<p><strong>MRR — Mean Reciprocal Rank.</strong> <em>On average, how high in the ranking does the first relevant result appear?</em></p>
+<p>For a single query whose first relevant result is at rank <code>rᵢ</code>, the reciprocal rank is <code>1/rᵢ</code> (and 0 if no relevant result appears). Averaged over a set of Q queries:</p>
+<pre><code>MRR = (1/Q) · Σᵢ (1 / rᵢ)</code></pre>
+<ul>
+<li>Range: [0, 1]. 1.0 means the first hit is always relevant; 0.5 means it’s typically at rank 2; etc.</li>
+<li>Cares only about the <strong>rank of the first</strong> relevant result, not how many relevant results follow.</li>
+<li>Use when there is essentially <strong>one correct answer</strong> per query (factoid QA, “find the right document”) and where the user only looks at / the LLM only uses the very top result.</li>
+</ul>
+<p><strong>F1-score (in retrieval).</strong> <em>Harmonic mean of precision and recall — a single number that punishes imbalance between the two.</em></p>
+<pre><code>F1 = 2 · (Precision · Recall) / (Precision + Recall)</code></pre>
+<ul>
+<li>Range: [0, 1]. Higher is better.</li>
+<li>Variant most relevant here: <strong>F1@K</strong> uses Precision@K and Recall@K.</li>
+<li>Useful when you want a <strong>single metric</strong> that balances both, and don’t want a system that wins on recall by returning the entire corpus or wins on precision by returning one obvious result.</li>
+</ul>
+<p><strong>Quick numeric example.</strong> Suppose 6 relevant documents exist for a query, you return K=5, and 3 of the 5 are relevant, with the first relevant one at rank 2.</p>
+<ul>
+<li>Precision@5 = 3/5 = 0.60</li>
+<li>Recall@5 = 3/6 = 0.50</li>
+<li>Reciprocal Rank for this query = 1/2 = 0.50</li>
+<li>F1@5 = 2 · 0.60 · 0.50 / (0.60 + 0.50) ≈ 0.545</li>
+</ul>
+<hr>
+</section>
+<section id="choosing-the-right-metric-based-on-task-requirements" class="level3">
+<h3 class="anchored" data-anchor-id="choosing-the-right-metric-based-on-task-requirements">7.2 Choosing the Right Metric Based on Task Requirements</h3>
+<p>Pick the metric whose definition matches the cost structure of your task.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Task / requirement</th>
+<th>Best primary metric</th>
+<th>Reasoning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Factoid QA</strong> — one document holds the answer; user only needs the first hit</td>
+<td><strong>MRR</strong></td>
+<td>Captures “did the right thing come up first?”</td>
+</tr>
+<tr class="even">
+<td><strong>Top-k feeds an LLM with a tight context window</strong> — every wasted slot hurts the answer</td>
+<td><strong>Precision@K</strong></td>
+<td>Penalises irrelevant chunks crowding out good ones.</td>
+</tr>
+<tr class="odd">
+<td><strong>Legal / compliance / discovery</strong> — missing a relevant doc is unacceptable</td>
+<td><strong>Recall@K</strong> (often with large K)</td>
+<td>Penalises gaps in coverage.</td>
+</tr>
+<tr class="even">
+<td><strong>Balanced quality with no clear asymmetry between false positives and false negatives</strong></td>
+<td><strong>F1@K</strong></td>
+<td>Single score balancing precision and recall.</td>
+</tr>
+<tr class="odd">
+<td><strong>Cost of false positives ≠ cost of false negatives</strong></td>
+<td>Use Precision and Recall <strong>separately</strong>, not F1</td>
+<td>F1 weights them equally; report both so the trade-off is visible.</td>
+</tr>
+<tr class="even">
+<td><strong>Comparing two retrievers / picking K</strong></td>
+<td>Sweep K and plot Precision@K, Recall@K, MRR</td>
+<td>Lets you see the actual trade-off curve, not just one point.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Picking K itself:</strong></p>
+<ul>
+<li>Small K (3–5) when downstream LLM context is tight or each chunk is expensive.</li>
+<li>Larger K (20–100) when followed by a re-ranker that will trim the list.</li>
+<li>For Recall@K specifically, K must be large enough that meaningful coverage is achievable.</li>
+</ul>
+<p><strong>End-to-end vs.&nbsp;retriever-only evaluation.</strong> Precision@K / Recall@K / MRR / F1 evaluate <strong>retrieval in isolation</strong>. A high-recall retriever can still feed a bad final answer if the LLM ignores the context. In practice, measure both: retrieval metrics for the retriever, plus answer-level metrics (exact match, F1 over answer tokens, or human/LLM grading) for the full system.</p>
+<hr>
+</section>
+</section>
+</section>
+<section id="part-2-implementing-rag-in-practice" class="level1">
+<h1>PART 2: IMPLEMENTING RAG IN PRACTICE</h1>
+<hr>
+<section id="module-8-building-a-rag-pipeline" class="level2">
+<h2 class="anchored" data-anchor-id="module-8-building-a-rag-pipeline">MODULE 8: BUILDING A RAG PIPELINE</h2>
+<section id="constructing-a-basic-rag-pipeline-using-langchain-llamaindex-or-custom-retrieval-logic" class="level3">
+<h3 class="anchored" data-anchor-id="constructing-a-basic-rag-pipeline-using-langchain-llamaindex-or-custom-retrieval-logic">8.1 Constructing a Basic RAG Pipeline Using LangChain, LlamaIndex, or Custom Retrieval Logic</h3>
+<p>A basic RAG pipeline always has the same six logical stages, regardless of which framework you use:</p>
+<ol type="1">
+<li><strong>Load</strong> documents from a source.</li>
+<li><strong>Split</strong> them into chunks.</li>
+<li><strong>Embed</strong> each chunk and <strong>store</strong> it in a vector store.</li>
+<li><strong>Retrieve</strong> top-k chunks for an incoming query.</li>
+<li><strong>Prompt</strong> the LLM with the query + retrieved context.</li>
+<li><strong>Generate</strong> the answer.</li>
+</ol>
+<p><strong>Skeleton in LangChain (Python):</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> langchain_community.document_loaders <span class="im">import</span> TextLoader</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> langchain.text_splitter <span class="im">import</span> RecursiveCharacterTextSplitter</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> langchain_openai <span class="im">import</span> OpenAIEmbeddings, ChatOpenAI</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> langchain_community.vectorstores <span class="im">import</span> Chroma</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> langchain.chains <span class="im">import</span> RetrievalQA</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>docs <span class="op">=</span> TextLoader(<span class="st">"docs/handbook.txt"</span>).load()</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>splitter <span class="op">=</span> RecursiveCharacterTextSplitter(chunk_size<span class="op">=</span><span class="dv">500</span>, chunk_overlap<span class="op">=</span><span class="dv">50</span>)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>chunks <span class="op">=</span> splitter.split_documents(docs)</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>vectorstore <span class="op">=</span> Chroma.from_documents(</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    documents<span class="op">=</span>chunks,</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    embedding<span class="op">=</span>OpenAIEmbeddings(model<span class="op">=</span><span class="st">"text-embedding-3-small"</span>),</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    persist_directory<span class="op">=</span><span class="st">"./chroma_db"</span>,</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>retriever <span class="op">=</span> vectorstore.as_retriever(search_kwargs<span class="op">=</span>{<span class="st">"k"</span>: <span class="dv">4</span>})</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>qa <span class="op">=</span> RetrievalQA.from_chain_type(</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>    llm<span class="op">=</span>ChatOpenAI(model<span class="op">=</span><span class="st">"gpt-4o-mini"</span>, temperature<span class="op">=</span><span class="dv">0</span>),</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>    retriever<span class="op">=</span>retriever,</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>    return_source_documents<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>answer <span class="op">=</span> qa.invoke({<span class="st">"query"</span>: <span class="st">"What is the parental-leave policy?"</span>})</span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(answer[<span class="st">"result"</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Skeleton in LlamaIndex (Python):</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> llama_index.core <span class="im">import</span> SimpleDirectoryReader, VectorStoreIndex, Settings</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> llama_index.embeddings.openai <span class="im">import</span> OpenAIEmbedding</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> llama_index.llms.openai <span class="im">import</span> OpenAI</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>Settings.embed_model <span class="op">=</span> OpenAIEmbedding(model<span class="op">=</span><span class="st">"text-embedding-3-small"</span>)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>Settings.llm         <span class="op">=</span> OpenAI(model<span class="op">=</span><span class="st">"gpt-4o-mini"</span>, temperature<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>documents <span class="op">=</span> SimpleDirectoryReader(<span class="st">"docs/"</span>).load_data()</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>index     <span class="op">=</span> VectorStoreIndex.from_documents(documents)</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>query_engine <span class="op">=</span> index.as_query_engine(similarity_top_k<span class="op">=</span><span class="dv">4</span>)</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(query_engine.query(<span class="st">"What is the parental-leave policy?"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Skeleton with custom retrieval logic (no framework):</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> openai <span class="im">import</span> OpenAI</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> OpenAI()</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> embed(text: <span class="bu">str</span>) <span class="op">-&gt;</span> np.ndarray:</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    v <span class="op">=</span> client.embeddings.create(model<span class="op">=</span><span class="st">"text-embedding-3-small"</span>, <span class="bu">input</span><span class="op">=</span>text).data[<span class="dv">0</span>].embedding</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.array(v, dtype<span class="op">=</span>np.float32)</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> chunk(text: <span class="bu">str</span>, size: <span class="bu">int</span> <span class="op">=</span> <span class="dv">500</span>, overlap: <span class="bu">int</span> <span class="op">=</span> <span class="dv">50</span>) <span class="op">-&gt;</span> <span class="bu">list</span>[<span class="bu">str</span>]:</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    out, i <span class="op">=</span> [], <span class="dv">0</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> i <span class="op">&lt;</span> <span class="bu">len</span>(text):</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>        out.append(text[i : i <span class="op">+</span> size])</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>        i <span class="op">+=</span> size <span class="op">-</span> overlap</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> out</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"docs/handbook.txt"</span>) <span class="im">as</span> f:</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>    chunks <span class="op">=</span> chunk(f.read())</span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>chunk_vecs <span class="op">=</span> np.stack([embed(c) <span class="cf">for</span> c <span class="kw">in</span> chunks])</span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> retrieve(query: <span class="bu">str</span>, k: <span class="bu">int</span> <span class="op">=</span> <span class="dv">4</span>) <span class="op">-&gt;</span> <span class="bu">list</span>[<span class="bu">str</span>]:</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>    q <span class="op">=</span> embed(query)</span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>    sims <span class="op">=</span> chunk_vecs <span class="op">@</span> q <span class="op">/</span> (np.linalg.norm(chunk_vecs, axis<span class="op">=</span><span class="dv">1</span>) <span class="op">*</span> np.linalg.norm(q) <span class="op">+</span> <span class="fl">1e-12</span>)</span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>    top <span class="op">=</span> np.argsort(<span class="op">-</span>sims)[:k]</span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [chunks[i] <span class="cf">for</span> i <span class="kw">in</span> top]</span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> answer(query: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>    context <span class="op">=</span> <span class="st">"</span><span class="ch">\n\n</span><span class="st">"</span>.join(retrieve(query))</span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>    prompt  <span class="op">=</span> (</span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Answer the question using ONLY the context below. "</span></span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a>        <span class="st">"If the answer is not in the context, say you don't know.</span><span class="ch">\n\n</span><span class="st">"</span></span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"CONTEXT:</span><span class="ch">\n</span><span class="sc">{</span>context<span class="sc">}</span><span class="ch">\n\n</span><span class="ss">QUESTION: </span><span class="sc">{</span>query<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a>    resp <span class="op">=</span> client.chat.completions.create(</span>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a>        model<span class="op">=</span><span class="st">"gpt-4o-mini"</span>,</span>
+<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a>        messages<span class="op">=</span>[{<span class="st">"role"</span>: <span class="st">"user"</span>, <span class="st">"content"</span>: prompt}],</span>
+<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a>        temperature<span class="op">=</span><span class="dv">0</span>,</span>
+<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> resp.choices[<span class="dv">0</span>].message.content</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>All three implementations execute the same six logical stages — only the syntactic wrapping differs.</p>
+<hr>
+</section>
+<section id="implementing-a-simple-end-to-end-retrieval-and-generation-loop" class="level3">
+<h3 class="anchored" data-anchor-id="implementing-a-simple-end-to-end-retrieval-and-generation-loop">8.2 Implementing a Simple End-to-End Retrieval and Generation Loop</h3>
+<p>The minimum viable RAG loop, broken into its ordered steps. Memorize the order — assessment items often ask you to reorder these.</p>
+<pre><code>1. INGEST
+   1a. Load raw documents from source.
+   1b. Clean / normalize text (remove boilerplate, fix encoding).
+   1c. Split into chunks (size and overlap chosen — see Module 10).
+   1d. Embed each chunk with the embedding model.
+   1e. Upsert (chunk_text, embedding, metadata) into the vector store.
+
+2. QUERY
+   2a. User submits a question.
+   2b. (Optional) Rewrite or expand the query.
+   2c. Embed the query with the SAME embedding model.
+   2d. Search the vector store for top-k nearest chunks.
+   2e. (Optional) Apply metadata filters / re-rank.
+
+3. GENERATE
+   3a. Build a prompt: system instructions + retrieved context + user question.
+   3b. Call the LLM.
+   3c. Parse and return the answer (optionally with citations to chunk IDs).</code></pre>
+<p><strong>Minimal end-to-end loop (framework-agnostic pseudocode):</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> rag_answer(question: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    q_emb   <span class="op">=</span> embed(question)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    chunks  <span class="op">=</span> vector_store.search(q_emb, k<span class="op">=</span><span class="dv">4</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    context <span class="op">=</span> <span class="st">"</span><span class="ch">\n\n</span><span class="st">"</span>.join(c.text <span class="cf">for</span> c <span class="kw">in</span> chunks)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    prompt  <span class="op">=</span> build_prompt(question, context)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> llm.generate(prompt)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Sample prompt template (a strong default):</strong></p>
+<pre><code>You are a helpful assistant. Use ONLY the context below to answer the question.
+If the answer is not in the context, reply: "I don't know based on the provided context."
+Cite the source IDs in square brackets when you use information from a chunk.
+
+CONTEXT:
+[1] {chunk_1_text}
+[2] {chunk_2_text}
+[3] {chunk_3_text}
+
+QUESTION: {user_question}
+
+ANSWER:</code></pre>
+<p><strong>What each step contributes to quality.</strong></p>
+<ul>
+<li>Cleaning prevents boilerplate (nav bars, footers) from drowning out real content.</li>
+<li>Chunking decides how much of the surrounding context travels with each retrieved hit.</li>
+<li>Same-model embedding for query and docs is mandatory; otherwise the vectors live in different spaces.</li>
+<li>The “answer ONLY from context” instruction is what actually reduces hallucination at generation time.</li>
+</ul>
+<hr>
+</section>
+<section id="identifying-different-packages-to-construct-a-rag-pipeline" class="level3">
+<h3 class="anchored" data-anchor-id="identifying-different-packages-to-construct-a-rag-pipeline">8.3 Identifying Different Packages to Construct a RAG Pipeline</h3>
+<p>Know the major options at a glance — the assessment may test “which of these is a RAG framework?” style items.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Package</th>
+<th>Type</th>
+<th>What it gives you</th>
+<th>When to pick it</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>LangChain</strong></td>
+<td>RAG / LLM orchestration framework (Python, JS)</td>
+<td>Loaders, splitters, vector-store wrappers, retrievers, chains, agents — broad, modular</td>
+<td>General-purpose orchestration; chaining retrieval with tools and agents</td>
+</tr>
+<tr class="even">
+<td><strong>LlamaIndex</strong></td>
+<td>Data-framework for LLMs (Python, TS)</td>
+<td>Strong document ingestion, indexing, query engines, response synthesizers</td>
+<td>Document-heavy RAG where ingestion and indexing are the bulk of the work</td>
+</tr>
+<tr class="odd">
+<td><strong>Haystack</strong> (deepset)</td>
+<td>End-to-end NLP / RAG framework</td>
+<td>Pipelines for retrieval, QA, summarization; mature evaluation</td>
+<td>Production NLP pipelines, especially with strong evaluation needs</td>
+</tr>
+<tr class="even">
+<td><strong>Chroma</strong></td>
+<td>Vector database</td>
+<td>Stores embeddings + text + metadata; simple API</td>
+<td>The store layer of a RAG pipeline</td>
+</tr>
+<tr class="odd">
+<td><strong>FAISS</strong></td>
+<td>ANN search library</td>
+<td>Fast similarity search over dense vectors</td>
+<td>The ANN engine under a custom or framework-built store</td>
+</tr>
+<tr class="even">
+<td><strong>Sentence-Transformers (SBERT)</strong></td>
+<td>Embedding model library</td>
+<td>Pretrained bi-encoders and cross-encoders</td>
+<td>Self-hosted embeddings and re-rankers</td>
+</tr>
+<tr class="odd">
+<td><strong>OpenAI / Cohere / Voyage SDKs</strong></td>
+<td>Hosted embedding + LLM APIs</td>
+<td>Production-grade models behind an API</td>
+<td>When you don’t want to self-host models</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Mental grouping.</strong> Frameworks (LangChain, LlamaIndex, Haystack) <strong>orchestrate</strong> the pipeline. Vector stores (Chroma, FAISS, and similar) hold the <strong>knowledge</strong>. Embedding / LLM providers (OpenAI, Cohere, SBERT, etc.) supply the <strong>models</strong>. A real RAG system picks one item from each group.</p>
+<hr>
+</section>
+</section>
+<section id="module-9-selecting-embedding-model" class="level2">
+<h2 class="anchored" data-anchor-id="module-9-selecting-embedding-model">MODULE 9: SELECTING EMBEDDING MODEL</h2>
+<section id="choosing-the-right-embedding-model-based-on-accuracy-cost-and-latency-trade-offs" class="level3">
+<h3 class="anchored" data-anchor-id="choosing-the-right-embedding-model-based-on-accuracy-cost-and-latency-trade-offs">9.1 Choosing the Right Embedding Model Based on Accuracy, Cost, and Latency Trade-offs</h3>
+<p>There is no universally “best” embedding model — only the best one <em>for your corpus, your latency budget, and your cost ceiling</em>. Score each candidate along three axes.</p>
+<p><strong>Accuracy.</strong></p>
+<ul>
+<li>Measure on <strong>your own data</strong>, not just public leaderboards. Build a small evaluation set of (query, relevant chunk) pairs from your corpus and compute Recall@K / MRR per candidate model.</li>
+<li>Larger / higher-dimensional models generally retrieve better, with diminishing returns.</li>
+<li>Domain match matters more than raw size: a 384-dim model trained on code may beat a 1536-dim general model on code.</li>
+<li>Multilingual matters if any meaningful share of queries or documents is non-English.</li>
+</ul>
+<p><strong>Cost.</strong></p>
+<ul>
+<li><strong>Hosted (API) embeddings:</strong> charged per token embedded. Costs accumulate from two places — bulk re-embedding of the corpus (one-time but big) and per-query embedding (small but continuous).</li>
+<li><strong>Self-hosted (open-weight) embeddings:</strong> no per-token fee, but you pay for GPU/CPU, engineering, and ops.</li>
+<li>Higher dimensions cost more to store (vector size × number of chunks) and more to search.</li>
+<li>Re-ranking with a cross-encoder costs more per query than bi-encoder retrieval — budget for it explicitly.</li>
+</ul>
+<p><strong>Latency.</strong></p>
+<ul>
+<li>Per-query embedding latency: typically tens of ms for hosted APIs; sub-10 ms for small self-hosted models on a GPU.</li>
+<li>Larger embedding dimension → slightly slower vector search.</li>
+<li>If you re-rank with a cross-encoder, that step usually dominates per-query latency.</li>
+<li>Index choice (Module 5) affects search latency more than embedding choice does.</li>
+</ul>
+<p><strong>Decision matrix:</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Constraint dominates</th>
+<th>Reasonable default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Accuracy above all (research, evaluation, recall-critical legal)</td>
+<td>A large hosted embedder + cross-encoder reranker</td>
+</tr>
+<tr class="even">
+<td>Cost above all (huge corpus, tight budget)</td>
+<td>Compact open-weight bi-encoder (e.g., MiniLM-class, 384-dim), self-hosted</td>
+</tr>
+<tr class="odd">
+<td>Latency above all (interactive UX, real-time)</td>
+<td>Small embedder + HNSW index + no reranker (or a small one)</td>
+</tr>
+<tr class="even">
+<td>Balanced production system</td>
+<td>Mid-size hosted embedder (e.g., 768/1024-dim) with rerank on top of a hybrid retriever</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Practical workflow:</strong></p>
+<ol type="1">
+<li>Pick 3–5 candidate embedding models spanning sizes/providers.</li>
+<li>Embed a sample of your corpus and your eval queries with each.</li>
+<li>Measure Recall@K and MRR on your eval set.</li>
+<li>Measure per-query latency and project monthly cost at your traffic.</li>
+<li>Pick the smallest / cheapest model that hits your accuracy bar.</li>
+</ol>
+<p><strong>Anti-patterns.</strong></p>
+<ul>
+<li>Picking the model that tops a public leaderboard without measuring on your own data.</li>
+<li>Switching embedding models without re-embedding the entire corpus (vectors from different models are not comparable).</li>
+<li>Maxing out dimensionality “to be safe” and then complaining about cost and latency.</li>
+</ul>
+<hr>
+</section>
+<section id="comparing-the-effectiveness-of-pretrained-vs-fine-tuned-embedding-models" class="level3">
+<h3 class="anchored" data-anchor-id="comparing-the-effectiveness-of-pretrained-vs-fine-tuned-embedding-models">9.2 Comparing the Effectiveness of Pretrained vs Fine-tuned Embedding Models</h3>
+<p><strong>Pretrained embedding model.</strong> A model trained by someone else (OpenAI, Cohere, BAAI, Microsoft, Google, etc.) on a large general-purpose corpus. You use it out of the box.</p>
+<ul>
+<li><strong>Pros:</strong> Zero training effort, immediate use, strong general performance, well-supported.</li>
+<li><strong>Cons:</strong> Trained on general web text — may underperform on highly specialized vocabulary (legal, biomedical, internal product jargon, code identifiers); cannot capture domain conventions it never saw.</li>
+</ul>
+<p><strong>Fine-tuned embedding model.</strong> A pretrained model further trained on <strong>your</strong> data — typically with a contrastive objective over (query, relevant_passage) pairs from your domain, often with hard negatives.</p>
+<ul>
+<li><strong>Pros:</strong> Aligns the vector space to <em>your</em> notion of similarity; usually meaningfully better Recall@K and MRR on the domain it was fine-tuned for; can specialise on terminology, document structure, and user query style.</li>
+<li><strong>Cons:</strong> Requires labeled (or weakly labeled) training pairs; engineering effort; risk of overfitting to a small dataset; risk of catastrophic forgetting on general queries; must be re-fine-tuned as the domain evolves.</li>
+</ul>
+<p><strong>Effectiveness comparison.</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Aspect</th>
+<th>Pretrained</th>
+<th>Fine-tuned</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Out-of-domain quality</td>
+<td>Good baseline</td>
+<td>Often worse if fine-tuned narrowly</td>
+</tr>
+<tr class="even">
+<td>In-domain quality</td>
+<td>Decent → poor on niches</td>
+<td>Often substantially better</td>
+</tr>
+<tr class="odd">
+<td>Cost to obtain</td>
+<td>Free (or API fee)</td>
+<td>Engineering + compute + labels</td>
+</tr>
+<tr class="even">
+<td>Time to deploy</td>
+<td>Minutes</td>
+<td>Days to weeks</td>
+</tr>
+<tr class="odd">
+<td>Risk of regression</td>
+<td>Low</td>
+<td>Real (overfit, forget)</td>
+</tr>
+<tr class="even">
+<td>Maintenance</td>
+<td>Vendor handles upgrades</td>
+<td>You handle drift and retraining</td>
+</tr>
+</tbody>
+</table>
+<p><strong>When to fine-tune (rules of thumb):</strong></p>
+<ul>
+<li>Your domain vocabulary is meaningfully different from general web text (legal, medical, internal product names, code).</li>
+<li>You can assemble at least a few hundred to a few thousand (query, relevant_passage) pairs — even weak supervision (e.g., from search logs or LLM-generated questions) often suffices.</li>
+<li>A strong pretrained baseline has already been measured on your eval set and falls short of the bar.</li>
+<li>The retrieval quality bottleneck has been <em>isolated</em> to the embedder — not to chunking, not to ranking, not to the LLM.</li>
+</ul>
+<p><strong>When to stick with pretrained:</strong></p>
+<ul>
+<li>You don’t have evaluation data yet — fine-tuning without an eval set is flying blind.</li>
+<li>Your domain is mainstream and the pretrained model already meets your bar.</li>
+<li>The expected lift over the pretrained baseline is small relative to the engineering cost.</li>
+</ul>
+<p><strong>A common third path:</strong> keep a pretrained bi-encoder for first-stage retrieval (cheap, broad, low-maintenance) and add a fine-tuned cross-encoder re-ranker on top (focused, expensive per item but only run on the top-N).</p>
+<hr>
+</section>
+</section>
+<section id="module-10-optimizing-chunking-strategies" class="level2">
+<h2 class="anchored" data-anchor-id="module-10-optimizing-chunking-strategies">MODULE 10: OPTIMIZING CHUNKING STRATEGIES</h2>
+<section id="differentiating-between-fixed-size-and-semantic-chunking-approaches" class="level3">
+<h3 class="anchored" data-anchor-id="differentiating-between-fixed-size-and-semantic-chunking-approaches">10.1 Differentiating Between Fixed-Size and Semantic Chunking Approaches</h3>
+<p><strong>Fixed-size chunking.</strong></p>
+<ul>
+<li><strong>Definition:</strong> Cut the text into chunks of a predetermined size — measured in characters, tokens, words, or sentences — usually with a fixed overlap between consecutive chunks.</li>
+<li><strong>How it works:</strong> Walk through the document; emit a chunk every <code>N</code> units, starting <code>N − overlap</code> units after the previous chunk’s start.</li>
+<li><strong>Pros:</strong> Trivial to implement, deterministic, very fast, predictable token cost per chunk.</li>
+<li><strong>Cons:</strong> Boundary-blind — happily cuts in the middle of a sentence, a code block, a table row, or a logical idea. The retrieved chunk may start mid-thought and end mid-thought.</li>
+<li><strong>Mitigations:</strong> Add overlap (commonly 10–20% of chunk size) so adjacent chunks share some text; prefer a <strong>recursive</strong> splitter that tries to break on paragraph → sentence → word boundaries first and only falls back to a hard cut.</li>
+</ul>
+<p><strong>Semantic chunking.</strong></p>
+<ul>
+<li><strong>Definition:</strong> Cut the text where the <strong>meaning</strong> changes, not where a fixed counter rolls over. Boundaries fall between distinct ideas, sections, or topics.</li>
+<li><strong>How it works (common approach):</strong> Embed each sentence (or small unit); walk through the document, and start a new chunk wherever the cosine similarity between consecutive sentences drops below a threshold — i.e., the topic just shifted. Variations: split by document structure (Markdown headings, HTML sections), by speaker turns, or by an LLM that proposes semantic boundaries.</li>
+<li><strong>Pros:</strong> Each chunk is internally coherent, which improves retrieval precision (the chunk is “about one thing”) and improves the LLM’s ability to use it (no awkward mid-sentence starts).</li>
+<li><strong>Cons:</strong> More expensive (per-sentence embedding or LLM calls during ingestion); chunk sizes vary widely; harder to bound context-window cost per retrieved chunk.</li>
+</ul>
+<p><strong>Side-by-side comparison:</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Aspect</th>
+<th>Fixed-size</th>
+<th>Semantic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Boundary rule</td>
+<td>Counter-based (chars/tokens)</td>
+<td>Meaning shift / structure</td>
+</tr>
+<tr class="even">
+<td>Chunk size</td>
+<td>Uniform</td>
+<td>Variable</td>
+</tr>
+<tr class="odd">
+<td>Implementation cost</td>
+<td>Trivial</td>
+<td>Moderate to high (extra embeddings or LLM calls)</td>
+</tr>
+<tr class="even">
+<td>Risk of cutting mid-idea</td>
+<td>High</td>
+<td>Low</td>
+</tr>
+<tr class="odd">
+<td>Retrieval precision</td>
+<td>Lower (noisier chunks)</td>
+<td>Higher</td>
+</tr>
+<tr class="even">
+<td>Best when</td>
+<td>Homogeneous prose, prototypes, tight budgets</td>
+<td>Heterogeneous documents (long PDFs, mixed headings, transcripts)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Middle-ground option: recursive structure-aware splitting.</strong> Splits first on document structure (headings, paragraphs, sentences) and only resorts to a hard character/token cut as a fallback. Cheap like fixed-size, much cleaner boundaries. Often the strongest default before reaching for truly semantic chunking.</p>
+<hr>
+</section>
+<section id="optimizing-chunk-size-for-better-retrieval-accuracy-while-minimizing-context-window-usage" class="level3">
+<h3 class="anchored" data-anchor-id="optimizing-chunk-size-for-better-retrieval-accuracy-while-minimizing-context-window-usage">10.2 Optimizing Chunk Size for Better Retrieval Accuracy While Minimizing Context-Window Usage</h3>
+<p>Chunk size is the single highest-leverage knob in a RAG pipeline. It directly trades <strong>retrieval precision</strong> against <strong>context completeness</strong> and <strong>token cost</strong>.</p>
+<p><strong>Effects of chunk size:</strong></p>
+<ul>
+<li><strong>Small chunks (≈100–300 tokens).</strong>
+<ul>
+<li>Pros: Each chunk is tightly focused → higher Precision@K; cheaper context window per chunk; the LLM’s attention isn’t spread across irrelevant text.</li>
+<li>Cons: Important context may be split across chunks; relevant information may sit just outside the retrieved chunk; the same topic gets fragmented into many similar chunks (hurts diversity).</li>
+</ul></li>
+<li><strong>Large chunks (≈1000–2000+ tokens).</strong>
+<ul>
+<li>Pros: Each chunk carries more surrounding context, so the LLM has more to work with; fewer chunks total in the store.</li>
+<li>Cons: Lower Precision@K (the chunk also contains a lot of irrelevant text); fewer distinct chunks fit in the context window; embeddings of very long chunks are “averaged” and lose specificity, so retrieval relevance drops.</li>
+</ul></li>
+<li><strong>Overlap.</strong>
+<ul>
+<li>10–20% overlap between adjacent chunks is the typical default; protects against information that would otherwise straddle a chunk boundary.</li>
+<li>Too much overlap = duplicated content in the index → wasted storage and the retriever returning two near-duplicate chunks for the same query.</li>
+</ul></li>
+</ul>
+<p><strong>Context-window arithmetic to keep in mind.</strong></p>
+<pre><code>tokens_used_per_query ≈ system_prompt + (k × chunk_size) + query + answer_buffer</code></pre>
+<p>So picking k and chunk_size is a joint decision: if your model has an 8k context and you reserve 1k for system + question + answer, you have ~7k tokens left for retrieved chunks. With chunk_size = 500 you can comfortably feed k = 10–12; with chunk_size = 1500 you can only fit k ≈ 4. The first option gives more diversity, the second gives more depth per chunk.</p>
+<p><strong>Optimization workflow:</strong></p>
+<ol type="1">
+<li>Build a small evaluation set: queries paired with the chunks (or documents) that contain the correct answer.</li>
+<li>Sweep a grid of chunk sizes (e.g., 128, 256, 512, 1024, 2048 tokens) × overlaps (0, 10%, 20%).</li>
+<li>For each combination, rebuild the index and measure Recall@K, Precision@K (or MRR) and the average tokens consumed per query.</li>
+<li>Plot accuracy vs.&nbsp;tokens-used; pick the smallest chunk size whose accuracy is within a small margin of the best.</li>
+<li>Re-check on a held-out query set so you’re not overfitting the eval queries.</li>
+</ol>
+<p><strong>Practical defaults (good starting points, not laws):</strong></p>
+<ul>
+<li>General prose: 300–500 tokens, 10–15% overlap.</li>
+<li>Long technical PDFs / specs: 500–800 tokens, 10–20% overlap, structure-aware splitter.</li>
+<li>Conversational transcripts: split on speaker turns, then merge to a target size.</li>
+<li>Source code: split on function / class boundaries, never mid-statement.</li>
+</ul>
+<p><strong>Why “smaller and more chunks” is not automatically better.</strong> As chunks get smaller, individual chunks lose context the LLM needs to interpret them; retrieval can return five tiny snippets that, separately, don’t actually contain the answer even though together they would. The sweet spot is “small enough to be on-topic, large enough to stand alone.”</p>
+<hr>
+</section>
+</section>
+<section id="module-11-optimizing-retrieval-performance" class="level2">
+<h2 class="anchored" data-anchor-id="module-11-optimizing-retrieval-performance">MODULE 11: OPTIMIZING RETRIEVAL PERFORMANCE</h2>
+<section id="improving-retrieval-results-using-re-ranking-methods-or-hybrid-search" class="level3">
+<h3 class="anchored" data-anchor-id="improving-retrieval-results-using-re-ranking-methods-or-hybrid-search">11.1 Improving Retrieval Results Using Re-Ranking Methods or Hybrid Search</h3>
+<p>Two of the highest-impact, well-understood upgrades over plain dense retrieval.</p>
+<p><strong>A. Hybrid search (sparse + dense fusion).</strong></p>
+<p><strong>Idea.</strong> Run a sparse retriever (BM25) and a dense retriever (embeddings) in parallel over the same corpus, then <strong>fuse</strong> their result lists. You get keyword precision from BM25 and semantic recall from embeddings.</p>
+<p><strong>Why it helps.</strong> BM25 nails queries that depend on exact tokens (product codes, names, error strings) that embeddings often dilute. Dense retrieval nails paraphrases and conceptual matches that BM25 misses entirely. Their failure modes are nearly disjoint, so fusion is robust.</p>
+<p><strong>How to fuse — two common methods:</strong></p>
+<ol type="1">
+<li><strong>Score fusion (weighted sum).</strong> Normalize each retriever’s scores (e.g., min-max) and combine them: <code>combined = α · dense + (1 − α) · sparse</code>. Tune <code>α</code> on a held-out set (often around 0.5–0.7 in favor of dense for natural-language queries).</li>
+<li><strong>Rank fusion (Reciprocal Rank Fusion, RRF).</strong> Ignore raw scores; combine by ranks:</li>
+</ol>
+<pre><code>RRF_score(doc) = Σ over retrievers   1 / (k + rank_in_that_retriever(doc))</code></pre>
+<p><code>k</code> is a small constant (commonly 60). RRF is robust because it sidesteps cross-retriever score-scale issues.</p>
+<p><strong>B. Re-ranking with a cross-encoder.</strong></p>
+<p><strong>Idea.</strong> First-stage retriever (bi-encoder and/or BM25) returns a generous top-N (say 50–100). A heavier <strong>cross-encoder</strong> then scores each (query, candidate) pair jointly and reorders them; keep the top-k (say 5–10) for the LLM.</p>
+<p><strong>Why it helps.</strong> A bi-encoder encodes query and document independently; it must commit to a single vector per document, which can miss subtle query-document interactions. A cross-encoder reads them together with full attention and produces a much more reliable relevance score. The cost — one forward pass per candidate — is manageable because it runs only on the top-N, not the whole corpus.</p>
+<p><strong>When to add a re-ranker:</strong> when Precision@k matters (small k feeding an expensive LLM call), when the first-stage retrieval is high-recall but noisy, or when downstream answer quality is bottlenecked by retrieval quality rather than coverage.</p>
+<p><strong>How re-ranking and hybrid combine in practice (a strong production recipe):</strong></p>
+<pre><code>query
+  ├── BM25         → top 100 by lexical score
+  └── dense (bi-encoder) → top 100 by cosine
+
+merge via RRF → top 100 unique candidates
+
+cross-encoder rerank → top 5–10
+
+feed to LLM</code></pre>
+<p>This pattern — <strong>hybrid retrieve → fuse → re-rank → generate</strong> — is the modern default for serious RAG systems.</p>
+<hr>
+</section>
+<section id="tuning-retriever-hyperparameters-to-boost-relevance" class="level3">
+<h3 class="anchored" data-anchor-id="tuning-retriever-hyperparameters-to-boost-relevance">11.2 Tuning Retriever Hyperparameters to Boost Relevance</h3>
+<p>A retriever exposes several knobs. Tune each against the same offline eval set (queries + relevance labels), measuring Recall@K, Precision@K, MRR, and end-to-end answer quality.</p>
+<p><strong>Hyperparameters worth tuning:</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Knob</th>
+<th>What it controls</th>
+<th>How to think about tuning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>k (top-k)</strong></td>
+<td>How many chunks to return / send to the LLM</td>
+<td>Too small → misses relevant chunks (low recall). Too large → noise dilutes the LLM’s prompt (low precision, higher cost). Sweep k and watch both recall and answer quality.</td>
+</tr>
+<tr class="even">
+<td><strong>Similarity score threshold</strong></td>
+<td>Minimum similarity to accept a chunk</td>
+<td>Set so that clearly irrelevant chunks are dropped even if they fall in the top-k. Useful when “no good match” should mean “no chunk”, not “the best of a bad bunch”.</td>
+</tr>
+<tr class="odd">
+<td><strong>Hybrid fusion weight (α) / RRF constant</strong></td>
+<td>Sparse vs.&nbsp;dense balance</td>
+<td>Tune α on a held-out set; for keyword-heavy queries lower α (give BM25 more weight), for natural-language queries higher α.</td>
+</tr>
+<tr class="even">
+<td><strong>Number of first-stage candidates (N)</strong></td>
+<td>How many candidates the re-ranker sees</td>
+<td>Larger N → better chance the true positive is in the candidate pool, but slower and pricier reranking. Pick the smallest N at which recall plateaus.</td>
+</tr>
+<tr class="odd">
+<td><strong>Re-ranker <code>top_k_after_rerank</code></strong></td>
+<td>Final size of context handed to the LLM</td>
+<td>Constrained by context window and answer-quality measurements.</td>
+</tr>
+<tr class="even">
+<td><strong>Chunk size and overlap</strong></td>
+<td>Granularity and redundancy of the index</td>
+<td>Re-tune whenever the embedder, document set, or query style changes (see 10.2).</td>
+</tr>
+<tr class="odd">
+<td><strong>Embedding model choice</strong></td>
+<td>The vector space itself</td>
+<td>Treat as a hyperparameter; benchmark candidates on your data (see 9.1).</td>
+</tr>
+<tr class="even">
+<td><strong>Index parameters (HNSW <code>M</code>, <code>efSearch</code>; IVF <code>nlist</code>, <code>nprobe</code>; PQ codes)</strong></td>
+<td>Speed-vs-accuracy on ANN search</td>
+<td>Raise <code>efSearch</code> / <code>nprobe</code> until recall stops improving meaningfully; then back off for latency.</td>
+</tr>
+<tr class="odd">
+<td><strong>Metadata filters</strong></td>
+<td>Pre-filter by date, source, language, tenant</td>
+<td>Use to enforce recency / access control; effectively raises precision on filtered slices.</td>
+</tr>
+<tr class="even">
+<td><strong>Query transformations</strong></td>
+<td>Rewrite, multi-query, HyDE</td>
+<td>Treat as on/off knobs; measure whether they actually help on your eval set (they don’t always).</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Tuning workflow:</strong></p>
+<ol type="1">
+<li><strong>Lock down an evaluation set</strong> of queries with known relevant chunks; without this, “tuning” is just vibes.</li>
+<li><strong>Establish a baseline</strong> with default settings; record Recall@K, Precision@K, MRR, answer quality.</li>
+<li><strong>One knob at a time.</strong> Sweep one hyperparameter through a small grid; pick the value that maximises the chosen metric.</li>
+<li><strong>Re-evaluate end-to-end.</strong> A change that helps retrieval metrics can still hurt answer quality (e.g., bigger k that adds noisy chunks). Always check both.</li>
+<li><strong>Iterate</strong> in the order of expected impact: chunk size → embedding model → k → hybrid fusion → re-ranker on/off → ANN index params.</li>
+<li><strong>Lock and monitor.</strong> Once tuned, lock the configuration and monitor metrics in production; re-tune when the corpus, query distribution, or models change.</li>
+</ol>
+<p><strong>Common pitfalls:</strong></p>
+<ul>
+<li>Tuning everything at once — you can’t tell what helped.</li>
+<li>Tuning on the same set you’ll later report numbers on — you’ll overfit.</li>
+<li>Optimising retrieval metrics in isolation while ignoring final answer quality.</li>
+<li>Cranking k arbitrarily high to “play it safe” — pollutes the LLM context with noise and increases cost.</li>
+<li>Mixing embedding models between query and index without re-embedding — silently destroys retrieval quality.</li>
+</ul>
+<hr>
+</section>
+</section>
+</section>
+<section id="quick-reference-key-term-mappings" class="level1">
+<h1>QUICK REFERENCE: KEY TERM MAPPINGS</h1>
+<p>For match-the-pairs questions, master these pairings (every term here is named in the syllabus):</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Term</th>
+<th>Definition / Association</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>RAG</strong></td>
+<td>Retrieval-Augmented Generation; retrieve external context then generate the answer</td>
+</tr>
+<tr class="even">
+<td><strong>Retriever</strong></td>
+<td>Component that selects top-k relevant chunks for a query</td>
+</tr>
+<tr class="odd">
+<td><strong>Retriever store</strong></td>
+<td>Persistent index/database holding chunks + embeddings + metadata</td>
+</tr>
+<tr class="even">
+<td><strong>Generator</strong></td>
+<td>LLM that produces the final answer from (query + retrieved context)</td>
+</tr>
+<tr class="odd">
+<td><strong>Embedding</strong></td>
+<td>Fixed-length vector representing the meaning of a text</td>
+</tr>
+<tr class="even">
+<td><strong>Cosine similarity</strong></td>
+<td>Angle-based similarity metric for embeddings</td>
+</tr>
+<tr class="odd">
+<td><strong>BM25</strong></td>
+<td>Sparse, lexical ranking function over an inverted index</td>
+</tr>
+<tr class="even">
+<td><strong>FAISS</strong></td>
+<td>Dense ANN similarity search library</td>
+</tr>
+<tr class="odd">
+<td><strong>Chroma</strong></td>
+<td>Vector database with built-in storage, metadata, and similarity search</td>
+</tr>
+<tr class="even">
+<td><strong>HNSW</strong></td>
+<td>Graph-based ANN index — fast, high-recall (typical backend)</td>
+</tr>
+<tr class="odd">
+<td><strong>IVF / IVF-PQ</strong></td>
+<td>Clustered ANN index, optionally compressed for memory</td>
+</tr>
+<tr class="even">
+<td><strong>Inverted index</strong></td>
+<td>Term-to-document mapping behind BM25</td>
+</tr>
+<tr class="odd">
+<td><strong>Precision@K</strong></td>
+<td>Fraction of returned top-K that are relevant</td>
+</tr>
+<tr class="even">
+<td><strong>Recall@K</strong></td>
+<td>Fraction of all relevant docs surfaced in the top-K</td>
+</tr>
+<tr class="odd">
+<td><strong>MRR</strong></td>
+<td>Mean reciprocal rank of the first relevant result</td>
+</tr>
+<tr class="even">
+<td><strong>F1-score</strong></td>
+<td>Harmonic mean of precision and recall</td>
+</tr>
+<tr class="odd">
+<td><strong>Fixed-size chunking</strong></td>
+<td>Split text into uniform-length pieces, optional overlap</td>
+</tr>
+<tr class="even">
+<td><strong>Semantic chunking</strong></td>
+<td>Split text where meaning / topic changes</td>
+</tr>
+<tr class="odd">
+<td><strong>Chunk overlap</strong></td>
+<td>Shared text between adjacent chunks (preserves context across boundaries)</td>
+</tr>
+<tr class="even">
+<td><strong>Hybrid search</strong></td>
+<td>Combine sparse (BM25) + dense (embeddings) retrievers</td>
+</tr>
+<tr class="odd">
+<td><strong>RRF (Reciprocal Rank Fusion)</strong></td>
+<td>Rank-based fusion method for combining retrievers</td>
+</tr>
+<tr class="even">
+<td><strong>Re-ranking</strong></td>
+<td>Second-stage scoring (usually a cross-encoder) over first-stage candidates</td>
+</tr>
+<tr class="odd">
+<td><strong>Bi-encoder</strong></td>
+<td>Encodes query and doc separately; fast; used as retriever</td>
+</tr>
+<tr class="even">
+<td><strong>Cross-encoder</strong></td>
+<td>Encodes (query, doc) jointly; accurate; used as re-ranker</td>
+</tr>
+<tr class="odd">
+<td><strong>LangChain</strong></td>
+<td>LLM/RAG orchestration framework</td>
+</tr>
+<tr class="even">
+<td><strong>LlamaIndex</strong></td>
+<td>Data framework focused on RAG ingestion / indexing / querying</td>
+</tr>
+<tr class="odd">
+<td><strong>Pretrained embedding</strong></td>
+<td>General-purpose embedder used out of the box</td>
+</tr>
+<tr class="even">
+<td><strong>Fine-tuned embedding</strong></td>
+<td>Pretrained embedder further trained on your domain pairs</td>
+</tr>
+<tr class="odd">
+<td><strong>Top-k</strong></td>
+<td>Number of chunks the retriever returns</td>
+</tr>
+<tr class="even">
+<td><strong>Score threshold</strong></td>
+<td>Minimum similarity for a chunk to be accepted</td>
+</tr>
+<tr class="odd">
+<td><strong>Parametric memory</strong></td>
+<td>Knowledge stored in model weights</td>
+</tr>
+<tr class="even">
+<td><strong>Non-parametric memory</strong></td>
+<td>Knowledge stored externally and retrieved on demand</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="key-workflows-to-know-order-the-steps-questions" class="level1">
+<h1>KEY WORKFLOWS TO KNOW (Order-the-Steps Questions)</h1>
+<p><strong>End-to-end RAG pipeline (build + serve):</strong></p>
+<ol type="1">
+<li>Load documents from sources.</li>
+<li>Clean and normalize text.</li>
+<li>Split into chunks (size + overlap).</li>
+<li>Embed chunks with the chosen embedding model.</li>
+<li>Upsert (chunk_text, embedding, metadata) into the vector store.</li>
+<li>At query time: embed the user query with the SAME model.</li>
+<li>Search the store for the top-k chunks.</li>
+<li>(Optional) Re-rank with a cross-encoder.</li>
+<li>Build a prompt with system instructions + retrieved context + question.</li>
+<li>Call the LLM; return the grounded answer (with citations).</li>
+</ol>
+<p><strong>Retrieval evaluation workflow:</strong></p>
+<ol type="1">
+<li>Assemble an evaluation set of queries with known relevant chunks.</li>
+<li>Run the retriever to get top-K for each query.</li>
+<li>Compute Precision@K, Recall@K, MRR (and F1@K) per query.</li>
+<li>Average across queries; report per-metric.</li>
+<li>Compare against a baseline / previous configuration.</li>
+<li>Identify the failure modes (low recall vs low precision) and pick the right intervention.</li>
+</ol>
+<p><strong>Chunk-size optimization workflow:</strong></p>
+<ol type="1">
+<li>Fix the embedder, retriever, and LLM; vary only chunking parameters.</li>
+<li>Define a grid: chunk sizes × overlaps.</li>
+<li>For each combination: rebuild the index.</li>
+<li>Measure retrieval metrics and average tokens-per-query on the eval set.</li>
+<li>Plot accuracy vs.&nbsp;tokens; pick the smallest chunk size whose accuracy is within a small margin of the best.</li>
+<li>Validate on a held-out query set; lock in.</li>
+</ol>
+<p><strong>Hybrid + re-rank workflow:</strong></p>
+<ol type="1">
+<li>Run BM25 → top-N candidates.</li>
+<li>Run dense retriever → top-N candidates.</li>
+<li>Merge with RRF (or weighted score fusion).</li>
+<li>Take the merged top-N (e.g., 50–100).</li>
+<li>Score each (query, candidate) pair with a cross-encoder.</li>
+<li>Keep the top-k (e.g., 5–10) for the LLM.</li>
+<li>Generate the answer.</li>
+</ol>
+<hr>
+</section>
+<section id="scenario-cheatsheet-situational-questions" class="level1">
+<h1>SCENARIO CHEATSHEET (Situational Questions)</h1>
+<p><strong>“Should I use RAG or a vanilla LLM?” (Skill 2.2)</strong></p>
+<ul>
+<li>Knowledge changes often → <strong>RAG</strong>.</li>
+<li>Knowledge is private / proprietary → <strong>RAG</strong>.</li>
+<li>Citations / auditability required → <strong>RAG</strong>.</li>
+<li>Domain is long-tail or specialized → <strong>RAG</strong>.</li>
+<li>Hallucinations are costly → <strong>RAG</strong>.</li>
+<li>Per-user access control needed → <strong>RAG</strong>.</li>
+<li>Task is pure style / rewriting / general reasoning with no external facts → <strong>Vanilla LLM</strong>.</li>
+<li>Need to change behaviour or output format → <strong>Fine-tune</strong> (in addition to RAG, not instead).</li>
+</ul>
+<p><strong>“Which retrieval strategy fits this use case?” (Skill 6.2)</strong></p>
+<ul>
+<li>Queries are keyword-heavy (codes, names, IDs) → <strong>BM25</strong> (or hybrid leaning on BM25).</li>
+<li>Queries are conversational / paraphrased → <strong>Dense / semantic</strong>.</li>
+<li>Mixed query traffic → <strong>Hybrid (BM25 + dense)</strong>.</li>
+<li>Small k feeding an expensive LLM call → add <strong>Cross-encoder re-ranker</strong>.</li>
+<li>Per-tenant / time-sensitive / permissioned corpus → <strong>Metadata-filtered retrieval</strong>.</li>
+<li>Vague or under-specified user queries → add <strong>Query rewriting / multi-query / HyDE</strong>.</li>
+<li>Answer requires chaining facts across documents → <strong>Multi-hop / iterative retrieval</strong>.</li>
+<li>Tiny corpus → skip retrieval; put everything in the prompt.</li>
+</ul>
+<hr>
+<p><em>These notes cover every skill named in the RAG syllabus. Focus particularly on the term definitions (match-the-pairs), the ordered workflows (sequence questions), the comparison tables (multi-select), and the scenario cheatsheet (situational questions).</em></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/madhaviit\.github\.io\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Madhav Kadam, All Rights Reserved.</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/madhaviit" target="_blank">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://x.com/kpmadhav18" target="_blank">
+      <i class="bi bi-twitter-x" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://linkedin.com/in/madhav-kadam" target="_blank">
+      <i class="bi bi-linkedin" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
