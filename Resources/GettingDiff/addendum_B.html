@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>addendum_b – Madhav Kadam</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/favicon.ico" rel="icon">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-2b454536a190732ebf2f95c4f11e6530.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-9b097c31a9caec86beae4783e147e129.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-2b454536a190732ebf2f95c4f11e6530.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-B6Z44LN64S"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-B6Z44LN64S', { 'anonymize_ip': true});
+</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="Madhav Kadam">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="Madhav Kadam">
+<meta name="twitter:title" content="Madhav Kadam">
+<meta name="twitter:description" content="">
+<meta name="twitter:card" content="summary">
+</head>
+
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Madhav Kadam</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://drive.google.com/file/d/1hnqTi8Y-63If0PUq-HJ09X44cnxxqlXD/view?usp=sharing" target="_blank"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../Poems/disclaimer.html"> 
+<span class="menu-text">Poems</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../MyBlog/index.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../books.html"> 
+<span class="menu-text">Library</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../travel.html"> 
+<span class="menu-text">Atlas</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+
+<!-- INSERT_AFTER_LINE_MATCHING: ^### 9.3 Training loss — the simplified ELBO -->
+<!-- SECTION_NAME: 9.3b The L_0 discrete decoder for pixel DDPMs -->
+<p>We just derived <span class="math inline">\(\mathcal{L}_{\mathrm{simple}}\)</span> by writing the VLB as a sum <span class="math inline">\(L_T + \sum_{t=2}^T L_{t-1} + L_0\)</span>, declaring <span class="math inline">\(L_T\)</span> a constant we can ignore, and reweighting the middle terms into a single <span class="math inline">\(\epsilon\)</span>-prediction MSE. The dropped piece <span class="math inline">\(L_0 = -\log p_\theta(x_0 \mid x_1)\)</span> looked innocuous in (<strong>?@eq-vlb-decomp</strong>), and from the standpoint of <em>sample quality</em> it more or less is. From the standpoint of <em>reported likelihoods</em>, however, <span class="math inline">\(L_0\)</span> is the entire reason that the numbers in Table 2 of Ho et al.&nbsp;(2020) are comparable to PixelRNN at all. This subsection unpacks what <span class="math inline">\(L_0\)</span> actually is, derives the closed form Ho et al.&nbsp;use, and explains why the term quietly disappears the moment you switch from pixels to latents.</p>
+<p><strong>Setup.</strong> At the final reverse step we have a continuous Gaussian <span class="math inline">\(p_\theta(x_0 \mid x_1) = \mathcal{N}(x_0;\, \mu_\theta(x_1, 1),\, \sigma_1^2 I)\)</span> — but the image we want to score is not continuous. It is a tensor of integers in <span class="math inline">\(\{0, 1, \dots, 255\}\)</span>, typically remapped to the interval <span class="math inline">\([-1, 1]\)</span> by <span class="math inline">\(x_0 = 2 \cdot (\text{intensity}/255) - 1\)</span>. The decoder is producing a density on <span class="math inline">\(\mathbb{R}^D\)</span> while the data lives on a discrete grid. If we evaluate <span class="math inline">\(\log p_\theta(x_0 \mid x_1)\)</span> as a Gaussian density on <span class="math inline">\(\mathbb{R}\)</span> we get a number with the wrong units: a <em>continuous</em> log-density that can be made arbitrarily large by shrinking <span class="math inline">\(\sigma_1\)</span> — and that says nothing about how well the model assigns <em>probability mass</em> to the actual pixel values.</p>
+<p><strong>The CDF construction.</strong> The fix is to turn the continuous Gaussian into a genuine probability mass function over the 256 admissible pixel values by integrating the Gaussian density over the half-bin around each value. With pixel spacing <span class="math inline">\(\Delta = 2/255\)</span> in the <span class="math inline">\([-1, 1]\)</span> normalization, the bin centered on value <span class="math inline">\(x_0^i\)</span> runs from <span class="math inline">\(x_0^i - \Delta/2\)</span> to <span class="math inline">\(x_0^i + \Delta/2\)</span>. Define the half-bin edges <span id="eq-bin-edges"><span class="math display">\[
+\delta_-(x_0^i) \;=\; \begin{cases} -\infty &amp; x_0^i = -1 \\ x_0^i - 1/255 &amp; \text{otherwise}\end{cases}, \qquad \delta_+(x_0^i) \;=\; \begin{cases} +\infty &amp; x_0^i = +1 \\ x_0^i + 1/255 &amp; \text{otherwise}\end{cases}.
+\tag{1}\]</span></span> The edge clipping is critical: at the dataset boundaries <span class="math inline">\(x_0^i \in \{-1, +1\}\)</span> we extend the bin all the way to the corresponding infinity, so that the 256 bin probabilities sum to exactly one and there is no probability mass leaking past the dynamic range. Now define <span id="eq-discrete-decoder"><span class="math display">\[
+p_\theta(x_0 \mid x_1) \;=\; \prod_{i=1}^D \int_{\delta_-(x_0^i)}^{\delta_+(x_0^i)} \mathcal{N}\!\bigl(x;\, \mu_\theta^i(x_1, 1),\, \sigma_1^2\bigr)\, dx.
+\tag{2}\]</span></span> The integrand is a one-dimensional Gaussian density and the integral is a CDF difference. Letting <span class="math inline">\(\Phi\)</span> denote the standard-normal CDF and using the standardization <span class="math inline">\(z = (x - \mu)/\sigma\)</span>, <span id="eq-cdf-diff"><span class="math display">\[
+p_\theta(x_0^i \mid x_1) \;=\; \Phi\!\!\left(\frac{\delta_+(x_0^i) - \mu_\theta^i(x_1, 1)}{\sigma_1}\right) - \Phi\!\!\left(\frac{\delta_-(x_0^i) - \mu_\theta^i(x_1, 1)}{\sigma_1}\right).
+\tag{3}\]</span></span> This is the discrete decoder of Ho et al.&nbsp;(2020), eq. (13). The per-pixel log-likelihood is just the log of (<a href="#eq-cdf-diff" class="quarto-xref">Equation&nbsp;3</a>), summed over channels and spatial locations. In implementations, one uses the more numerically stable <code>log_cdf</code> and the identity <span class="math inline">\(\log(\Phi(b) - \Phi(a)) = \log(\Phi(b)) + \mathrm{log1p}(-\exp(\log\Phi(a) - \log\Phi(b)))\)</span> to avoid catastrophic cancellation when <span class="math inline">\(b - a\)</span> is small.</p>
+<blockquote class="blockquote">
+<p>A useful mental picture. The continuous Gaussian sits over the pixel grid like a tent. The discrete decoder integrates the tent over each <span class="math inline">\(1/255\)</span>-wide bin to produce the probability that the discretized pixel lands on that integer value. Where the tent is steep (well-localized predictions), most of the mass concentrates in a single bin and the log-likelihood is close to <span class="math inline">\(-\log(\Phi(\delta_+) - \Phi(\delta_-)) \approx -\log\bigl(\phi(0) \cdot \Delta/\sigma_1\bigr)\)</span> — a <em>plus</em> offset compared to the continuous density evaluated at the mean. Where the tent is broad (uncertain predictions), the mass spreads over many bins and the log-likelihood drops accordingly.</p>
+</blockquote>
+<p><strong>Why <span class="math inline">\(L_0\)</span> matters for reported likelihood.</strong> Without it, the model is implicitly producing a <em>continuous</em> log-density and we would simply compute <span class="math inline">\(-\log p_\theta(x_0 \mid x_1) = D/2 \cdot \log(2\pi\sigma_1^2) + \|x_0 - \mu_\theta\|^2/(2\sigma_1^2)\)</span>, which has the wrong units. To compare against autoregressive baselines like PixelRNN (van den Oord et al., 2016), Sparse Transformer (Child et al., 2019), or PixelSNAIL — all of which model a categorical over <span class="math inline">\(\{0, \dots, 255\}\)</span> at each location and report <em>bits per dimension</em> (BPD) — we need a <em>discrete</em> log-likelihood. With (<a href="#eq-discrete-decoder" class="quarto-xref">Equation&nbsp;2</a>), the total negative log-likelihood <span class="math display">\[
+-\log p_\theta(x_0) \;=\; L_T + \sum_{t=2}^{T} L_{t-1} + L_0
+\]</span> is in nats, and dividing by <span class="math inline">\(D \log 2\)</span> converts to bits per dimension. Ho et al.&nbsp;(2020) report BPD <span class="math inline">\(= 3.69\)</span> for CIFAR-10 DDPM under the simple loss, which is competitive with PixelRNN’s <span class="math inline">\(3.00\)</span> and worse than Sparse Transformer’s <span class="math inline">\(2.80\)</span> but already a remarkable result for a model that was <em>not</em> trained as a likelihood model. Strip away <span class="math inline">\(L_0\)</span> and the number is no longer comparable to any of those baselines — the model simply has no defined likelihood on the data manifold.</p>
+<p><strong>Why <span class="math inline">\(L_0\)</span> barely matters for sample quality.</strong> The MSE <span class="math inline">\(\|\epsilon - \epsilon_\theta\|^2\)</span> averaged over <span class="math inline">\(t \in \{1, \dots, T\}\)</span> is what shapes the score field everywhere along the diffusion trajectory. <span class="math inline">\(L_0\)</span> contributes one term at one timestep, and at <span class="math inline">\(t = 1\)</span> the noise level <span class="math inline">\(\sigma_1\)</span> is already very small — the network has typically converged on a near-identity decoder at that boundary. Empirically, Ho et al.&nbsp;(2020) ablate the choice and find essentially identical FID on CIFAR-10 with or without the <span class="math inline">\(L_0\)</span> term in the training objective. Production systems training under <span class="math inline">\(\mathcal{L}_{\mathrm{simple}}\)</span> never include it and never miss it.</p>
+<p><strong>Latent diffusion’s freedom.</strong> The story changes the moment we leave pixel space. In Stable Diffusion, FLUX, BAGEL, and every other latent-diffusion system, the diffusion process runs on continuous latents <span class="math inline">\(z = \mathcal{E}(x) \in \mathbb{R}^{h \times w \times c}\)</span> produced by a VAE encoder. Latents are not quantized — they are floating-point activations — so there is no half-bin to integrate over and no discrete decoder to write down. <span class="math inline">\(L_0\)</span> as defined above simply does not exist. The “decoder” is the pretrained VAE decoder <span class="math inline">\(\mathcal{D}\)</span>, which is trained separately by a reconstruction objective; the diffusion model evaluates its objective entirely in continuous latent space. This is one of the rarely-cited reasons latent diffusion is conceptually cleaner than pixel diffusion: the awkward discretization step at the boundary is delegated to a different model trained for a different objective, and the diffusion loss can be a single clean MSE all the way down to <span class="math inline">\(t = 0\)</span>.</p>
+<p><strong>Improved DDPM’s learned variance.</strong> The one production setting where <span class="math inline">\(L_0\)</span> resurfaces is Nichol &amp; Dhariwal (2021), Improved Denoising Diffusion Probabilistic Models. They observed that fixing <span class="math inline">\(\Sigma_\theta\)</span> to either <span class="math inline">\(\beta_t I\)</span> or <span class="math inline">\(\tilde\beta_t I\)</span> leaves likelihood on the table — the truth lies between the two — and proposed to <em>learn</em> a per-coordinate mixing logit <span class="math inline">\(v\)</span> such that <span id="eq-improved-variance"><span class="math display">\[
+\Sigma_\theta(x_t, t) \;=\; \exp\!\bigl(v(x_t, t)\, \log \beta_t \;+\; (1 - v(x_t, t))\, \log \tilde\beta_t\bigr) \cdot I.
+\tag{4}\]</span></span> The <span class="math inline">\(\log\)</span>-space interpolation guarantees <span class="math inline">\(\Sigma_\theta\)</span> stays in the bracket <span class="math inline">\([\tilde\beta_t, \beta_t]\)</span> without softplus clamps. Training under just <span class="math inline">\(\mathcal{L}_{\mathrm{simple}}\)</span> does not optimize the variance — the MSE has no opinion on <span class="math inline">\(\sigma\)</span> at all — so they introduce a hybrid loss <span class="math display">\[
+\mathcal{L}_{\mathrm{hybrid}} \;=\; \mathcal{L}_{\mathrm{simple}} \;+\; \lambda\, \mathcal{L}_{\mathrm{VLB}},
+\]</span> with <span class="math inline">\(\lambda = 10^{-3}\)</span> and a stop-gradient on <span class="math inline">\(\mu_\theta\)</span> inside <span class="math inline">\(\mathcal{L}_{\mathrm{VLB}}\)</span> to prevent the VLB term from corrupting the noise prediction. The full <span class="math inline">\(\mathcal{L}_{\mathrm{VLB}}\)</span> — including <span class="math inline">\(L_0\)</span> — is needed because the model is now being graded as a likelihood model. With this trick, CIFAR-10 BPD drops from <span class="math inline">\(3.69\)</span> to about <span class="math inline">\(3.27\)</span>, closing most of the gap to autoregressive baselines while preserving DDPM’s sample quality. Importantly, the <em>sample quality</em> gain from learned variance is small; the win is almost entirely on the BPD scoreboard.</p>
+<blockquote class="blockquote">
+<p><strong>Mental summary.</strong> <span class="math inline">\(L_0\)</span> is the bridge between a continuous noise-prediction model and a discrete pixel-grid evaluation. It is mandatory for honest likelihood reporting on raw pixels, irrelevant for samples, and structurally absent in latent diffusion. When a paper reports BPD without mentioning the discrete decoder, treat the number with suspicion; when a paper reports FID without mentioning BPD, the discrete decoder is probably just not in the training loop and that is fine.</p>
+</blockquote>
+<p>A final practical note: at inference, when the deterministic sampler produces a final continuous <span class="math inline">\(\hat x_0 \in \mathbb{R}^D\)</span>, the actual pixel grid is recovered by clamping to <span class="math inline">\([-1, 1]\)</span> and rounding to the nearest <span class="math inline">\(1/127.5\)</span>-step. This is the inverse of the half-bin construction. No one ever talks about it because it is one line of code at the very end of <code>pipeline.py</code>, but it is the discrete decoder making one last appearance in disguise.</p>
+<!-- INSERT_AFTER_LINE_MATCHING: ^### 9.5 Sampling: DDIM, distillation, and consistency models -->
+<!-- SECTION_NAME: 9.5b Higher-order ODE solvers: DPM-Solver, Heun, and the deterministic-sampler menagerie -->
+<p>DDIM and consistency models attack the sampling-speed problem from opposite ends — DDIM by taking bigger Euler steps along the probability-flow ODE, consistency models by collapsing the entire trajectory into one network evaluation. Between those two extremes sits a quietly dominant family of techniques that does neither: it keeps the original noise-prediction network unchanged and instead designs <em>better numerical solvers</em> for the probability-flow ODE. With twenty or thirty network evaluations, these solvers reach quality that DDIM needs hundreds of steps to match, and with no distillation, no retraining, no new losses. They are what runs in production today.</p>
+<p>This subsection derives the headline result — DPM-Solver — from scratch, places it inside the broader family of high-order ODE methods (Heun, EDM, DPM-Solver++), and ends with a small table of “what sampler do I actually click in ComfyUI?” recommendations.</p>
+<p><strong>Setup.</strong> From §9.4 we have the probability-flow ODE <span id="eq-pf-ode-general"><span class="math display">\[
+\frac{dx_t}{dt} \;=\; f(t)\, x_t \;-\; \tfrac{1}{2}\, g(t)^2\, \nabla_{x_t} \log p_t(x_t),
+\tag{5}\]</span></span> where for the VP-SDE used by DDPM the drift is <span class="math inline">\(f(t) = -\tfrac{1}{2}\beta(t)\)</span> and the diffusion is <span class="math inline">\(g(t)^2 = \beta(t)\)</span>. The score is related to the noise predictor by <span class="math inline">\(\nabla_{x_t} \log p_t(x_t) = -\epsilon_\theta(x_t, t)/\sigma_t\)</span> where <span class="math inline">\(x_t = \alpha_t x_0 + \sigma_t \epsilon\)</span>. Substituting, the VP-SDE probability-flow ODE becomes <span class="math display">\[
+\frac{dx_t}{dt} \;=\; -\tfrac{1}{2}\beta(t)\, x_t \;+\; \tfrac{1}{2}\, \frac{\beta(t)}{\sigma_t}\, \epsilon_\theta(x_t, t).
+\]</span> The first term is <em>linear</em> in <span class="math inline">\(x_t\)</span>; the second is the nonlinear part involving the learned network. This separation is what makes the next step possible.</p>
+<p><strong>The semi-linear form.</strong> For a general Gaussian probability path with marginals <span class="math inline">\(q_t(x_t \mid x_0) = \mathcal{N}(\alpha_t x_0, \sigma_t^2 I)\)</span>, the probability-flow ODE can be rewritten exactly as <span id="eq-semi-linear"><span class="math display">\[
+\frac{dx_t}{dt} \;=\; \underbrace{\frac{d \log \alpha_t}{dt}\, x_t}_{\text{linear in }x_t} \;+\; \underbrace{\frac{d \log(\sigma_t / \alpha_t)}{dt}\, \sigma_t\, \epsilon_\theta(x_t, t)}_{\text{nonlinear in }x_t}.
+\tag{6}\]</span></span> You can verify (<a href="#eq-semi-linear" class="quarto-xref">Equation&nbsp;6</a>) collapses to the VP-SDE form by computing <span class="math inline">\(d\log\alpha_t/dt = -\tfrac{1}{2}\beta(t)\)</span> and <span class="math inline">\(d \log(\sigma_t/\alpha_t)/dt = \tfrac{1}{2}\beta(t)/\sigma_t^2\)</span> from the VP definitions <span class="math inline">\(\alpha_t^2 + \sigma_t^2 = 1\)</span> and <span class="math inline">\(d\alpha_t^2/dt = -\beta(t)\alpha_t^2\)</span>. The form (<a href="#eq-semi-linear" class="quarto-xref">Equation&nbsp;6</a>) is what Lu et al.&nbsp;(2022) call the <strong>semi-linear</strong> structure of the diffusion ODE, and it is the central observation behind DPM-Solver.</p>
+<p><strong>The integrating factor.</strong> Define the rescaled state <span class="math inline">\(\tilde x_t = x_t / \alpha_t\)</span>. Differentiating, <span class="math display">\[
+\frac{d \tilde x_t}{dt} \;=\; \frac{1}{\alpha_t}\frac{dx_t}{dt} - \frac{x_t}{\alpha_t^2} \frac{d\alpha_t}{dt} \;=\; \frac{1}{\alpha_t}\frac{dx_t}{dt} - \tilde x_t\, \frac{d\log\alpha_t}{dt}.
+\]</span> Substituting the semi-linear form, the linear term <em>cancels exactly</em>: <span class="math display">\[
+\frac{d\tilde x_t}{dt} \;=\; \frac{\sigma_t}{\alpha_t}\, \frac{d\log(\sigma_t/\alpha_t)}{dt}\, \epsilon_\theta(x_t, t) \;=\; \frac{d(\sigma_t/\alpha_t)}{dt}\, \epsilon_\theta(x_t, t),
+\]</span> where in the last step we used the identity <span class="math inline">\(f \cdot d\log f/dt = df/dt\)</span>. So <span id="eq-tildex-evolution"><span class="math display">\[
+\boxed{\;\; d\tilde x_t \;=\; \epsilon_\theta(x_t, t)\, d\!\left(\frac{\sigma_t}{\alpha_t}\right).\;\;}
+\tag{7}\]</span></span></p>
+<p>This is a remarkable identity. It says the rescaled state <span class="math inline">\(\tilde x_t = x_t/\alpha_t\)</span> evolves <em>only</em> through the network output, with no remaining linear term. All the “deterministic shrinkage” of the trajectory has been folded into the change of variable.</p>
+<p><strong>The half-log-SNR.</strong> Define <span class="math inline">\(\lambda_t = \log(\alpha_t/\sigma_t)\)</span> — this is half the log signal-to-noise ratio of the marginal <span class="math inline">\(q_t\)</span>. Then <span class="math inline">\(\sigma_t/\alpha_t = e^{-\lambda_t}\)</span>, and a change of variable from <span class="math inline">\(t\)</span> to <span class="math inline">\(\lambda\)</span> gives <span class="math display">\[
+\frac{d\tilde x}{d\lambda} \;=\; \frac{d\tilde x/dt}{d\lambda/dt} \;=\; \frac{\epsilon_\theta\, \cdot \, d(\sigma_t/\alpha_t)/dt}{d\lambda/dt} \;=\; -e^{-\lambda}\, \epsilon_\theta(x_\lambda, \lambda),
+\]</span> where we’ve used <span class="math inline">\(d(e^{-\lambda})/d\lambda = -e^{-\lambda}\)</span> and treated <span class="math inline">\(\epsilon_\theta\)</span> as a function of <span class="math inline">\(\lambda\)</span> via the time map. Integrating from <span class="math inline">\(\lambda_i\)</span> to <span class="math inline">\(\lambda_{i+1} = \lambda_i + h_i\)</span>: <span id="eq-integral-form"><span class="math display">\[
+\tilde x(\lambda_{i+1}) \;=\; \tilde x(\lambda_i) \;-\; \int_{\lambda_i}^{\lambda_{i+1}} e^{-\lambda}\, \epsilon_\theta(x_\lambda, \lambda)\, d\lambda.
+\tag{8}\]</span></span></p>
+<p>Now the entire numerical work has been reduced to evaluating one integral. The factor <span class="math inline">\(e^{-\lambda}\)</span> inside the integrand is <em>known</em>, and the only unknown is <span class="math inline">\(\epsilon_\theta\)</span> — exactly the term we have a network for. The remaining game is to approximate the integral using as few network evaluations as possible.</p>
+<p><strong>DPM-Solver-1 = DDIM.</strong> The simplest approximation is to treat <span class="math inline">\(\epsilon_\theta\)</span> as constant at the left endpoint <span class="math inline">\(\lambda_i\)</span>. Then <span class="math display">\[
+\int_{\lambda_i}^{\lambda_i + h_i} e^{-\lambda}\, d\lambda \;=\; e^{-\lambda_i}\!\left(1 - e^{-h_i}\right),
+\]</span> and substituting back <span class="math inline">\(\tilde x = x/\alpha\)</span> and rearranging, <span id="eq-dpm-solver-1"><span class="math display">\[
+x_{t_{i+1}} \;=\; \frac{\alpha_{t_{i+1}}}{\alpha_{t_i}}\, x_{t_i} \;-\; \sigma_{t_{i+1}}\!\left(e^{h_i} - 1\right)\epsilon_\theta(x_{t_i}, t_i).
+\tag{9}\]</span></span> The algebra to bring out the <span class="math inline">\(\sigma_{t_{i+1}}(e^{h_i} - 1)\)</span> form uses <span class="math inline">\(\alpha_{t_{i+1}} e^{-\lambda_i} = \sigma_{t_{i+1}} e^{h_i}\)</span> and <span class="math inline">\(\alpha_{t_{i+1}} e^{-\lambda_{i+1}} = \sigma_{t_{i+1}}\)</span>. Lu et al.&nbsp;(2022) show that (<a href="#eq-dpm-solver-1" class="quarto-xref">Equation&nbsp;9</a>) is <em>identically</em> the deterministic DDIM update with the <span class="math inline">\(\eta = 0\)</span> variance. So DDIM is exactly the first-order DPM-Solver applied to the semi-linear form (<a href="#eq-semi-linear" class="quarto-xref">Equation&nbsp;6</a>). DDIM is not a separate algorithm; it is the Euler discretization of the integral (<a href="#eq-integral-form" class="quarto-xref">Equation&nbsp;8</a>) in disguise.</p>
+<blockquote class="blockquote">
+<p>The cleanliness of (<a href="#eq-dpm-solver-1" class="quarto-xref">Equation&nbsp;9</a>) is what made the DDIM derivation so much messier than it needed to be in the original paper (Song et al., 2020). Song et al.&nbsp;wrote the update in the time variable <span class="math inline">\(t\)</span> with the linear drift explicitly retained, which forced a complicated expression. In the <span class="math inline">\(\lambda\)</span> variable with the integrating factor applied, the linear part is gone, the update is a clean exponential, and the connection to higher-order solvers is obvious. This sort of variable change is a useful general-purpose technique whenever you have a semi-linear ODE.</p>
+</blockquote>
+<p><strong>DPM-Solver-2.</strong> The next-order approximation Taylor-expands <span class="math inline">\(\epsilon_\theta(x_\lambda, \lambda)\)</span> to first order in <span class="math inline">\(\lambda\)</span> around <span class="math inline">\(\lambda_i\)</span>: <span class="math display">\[
+\epsilon_\theta(x_\lambda, \lambda) \;\approx\; \epsilon_\theta^{(i)} + (\lambda - \lambda_i)\, \frac{d\epsilon_\theta}{d\lambda}\bigg|_{\lambda_i}.
+\]</span> The integral becomes <span class="math display">\[
+\int_{\lambda_i}^{\lambda_i + h_i} e^{-\lambda}\, \epsilon_\theta\, d\lambda \;\approx\; \epsilon_\theta^{(i)} \cdot e^{-\lambda_i}(1 - e^{-h_i}) + \frac{d\epsilon_\theta}{d\lambda}\bigg|_{\lambda_i}\!\!\cdot e^{-\lambda_i}\bigl(1 - (1 + h_i)\, e^{-h_i}\bigr).
+\]</span></p>
+<p>The derivative <span class="math inline">\(d\epsilon_\theta/d\lambda\)</span> at <span class="math inline">\(\lambda_i\)</span> is not directly available, but it can be estimated by evaluating the network at an intermediate point. The trick is to use the <em>first-order</em> solver to step from <span class="math inline">\(\lambda_i\)</span> to a midpoint <span class="math inline">\(\lambda_{\mathrm{mid}} = \lambda_i + h_i/2\)</span>, then use the difference <span class="math inline">\(\epsilon_\theta(u_i, \lambda_{\mathrm{mid}}) - \epsilon_\theta(x_{t_i}, \lambda_i)\)</span> to construct a second-order estimate. The full DPM-Solver-2 update reads:</p>
+<pre class="text"><code>ALGORITHM 5 — DPM-Solver-2 (singlestep, second-order)
+  Given:    x_{t_i}  at lambda_i
+  Output:   x_{t_{i+1}}  at lambda_{i+1} = lambda_i + h_i
+
+  s_i      = (lambda_i + lambda_{i+1}) / 2                    # midpoint in lambda
+  t_{s_i}  = lambda_to_t(s_i)
+  eps_i    = eps_theta(x_{t_i}, t_i)
+  u_i      = (alpha_{s_i}/alpha_{t_i}) x_{t_i}
+             - sigma_{s_i} * (exp(h_i/2) - 1) * eps_i         # half-step DDIM
+  eps_mid  = eps_theta(u_i, t_{s_i})
+  x_{t_{i+1}} = (alpha_{t_{i+1}}/alpha_{t_i}) x_{t_i}
+                - sigma_{t_{i+1}} * (exp(h_i) - 1) * eps_mid</code></pre>
+<p>Two network evaluations per step (one at <span class="math inline">\(t_i\)</span>, one at the midpoint <span class="math inline">\(t_{s_i}\)</span>), local error <span class="math inline">\(O(h_i^3)\)</span> for the nonlinear part, and the linear part still solved exactly. This is the entire trick.</p>
+<blockquote class="blockquote">
+<p>Why “<span class="math inline">\(O(h_i^3)\)</span> for the nonlinear part” and not <span class="math inline">\(O(h_i^3)\)</span> globally? Because the linear shrinkage <span class="math inline">\(\alpha_{t_{i+1}}/\alpha_{t_i}\)</span> is applied <em>exactly</em>, with zero discretization error. In a classical second-order Runge-Kutta on the raw ODE (<a href="#eq-pf-ode-general" class="quarto-xref">Equation&nbsp;5</a>), the linear part would also accumulate <span class="math inline">\(O(h^3)\)</span> local error. Here we have removed that source of error entirely. So DPM-Solver-2 is strictly more accurate than vanilla RK2 on the same problem, with the same number of network evaluations.</p>
+</blockquote>
+<p><strong>Why DPM-Solver crushes Euler.</strong> A classical Euler step on (<a href="#eq-pf-ode-general" class="quarto-xref">Equation&nbsp;5</a>) has <span class="math inline">\(O(h)\)</span> local error per step from <em>all</em> sources — linear and nonlinear. DPM-Solver-2 has <span class="math inline">\(O(h^3)\)</span> local error per step from the nonlinear <span class="math inline">\(\epsilon_\theta\)</span> integral, and zero error from the linear drift. The constants in front of the <span class="math inline">\(O(h^3)\)</span> involve the smoothness of <span class="math inline">\(\epsilon_\theta\)</span> as a function of <span class="math inline">\(\lambda\)</span>, which is empirically much better-behaved than the smoothness in <span class="math inline">\(t\)</span> because <span class="math inline">\(\lambda\)</span> is <em>the</em> natural variable for the noise scale. Lu et al.&nbsp;(2022) report that DPM-Solver-2 with 10 NFEs matches DDIM with 100 NFEs on CIFAR-10, and DPM-Solver-3 (which Taylor-expands <span class="math inline">\(\epsilon_\theta\)</span> to second order using two intermediate evaluations) with 15 NFEs matches DDIM with 250 NFEs. These are not small wins.</p>
+<p><strong>Heun’s method.</strong> A simpler classical predictor-corrector — second-order by a different route. The predictor takes an Euler step: <span class="math display">\[
+\tilde x_{t+h} \;=\; x_t + h\, v(x_t, t),
+\]</span> where <span class="math inline">\(v(x_t, t)\)</span> is the right-hand side of the ODE (<a href="#eq-pf-ode-general" class="quarto-xref">Equation&nbsp;5</a>). The corrector then averages the velocity at the start and end: <span id="eq-heun"><span class="math display">\[
+x_{t+h} \;=\; x_t + \tfrac{h}{2}\bigl(v(x_t, t) + v(\tilde x_{t+h}, t+h)\bigr).
+\tag{10}\]</span></span></p>
+<p>Heun’s method has <span class="math inline">\(O(h^3)\)</span> local error globally (not just on the nonlinear part), which is technically worse than DPM-Solver-2 — but the proportionality constant is small enough that for practical step counts (<span class="math inline">\(N \in [10, 50]\)</span>) the two are comparable. Heun is what powers the <strong>EDM sampler</strong> of Karras et al.&nbsp;(2022). Two NFEs per step, no semi-linear bookkeeping, no <span class="math inline">\(\lambda\)</span> change of variable.</p>
+<p><strong>EDM’s unified preconditioned framework.</strong> Karras et al.&nbsp;(2022) propose a parameterization that subsumes essentially every prior sampler. Replace the noise predictor <span class="math inline">\(\epsilon_\theta\)</span> with a <em>denoiser</em> <span class="math inline">\(D_\theta(x; \sigma)\)</span> that takes the noisy image and the <em>noise scale</em> directly (no time index), and define <span id="eq-edm-precond"><span class="math display">\[
+D_\theta(x; \sigma) \;=\; c_{\mathrm{skip}}(\sigma)\, x \;+\; c_{\mathrm{out}}(\sigma)\, F_\theta\!\bigl(c_{\mathrm{in}}(\sigma)\, x,\, c_{\mathrm{noise}}(\sigma)\bigr),
+\tag{11}\]</span></span> where <span class="math inline">\(F_\theta\)</span> is the raw neural network output and the four scalings are <span id="eq-edm-coefs"><span class="math display">\[
+c_{\mathrm{skip}}(\sigma) = \frac{\sigma_{\mathrm{data}}^2}{\sigma^2 + \sigma_{\mathrm{data}}^2}, \quad c_{\mathrm{out}}(\sigma) = \frac{\sigma \cdot \sigma_{\mathrm{data}}}{\sqrt{\sigma_{\mathrm{data}}^2 + \sigma^2}}, \quad c_{\mathrm{in}}(\sigma) = \frac{1}{\sqrt{\sigma_{\mathrm{data}}^2 + \sigma^2}}, \quad c_{\mathrm{noise}}(\sigma) = \tfrac{1}{4} \log \sigma.
+\tag{12}\]</span></span> The intuition: <span class="math inline">\(c_{\mathrm{in}}\)</span> standardizes the network input to roughly unit variance; <span class="math inline">\(c_{\mathrm{out}}\)</span> rescales the network output so the target is also unit-variance; <span class="math inline">\(c_{\mathrm{skip}}\)</span> produces a smooth interpolation between identity (at low noise) and full denoising (at high noise); <span class="math inline">\(c_{\mathrm{noise}}\)</span> maps the geometric sequence of noise levels to a logarithmically spaced conditioning signal that the network can process linearly.</p>
+<p>With this preconditioning, the EDM probability-flow ODE simplifies to <span id="eq-edm-ode"><span class="math display">\[
+\frac{dx}{d\sigma} \;=\; \frac{x - D_\theta(x; \sigma)}{\sigma},
+\tag{13}\]</span></span> which can be derived directly from the variance-exploding (VE) formulation — <span class="math inline">\(f(t) = 0\)</span>, <span class="math inline">\(g(t)^2 = d\sigma^2/dt\)</span> — by taking <span class="math inline">\(\sigma\)</span> as the time variable. EDM uses a power-law <span class="math inline">\(\sigma\)</span> schedule <span class="math inline">\(\sigma_i = \bigl(\sigma_{\max}^{1/\rho} + \tfrac{i}{N-1}(\sigma_{\min}^{1/\rho} - \sigma_{\max}^{1/\rho})\bigr)^\rho\)</span> with <span class="math inline">\(\rho \approx 7\)</span>, which concentrates steps in the medium-to-low-noise regime where curvature is highest, and sweeps Heun’s method along it. Karras et al.&nbsp;report FID 1.97 on CIFAR-10 with 35 NFEs — the state of the art at publication time, beaten only by later distillation-based methods.</p>
+<blockquote class="blockquote">
+<p>The four preconditioning scalings (<a href="#eq-edm-coefs" class="quarto-xref">Equation&nbsp;12</a>) are not arbitrary. Karras et al.&nbsp;derive them by requiring (i) the network input variance equals 1 at every noise level, (ii) the network target variance equals 1 at every noise level, and (iii) the loss weighting be uniform in log-SNR. Each constraint determines one of the scalings. The fourth scaling <span class="math inline">\(c_{\mathrm{noise}}\)</span> is empirical — they found logarithmic conditioning trains faster than linear <span class="math inline">\(\sigma\)</span> conditioning.</p>
+</blockquote>
+<p><strong>DPM-Solver++ and the multistep family.</strong> DPM-Solver++ (Lu et al., 2022b) makes two refinements. First, it reparameterizes from <span class="math inline">\(\epsilon\)</span>-prediction to <em>data-prediction</em> (a.k.a. <span class="math inline">\(x_0\)</span>-prediction), <span class="math inline">\(x_\theta(x_t, t) = (x_t - \sigma_t \epsilon_\theta)/\alpha_t\)</span>, which is more stable at very low <span class="math inline">\(\sigma_t\)</span> where dividing by <span class="math inline">\(\sigma_t\)</span> in the score amplifies network noise. Second, it introduces a multistep variant. Instead of producing a second-order solver by adding an intermediate network evaluation (à la DPM-Solver-2, two NFEs per step), DPM-Solver++ 2M reuses the <em>previous</em> step’s network evaluation in an Adams-Bashforth–style extrapolation: <span class="math display">\[
+\epsilon_\theta^{\mathrm{extrap}} \;=\; (1 + r_i)\,\epsilon_\theta(x_{t_i}, t_i) - r_i\, \epsilon_\theta(x_{t_{i-1}}, t_{i-1}), \quad r_i = h_{i-1}/h_i,
+\]</span> and uses this extrapolated value in place of the constant approximation. The result is second-order accurate at the cost of only one NFE per step, plus the storage of one previous activation. For 20-step sampling this halves wall-clock time relative to DPM-Solver-2 with no measurable FID loss. DPM-Solver++ 2M is the default sampler in the diffusers library and what most production Stable Diffusion deployments use.</p>
+<p><strong>Data-prediction vs.&nbsp;noise-prediction parameterizations.</strong> Lu et al.&nbsp;(2022b) point out a subtle numerical issue with the <span class="math inline">\(\epsilon\)</span>-prediction integral (<a href="#eq-integral-form" class="quarto-xref">Equation&nbsp;8</a>). At very low noise levels (<span class="math inline">\(\sigma_t \to 0\)</span> near <span class="math inline">\(t = 0\)</span>), the relation <span class="math inline">\(\nabla_{x_t}\log p_t = -\epsilon_\theta/\sigma_t\)</span> amplifies any small error in <span class="math inline">\(\epsilon_\theta\)</span> by a factor of <span class="math inline">\(1/\sigma_t\)</span>, which is precisely where the network is most uncertain (the last few steps before clean data). Reparameterizing to predict the <em>clean data</em> <span class="math inline">\(x_\theta(x_t, t) = (x_t - \sigma_t \epsilon_\theta(x_t, t))/\alpha_t\)</span> avoids this amplification because the data target is bounded in <span class="math inline">\([-1, 1]\)</span> regardless of <span class="math inline">\(\sigma_t\)</span>. The DPM-Solver++ first-order update in the data-prediction parameterization reads <span class="math display">\[
+x_{t_{i+1}} \;=\; \frac{\sigma_{t_{i+1}}}{\sigma_{t_i}}\, x_{t_i} \;+\; \alpha_{t_{i+1}}\!\left(1 - e^{-h_i}\right) x_\theta(x_{t_i}, t_i),
+\]</span> which is identical in spirit to (<a href="#eq-dpm-solver-1" class="quarto-xref">Equation&nbsp;9</a>) but with <span class="math inline">\((\alpha, \sigma)\)</span> swapped and a sign flipped in the exponent. Internally, the trained network is unchanged — it still outputs <span class="math inline">\(\epsilon_\theta\)</span> — and <span class="math inline">\(x_\theta\)</span> is recovered by the formula above. The data-prediction parameterization is what gives DPM-Solver++ its quality edge over DPM-Solver in the very-low-NFE regime (5–10 steps), where the last steps are precisely the ones with amplifying <span class="math inline">\(1/\sigma_t\)</span> factors. Karras et al.’s preconditioned denoiser (<a href="#eq-edm-precond" class="quarto-xref">Equation&nbsp;11</a>) is a generalization of the same idea: shape the network’s input/output scaling so the target lives in a fixed range across all noise levels.</p>
+<p><strong>Stochastic variants.</strong> A common observation: deterministic ODE sampling can produce slightly less diverse samples than stochastic SDE sampling, particularly on highly multimodal targets where the deterministic trajectory commits early to a mode and can’t escape. Karras et al.&nbsp;(2022) propose “stochastic Heun”: at each step, re-inject a small amount of fresh Gaussian noise scaled by a hyperparameter <span class="math inline">\(S_{\mathrm{churn}} \in [0, \infty)\)</span>, then take a normal Heun step on the now-noisier state. With <span class="math inline">\(S_{\mathrm{churn}} = 0\)</span> this is deterministic Heun; with large <span class="math inline">\(S_{\mathrm{churn}}\)</span> it approaches the underlying SDE. EDM’s default is <span class="math inline">\(S_{\mathrm{churn}} \approx 50\)</span>, restricted to a middle range of noise levels. DPM-Solver++ has an analogous stochastic variant (DPM-Solver++ SDE). On unconditional generation, the stochastic variant typically beats the deterministic one by a small FID margin; on conditional text-to-image generation, the two are essentially indistinguishable.</p>
+<blockquote class="blockquote">
+<p><strong>A note on adaptive-step methods.</strong> Classical ODE literature features sophisticated adaptive-step solvers (Runge-Kutta-Fehlberg, Dormand-Prince) that vary <span class="math inline">\(h_i\)</span> based on a local error estimate, taking large steps in smooth regions and small steps in stiff regions. These rarely win for diffusion sampling — the curvature of the probability-flow trajectory is highest near <span class="math inline">\(t = 0\)</span>, where the data manifold begins to impose its structure, and the <em>schedule</em> (placing more nodes near <span class="math inline">\(t = 0\)</span> via a power-law <span class="math inline">\(\sigma\)</span> schedule) is a much cheaper way to get the same concentration of steps than an adaptive solver that wastes function evaluations evaluating its own error estimate. Karras et al.&nbsp;(2022) explicitly try adaptive Dormand-Prince and find it slower than fixed-step Heun at matched FID. The lesson generalizes: when a problem has known stiffness structure, hand-tuned non-uniform sampling beats automatic adaptivity.</p>
+</blockquote>
+<div id="fig-dpm-solver" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-dpm-solver-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://lilianweng.github.io/posts/2021-07-11-diffusion-models/dpm-solver-comparison.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dpm-solver-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Figure: NFE-vs-FID for various samplers on CIFAR-10/LSUN; DPM-Solver++ Pareto-dominates DDIM at every step count; see Lu et al.&nbsp;(2022), Fig. 1.
+</figcaption>
+</figure>
+</div>
+<p><strong>Practical recommendations.</strong> Here is the cheat-sheet most production diffusion engineers carry in their heads:</p>
+<ul>
+<li><strong>Stable Diffusion 1.5 / SDXL.</strong> DPM-Solver++ 2M Karras with 20 steps. Karras here means the EDM-style power-law sigma schedule rather than the original DDPM linear schedule; the difference is a 5–10% FID improvement at the same NFE.</li>
+<li><strong>Latent video diffusion</strong> (e.g., CogVideoX, LTX). DPM-Solver-2 with 25–30 steps, plus a slightly higher CFG scale to compensate for the increased difficulty of the conditional distribution.</li>
+<li><strong>Consistency-distilled models</strong> (LCM, LCM-LoRA). Euler with 4 steps. Going higher does not help because the model was distilled to be self-consistent in <span class="math inline">\(\leq 4\)</span> steps. Going lower (1–2 steps) is sometimes acceptable for previews.</li>
+<li><strong>Rectified-flow distilled models</strong> (FLUX-schnell, SDXL Turbo, SD3 Turbo). Euler with 1–4 steps. The probability-flow ODE has been straightened by rectification so a low-order solver suffices.</li>
+<li><strong>EDM-style research models.</strong> Heun with 18–35 steps following the EDM <span class="math inline">\(\sigma\)</span> schedule. This is what’s used to produce the headline CIFAR-10 / FFHQ numbers in most academic comparisons.</li>
+<li><strong>Anything where you want to investigate sampler differences.</strong> Run DDIM with 250 steps as a “ground truth” reference. Any production sampler should match within FID 0.1 of this reference.</li>
+</ul>
+<blockquote class="blockquote">
+<p>One more piece of folklore worth committing to memory. <strong>The choice of <span class="math inline">\(\sigma\)</span> (or <span class="math inline">\(\beta\)</span>) schedule often matters more than the choice of solver.</strong> A 20-step DDIM sampler on the EDM schedule can outperform a 50-step DPM-Solver++ sampler on a poorly chosen schedule, because the schedule decides <em>where to place the discretization nodes</em> and a well-placed node is worth two badly placed ones. When diagnosing why a fast sampler is producing artifacts, check the schedule before blaming the solver.</p>
+</blockquote>
+<p>The pattern across this whole literature is consistent: the score network is the model, and the sampler is a <em>separate</em> algorithm operating on that model. Once trained, a diffusion or flow-matching model is a function from <span class="math inline">\((x_t, t)\)</span> to <span class="math inline">\(\epsilon\)</span> (or velocity, or score) — the sampler is free to use whatever discretization of the ODE/SDE it pleases, including ones with no semantic connection to the training schedule. Better samplers give faster inference for free. This decoupling is one of the underrated virtues of diffusion models compared to autoregressive generation, where the sampling algorithm (sequential one-token-at-a-time) is welded to the model architecture and cannot be replaced without architectural surgery.</p>
+<!-- INSERT_AFTER_LINE_MATCHING: ^### 10.9 Diffusion as a special case of flow matching -->
+<!-- SECTION_NAME: 10.9b Riemannian and discrete flow matching -->
+<p>Every probability path we have considered so far has been a Gaussian in <span class="math inline">\(\mathbb{R}^d\)</span>, a continuous distribution over a flat Euclidean ambient space. That is the correct framing for natural images, audio, and continuous robot actions. But many distributions of practical interest do not live in <span class="math inline">\(\mathbb{R}^d\)</span> at all — they live on <em>curved</em> manifolds, or on <em>discrete</em> state spaces, or on combinations of the two. To handle them, we have to take the conditional-flow-matching framework of §10.4 and generalize the two pieces: the geometry of the state space, and the structure of the conditional probability path.</p>
+<p><strong>Domains where Euclidean flow matching fails.</strong> A short tour of motivating examples:</p>
+<ul>
+<li><strong>Sphere <span class="math inline">\(S^d\)</span>.</strong> Protein backbone orientations are described by unit-norm direction vectors. Earth-surface coordinates lie on <span class="math inline">\(S^2\)</span>. Embeddings on the hypersphere (after <span class="math inline">\(\ell_2\)</span> normalization, as in CLIP) live on <span class="math inline">\(S^{d-1}\)</span>. In all these cases, a sample is required to satisfy <span class="math inline">\(\|x\| = 1\)</span>, which is a constraint that Euclidean ODE integration violates at every step.</li>
+<li><strong>Special orthogonal group <span class="math inline">\(\mathrm{SO}(3)\)</span>.</strong> The orientation of a robot’s end-effector, of a rigid object in a 3D scene, or of a small molecule, is a <span class="math inline">\(3 \times 3\)</span> rotation matrix with <span class="math inline">\(R^\top R = I\)</span> and <span class="math inline">\(\det R = +1\)</span>. The group has dimension three but lives as a curved 3-manifold inside <span class="math inline">\(\mathbb{R}^9\)</span>.</li>
+<li><strong>Probability simplex <span class="math inline">\(\Delta^k\)</span>.</strong> A categorical distribution over <span class="math inline">\(k\)</span> outcomes is a point in the <span class="math inline">\((k-1)\)</span>-simplex. Token distributions over a vocabulary, asset allocations in a portfolio, mixing weights for a Gaussian mixture model — all are simplex-valued. Linear interpolation can produce a vector with a negative entry, which is no longer a probability distribution.</li>
+<li><strong>Discrete sets.</strong> Amino acid sequences, DNA, code tokens, molecular graphs. There is no continuous trajectory connecting two distinct tokens — the state space is intrinsically discrete.</li>
+<li><strong>Combinations.</strong> The pose of a robot end-effector lives in <span class="math inline">\(\mathrm{SE}(3) = \mathbb{R}^3 \times \mathrm{SO}(3)\)</span>, a six-dimensional manifold. Action chunks for dexterous manipulation are sequences of <span class="math inline">\(\mathrm{SE}(3)\)</span> elements, possibly with discrete grasp/release states layered on top.</li>
+</ul>
+<p><strong>Riemannian flow matching (Chen &amp; Lipman, 2023).</strong> The generalization to a smooth Riemannian manifold <span class="math inline">\((\mathcal{M}, g)\)</span> is conceptually almost trivial — every object in the CFM derivation just gets its manifold-aware counterpart — but the algebra requires a bit of geometric language.</p>
+<p>A vector field on <span class="math inline">\(\mathcal{M}\)</span> assigns to each point <span class="math inline">\(x \in \mathcal{M}\)</span> a tangent vector <span class="math inline">\(u(x) \in T_x \mathcal{M}\)</span>. The flow ODE is now <span class="math display">\[
+\frac{dx_t}{dt} \;=\; u_\theta(t, x_t) \;\in\; T_{x_t} \mathcal{M},
+\]</span> which the integrator must respect — taking an Euclidean Euler step <span class="math inline">\(x_t + h\, u_\theta\)</span> would generically leave the manifold, so we either use a manifold-aware step (the <strong>Riemannian exponential map</strong> <span class="math inline">\(\exp_{x_t}(h\, u_\theta)\)</span>, which moves along a geodesic for time <span class="math inline">\(h\)</span> in the direction <span class="math inline">\(u_\theta\)</span>) or use a Lie-group exponential when <span class="math inline">\(\mathcal{M}\)</span> is a Lie group.</p>
+<p>The straight-line interpolation <span class="math inline">\(x_t = (1-t) x_0 + t x_1\)</span> from §10.5 generalizes to a <strong>geodesic</strong> interpolation: <span id="eq-geodesic"><span class="math display">\[
+x_t \;=\; \exp_{x_0}\!\bigl(t \cdot \log_{x_0}(x_1)\bigr),
+\tag{14}\]</span></span> where <span class="math inline">\(\log_{x_0}: \mathcal{M} \to T_{x_0}\mathcal{M}\)</span> is the Riemannian logarithm — the inverse of the exponential, giving the initial tangent vector that arrives at <span class="math inline">\(x_1\)</span> after time <span class="math inline">\(1\)</span>. The conditional probability path is then a delta concentrated on the geodesic from <span class="math inline">\(x_0\)</span> to <span class="math inline">\(x_1\)</span>, and the conditional velocity (a tangent vector at <span class="math inline">\(x_t\)</span>) is the parallel transport of <span class="math inline">\(\log_{x_0}(x_1)\)</span> along the geodesic. For the <em>simple geodesic path</em> of Chen &amp; Lipman, this works out to <span id="eq-riem-vf"><span class="math display">\[
+u_t(x \mid x_1) \;=\; \frac{1}{1-t}\, \log_{x}(x_1),
+\tag{15}\]</span></span> which is the tangent vector at the <em>current</em> point <span class="math inline">\(x\)</span> pointing toward <span class="math inline">\(x_1\)</span>, scaled by an inverse-time factor that grows as <span class="math inline">\(t \to 1\)</span> (just like the Euclidean case where <span class="math inline">\(u = (x_1 - x)/(1-t)\)</span>).</p>
+<blockquote class="blockquote">
+<p><strong>The sphere worked out.</strong> On <span class="math inline">\(S^d\)</span> with the round metric, the exponential map at a point <span class="math inline">\(p\)</span> with tangent vector <span class="math inline">\(v\)</span> is <span class="math inline">\(\exp_p(v) = \cos(\|v\|)\, p + \sin(\|v\|)\, v/\|v\|\)</span>, valid for <span class="math inline">\(\|v\| &lt; \pi\)</span>. The logarithm map at <span class="math inline">\(p\)</span> to a point <span class="math inline">\(q\)</span> (with <span class="math inline">\(\langle p, q \rangle \in (-1, 1)\)</span>) is <span class="math inline">\(\log_p(q) = \arccos(\langle p, q\rangle) \cdot \tfrac{q - \langle p, q\rangle p}{\|q - \langle p, q\rangle p\|}\)</span> — the unit vector tangent to the great circle from <span class="math inline">\(p\)</span> toward <span class="math inline">\(q\)</span>, scaled by the geodesic distance. The conditional velocity in (<a href="#eq-riem-vf" class="quarto-xref">Equation&nbsp;15</a>) is then a closed-form tensor expression, just like the Euclidean case, and the network learns to predict it.</p>
+</blockquote>
+<p><strong>Why ambient interpolation fails.</strong> Consider <span class="math inline">\(S^2\)</span> with two points <span class="math inline">\(x_0 = (1, 0, 0)\)</span> and <span class="math inline">\(x_1 = (-1, 0, 0)\)</span> — antipodes. The Euclidean midpoint <span class="math inline">\(\tfrac{1}{2}(x_0 + x_1) = (0, 0, 0)\)</span> is the center of the sphere, not on the manifold. A flow that uses this midpoint as its target at <span class="math inline">\(t = 0.5\)</span> would produce off-manifold samples that the decoder cannot interpret. Geodesic interpolation goes the long way around the great circle and stays on the sphere throughout. More importantly, <em>all</em> the trajectories the model learns to produce are intrinsic to <span class="math inline">\(\mathcal{M}\)</span>, so at inference the integrator stays on the manifold by construction.</p>
+<p><strong>Discrete flow matching (Gat, Remez, Shaul et al., 2024).</strong> The other generalization replaces the continuous ambient <span class="math inline">\(\mathbb{R}^d\)</span> with a discrete state space — say <span class="math inline">\(\mathcal{X} = \{1, \dots, V\}^L\)</span>, a sequence of <span class="math inline">\(L\)</span> tokens drawn from a vocabulary of size <span class="math inline">\(V\)</span> (so <span class="math inline">\(\mathcal{X}\)</span> contains <span class="math inline">\(V^L\)</span> points). There is no notion of a tangent vector at a token, no notion of a continuous trajectory between two distinct tokens. What replaces the ODE is a <strong>continuous-time Markov chain</strong> (CTMC).</p>
+<p>A CTMC on <span class="math inline">\(\mathcal{X}\)</span> is specified by an infinitesimal generator matrix <span class="math inline">\(Q_t \in \mathbb{R}^{|\mathcal{X}| \times |\mathcal{X}|}\)</span>, also called the rate matrix, where <span class="math inline">\(Q_t(x, y) \geq 0\)</span> for <span class="math inline">\(x \neq y\)</span> is the instantaneous transition rate from state <span class="math inline">\(x\)</span> to state <span class="math inline">\(y\)</span> at time <span class="math inline">\(t\)</span>, and the diagonal entries are set to <span class="math inline">\(Q_t(x, x) = -\sum_{y \neq x} Q_t(x, y)\)</span> so each row sums to zero. The marginal distribution <span class="math inline">\(p_t \in \Delta^{|\mathcal{X}|}\)</span> evolves by the master equation <span id="eq-master-eq"><span class="math display">\[
+\frac{d\, p_t(x)}{dt} \;=\; \sum_{y \neq x}\!\bigl[Q_t(y, x)\, p_t(y) - Q_t(x, y)\, p_t(x)\bigr].
+\tag{16}\]</span></span> This is the discrete continuity equation — probability mass flowing into state <span class="math inline">\(x\)</span> from neighbors <span class="math inline">\(y\)</span> at rate <span class="math inline">\(Q_t(y, x) p_t(y)\)</span>, minus mass flowing out at rate <span class="math inline">\(Q_t(x, y) p_t(x)\)</span>.</p>
+<p>To set up flow matching on a discrete space we play the same trick as in the continuous case. Define a <strong>conditional probability path</strong> <span class="math inline">\(p_t(x \mid x_1)\)</span> that interpolates between a known source distribution <span class="math inline">\(p_0\)</span> and a delta on <span class="math inline">\(x_1\)</span> as <span class="math inline">\(t \to 1\)</span>. Two popular choices:</p>
+<ul>
+<li><strong>Masking path.</strong> Introduce an extra token <span class="math inline">\(\mathbf{M}\)</span> (“mask”) into the vocabulary. At each position independently, the conditional path puts probability <span class="math inline">\(t\)</span> on the target token <span class="math inline">\(x_1^i\)</span> and probability <span class="math inline">\(1 - t\)</span> on <span class="math inline">\(\mathbf{M}\)</span>. So <span class="math inline">\(p_t(x \mid x_1) = \prod_i [t \cdot \mathbb{1}\{x^i = x_1^i\} + (1-t)\, \mathbb{1}\{x^i = \mathbf{M}\}]\)</span>. At <span class="math inline">\(t = 0\)</span> the entire sequence is mask, at <span class="math inline">\(t = 1\)</span> it is <span class="math inline">\(x_1\)</span>. This is the path used by MD4 (Shi et al., 2024) and by Meta’s MaskGIT-style discrete diffusion models.</li>
+<li><strong>Uniform path.</strong> Mix the conditional distribution between a uniform <span class="math inline">\(p_0(x) = 1/V\)</span> and a delta on <span class="math inline">\(x_1\)</span>, again position by position. This is the path used by SEDD (Lou et al., 2024) and by Gat et al.’s original discrete flow matching paper.</li>
+</ul>
+<p>For each conditional path there exists a <em>conditional generator</em> <span class="math inline">\(Q_t(\cdot, \cdot \mid x_1)\)</span> whose master equation generates <span class="math inline">\(p_t(\cdot \mid x_1)\)</span>, and the marginal generator <span class="math display">\[
+Q_t(x, y) \;=\; \mathbb{E}_{p_{1\mid t}(x_1 \mid x)}\!\bigl[Q_t(x, y \mid x_1)\bigr]
+\]</span> satisfies the master equation for the marginal <span class="math inline">\(p_t\)</span>. The proof is exactly parallel to the continuous case (<strong>?@eq-marginal-vf</strong>): substitute the mixture decomposition into the master equation for <span class="math inline">\(p_t(\cdot \mid x_1)\)</span>, integrate against <span class="math inline">\(q_1(x_1)\)</span>, and recognize the result. The training objective regresses a neural model <span class="math inline">\(Q_\theta(t, x, y)\)</span> onto the conditional generator, with the same “<span class="math inline">\(\nabla_\theta \mathcal{L}_{\mathrm{FM}} = \nabla_\theta \mathcal{L}_{\mathrm{CFM}}\)</span>” miracle providing an unbiased gradient. At inference, we simulate the learned CTMC: sample exponentially distributed waiting times, then jump to a new state according to the off-diagonal rates, until <span class="math inline">\(t\)</span> reaches <span class="math inline">\(1\)</span>.</p>
+<blockquote class="blockquote">
+<p><strong>Why the masking path is convenient.</strong> For most positions <span class="math inline">\(i\)</span> at most times <span class="math inline">\(t\)</span>, the current state <span class="math inline">\(x^i = \mathbf{M}\)</span> and the only allowed transition is mask <span class="math inline">\(\to\)</span> token. So the conditional generator is sparse — most off-diagonal entries are zero — and the network only needs to predict, at each masked position, a distribution over the <span class="math inline">\(V\)</span> vocabulary tokens. This reduces to <em>parallel logits over masked positions</em>, which is exactly the architecture BERT and its descendants were already trained for. The masking path turns discrete flow matching into “MLM with a continuous mask ratio plus a learned schedule for the unmasking order.” The connection runs deep enough that the practical loss is essentially a weighted cross-entropy, with weighting determined by the rate-matrix structure.</p>
+</blockquote>
+<p><strong>Why this matters for language modeling.</strong> Autoregressive language models are excellent — GPT-style decoders dominate language tasks — but they have one structural disadvantage: token-by-token sampling means each token requires a full network evaluation, and the latency is <span class="math inline">\(O(L)\)</span> for a sequence of length <span class="math inline">\(L\)</span>. Discrete diffusion / flow matching models can do parallel decoding: every position is sampled jointly at each diffusion step, so <span class="math inline">\(L\)</span> doesn’t appear in the latency per step. For a model with <span class="math inline">\(L = 10{,}000\)</span> tokens (long context, long generations) and a sampler that converges in 20 steps, the latency is <span class="math inline">\(20 \cdot t_{\mathrm{NFE}}\)</span> rather than <span class="math inline">\(10{,}000 \cdot t_{\mathrm{NFE}}\)</span>. This is the basic reason interest in discrete diffusion has accelerated: parallel decoding is a real and growing competitive advantage at scale.</p>
+<p>Practical examples:</p>
+<ul>
+<li><strong>SEDD</strong> (Lou et al., 2024, “Score Entropy Discrete Diffusion”): the first discrete diffusion model to match GPT-2-scale autoregressive perplexity on text. Uses the uniform path and a score-entropy training objective that turns out to be equivalent to a particular discrete flow-matching loss.</li>
+<li><strong>MD4</strong> (Shi et al., 2024, “Masked Diffusion at Four Levels”): a masking-path discrete diffusion language model that scales to multi-billion parameters and achieves quality competitive with autoregressive LLMs on standard benchmarks.</li>
+<li><strong>LLaDA</strong> (and the LLaDA-3 family): pushes discrete diffusion to chat-style instruction following with serving infrastructure tuned for parallel decoding.</li>
+<li><strong>ESM-DiFF</strong> and <strong>MultiFlow</strong> (Campbell et al., 2024): protein sequence design with discrete flow matching, used for de novo enzyme design and antibody engineering.</li>
+</ul>
+<p><strong>The robotics connection.</strong> Robot manipulation actions live in <span class="math inline">\(\mathrm{SE}(3)\)</span> (or <span class="math inline">\(\mathrm{SE}(3)^k\)</span> for multi-finger hands), and the policy needs to generate sequences of <span class="math inline">\(\mathrm{SE}(3)\)</span> poses that respect kinematic and dynamic constraints. Euclidean flow matching can be used by parameterizing each <span class="math inline">\(\mathrm{SO}(3)\)</span> rotation as a quaternion or axis-angle vector and treating it as a 3- or 4-dimensional Euclidean point, but doing so introduces distortion: the geodesic distance between two rotations is not the same as the Euclidean distance between their quaternion representations, and the model has to learn this metric mismatch through its weights.</p>
+<p>The cleaner approach is to apply Riemannian flow matching directly on <span class="math inline">\(\mathrm{SE}(3)\)</span>. Carl-VLA (2025) does precisely this for the gripper-pose branch of its action expert: the conditional probability path is a geodesic from a random initial pose on <span class="math inline">\(\mathrm{SE}(3)\)</span> to the target pose, the network outputs a tangent vector in <span class="math inline">\(\mathfrak{se}(3)\)</span> (the Lie algebra), and the integrator uses the matrix-exponential to step on the manifold. The translation component remains Euclidean and is handled by the standard linear-interpolation CFM; only the rotation component requires the Riemannian machinery. Empirically, the geometric approach gives smoother trajectories with less rotational jitter than naive quaternion-based Euclidean flow matching, and the difference is most visible on tasks involving precise re-orientation (peg insertion, valve turning).</p>
+<blockquote class="blockquote">
+<p><strong>Where Riemannian and discrete flow matching meet.</strong> Many real-world generative problems combine continuous-on-manifold variables with discrete tokens: a robot action might be a continuous <span class="math inline">\(\mathrm{SE}(3)\)</span> pose plus a discrete gripper open/close bit, a molecule is a graph of discrete atom types plus continuous 3D positions in <span class="math inline">\(\mathbb{R}^3\)</span> (or <span class="math inline">\(\mathbb{R}^3\)</span> quotient by the <span class="math inline">\(\mathrm{SE}(3)\)</span> symmetry group), a structured document is a discrete token sequence with continuous-valued attributes. Joint generative models for these mixed-geometry distributions are an active research front, with frameworks like <strong>MultiFlow</strong> (Campbell et al., 2024) jointly handling sequence and structure for protein design. The unifying observation is that the conditional-flow-matching framework is geometric in spirit: pick a probability path, learn its generator (vector field on the tangent bundle, rate matrix in the discrete case), use the miracle identity to make the loss tractable. Everything else is bookkeeping.</p>
+</blockquote>
+<p>If a state space has a continuous group structure, a tractable conditional path, and an exponential map, you can flow-match on it. Sphere, <span class="math inline">\(\mathrm{SO}(3)\)</span>, <span class="math inline">\(\mathrm{SE}(3)\)</span>, the simplex (with information geometry), Stiefel manifolds, even spaces of probability distributions themselves (using Wasserstein geometry) — all admit flow-matching generative models. The framework is structural, not domain-specific, and that is why it continues to spread into new application areas faster than the diffusion framework that preceded it.</p>
+<!-- INSERT_AFTER_LINE_MATCHING: ^### 11.5 Where we are heading -->
+<!-- SECTION_NAME: 11.6 A quantitative cheat-sheet: the numbers you should know -->
+<p>Theory tells you the shape of things; numbers tell you which things are real. This last subsection of Chapter 11 is a reference page — densities of compute, parameter counts, sample-quality benchmarks, NFE-to-FID trade-offs — that you can flip to when reading a new paper and needing to calibrate its claims against the existing landscape. We anchor each number to its primary source so you can chase down the original measurement; we close with two paragraphs on which numbers in modern diffusion are gameable and which are sturdy.</p>
+<p><strong>Fréchet Inception Distance (FID).</strong> Briefly: FID measures the Wasserstein-2 distance between two Gaussians fit to the Inception-V3 pool-3 features of generated and real samples respectively. Lower is better; FID 0 means the generated feature distribution is indistinguishable from real (under the Inception-V3 measurement). FID is the dominant image-quality metric in the diffusion literature, so most “this model is better than that model” claims live or die by FID. Numbers reported below are from papers’ headline tables; for ImageNet they use 50k generated samples against the 50k validation set unless otherwise noted.</p>
+<p><strong>ImageNet 256×256 (class-conditional FID).</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Model</th>
+<th>FID</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ADM</td>
+<td>4.59</td>
+<td>Dhariwal &amp; Nichol (2021)</td>
+</tr>
+<tr class="even">
+<td>ADM-G (with classifier guidance)</td>
+<td>3.94</td>
+<td>Dhariwal &amp; Nichol (2021)</td>
+</tr>
+<tr class="odd">
+<td>LDM-4-G</td>
+<td>3.60</td>
+<td>Rombach et al.&nbsp;(2022)</td>
+</tr>
+<tr class="even">
+<td>DiT-XL/2</td>
+<td>2.27</td>
+<td>Peebles &amp; Xie (2022)</td>
+</tr>
+<tr class="odd">
+<td>MDT-XL/2</td>
+<td>1.79</td>
+<td>Gao et al.&nbsp;(2023)</td>
+</tr>
+<tr class="even">
+<td>FLUX dev (zero-shot, after class-prompt)</td>
+<td>~1.7</td>
+<td>community measurement</td>
+</tr>
+<tr class="odd">
+<td>Stable Diffusion 3 (8B)</td>
+<td>~2.0</td>
+<td>Esser et al.&nbsp;(2024)</td>
+</tr>
+</tbody>
+</table>
+<p>The 4.59 → 2.27 progression from ADM to DiT-XL/2 over two years is what convinced the field that latent-space transformer backbones were the future. The 2.27 → 1.79 → 1.7 plateau after that suggests diminishing returns on FID <em>as measured</em>, though human-eye preference and CLIP-aligned scores continue to improve.</p>
+<p><strong>CIFAR-10 (unconditional FID, 50k samples).</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Model</th>
+<th>FID</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>DDPM</td>
+<td>3.17</td>
+<td>Ho et al.&nbsp;(2020)</td>
+</tr>
+<tr class="even">
+<td>Improved DDPM</td>
+<td>2.90</td>
+<td>Nichol &amp; Dhariwal (2021)</td>
+</tr>
+<tr class="odd">
+<td>Score SDE (NCSN++)</td>
+<td>2.20</td>
+<td>Song et al.&nbsp;(2021)</td>
+</tr>
+<tr class="even">
+<td>EDM</td>
+<td>1.97</td>
+<td>Karras et al.&nbsp;(2022)</td>
+</tr>
+<tr class="odd">
+<td>Consistency Distillation</td>
+<td>3.55</td>
+<td>Song et al.&nbsp;(2023)</td>
+</tr>
+<tr class="even">
+<td>Consistency Trajectory Models</td>
+<td>1.73</td>
+<td>Kim et al.&nbsp;(2023)</td>
+</tr>
+</tbody>
+</table>
+<p>CIFAR-10 has been the standardized “small” benchmark since 2020 and is now essentially saturated: anything below FID 2 is within noise of the dataset’s own evaluation limit.</p>
+<p><strong>MS-COCO zero-shot 256×256 (text-to-image FID with 30k captions).</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Model</th>
+<th>FID</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>GLIDE</td>
+<td>12.24</td>
+<td>Nichol et al.&nbsp;(2022)</td>
+</tr>
+<tr class="even">
+<td>DALL-E 2</td>
+<td>10.39</td>
+<td>Ramesh et al.&nbsp;(2022)</td>
+</tr>
+<tr class="odd">
+<td>Imagen</td>
+<td>7.27</td>
+<td>Saharia et al.&nbsp;(2022)</td>
+</tr>
+<tr class="even">
+<td>Stable Diffusion v1.4</td>
+<td>12.6</td>
+<td>Rombach et al.&nbsp;(2022)</td>
+</tr>
+<tr class="odd">
+<td>SDXL</td>
+<td>4.65</td>
+<td>Podell et al.&nbsp;(2023)</td>
+</tr>
+</tbody>
+</table>
+<p>The fact that DALL-E 2 (a CLIP-prior plus diffusion decoder) under-performs Imagen (a frozen-T5 plus pixel-space diffusion plus super-resolution cascade) on the same benchmark is one of the more underappreciated results of 2022 — it directly motivated the move to large text encoders (T5-XXL) which Imagen pioneered and which SD3 and FLUX adopted.</p>
+<p><strong>Bits per dimension (BPD), CIFAR-10.</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Model</th>
+<th>BPD</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>PixelRNN</td>
+<td>3.00</td>
+<td>van den Oord et al.&nbsp;(2016)</td>
+</tr>
+<tr class="even">
+<td>Sparse Transformer</td>
+<td>2.80</td>
+<td>Child et al.&nbsp;(2019)</td>
+</tr>
+<tr class="odd">
+<td>DDPM (<span class="math inline">\(\mathcal{L}_{\mathrm{simple}}\)</span>)</td>
+<td>3.69</td>
+<td>Ho et al.&nbsp;(2020)</td>
+</tr>
+<tr class="even">
+<td>Improved DDPM (<span class="math inline">\(\mathcal{L}_{\mathrm{hybrid}}\)</span>, learned <span class="math inline">\(\Sigma\)</span>)</td>
+<td>3.27</td>
+<td>Nichol &amp; Dhariwal (2021)</td>
+</tr>
+<tr class="odd">
+<td>ScoreFlow (Hutchinson trace)</td>
+<td>2.83</td>
+<td>Song et al.&nbsp;(2021)</td>
+</tr>
+<tr class="even">
+<td>VDM</td>
+<td>2.49</td>
+<td>Kingma et al.&nbsp;(2021)</td>
+</tr>
+</tbody>
+</table>
+<p>Note how Sparse Transformer at 2.80 BPD outperforms even Improved DDPM. Autoregressive models retain a likelihood lead on small images, which is a real signal that the training objective of diffusion is <em>not</em> tightly aligned with maximum likelihood for low-dimensional data. As dimensionality grows the gap inverts — at ImageNet 256 there is no autoregressive baseline competitive with diffusion at sample quality.</p>
+<p><strong>Number of function evaluations (NFE) for sampling.</strong> This is the inference-time cost knob, and the place where compounding research has produced 250× wins over five years.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Sampler</th>
+<th>NFE</th>
+<th>Quality match against DDPM-1000</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>DDPM (Ho et al.&nbsp;2020)</td>
+<td>1000</td>
+<td>baseline</td>
+</tr>
+<tr class="even">
+<td>DDIM (<span class="math inline">\(\eta = 0\)</span>, Song et al.&nbsp;2020)</td>
+<td>50</td>
+<td>essentially identical</td>
+</tr>
+<tr class="odd">
+<td>DPM-Solver-2 (Lu et al.&nbsp;2022)</td>
+<td>20</td>
+<td>within FID 0.1</td>
+</tr>
+<tr class="even">
+<td>DPM-Solver++ 2M (Lu et al.&nbsp;2022b)</td>
+<td>15–20</td>
+<td>within FID 0.1</td>
+</tr>
+<tr class="odd">
+<td>Latent Consistency Model (LCM, Luo et al.&nbsp;2023)</td>
+<td>4</td>
+<td>small FID regression, large speed win</td>
+</tr>
+<tr class="even">
+<td>Rectified Flow distilled (FLUX-schnell, SDXL Turbo)</td>
+<td>1–4</td>
+<td>small quality regression, real-time speed</td>
+</tr>
+<tr class="odd">
+<td>Consistency Models (CT, Song et al.&nbsp;2023)</td>
+<td>1</td>
+<td>competitive at low resolutions</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Wall-clock figures on H100, 512×512 latent image (rough, eager PyTorch).</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Model &amp; sampler</th>
+<th>NFE</th>
+<th>Wall-clock per image</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SD-1.5, 50-step DDIM</td>
+<td>50</td>
+<td>2.8 s</td>
+</tr>
+<tr class="even">
+<td>SDXL, 25-step DPM-Solver++ 2M</td>
+<td>25</td>
+<td>4.5 s</td>
+</tr>
+<tr class="odd">
+<td>SDXL Turbo, 1-step Euler</td>
+<td>1</td>
+<td>0.15 s</td>
+</tr>
+<tr class="even">
+<td>FLUX-schnell, 4-step Euler</td>
+<td>4</td>
+<td>0.65 s</td>
+</tr>
+<tr class="odd">
+<td>FLUX-dev, 25-step Euler</td>
+<td>25</td>
+<td>4.0 s</td>
+</tr>
+<tr class="even">
+<td>BAGEL, 20-step rectified-flow</td>
+<td>20</td>
+<td>1.6 s</td>
+</tr>
+</tbody>
+</table>
+<p>These numbers are accurate to roughly ±20% depending on attention implementation (FlashAttention-2 vs xformers vs naive) and whether the VAE decoder is fused.</p>
+<p><strong>Compute budgets for training (approximate).</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Model</th>
+<th>Training compute</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>DDPM CIFAR-10 (original)</td>
+<td>~10 V100-days</td>
+<td>Ho et al.&nbsp;(2020)</td>
+</tr>
+<tr class="even">
+<td>Stable Diffusion 1.5</td>
+<td>~150,000 A100-hours</td>
+<td>Rombach et al.&nbsp;(2022)</td>
+</tr>
+<tr class="odd">
+<td>Stable Diffusion XL</td>
+<td>~390,000 A100-hours</td>
+<td>Podell et al.&nbsp;(2023)</td>
+</tr>
+<tr class="even">
+<td>Stable Diffusion 3 Large</td>
+<td>~1.5M H100-hours</td>
+<td>Esser et al.&nbsp;(2024)</td>
+</tr>
+<tr class="odd">
+<td>FLUX dev</td>
+<td>~1.2M H100-hours</td>
+<td>Black Forest Labs (estimated)</td>
+</tr>
+<tr class="even">
+<td>DiT-XL/2 ImageNet</td>
+<td>~120,000 A100-hours</td>
+<td>Peebles &amp; Xie (2022)</td>
+</tr>
+</tbody>
+</table>
+<p>The trend is unsubtle: a <span class="math inline">\(\sim 10\times\)</span> jump from SD 1.5 (2022) to SDXL (2023) and another <span class="math inline">\(\sim 4\times\)</span> jump from SDXL to SD3 / FLUX (2024). If the trend continues, the 2026 generation should sit at <span class="math inline">\(\sim 6\text{–}10\mathrm{M}\)</span> H100-hours, which is firmly in the territory where only a handful of organizations can run a single training job.</p>
+<p><strong>Parameter counts (active parameters).</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Model</th>
+<th>UNet/DiT</th>
+<th>Text encoder</th>
+<th>VAE</th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Stable Diffusion 1.5</td>
+<td>860M (UNet)</td>
+<td>123M (CLIP-L/14)</td>
+<td>84M</td>
+<td>1.07B</td>
+</tr>
+<tr class="even">
+<td>Stable Diffusion XL</td>
+<td>2.6B (UNet)</td>
+<td>800M (CLIP-L + OpenCLIP-G)</td>
+<td>84M</td>
+<td>3.5B</td>
+</tr>
+<tr class="odd">
+<td>Stable Diffusion 3 Large</td>
+<td>8B (MM-DiT)</td>
+<td>4.7B (T5-XXL + CLIP-L + CLIP-G)</td>
+<td>84M</td>
+<td>12.8B</td>
+</tr>
+<tr class="even">
+<td>FLUX dev</td>
+<td>12B (MM-DiT)</td>
+<td>4.7B (T5-XXL + CLIP-L)</td>
+<td>84M</td>
+<td>16.8B</td>
+</tr>
+<tr class="odd">
+<td>DiT-XL/2</td>
+<td>675M</td>
+<td>— (class label)</td>
+<td>(off-the-shelf SD-VAE, 84M)</td>
+<td>760M</td>
+</tr>
+<tr class="even">
+<td>Pi-0 (Black et al.&nbsp;2024)</td>
+<td>0.3B (action expert DiT)</td>
+<td>— (PaLI-3B handles vision/language)</td>
+<td>—</td>
+<td>3.3B (incl.&nbsp;VLM)</td>
+</tr>
+<tr class="odd">
+<td>BAGEL (Deng et al.&nbsp;2024)</td>
+<td>7B active / 14B total (MoE)</td>
+<td>shared</td>
+<td>shared</td>
+<td>14B total</td>
+</tr>
+</tbody>
+</table>
+<p>The pattern: text-to-image systems are now bottlenecked as much by the <em>text encoder</em> as by the diffusion model. T5-XXL (4.6B) dwarfs SDXL’s diffusion backbone by 5×, and the move from CLIP-L only (SD1.5) to T5-XXL + CLIP-L (SD3) is what gave SD3 its long-prompt comprehension lead.</p>
+<p><strong>Modeling-target dimensions.</strong> This is the underrated knob — what does the diffusion model actually predict at each step?</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Representation</th>
+<th>Spatial × channels</th>
+<th>Total dims</th>
+<th>Relative cost</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Pixel 256×256×3</td>
+<td>256² × 3</td>
+<td>196,608</td>
+<td>1.0× (baseline)</td>
+</tr>
+<tr class="even">
+<td>SD-VAE latent 32×32×4</td>
+<td>32² × 4</td>
+<td>4,096</td>
+<td>0.021× (48× smaller)</td>
+</tr>
+<tr class="odd">
+<td>SD3/FLUX-VAE latent 64×64×16</td>
+<td>64² × 16</td>
+<td>65,536</td>
+<td>0.33× (3× smaller)</td>
+</tr>
+<tr class="even">
+<td>BAGEL latent 64×64×16</td>
+<td>64² × 16</td>
+<td>65,536</td>
+<td>0.33×</td>
+</tr>
+<tr class="odd">
+<td>Latent video 16f × 32² × 4</td>
+<td>16f × 32² × 4</td>
+<td>65,536</td>
+<td>0.33×</td>
+</tr>
+</tbody>
+</table>
+<p>The SD1.5 latent (32² × 4) is so aggressively compressed that the VAE is the <em>quality bottleneck</em> — no matter how good the diffusion model gets, the VAE decoder cannot reconstruct fine textures. The SD3/FLUX VAE (64² × 16) trades 16× more diffusion compute for substantially better reconstruction, and this single change is what most clearly differentiates SD3-era image quality from SD1.5-era.</p>
+<p><strong>A sampler-choice sanity table.</strong> Anchoring everything: if you have a pretrained model and need to pick a sampler, the rough NFE-vs-FID Pareto front looks like this on Stable Diffusion 2.1, evaluated on MS-COCO 5k:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>NFE</th>
+<th>Best sampler</th>
+<th>Approx. FID (CFG-7, CLIP-L only)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>4</td>
+<td>LCM-LoRA / Euler</td>
+<td>18.0</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>DPM-Solver++ 2M</td>
+<td>15.5</td>
+</tr>
+<tr class="odd">
+<td>15</td>
+<td>DPM-Solver++ 2M Karras</td>
+<td>13.4</td>
+</tr>
+<tr class="even">
+<td>25</td>
+<td>DPM-Solver++ 2M Karras</td>
+<td>13.0</td>
+</tr>
+<tr class="odd">
+<td>50</td>
+<td>DDIM</td>
+<td>13.2</td>
+</tr>
+<tr class="even">
+<td>250</td>
+<td>DDIM (reference)</td>
+<td>13.0</td>
+</tr>
+</tbody>
+</table>
+<p>The cliff between NFE 4 and NFE 8 is the regime where distilled / consistency-based samplers shine. Above NFE 15, DPM-Solver++ is essentially at the FID floor and additional NFE gives diminishing returns.</p>
+<div id="fig-fid-nfe" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fid-nfe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://placehold.co/800x500?text=FID-NFE+Pareto+front+%28Karras+et+al.+EDM2%29" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fid-nfe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Figure (placeholder): representative FID-NFE Pareto front showing how each modern sampler dominates an earlier baseline; see Karras et al.&nbsp;2024 EDM2 paper Fig. 2 (arXiv:2312.02696).
+</figcaption>
+</figure>
+</div>
+<p><strong>Editorial: which numbers are trustworthy, which are gameable.</strong> Two paragraphs of operator caveats.</p>
+<p><em>FID is gameable.</em> It is computed against Inception-V3 features, an ImageNet-trained classifier from 2016. Any optimization signal that improves the Inception-V3 feature alignment without improving perceived image quality counts as “improving FID.” Most notoriously, SDXL-Lightning (Ren et al.&nbsp;2024) — a 4-step distilled SDXL — reports better MS-COCO zero-shot FID than the SDXL teacher it was distilled from. This is not because the student produces better images; it is because the student’s outputs sit slightly more centrally in Inception-V3 feature space, and Inception-V3 has well-known biases. Modern papers responsibly accompany FID with one or more of: CLIPScore (CLIP text-image alignment), VQAScore, human-preference ELO from Chatbot Arena Image, ImageReward, PickScore, or the venue-mandated “human study with 200 raters.” Treat single-number FID claims like single-number language model evaluations: useful as a coarse sanity check, dangerous as a deciding criterion.</p>
+<p><em>BPD is sturdier but narrower.</em> Reported BPD numbers are reproducible — they come from a closed-form log-likelihood evaluation on a known test set — and are not gameable in the same way FID is. The catch is that BPD only measures one slice of model quality (compression / likelihood), not perceptual quality. A model can have great BPD and produce blurry samples, or great samples and mediocre BPD. The two correlate weakly. If you are doing scientific work where likelihood-comparability to autoregressive baselines matters (e.g., compression, anomaly detection, evidential reasoning), BPD is the right number to track. For sample quality work, FID + a perceptual metric + a human study remains the gold standard. <em>Wall-clock numbers</em> are reproducible if you also report the hardware, the attention implementation, the precision (BF16 vs FP16 vs FP8), and whether CUDA graphs are enabled — the variance from those four knobs is roughly 3×, so anyone reporting “Stable Diffusion runs at <span class="math inline">\(X\)</span> images per second” without that context is either being sloppy or being deliberately optimistic.</p>
+<blockquote class="blockquote">
+<p><strong>The one number you should always demand.</strong> When evaluating a new sampler, the most useful single statistic is its NFE-to-FID Pareto curve on a <em>fixed pretrained model</em>. New training recipes need new tables; new samplers need a curve. Curves let you see where in the NFE budget the new method dominates and where it does not; tables let you see only the cherry-picked corner. The original DPM-Solver paper (Lu et al.&nbsp;2022) reports a beautiful Pareto curve; the original consistency-models paper (Song et al.&nbsp;2023) reports two; the EDM2 paper (Karras et al.&nbsp;2024) reports more than ten. Imitate that practice and the field’s collective benchmarks improve in legibility.</p>
+</blockquote>
+<p>The headline you should leave with: a 2026 generation, latent-space, rectified-flow diffusion model at 12 billion parameters, sampled in 4 steps with a DPM-Solver++ or distilled Euler scheduler, costs <span class="math inline">\(\sim 0.1\)</span> second per 1024² image on a single H100, was trained on roughly one million H100-hours of compute, reaches FID <span class="math inline">\(\sim 2\)</span> on ImageNet 256² and FID <span class="math inline">\(\sim 4\)</span> on MS-COCO 256², and scales linearly in compute up to that point with no asymptote yet visible. That sentence is the entire industry as of this writing; every model name in the table above is a refinement of it.</p>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/madhaviit\.github\.io\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Madhav Kadam, All Rights Reserved.</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/madhaviit" target="_blank">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://x.com/kpmadhav18" target="_blank">
+      <i class="bi bi-twitter-x" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://linkedin.com/in/madhav-kadam" target="_blank">
+      <i class="bi bi-linkedin" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

@@ -1,0 +1,1488 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>part_b – Madhav Kadam</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/favicon.ico" rel="icon">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-2b454536a190732ebf2f95c4f11e6530.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-9b097c31a9caec86beae4783e147e129.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-2b454536a190732ebf2f95c4f11e6530.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-B6Z44LN64S"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-B6Z44LN64S', { 'anonymize_ip': true});
+</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="Madhav Kadam">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="Madhav Kadam">
+<meta name="twitter:title" content="Madhav Kadam">
+<meta name="twitter:description" content="">
+<meta name="twitter:card" content="summary">
+</head>
+
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Madhav Kadam</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://drive.google.com/file/d/1hnqTi8Y-63If0PUq-HJ09X44cnxxqlXD/view?usp=sharing" target="_blank"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../Poems/disclaimer.html"> 
+<span class="menu-text">Poems</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../MyBlog/index.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../books.html"> 
+<span class="menu-text">Library</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../travel.html"> 
+<span class="menu-text">Atlas</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#part-ii-generative-modeling-from-vae-to-diffusion-to-flow-matching" id="toc-part-ii-generative-modeling-from-vae-to-diffusion-to-flow-matching" class="nav-link active" data-scroll-target="#part-ii-generative-modeling-from-vae-to-diffusion-to-flow-matching">Part II — Generative Modeling: From VAE to Diffusion to Flow Matching</a>
+  <ul class="collapse">
+  <li><a href="#chapter-7-why-generative-modeling-is-hard-and-the-probability-refresher" id="toc-chapter-7-why-generative-modeling-is-hard-and-the-probability-refresher" class="nav-link" data-scroll-target="#chapter-7-why-generative-modeling-is-hard-and-the-probability-refresher">Chapter 7 — Why Generative Modeling Is Hard, and the Probability Refresher</a>
+  <ul class="collapse">
+  <li><a href="#the-shape-of-the-problem" id="toc-the-shape-of-the-problem" class="nav-link" data-scroll-target="#the-shape-of-the-problem">7.1 The shape of the problem</a></li>
+  <li><a href="#three-classical-families-and-their-failure-modes" id="toc-three-classical-families-and-their-failure-modes" class="nav-link" data-scroll-target="#three-classical-families-and-their-failure-modes">7.2 Three classical families and their failure modes</a></li>
+  <li><a href="#a-probability-theory-refresher" id="toc-a-probability-theory-refresher" class="nav-link" data-scroll-target="#a-probability-theory-refresher">7.3 A probability theory refresher</a></li>
+  </ul></li>
+  <li><a href="#chapter-8-variational-auto-encoders-from-first-principles" id="toc-chapter-8-variational-auto-encoders-from-first-principles" class="nav-link" data-scroll-target="#chapter-8-variational-auto-encoders-from-first-principles">Chapter 8 — Variational Auto-Encoders From First Principles</a>
+  <ul class="collapse">
+  <li><a href="#the-four-distributions" id="toc-the-four-distributions" class="nav-link" data-scroll-target="#the-four-distributions">8.1 The four distributions</a></li>
+  <li><a href="#deriving-the-elbo" id="toc-deriving-the-elbo" class="nav-link" data-scroll-target="#deriving-the-elbo">8.2 Deriving the ELBO</a></li>
+  <li><a href="#the-reconstruction-prior-matching-decomposition" id="toc-the-reconstruction-prior-matching-decomposition" class="nav-link" data-scroll-target="#the-reconstruction-prior-matching-decomposition">8.3 The “reconstruction + prior matching” decomposition</a></li>
+  <li><a href="#the-reparameterization-trick-again" id="toc-the-reparameterization-trick-again" class="nav-link" data-scroll-target="#the-reparameterization-trick-again">8.4 The reparameterization trick, again</a></li>
+  <li><a href="#hierarchical-vaes-and-the-bridge-to-diffusion" id="toc-hierarchical-vaes-and-the-bridge-to-diffusion" class="nav-link" data-scroll-target="#hierarchical-vaes-and-the-bridge-to-diffusion">8.5 Hierarchical VAEs and the bridge to diffusion</a></li>
+  </ul></li>
+  <li><a href="#chapter-9-denoising-diffusion-probabilistic-models-ddpm" id="toc-chapter-9-denoising-diffusion-probabilistic-models-ddpm" class="nav-link" data-scroll-target="#chapter-9-denoising-diffusion-probabilistic-models-ddpm">Chapter 9 — Denoising Diffusion Probabilistic Models (DDPM)</a>
+  <ul class="collapse">
+  <li><a href="#the-forward-diffusion-process" id="toc-the-forward-diffusion-process" class="nav-link" data-scroll-target="#the-forward-diffusion-process">9.1 The forward diffusion process</a></li>
+  <li><a href="#the-reverse-process" id="toc-the-reverse-process" class="nav-link" data-scroll-target="#the-reverse-process">9.2 The reverse process</a></li>
+  <li><a href="#training-loss-the-simplified-elbo" id="toc-training-loss-the-simplified-elbo" class="nav-link" data-scroll-target="#training-loss-the-simplified-elbo">9.3 Training loss — the simplified ELBO</a></li>
+  <li><a href="#the-score-perspective-and-the-sdeode-unification" id="toc-the-score-perspective-and-the-sdeode-unification" class="nav-link" data-scroll-target="#the-score-perspective-and-the-sdeode-unification">9.4 The score perspective and the SDE/ODE unification</a></li>
+  <li><a href="#sampling-ddim-distillation-and-consistency-models" id="toc-sampling-ddim-distillation-and-consistency-models" class="nav-link" data-scroll-target="#sampling-ddim-distillation-and-consistency-models">9.5 Sampling: DDIM, distillation, and consistency models</a></li>
+  <li><a href="#conditional-generation-classifier-and-classifier-free-guidance" id="toc-conditional-generation-classifier-and-classifier-free-guidance" class="nav-link" data-scroll-target="#conditional-generation-classifier-and-classifier-free-guidance">9.6 Conditional generation: classifier and classifier-free guidance</a></li>
+  <li><a href="#architectures-u-net-and-dit" id="toc-architectures-u-net-and-dit" class="nav-link" data-scroll-target="#architectures-u-net-and-dit">9.7 Architectures: U-Net and DiT</a></li>
+  <li><a href="#latent-diffusion" id="toc-latent-diffusion" class="nav-link" data-scroll-target="#latent-diffusion">9.8 Latent diffusion</a></li>
+  </ul></li>
+  <li><a href="#chapter-10-flow-matching-the-modern-successor" id="toc-chapter-10-flow-matching-the-modern-successor" class="nav-link" data-scroll-target="#chapter-10-flow-matching-the-modern-successor">Chapter 10 — Flow Matching: The Modern Successor</a>
+  <ul class="collapse">
+  <li><a href="#normalizing-flows-recap" id="toc-normalizing-flows-recap" class="nav-link" data-scroll-target="#normalizing-flows-recap">10.1 Normalizing flows recap</a></li>
+  <li><a href="#continuous-time-limit-and-cnfs" id="toc-continuous-time-limit-and-cnfs" class="nav-link" data-scroll-target="#continuous-time-limit-and-cnfs">10.2 Continuous-time limit and CNFs</a></li>
+  <li><a href="#the-flow-matching-idea" id="toc-the-flow-matching-idea" class="nav-link" data-scroll-target="#the-flow-matching-idea">10.3 The flow-matching idea</a></li>
+  <li><a href="#conditional-flow-matching" id="toc-conditional-flow-matching" class="nav-link" data-scroll-target="#conditional-flow-matching">10.4 Conditional Flow Matching</a></li>
+  <li><a href="#gaussian-probability-paths" id="toc-gaussian-probability-paths" class="nav-link" data-scroll-target="#gaussian-probability-paths">10.5 Gaussian probability paths</a></li>
+  <li><a href="#the-path-crossing-problem" id="toc-the-path-crossing-problem" class="nav-link" data-scroll-target="#the-path-crossing-problem">10.6 The path-crossing problem</a></li>
+  <li><a href="#rectified-flow" id="toc-rectified-flow" class="nav-link" data-scroll-target="#rectified-flow">10.7 Rectified Flow</a></li>
+  <li><a href="#optimal-transport-coupling" id="toc-optimal-transport-coupling" class="nav-link" data-scroll-target="#optimal-transport-coupling">10.8 Optimal transport coupling</a></li>
+  <li><a href="#diffusion-as-a-special-case-of-flow-matching" id="toc-diffusion-as-a-special-case-of-flow-matching" class="nav-link" data-scroll-target="#diffusion-as-a-special-case-of-flow-matching">10.9 Diffusion as a special case of flow matching</a></li>
+  </ul></li>
+  <li><a href="#chapter-11-practical-engineering-notes" id="toc-chapter-11-practical-engineering-notes" class="nav-link" data-scroll-target="#chapter-11-practical-engineering-notes">Chapter 11 — Practical Engineering Notes</a>
+  <ul class="collapse">
+  <li><a href="#sampling-tricks" id="toc-sampling-tricks" class="nav-link" data-scroll-target="#sampling-tricks">11.1 Sampling tricks</a></li>
+  <li><a href="#inference-acceleration" id="toc-inference-acceleration" class="nav-link" data-scroll-target="#inference-acceleration">11.2 Inference acceleration</a></li>
+  <li><a href="#the-latent-vs-pixel-trade-off" id="toc-the-latent-vs-pixel-trade-off" class="nav-link" data-scroll-target="#the-latent-vs-pixel-trade-off">11.3 The latent-vs-pixel trade-off</a></li>
+  <li><a href="#numerical-stability-tricks" id="toc-numerical-stability-tricks" class="nav-link" data-scroll-target="#numerical-stability-tricks">11.4 Numerical stability tricks</a></li>
+  <li><a href="#where-we-are-heading" id="toc-where-we-are-heading" class="nav-link" data-scroll-target="#where-we-are-heading">11.5 Where we are heading</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+
+<section id="part-ii-generative-modeling-from-vae-to-diffusion-to-flow-matching" class="level1">
+<h1>Part II — Generative Modeling: From VAE to Diffusion to Flow Matching</h1>
+<p>The Transformer chapters in Part I taught us how to model a single conditional distribution — given a prompt <span class="math inline">\(x\)</span>, predict the next token <span class="math inline">\(y\)</span>. That is a one-dimensional question that lives in a vocabulary of perhaps fifty thousand symbols. The story we are about to tell is fundamentally different. We will leave the world of <em>discriminative</em> modeling behind and step into the world of <em>generative</em> modeling, where the object of study is not <span class="math inline">\(p(y \mid x)\)</span> but rather <span class="math inline">\(p(x)\)</span> itself — the full probability of a data point — and where each data point is no longer a token but a high-resolution image, a video, a chunk of audio, or, as we will see in Part C, a sequence of robot joint torques.</p>
+<p>The intuitive leap is small. The mathematical leap is enormous. Modeling <span class="math inline">\(p(y \mid x)\)</span> for a softmax over fifty thousand tokens is a problem in <span class="math inline">\(\mathbb{R}^{5\times 10^4}\)</span>. Modeling <span class="math inline">\(p(x)\)</span> for a <span class="math inline">\(1024 \times 1024 \times 3\)</span> image is a problem in <span class="math inline">\(\mathbb{R}^{3 \times 10^6}\)</span>. A bookshelf of probability mass has to be spread across a space whose volume dwarfs the number of atoms in the observable universe. Almost every point in that space is garbage — pure static, salt-and-pepper noise. The interesting points — photographs, paintings, frames of movies — form a <em>manifold</em> of vanishingly small measure inside that ambient cube. Our job is to find that manifold and place probability mass on it, using only finitely many samples drawn from it.</p>
+<p>This part of the article tells the story of how that job got done. We will move in roughly chronological order: from variational autoencoders (VAEs), which framed the problem in terms of an evidence lower bound and an encoder–decoder pair; to denoising diffusion probabilistic models (DDPMs), which replaced the single-step encoder with a <em>fixed</em> Markov chain of noise-adding steps and learned only the reverse; to score-based models and the SDE/ODE unification of Yang Song and collaborators, which gave us a continuous-time lens on diffusion; to DDIM and consistency models, which carved sampling time from thousands of steps down to a single forward pass; to latent diffusion and DiT, which moved the whole machine off pixels and onto compressed latents with a transformer backbone; and finally to <strong>flow matching</strong> and <strong>rectified flow</strong>, the modern simulation-free training paradigm that powers the systems we will meet in Part C — π₀ for robot policies and BAGEL for unified multimodal generation. Along the way we will refresh enough probability theory, calculus, and stochastic analysis to make every derivation transparent.</p>
+<p>A word on style. This is not a survey. It is a <em>derivation</em>. Every loss function we write down will be derived from a more primitive principle, every “Gaussian closed form” will be expanded with completed squares, and every “it can be shown that” will be either shown explicitly or shoved into an aside that the reader can return to later. The book recommendation, if you only have time for one, is Lilian Weng’s blog post <em>What are Diffusion Models?</em> together with the Cambridge MLG blog post <em>An Introduction to Flow Matching</em>; these two posts are the spine of this chapter, and many of the algebraic steps follow them very closely.</p>
+<hr>
+<section id="chapter-7-why-generative-modeling-is-hard-and-the-probability-refresher" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-7-why-generative-modeling-is-hard-and-the-probability-refresher">Chapter 7 — Why Generative Modeling Is Hard, and the Probability Refresher</h2>
+<section id="the-shape-of-the-problem" class="level3">
+<h3 class="anchored" data-anchor-id="the-shape-of-the-problem">7.1 The shape of the problem</h3>
+<p>Suppose we have access to a dataset <span class="math inline">\(\mathcal{D} = \{x^{(1)}, \dots, x^{(N)}\}\)</span> of i.i.d. samples drawn from an unknown distribution <span class="math inline">\(q(x)\)</span> defined over some high-dimensional space <span class="math inline">\(\mathbb{R}^D\)</span>. We want to learn a model <span class="math inline">\(p_\theta(x)\)</span> that approximates <span class="math inline">\(q(x)\)</span> well enough that we can draw new samples <span class="math inline">\(x \sim p_\theta\)</span> that look like they could have come from <span class="math inline">\(q\)</span>. There are three flavors of “well enough”:</p>
+<ol type="1">
+<li><strong>Sampling.</strong> Given the model, produce realistic novel samples efficiently.</li>
+<li><strong>Density evaluation.</strong> Given a new point <span class="math inline">\(x^\star\)</span>, compute <span class="math inline">\(p_\theta(x^\star)\)</span> or at least <span class="math inline">\(\log p_\theta(x^\star)\)</span> — useful for anomaly detection, compression, and likelihood-based model comparison.</li>
+<li><strong>Conditional generation.</strong> Given side information <span class="math inline">\(y\)</span> (a class label, a caption, a partial observation), draw from <span class="math inline">\(p_\theta(x \mid y)\)</span>.</li>
+</ol>
+<p>Almost every modern generative model trades some of these capabilities against others. GANs are excellent at (1) but offer nothing for (2). Autoregressive language models are excellent at (1) and (2) but only by serializing data into a one-dimensional sequence. Diffusion and flow matching are excellent at (1) and conditional (3), reasonably good at (2) via the ELBO or change-of-variables, and — crucially for us — they scale to billion-pixel data spaces without architectural contortions.</p>
+<blockquote class="blockquote">
+<p>Why is this so hard? Because the manifold hypothesis is real. Photographs are concentrated near a low-dimensional manifold of <span class="math inline">\(\mathbb{R}^{3 M}\)</span>, and that manifold has zero Lebesgue measure in the ambient space. If you try to estimate <span class="math inline">\(q(x)\)</span> by, say, fitting a Gaussian, you get a model that puts most of its probability outside the data manifold, where every sample looks like static. If you try a mixture of Gaussians with one component per data point, you memorize the training set and generalize zero percent. We need models that learn the <em>shape</em> of the manifold, not just the location of training points.</p>
+</blockquote>
+<div id="fig-families" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-families-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://lilianweng.github.io/posts/2021-07-11-diffusion-models/generative-overview.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-families-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Figure: comparing the four classical generative model families. Diffusion-style models slowly perturb data into noise and learn to reverse the perturbation; VAEs compress to a latent and decompress; GANs train a generator against a discriminator; normalizing flows compose invertible maps with tractable Jacobians.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="three-classical-families-and-their-failure-modes" class="level3">
+<h3 class="anchored" data-anchor-id="three-classical-families-and-their-failure-modes">7.2 Three classical families and their failure modes</h3>
+<p>Before diffusion, three families dominated the field. Each one made a different bargain with the devil.</p>
+<p><strong>GANs (Goodfellow et al., 2014).</strong> Train a generator <span class="math inline">\(G_\theta\)</span> together with a discriminator <span class="math inline">\(D_\phi\)</span> in a two-player minimax game. The generator’s job is to fool the discriminator; the discriminator’s job is to distinguish real from fake. At equilibrium, <span class="math inline">\(G_\theta\)</span> samples from <span class="math inline">\(q\)</span>. The good news: sampling is a single forward pass, and the samples can be visually stunning. The bad news: training is unstable (the minimax landscape is full of saddles and oscillations), mode collapse is rampant (the generator finds a few outputs that fool the discriminator and refuses to explore), and you never get a tractable density. Years of research went into Wasserstein objectives, spectral normalization, R1 regularization, progressive growing, and StyleGAN-style architecture tricks to tame the dynamics, but GANs were never a comfortable bet for systems that needed both diversity and stability.</p>
+<p><strong>VAEs (Kingma &amp; Welling, 2014; Rezende et al., 2014).</strong> Maximize a <em>lower bound</em> on the log-likelihood by introducing an approximate posterior <span class="math inline">\(q_\phi(z \mid x)\)</span> over a latent <span class="math inline">\(z\)</span> and decoding from <span class="math inline">\(z\)</span> with <span class="math inline">\(p_\theta(x \mid z)\)</span>. The good news: stable training, tractable density (well, a lower bound), and a principled probabilistic interpretation. The bad news: samples are notoriously blurry. The blur is a direct consequence of optimizing the ELBO with a Gaussian likelihood — the model is incentivized to predict the <em>mean</em> of plausible decodings, and the mean of many sharp images is one blurry image. Fancier likelihoods (PixelCNN decoders, discrete VAEs with VQ codebooks) help, but no one ever got VAEs to FID-2 on ImageNet.</p>
+<p><strong>Normalizing flows (Dinh et al., 2014/2017; Kingma &amp; Dhariwal, 2018).</strong> Define <span class="math inline">\(p_\theta(x)\)</span> as the push-forward of a simple base density <span class="math inline">\(p_0(z)\)</span> through an invertible neural network <span class="math inline">\(\phi_\theta\)</span>, <span class="math inline">\(x = \phi_\theta(z)\)</span>. By the change-of-variables formula, <span class="math inline">\(\log p_\theta(x) = \log p_0(\phi_\theta^{-1}(x)) - \log \lvert\det J_{\phi_\theta}(x)\rvert\)</span>, which is exact. The good news: exact likelihoods, exact sampling. The bad news: the architecture must be both invertible <em>and</em> have a tractable Jacobian determinant, which is a brutal constraint. Coupling layers, autoregressive flows, and continuous normalizing flows each solved part of the problem, but expressivity per parameter never matched a U-Net or a Transformer.</p>
+<blockquote class="blockquote">
+<p>The historical punchline: each of the three families gave up something fundamental — GANs gave up density and stability, VAEs gave up sharpness, flows gave up architectural freedom. Diffusion models, as we will see, give up <em>only</em> sampling speed (which we recoup through clever schedulers and distillation), and in exchange they inherit dense probability mass, principled likelihoods, stable training, and arbitrary network architectures.</p>
+</blockquote>
+</section>
+<section id="a-probability-theory-refresher" class="level3">
+<h3 class="anchored" data-anchor-id="a-probability-theory-refresher">7.3 A probability theory refresher</h3>
+<p>The math in the rest of this Part is heavy on Gaussians and KL divergences. Here is the dictionary.</p>
+<p><strong>Random variables and distributions.</strong> A random variable <span class="math inline">\(X\)</span> on <span class="math inline">\(\mathbb{R}^D\)</span> is described by its density <span class="math inline">\(p(x)\)</span> (assuming a continuous distribution). The joint density of two RVs is <span class="math inline">\(p(x, y)\)</span>; the marginal is <span class="math inline">\(p(x) = \int p(x, y) \, dy\)</span>; the conditional is <span class="math inline">\(p(y \mid x) = p(x, y) / p(x)\)</span>. <strong>Bayes’ theorem</strong> rearranges the conditional definition into <span class="math inline">\(p(y \mid x) p(x) = p(x \mid y) p(y) = p(x, y)\)</span>, which we will use approximately a hundred times.</p>
+<p><strong>Expectation.</strong> <span class="math inline">\(\mathbb{E}_{p(x)}[f(x)] = \int f(x) p(x) \, dx\)</span>. The law of the unconscious statistician (LOTUS) says we can compute expectations of functions of <span class="math inline">\(X\)</span> without computing the distribution of <span class="math inline">\(f(X)\)</span>. The <strong>tower property</strong> says <span class="math inline">\(\mathbb{E}[f(X, Y)] = \mathbb{E}_X[\mathbb{E}_{Y \mid X}[f(X, Y)]]\)</span>.</p>
+<p><strong>KL divergence.</strong> For two distributions <span class="math inline">\(p, q\)</span> on the same space, <span id="eq-kl"><span class="math display">\[
+D_{\mathrm{KL}}(p \,\|\, q) \;=\; \mathbb{E}_{p(x)}\!\left[\log \frac{p(x)}{q(x)}\right] \;=\; \int p(x) \log \frac{p(x)}{q(x)} \, dx.
+\tag{1}\]</span></span> Two facts that we will lean on constantly: (i) <span class="math inline">\(D_{\mathrm{KL}}(p \,\|\, q) \geq 0\)</span> with equality if and only if <span class="math inline">\(p = q\)</span> almost everywhere (this is <strong>Gibbs’ inequality</strong>, which follows from Jensen applied to <span class="math inline">\(-\log\)</span>); and (ii) KL is <em>asymmetric</em>: <span class="math inline">\(D_{\mathrm{KL}}(p \,\|\, q) \neq D_{\mathrm{KL}}(q \,\|\, p)\)</span> in general. The asymmetry matters: variational inference puts the “approximate” distribution <span class="math inline">\(q\)</span> in the first slot, so we minimize <span class="math inline">\(D_{\mathrm{KL}}(q \,\|\, p)\)</span> — which is <em>mode-seeking</em>, meaning <span class="math inline">\(q\)</span> tries to put mass only where <span class="math inline">\(p\)</span> has mass and is happy to ignore parts of <span class="math inline">\(p\)</span> entirely. The reverse <span class="math inline">\(D_{\mathrm{KL}}(p \,\|\, q)\)</span> is <em>mass-covering</em>: <span class="math inline">\(q\)</span> tries to cover every mode of <span class="math inline">\(p\)</span> at the cost of putting mass between modes.</p>
+<p><strong>Jensen’s inequality.</strong> For any convex <span class="math inline">\(\varphi\)</span> and random variable <span class="math inline">\(X\)</span>, <span class="math inline">\(\varphi(\mathbb{E}[X]) \leq \mathbb{E}[\varphi(X)]\)</span>. Since <span class="math inline">\(-\log\)</span> is convex, <span class="math inline">\(-\log \mathbb{E}[X] \leq -\mathbb{E}[\log X]\)</span>, equivalently <span class="math inline">\(\log \mathbb{E}[X] \geq \mathbb{E}[\log X]\)</span>. This is the swap we use to derive the ELBO.</p>
+<p><strong>Entropy.</strong> <span class="math inline">\(H(p) = -\mathbb{E}_p[\log p(X)]\)</span>, measured in nats. For an isotropic Gaussian <span class="math inline">\(\mathcal{N}(\mu, \sigma^2 I)\)</span> in <span class="math inline">\(\mathbb{R}^D\)</span>, <span class="math inline">\(H = \tfrac{D}{2}\log(2\pi e \sigma^2)\)</span>. Differential entropy can be negative — don’t be alarmed.</p>
+<p><strong>Change of variables.</strong> If <span class="math inline">\(Y = \phi(X)\)</span> for an invertible differentiable <span class="math inline">\(\phi: \mathbb{R}^D \to \mathbb{R}^D\)</span>, then <span id="eq-changeofvar"><span class="math display">\[
+p_Y(y) \;=\; p_X\!\bigl(\phi^{-1}(y)\bigr) \,\left\lvert \det \frac{\partial \phi^{-1}}{\partial y}(y) \right\rvert.
+\tag{2}\]</span></span> We will meet this formula three times: once for normalizing flows, once for the continuous transport equation, and once for the reparameterization trick.</p>
+<p><strong>The reparameterization trick.</strong> To draw <span class="math inline">\(z \sim \mathcal{N}(\mu, \sigma^2 I)\)</span> in a way that lets gradients flow through <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span>, sample <span class="math inline">\(\epsilon \sim \mathcal{N}(0, I)\)</span> from a <em>parameter-free</em> base distribution and then set <span class="math inline">\(z = \mu + \sigma \odot \epsilon\)</span>. Now <span class="math inline">\(\nabla_\mu z = 1\)</span> and <span class="math inline">\(\nabla_\sigma z = \epsilon\)</span>, so any objective <span class="math inline">\(\mathcal{L}(z)\)</span> can be differentiated end-to-end with no high-variance score function estimator. This single trick is what made VAEs practical, and we will reuse it (in disguise) every time we sample <span class="math inline">\(x_t = \sqrt{\bar\alpha_t}\, x_0 + \sqrt{1 - \bar\alpha_t}\,\epsilon\)</span> in a diffusion training step.</p>
+<blockquote class="blockquote">
+<p><strong>Mental model.</strong> Reparameterization separates “where the randomness comes from” (the fixed noise distribution <span class="math inline">\(p(\epsilon)\)</span>) from “how the model uses it” (the learnable transform <span class="math inline">\(\mu_\phi, \sigma_\phi\)</span>). Gradients only need to flow through the transform, never through the sampler. Every modern generative model — VAE, DDPM, flow matching — uses some flavor of this trick.</p>
+</blockquote>
+<p><strong>The KL between two diagonal Gaussians, worked out.</strong> Because we will use this twice (once for VAEs, once implicitly inside the VLB of DDPM), it is worth recording. Let <span class="math inline">\(p = \mathcal{N}(\mu_0, \mathrm{diag}(\sigma_0^2))\)</span> and <span class="math inline">\(q = \mathcal{N}(\mu_1, \mathrm{diag}(\sigma_1^2))\)</span> both in <span class="math inline">\(\mathbb{R}^d\)</span>. Then <span class="math display">\[
+D_{\mathrm{KL}}(p \,\|\, q) \;=\; \tfrac{1}{2} \sum_{i=1}^{d} \!\left[\log \frac{\sigma_{1,i}^2}{\sigma_{0,i}^2} + \frac{\sigma_{0,i}^2 + (\mu_{0,i} - \mu_{1,i})^2}{\sigma_{1,i}^2} - 1\right].
+\]</span> The three terms have intuitive meanings: a log-variance-ratio term penalizes mismatched scales, a Mahalanobis distance term penalizes mismatched means under the target covariance, and a <span class="math inline">\(-1\)</span> enforces that the divergence is zero when the two Gaussians coincide. This formula is fully differentiable in every parameter, which is why Gaussians dominate variational inference even when they are clearly the wrong family.</p>
+<blockquote class="blockquote">
+<p>A philosophical note on the unreasonable effectiveness of Gaussians in generative modeling. Almost every model in this Part is built out of Gaussian conditionals — <span class="math inline">\(q(x_t \mid x_{t-1})\)</span>, <span class="math inline">\(p_t(x \mid x_1)\)</span>, <span class="math inline">\(q_\phi(z \mid x)\)</span>. The reason is not that the world is Gaussian; clearly it isn’t. The reason is that mixtures of Gaussians are universal density approximators, and our models <em>are</em> mixtures of conditional Gaussians where the “mixing variable” is the latent. The marginal distribution <span class="math inline">\(p_t(x) = \int p_t(x \mid x_1) q_1(x_1)\, dx_1\)</span> is allowed to be wildly non-Gaussian (it could be the distribution of natural images) as long as each <em>conditional</em> is Gaussian. This is the same trick that makes Gaussian mixture models far more expressive than any single Gaussian. We are doing GMM with an infinite number of components and a learned mixing distribution.</p>
+</blockquote>
+<p>With this toolkit we are ready to derive the VAE.</p>
+<hr>
+</section>
+</section>
+<section id="chapter-8-variational-auto-encoders-from-first-principles" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-8-variational-auto-encoders-from-first-principles">Chapter 8 — Variational Auto-Encoders From First Principles</h2>
+<p>We follow Stanley Chan’s tutorial here, with a few extra steps inserted to make the algebra explicit.</p>
+<section id="the-four-distributions" class="level3">
+<h3 class="anchored" data-anchor-id="the-four-distributions">8.1 The four distributions</h3>
+<p>The VAE setup, in words: we want to model the unknown data distribution <span class="math inline">\(p(x)\)</span> by introducing a latent variable <span class="math inline">\(z\)</span> that lives in a low-dimensional space (<span class="math inline">\(\mathbb{R}^d\)</span> with <span class="math inline">\(d \ll D\)</span>). We will <em>assume</em> a simple prior <span class="math inline">\(p(z) = \mathcal{N}(0, I)\)</span> and try to learn a decoder that turns latent samples into data samples. There are four distributions in this picture:</p>
+<ul>
+<li><span class="math inline">\(p(x)\)</span> — the data distribution. <strong>We have no access to this.</strong> Estimating <span class="math inline">\(p\)</span> at any single point is exactly the problem we are trying to solve. If we knew <span class="math inline">\(p\)</span>, we’d be done.</li>
+<li><span class="math inline">\(p(z) = \mathcal{N}(0, I)\)</span> — the prior on the latent. <strong>We choose this.</strong> It’s a deliberate modeling assumption; lazy and convenient.</li>
+<li><span class="math inline">\(p(z \mid x)\)</span> — the true posterior, which says “given an observed image, what latent code produced it?” <strong>We have no access to this either.</strong> The true posterior is, by Bayes, <span class="math inline">\(p(z \mid x) = p(x \mid z) p(z) / p(x)\)</span>, and the denominator <span class="math inline">\(p(x) = \int p(x \mid z) p(z) \, dz\)</span> is the very intractable integral we are trying to avoid.</li>
+<li><span class="math inline">\(p(x \mid z)\)</span> — the true decoder, which says “given a latent, what data point does it produce?” We don’t have access to this exact distribution, but we will <em>approximate</em> it with a learned proxy.</li>
+</ul>
+<p>We introduce two <strong>proxy</strong> distributions, both Gaussians, both parameterized by neural networks:</p>
+<ul>
+<li><span class="math inline">\(q_\phi(z \mid x) = \mathcal{N}\!\bigl(z \mid \mu_\phi(x), \, \mathrm{diag}(\sigma_\phi^2(x))\bigr)\)</span> — the <strong>encoder</strong> (also called the recognition model). Given an image <span class="math inline">\(x\)</span>, two neural networks <span class="math inline">\(\mu_\phi, \sigma_\phi\)</span> output the mean and (diagonal) variance of a Gaussian over latents.</li>
+<li><span class="math inline">\(p_\theta(x \mid z) = \mathcal{N}\!\bigl(x \mid \mu_\theta(z), \sigma_\mathrm{dec}^2 I\bigr)\)</span> — the <strong>decoder</strong>. A neural network <span class="math inline">\(\mu_\theta\)</span> produces an image <span class="math inline">\(\hat x\)</span> from a latent <span class="math inline">\(z\)</span>, and we assume the residual <span class="math inline">\(x - \hat x\)</span> is Gaussian with some (possibly fixed) variance.</li>
+</ul>
+<p>The point of <span class="math inline">\(q_\phi\)</span> is to approximate the intractable <span class="math inline">\(p(z \mid x)\)</span>. The point of <span class="math inline">\(p_\theta\)</span> is to approximate the intractable <span class="math inline">\(p(x \mid z)\)</span>. We jointly train <span class="math inline">\(\phi\)</span> and <span class="math inline">\(\theta\)</span>.</p>
+</section>
+<section id="deriving-the-elbo" class="level3">
+<h3 class="anchored" data-anchor-id="deriving-the-elbo">8.2 Deriving the ELBO</h3>
+<p>We want <span class="math inline">\(\log p(x)\)</span> to be high — the model should assign high probability to real data. We can’t compute <span class="math inline">\(\log p(x)\)</span> directly, so we derive a <em>lower bound</em> called the <strong>evidence lower bound</strong> (ELBO) and maximize that instead.</p>
+<p>Here is the derivation, line by line. Start with <span class="math inline">\(\log p(x)\)</span> and multiply by one, where the “one” is <span class="math inline">\(\int q_\phi(z \mid x) \, dz\)</span>:</p>
+<p><span class="math display">\[
+\log p(x) \;=\; \log p(x) \cdot \underbrace{\int q_\phi(z \mid x) \, dz}_{=1} \;=\; \int q_\phi(z \mid x) \log p(x) \, dz \;=\; \mathbb{E}_{q_\phi(z \mid x)}\bigl[\log p(x)\bigr].
+\]</span></p>
+<p>Now use Bayes’ rule on <span class="math inline">\(p(x)\)</span>. Specifically, <span class="math inline">\(p(x) = p(x, z) / p(z \mid x)\)</span>, so <span class="math inline">\(\log p(x) = \log p(x, z) - \log p(z \mid x)\)</span>. Inside the expectation:</p>
+<p><span class="math display">\[
+\log p(x) \;=\; \mathbb{E}_{q_\phi}\!\left[\log \frac{p(x, z)}{p(z \mid x)}\right] \;=\; \mathbb{E}_{q_\phi}\!\left[\log \frac{p(x, z)}{p(z \mid x)} \cdot \frac{q_\phi(z \mid x)}{q_\phi(z \mid x)}\right],
+\]</span></p>
+<p>where we’ve inserted another harmless <span class="math inline">\(q/q = 1\)</span>. Split the log into two pieces:</p>
+<p><span id="eq-elbo-derivation"><span class="math display">\[
+\log p(x) \;=\; \underbrace{\mathbb{E}_{q_\phi}\!\left[\log \frac{p(x, z)}{q_\phi(z \mid x)}\right]}_{=\,\mathrm{ELBO}(x)} \;+\; \underbrace{\mathbb{E}_{q_\phi}\!\left[\log \frac{q_\phi(z \mid x)}{p(z \mid x)}\right]}_{=\,D_{\mathrm{KL}}(q_\phi(z \mid x) \,\|\, p(z \mid x))}.
+\tag{3}\]</span></span></p>
+<p>The second term is a KL divergence, hence non-negative. So <span id="eq-elbo"><span class="math display">\[
+\log p(x) \;\geq\; \mathrm{ELBO}(x) \;\triangleq\; \mathbb{E}_{q_\phi(z \mid x)}\!\left[\log \frac{p(x, z)}{q_\phi(z \mid x)}\right].
+\tag{4}\]</span></span></p>
+<p>The bound is tight when <span class="math inline">\(q_\phi(z \mid x) = p(z \mid x)\)</span>, which is the variational inference “objective”: make the proxy match the true posterior.</p>
+</section>
+<section id="the-reconstruction-prior-matching-decomposition" class="level3">
+<h3 class="anchored" data-anchor-id="the-reconstruction-prior-matching-decomposition">8.3 The “reconstruction + prior matching” decomposition</h3>
+<p>The form of the ELBO in equation (<a href="#eq-elbo" class="quarto-xref">Equation&nbsp;4</a>) is not yet computable, because <span class="math inline">\(p(x, z)\)</span> is unknown. But we can rewrite it using <span class="math inline">\(p(x, z) = p(x \mid z) p(z)\)</span>:</p>
+<p><span class="math display">\[
+\mathrm{ELBO}(x) \;=\; \mathbb{E}_{q_\phi(z \mid x)}\!\left[\log \frac{p(x \mid z) \, p(z)}{q_\phi(z \mid x)}\right] \;=\; \mathbb{E}_{q_\phi}\bigl[\log p(x \mid z)\bigr] + \mathbb{E}_{q_\phi}\!\left[\log \frac{p(z)}{q_\phi(z \mid x)}\right].
+\]</span></p>
+<p>The second expectation is the negative KL divergence <span class="math inline">\(-D_{\mathrm{KL}}(q_\phi(z \mid x) \,\|\, p(z))\)</span>. Replace the inaccessible <span class="math inline">\(p(x \mid z)\)</span> with our learned proxy <span class="math inline">\(p_\theta(x \mid z)\)</span>:</p>
+<p><span id="eq-elbo-split"><span class="math display">\[
+\boxed{\;\;\mathrm{ELBO}(x) \;=\; \underbrace{\mathbb{E}_{q_\phi(z \mid x)}\!\bigl[\log p_\theta(x \mid z)\bigr]}_{\text{reconstruction}} \;-\; \underbrace{D_{\mathrm{KL}}\!\bigl(q_\phi(z \mid x) \,\big\|\, p(z)\bigr)}_{\text{prior matching}}.\;\;}
+\tag{5}\]</span></span></p>
+<p>This is the workhorse decomposition of every variational model from 2014 to the present day. Two readings:</p>
+<ul>
+<li><strong>Reconstruction:</strong> sample a latent <span class="math inline">\(z\)</span> from the encoder’s posterior, push it through the decoder, and ask “how likely is the original <span class="math inline">\(x\)</span> under that decoded distribution?” If <span class="math inline">\(p_\theta(x \mid z)\)</span> is a Gaussian with mean <span class="math inline">\(\mu_\theta(z)\)</span> and fixed variance <span class="math inline">\(\sigma_\mathrm{dec}^2\)</span>, then <span class="math inline">\(\log p_\theta(x \mid z) = -\|x - \mu_\theta(z)\|^2 / (2\sigma_\mathrm{dec}^2) + \mathrm{const}\)</span>. Maximizing this is just minimizing the <span class="math inline">\(\ell_2\)</span> reconstruction error — the squared difference between the original image and the decoded image.</li>
+<li><strong>Prior matching:</strong> the encoder’s output distribution <span class="math inline">\(q_\phi(z \mid x)\)</span> should be close to the prior <span class="math inline">\(\mathcal{N}(0, I)\)</span> in KL. For two Gaussians the KL has a clean closed form, which we’ll meet in equation (<a href="#eq-kl-gauss" class="quarto-xref">Equation&nbsp;6</a>) below.</li>
+</ul>
+<p>Maximizing the ELBO is therefore “decode well <em>and</em> don’t drift too far from the prior.”</p>
+</section>
+<section id="the-reparameterization-trick-again" class="level3">
+<h3 class="anchored" data-anchor-id="the-reparameterization-trick-again">8.4 The reparameterization trick, again</h3>
+<p>To train end-to-end, we need to differentiate the ELBO with respect to <span class="math inline">\(\phi\)</span> (the encoder parameters) and <span class="math inline">\(\theta\)</span> (the decoder parameters). <span class="math inline">\(\theta\)</span> is easy — it only appears inside the expectation over <span class="math inline">\(q_\phi\)</span>, which doesn’t depend on <span class="math inline">\(\theta\)</span>. But <span class="math inline">\(\phi\)</span> is <em>inside</em> the expectation, so naively <span class="math inline">\(\nabla_\phi \mathbb{E}_{q_\phi}[f(z)]\)</span> is intractable. The reparameterization trick says: write <span class="math inline">\(z\)</span> as a deterministic function of a parameter-free noise variable. Specifically, <span class="math display">\[
+\epsilon \sim \mathcal{N}(0, I), \qquad z \;=\; \mu_\phi(x) + \sigma_\phi(x) \odot \epsilon.
+\]</span> Now the expectation is over <span class="math inline">\(\epsilon\)</span> rather than <span class="math inline">\(z\)</span>, the distribution of <span class="math inline">\(\epsilon\)</span> doesn’t depend on <span class="math inline">\(\phi\)</span>, and we can swap the gradient and the expectation: <span class="math display">\[
+\nabla_\phi \mathbb{E}_{q_\phi(z \mid x)}[f(z)] \;=\; \mathbb{E}_{\epsilon \sim \mathcal{N}(0, I)}\!\bigl[\nabla_\phi f(\mu_\phi(x) + \sigma_\phi(x) \odot \epsilon)\bigr].
+\]</span></p>
+<p>Monte Carlo with a single <span class="math inline">\(\epsilon\)</span> sample gives a low-variance estimator that backprop handles natively.</p>
+<p>The KL term has a closed form because both distributions are Gaussian: <span id="eq-kl-gauss"><span class="math display">\[
+D_{\mathrm{KL}}\!\bigl(\mathcal{N}(\mu_0, \Sigma_0) \,\|\, \mathcal{N}(\mu_1, \Sigma_1)\bigr) \;=\; \tfrac{1}{2}\!\left[\mathrm{tr}(\Sigma_1^{-1}\Sigma_0) + (\mu_1 - \mu_0)^\top \Sigma_1^{-1}(\mu_1 - \mu_0) - d + \log\tfrac{\det \Sigma_1}{\det \Sigma_0}\right].
+\tag{6}\]</span></span></p>
+<p>With <span class="math inline">\(\mu_1 = 0, \Sigma_1 = I, \mu_0 = \mu_\phi(x), \Sigma_0 = \mathrm{diag}(\sigma_\phi^2(x))\)</span>, this simplifies to a clean sum: <span class="math display">\[
+D_{\mathrm{KL}}(q_\phi(z\mid x) \,\|\, \mathcal{N}(0, I)) \;=\; \tfrac{1}{2} \sum_{i=1}^d \!\bigl(\sigma_{\phi,i}^2 + \mu_{\phi,i}^2 - 1 - \log \sigma_{\phi,i}^2\bigr),
+\]</span></p>
+<p>which is fully differentiable in <span class="math inline">\(\phi\)</span>.</p>
+<p>The final VAE loss is, by convention, the <em>negative</em> ELBO averaged over the training set: <span class="math display">\[
+\mathcal{L}_{\mathrm{VAE}}(\theta, \phi) \;=\; \mathbb{E}_{x \sim \mathcal{D}}\!\left[\, \tfrac{\|x - \mu_\theta(z)\|^2}{2\sigma_\mathrm{dec}^2} + D_{\mathrm{KL}}\!\bigl(q_\phi(z \mid x) \,\|\, \mathcal{N}(0, I)\bigr) \,\right],
+\]</span></p>
+<p>with <span class="math inline">\(z = \mu_\phi(x) + \sigma_\phi(x) \odot \epsilon\)</span>, <span class="math inline">\(\epsilon \sim \mathcal{N}(0, I)\)</span>. End of derivation.</p>
+</section>
+<section id="hierarchical-vaes-and-the-bridge-to-diffusion" class="level3">
+<h3 class="anchored" data-anchor-id="hierarchical-vaes-and-the-bridge-to-diffusion">8.5 Hierarchical VAEs and the bridge to diffusion</h3>
+<p>What if one latent isn’t enough? Stack them: <span class="math inline">\(z_1, z_2, \dots, z_T\)</span> with <span class="math inline">\(z_T\)</span> closest to noise and <span class="math inline">\(z_1\)</span> closest to data. A hierarchical VAE factorizes <span class="math display">\[
+p_\theta(x, z_{1:T}) \;=\; p(z_T) \prod_{t=1}^{T} p_\theta(z_{t-1} \mid z_t), \qquad q_\phi(z_{1:T} \mid x) \;=\; q_\phi(z_1 \mid x) \prod_{t=2}^{T} q_\phi(z_t \mid z_{t-1}),
+\]</span></p>
+<p>with <span class="math inline">\(z_0 \triangleq x\)</span>. The ELBO generalizes: it picks up KL terms between every adjacent pair of layers.</p>
+<p>Here is the punch line we will lean on for the next forty pages. <strong>A denoising diffusion model is exactly a hierarchical VAE with <span class="math inline">\(T\)</span> latent layers, where:</strong></p>
+<ol type="1">
+<li>The encoder <span class="math inline">\(q\)</span> is <em>not learned</em>. It is a fixed Markov chain that adds Gaussian noise at each step: <span class="math inline">\(q(z_t \mid z_{t-1}) = \mathcal{N}(z_t; \sqrt{1 - \beta_t}\, z_{t-1}, \beta_t I)\)</span>. There is no <span class="math inline">\(\phi\)</span>.</li>
+<li>The final latent <span class="math inline">\(z_T\)</span> is approximately <span class="math inline">\(\mathcal{N}(0, I)\)</span> because successive noise pushes data toward the prior.</li>
+<li>The decoder <span class="math inline">\(p_\theta(z_{t-1} \mid z_t)\)</span> is learned, with the same architecture shared across all <span class="math inline">\(t\)</span> (a time-conditioned U-Net or DiT).</li>
+</ol>
+<p>That’s it. Everything else in Chapter 9 is fallout from these three design choices.</p>
+<blockquote class="blockquote">
+<p>Why is the encoder fixed? Because a <em>known</em> noise schedule turns the inference problem from “what latent caused this image?” into “what <em>less-noisy</em> image caused this noisy image?” — a problem we can pose as supervised denoising regression. We trade the freedom of a learned encoder for the convenience of a tractable forward process, and we use that convenience to build a model with thousands of effective latent layers without any inference-network parameters.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="chapter-9-denoising-diffusion-probabilistic-models-ddpm" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-9-denoising-diffusion-probabilistic-models-ddpm">Chapter 9 — Denoising Diffusion Probabilistic Models (DDPM)</h2>
+<p>The DDPM derivation is one of the most beautiful constructions in modern ML. We will follow Lilian Weng’s blog closely, expanding every step.</p>
+<section id="the-forward-diffusion-process" class="level3">
+<h3 class="anchored" data-anchor-id="the-forward-diffusion-process">9.1 The forward diffusion process</h3>
+<p>Let <span class="math inline">\(x_0 \sim q(x)\)</span> be a sample from the data distribution. Define a sequence of latent variables <span class="math inline">\(x_1, x_2, \dots, x_T\)</span> by the Markov chain <span id="eq-forward"><span class="math display">\[
+q(x_t \mid x_{t-1}) \;=\; \mathcal{N}\!\bigl(x_t;\; \sqrt{1 - \beta_t}\, x_{t-1},\; \beta_t I\bigr), \qquad t = 1, \dots, T,
+\tag{7}\]</span></span></p>
+<p>where <span class="math inline">\(\{\beta_t\}_{t=1}^T \in (0, 1)\)</span> is a small <strong>variance schedule</strong>. The full forward distribution factorizes as <span class="math inline">\(q(x_{1:T} \mid x_0) = \prod_{t=1}^T q(x_t \mid x_{t-1})\)</span>.</p>
+<p>Intuition: at each step, we slightly shrink the current sample (by <span class="math inline">\(\sqrt{1 - \beta_t}\)</span>) and add a tiny bit of fresh Gaussian noise (with variance <span class="math inline">\(\beta_t\)</span>). After many steps, all structure is destroyed and <span class="math inline">\(x_T\)</span> is essentially isotropic Gaussian noise. The shrink factor is chosen so that the variance of <span class="math inline">\(x_t\)</span> stays roughly constant near 1 — without it, the noise injections would cause the variance to grow without bound.</p>
+<div id="fig-forward" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-forward-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://lilianweng.github.io/posts/2021-07-11-diffusion-models/DDPM.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-forward-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Figure: forward diffusion as a Markov chain that slowly adds Gaussian noise; reverse diffusion as the learned chain that removes it. See Ho et al.&nbsp;(2020) Fig. 2.
+</figcaption>
+</figure>
+</div>
+<p><strong>The closed form for <span class="math inline">\(q(x_t \mid x_0)\)</span>.</strong> Define <span class="math inline">\(\alpha_t = 1 - \beta_t\)</span> and <span class="math inline">\(\bar\alpha_t = \prod_{s=1}^{t} \alpha_s\)</span>. By induction using the reparameterization <span class="math inline">\(x_t = \sqrt{\alpha_t}\, x_{t-1} + \sqrt{1 - \alpha_t}\, \epsilon_{t-1}\)</span> with <span class="math inline">\(\epsilon_{t-1} \sim \mathcal{N}(0, I)\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+x_t &amp;= \sqrt{\alpha_t}\, x_{t-1} + \sqrt{1 - \alpha_t}\,\epsilon_{t-1} \\
+    &amp;= \sqrt{\alpha_t}\!\left[\sqrt{\alpha_{t-1}}\, x_{t-2} + \sqrt{1 - \alpha_{t-1}}\,\epsilon_{t-2}\right] + \sqrt{1 - \alpha_t}\,\epsilon_{t-1} \\
+    &amp;= \sqrt{\alpha_t \alpha_{t-1}}\, x_{t-2} + \sqrt{\alpha_t (1 - \alpha_{t-1})}\,\epsilon_{t-2} + \sqrt{1 - \alpha_t}\,\epsilon_{t-1}.
+\end{aligned}
+\]</span></p>
+<p>The last two terms are independent zero-mean Gaussians. <strong>Merging two Gaussians</strong> <span class="math inline">\(\mathcal{N}(0, \sigma_1^2 I) + \mathcal{N}(0, \sigma_2^2 I)\)</span> produces <span class="math inline">\(\mathcal{N}(0, (\sigma_1^2 + \sigma_2^2) I)\)</span>. So the combined noise has variance <span class="math inline">\(\alpha_t(1 - \alpha_{t-1}) + (1 - \alpha_t) = 1 - \alpha_t \alpha_{t-1}\)</span>, and we can write <span class="math display">\[
+x_t \;=\; \sqrt{\alpha_t \alpha_{t-1}}\, x_{t-2} + \sqrt{1 - \alpha_t \alpha_{t-1}}\, \bar\epsilon_{t-2},
+\]</span> with <span class="math inline">\(\bar\epsilon_{t-2} \sim \mathcal{N}(0, I)\)</span>. Repeating the argument <span class="math inline">\(t\)</span> times, <span id="eq-xt-closed"><span class="math display">\[
+x_t \;=\; \sqrt{\bar\alpha_t}\, x_0 + \sqrt{1 - \bar\alpha_t}\, \epsilon, \qquad \epsilon \sim \mathcal{N}(0, I).
+\tag{8}\]</span></span></p>
+<p>Equivalently, <span id="eq-q-xt-x0"><span class="math display">\[
+q(x_t \mid x_0) \;=\; \mathcal{N}\!\bigl(x_t;\; \sqrt{\bar\alpha_t}\, x_0,\; (1 - \bar\alpha_t)\, I\bigr).
+\tag{9}\]</span></span></p>
+<p><strong>This is the workhorse identity of all of diffusion.</strong> It says we can sample <span class="math inline">\(x_t\)</span> at any time <span class="math inline">\(t\)</span> in one shot, without simulating the chain. At training time we will pick a random <span class="math inline">\(t\)</span>, sample <span class="math inline">\(\epsilon \sim \mathcal{N}(0, I)\)</span>, and form <span class="math inline">\(x_t\)</span> as a linear combination of clean data and noise.</p>
+<blockquote class="blockquote">
+<p>Practical note: typical <span class="math inline">\(\beta_t\)</span> schedules go from <span class="math inline">\(\beta_1 = 10^{-4}\)</span> to <span class="math inline">\(\beta_T = 0.02\)</span> linearly, with <span class="math inline">\(T = 1000\)</span>. Then <span class="math inline">\(\bar\alpha_T \approx 0\)</span> and <span class="math inline">\(x_T\)</span> is approximately <span class="math inline">\(\mathcal{N}(0, I)\)</span>.</p>
+</blockquote>
+<p><strong>Connection to stochastic gradient Langevin dynamics.</strong> Langevin dynamics says we can sample from <span class="math inline">\(p(x)\)</span> by following its score <span class="math inline">\(\nabla_x \log p(x)\)</span>: <span class="math display">\[
+x_{k+1} \;=\; x_k + \tfrac{\delta}{2} \nabla_x \log p(x_k) + \sqrt{\delta}\, \epsilon_k.
+\]</span> This looks remarkably like a discretized SDE, and indeed Yang Song et al.&nbsp;(2021) made the connection explicit by viewing diffusion as a continuous-time process. We’ll come back to this in §9.4. The aesthetic point is that the noise injection in <a href="#eq-forward" class="quarto-xref">Equation&nbsp;7</a> is doing the same job as the noise injection in Langevin dynamics: it prevents the chain from collapsing into local modes and ensures the sampler explores the full data manifold.</p>
+<blockquote class="blockquote">
+<p>A small computation that pays off later. Notice that the forward update <span class="math inline">\(x_t = \sqrt{1 - \beta_t}\, x_{t-1} + \sqrt{\beta_t}\, \epsilon\)</span> exactly preserves the variance of <span class="math inline">\(x_t\)</span> provided <span class="math inline">\(x_{t-1}\)</span> already has unit variance: <span class="math inline">\(\mathrm{Var}[x_t] = (1 - \beta_t) \cdot 1 + \beta_t = 1\)</span>. This <strong>variance-preserving</strong> property is the entire reason the schedule uses <span class="math inline">\(\sqrt{1 - \beta_t}\)</span> as the shrink factor; without it, the marginal variance would grow or shrink in <span class="math inline">\(t\)</span> and the chain would not converge to a unit Gaussian. There is a sibling formulation called <strong>variance-exploding</strong> (used in NCSN), where the shrink factor is 1 and the noise variance grows in <span class="math inline">\(t\)</span> — same model, different bookkeeping.</p>
+</blockquote>
+</section>
+<section id="the-reverse-process" class="level3">
+<h3 class="anchored" data-anchor-id="the-reverse-process">9.2 The reverse process</h3>
+<p>If we knew <span class="math inline">\(q(x_{t-1} \mid x_t)\)</span>, we could start with <span class="math inline">\(x_T \sim \mathcal{N}(0, I)\)</span> and run the chain backwards, producing a sample <span class="math inline">\(x_0 \sim q\)</span>. Unfortunately <span class="math inline">\(q(x_{t-1} \mid x_t)\)</span> is <em>not</em> Gaussian in general (it requires knowing the data distribution to invert the forward step). But we can parameterize a Gaussian approximation: <span class="math display">\[
+p_\theta(x_{t-1} \mid x_t) \;=\; \mathcal{N}\!\bigl(x_{t-1};\; \mu_\theta(x_t, t),\; \Sigma_\theta(x_t, t)\bigr).
+\]</span></p>
+<p>When <span class="math inline">\(\beta_t\)</span> is small, <span class="math inline">\(q(x_{t-1} \mid x_t)\)</span> is <em>approximately</em> Gaussian, so this parameterization is reasonable.</p>
+<p><strong>The conditional reverse <span class="math inline">\(q(x_{t-1} \mid x_t, x_0)\)</span> is exactly Gaussian.</strong> This is the key trick. While <span class="math inline">\(q(x_{t-1} \mid x_t)\)</span> alone is intractable, if we additionally condition on <span class="math inline">\(x_0\)</span>, Bayes makes everything explicit. From Bayes: <span class="math display">\[
+q(x_{t-1} \mid x_t, x_0) \;=\; q(x_t \mid x_{t-1}, x_0) \,\frac{q(x_{t-1} \mid x_0)}{q(x_t \mid x_0)}.
+\]</span> The Markov property makes <span class="math inline">\(q(x_t \mid x_{t-1}, x_0) = q(x_t \mid x_{t-1})\)</span>. All three factors on the right are Gaussian with known means and variances: <span class="math display">\[
+q(x_t \mid x_{t-1}) = \mathcal{N}(\sqrt{\alpha_t}\, x_{t-1}, \beta_t I), \quad q(x_{t-1} \mid x_0) = \mathcal{N}(\sqrt{\bar\alpha_{t-1}}\, x_0, (1-\bar\alpha_{t-1}) I), \quad q(x_t \mid x_0) = \mathcal{N}(\sqrt{\bar\alpha_t}\, x_0, (1-\bar\alpha_t) I).
+\]</span></p>
+<p>A product/quotient of Gaussians is Gaussian, so we know <span class="math inline">\(q(x_{t-1} \mid x_t, x_0) = \mathcal{N}(\tilde\mu_t(x_t, x_0), \tilde\beta_t I)\)</span> for some <span class="math inline">\(\tilde\mu_t\)</span> and <span class="math inline">\(\tilde\beta_t\)</span>. Let’s find them by <strong>completing the square</strong> in the exponent.</p>
+<p>The product of the densities, up to terms not involving <span class="math inline">\(x_{t-1}\)</span>, is <span class="math display">\[
+\exp\!\left(-\tfrac{1}{2}\!\left[\frac{(x_t - \sqrt{\alpha_t}\, x_{t-1})^2}{\beta_t} + \frac{(x_{t-1} - \sqrt{\bar\alpha_{t-1}}\, x_0)^2}{1 - \bar\alpha_{t-1}} - \frac{(x_t - \sqrt{\bar\alpha_t}\, x_0)^2}{1 - \bar\alpha_t}\right]\right).
+\]</span> Expanding and collecting terms in <span class="math inline">\(x_{t-1}^2\)</span> and <span class="math inline">\(x_{t-1}\)</span>: <span class="math display">\[
+\exp\!\left(-\tfrac{1}{2}\!\left[ \underbrace{\!\left(\tfrac{\alpha_t}{\beta_t} + \tfrac{1}{1 - \bar\alpha_{t-1}}\right)}_{1/\tilde\beta_t}\, x_{t-1}^2 - \underbrace{\!\left(\tfrac{2 \sqrt{\alpha_t}}{\beta_t}\, x_t + \tfrac{2 \sqrt{\bar\alpha_{t-1}}}{1 - \bar\alpha_{t-1}}\, x_0\right)}_{2 \tilde\mu_t / \tilde\beta_t}\, x_{t-1} + C(x_t, x_0)\right]\right).
+\]</span></p>
+<p>Match coefficients. For the variance: <span class="math display">\[
+\tilde\beta_t \;=\; \frac{1}{\tfrac{\alpha_t}{\beta_t} + \tfrac{1}{1 - \bar\alpha_{t-1}}} \;=\; \frac{\beta_t (1 - \bar\alpha_{t-1})}{\alpha_t(1 - \bar\alpha_{t-1}) + \beta_t}.
+\]</span> Use <span class="math inline">\(\alpha_t = 1 - \beta_t\)</span> and <span class="math inline">\(\bar\alpha_t = \alpha_t \bar\alpha_{t-1}\)</span> to simplify the denominator: <span class="math inline">\(\alpha_t(1 - \bar\alpha_{t-1}) + \beta_t = \alpha_t - \alpha_t \bar\alpha_{t-1} + 1 - \alpha_t = 1 - \bar\alpha_t\)</span>. So <span id="eq-tildebeta"><span class="math display">\[
+\boxed{\;\tilde\beta_t \;=\; \frac{1 - \bar\alpha_{t-1}}{1 - \bar\alpha_t}\, \beta_t.\;}
+\tag{10}\]</span></span></p>
+<p>For the mean, <span class="math inline">\(\tilde\mu_t = \tilde\beta_t \cdot \!\left(\tfrac{\sqrt{\alpha_t}}{\beta_t}\, x_t + \tfrac{\sqrt{\bar\alpha_{t-1}}}{1 - \bar\alpha_{t-1}}\, x_0\right)\)</span>. Substituting <span class="math inline">\(\tilde\beta_t\)</span>: <span id="eq-tildemu"><span class="math display">\[
+\tilde\mu_t(x_t, x_0) \;=\; \frac{\sqrt{\alpha_t}\,(1 - \bar\alpha_{t-1})}{1 - \bar\alpha_t}\, x_t \;+\; \frac{\sqrt{\bar\alpha_{t-1}}\, \beta_t}{1 - \bar\alpha_t}\, x_0.
+\tag{11}\]</span></span></p>
+<p>So we have, exactly, <span id="eq-q-reverse"><span class="math display">\[
+q(x_{t-1} \mid x_t, x_0) \;=\; \mathcal{N}\!\bigl(x_{t-1};\; \tilde\mu_t(x_t, x_0),\; \tilde\beta_t I\bigr).
+\tag{12}\]</span></span></p>
+<p>The variance <span class="math inline">\(\tilde\beta_t\)</span> depends on time only, not on the data; the mean is a deterministic linear combination of <span class="math inline">\(x_t\)</span> and <span class="math inline">\(x_0\)</span>.</p>
+<p><strong>The <span class="math inline">\(\epsilon\)</span>-prediction reparameterization.</strong> Equation (<a href="#eq-xt-closed" class="quarto-xref">Equation&nbsp;8</a>) lets us solve for <span class="math inline">\(x_0\)</span> in terms of <span class="math inline">\(x_t\)</span> and the noise: <span class="math inline">\(x_0 = (x_t - \sqrt{1 - \bar\alpha_t}\, \epsilon) / \sqrt{\bar\alpha_t}\)</span>. Substitute into (<a href="#eq-tildemu" class="quarto-xref">Equation&nbsp;11</a>) and simplify (this is a couple of lines of algebra): <span id="eq-tildemu-eps"><span class="math display">\[
+\tilde\mu_t \;=\; \frac{1}{\sqrt{\alpha_t}}\!\left(x_t - \frac{1 - \alpha_t}{\sqrt{1 - \bar\alpha_t}}\,\epsilon\right).
+\tag{13}\]</span></span></p>
+<p>This is the form we will use. The mean of the reverse process depends only on <span class="math inline">\(x_t\)</span> and the noise <span class="math inline">\(\epsilon\)</span> that produced <span class="math inline">\(x_t\)</span> from <span class="math inline">\(x_0\)</span>.</p>
+</section>
+<section id="training-loss-the-simplified-elbo" class="level3">
+<h3 class="anchored" data-anchor-id="training-loss-the-simplified-elbo">9.3 Training loss — the simplified ELBO</h3>
+<p>We optimize a variational bound exactly as in the VAE: <span class="math display">\[
+\log p_\theta(x_0) \;\geq\; -\mathcal{L}_{\mathrm{VLB}}(x_0), \qquad \mathcal{L}_{\mathrm{VLB}} \;=\; \mathbb{E}_{q(x_{0:T})}\!\left[\log \frac{q(x_{1:T} \mid x_0)}{p_\theta(x_{0:T})}\right].
+\]</span></p>
+<p>Expanding the chain and rearranging (see Lilian Weng’s blog or Sohl-Dickstein et al.&nbsp;(2015) Appendix B for the full step-by-step), the VLB decomposes neatly: <span id="eq-vlb-decomp"><span class="math display">\[
+\mathcal{L}_{\mathrm{VLB}} \;=\; \underbrace{D_{\mathrm{KL}}\!\bigl(q(x_T \mid x_0) \,\|\, p(x_T)\bigr)}_{L_T} \;+\; \sum_{t=2}^{T} \underbrace{D_{\mathrm{KL}}\!\bigl(q(x_{t-1} \mid x_t, x_0) \,\|\, p_\theta(x_{t-1} \mid x_t)\bigr)}_{L_{t-1}} \;\underbrace{-\;\log p_\theta(x_0 \mid x_1)}_{L_0}.
+\tag{14}\]</span></span></p>
+<p>Three pieces. The first, <span class="math inline">\(L_T\)</span>, is the KL between the (parameter-free) terminal Gaussian and the prior — it’s a constant, <span class="math inline">\(\sim 0\)</span> for a well-designed schedule, and we ignore it. The last, <span class="math inline">\(L_0\)</span>, is a discrete decoder log-likelihood that Ho et al.&nbsp;(2020) handle separately. The interesting middle terms are KL divergences between two Gaussians — both sides of which we’ve already computed.</p>
+<p>Specifically, <span class="math inline">\(q(x_{t-1} \mid x_t, x_0) = \mathcal{N}(\tilde\mu_t, \tilde\beta_t I)\)</span> (by <a href="#eq-q-reverse" class="quarto-xref">Equation&nbsp;12</a>) and <span class="math inline">\(p_\theta(x_{t-1} \mid x_t) = \mathcal{N}(\mu_\theta(x_t, t), \sigma_t^2 I)\)</span> where we’ve fixed the variance to a constant <span class="math inline">\(\sigma_t^2\)</span> (we’ll discuss what to set it to in a moment). For two diagonal Gaussians with the same variance, <span class="math inline">\(D_{\mathrm{KL}}(\mathcal{N}(\mu_a, \sigma^2 I) \,\|\, \mathcal{N}(\mu_b, \sigma^2 I)) = \|\mu_a - \mu_b\|^2 / (2 \sigma^2)\)</span>. So <span class="math display">\[
+L_{t-1} \;=\; \mathbb{E}_q\!\left[\frac{1}{2 \sigma_t^2}\, \|\tilde\mu_t(x_t, x_0) - \mu_\theta(x_t, t)\|^2\right] + C,
+\]</span> where <span class="math inline">\(C\)</span> collects time-dependent constants we don’t care about for gradients.</p>
+<p><strong>Now parameterize <span class="math inline">\(\mu_\theta\)</span> to predict noise.</strong> Since we just showed <span class="math inline">\(\tilde\mu_t\)</span> depends linearly on <span class="math inline">\(\epsilon\)</span> via (<a href="#eq-tildemu-eps" class="quarto-xref">Equation&nbsp;13</a>), it makes sense to have the network output a noise prediction <span class="math inline">\(\epsilon_\theta(x_t, t)\)</span> and then form <span id="eq-mu-eps"><span class="math display">\[
+\mu_\theta(x_t, t) \;=\; \frac{1}{\sqrt{\alpha_t}}\!\left(x_t - \frac{1 - \alpha_t}{\sqrt{1 - \bar\alpha_t}}\, \epsilon_\theta(x_t, t)\right).
+\tag{15}\]</span></span></p>
+<p>Then <span class="math inline">\(\tilde\mu_t - \mu_\theta = \frac{1 - \alpha_t}{\sqrt{\alpha_t}\,\sqrt{1 - \bar\alpha_t}} (\epsilon - \epsilon_\theta)\)</span>, so <span class="math display">\[
+L_{t-1} \;=\; \mathbb{E}_{x_0, \epsilon}\!\left[\frac{(1 - \alpha_t)^2}{2 \sigma_t^2 \, \alpha_t \, (1 - \bar\alpha_t)}\, \|\epsilon - \epsilon_\theta(x_t, t)\|^2\right].
+\]</span></p>
+<p>Empirically, Ho et al.&nbsp;(2020) found that <strong>dropping the time-dependent weight</strong> and just minimizing the noise-prediction MSE works better: <span id="eq-lsimple"><span class="math display">\[
+\boxed{\;\;\mathcal{L}_{\mathrm{simple}}(\theta) \;=\; \mathbb{E}_{t \sim \mathcal{U}\{1,\dots,T\},\; x_0 \sim q,\; \epsilon \sim \mathcal{N}(0, I)}\!\left[\bigl\|\epsilon - \epsilon_\theta(\sqrt{\bar\alpha_t}\, x_0 + \sqrt{1 - \bar\alpha_t}\, \epsilon,\; t)\bigr\|^2\right].\;\;}
+\tag{16}\]</span></span></p>
+<p>That is the entire DDPM training objective. Sample a clean image, sample a timestep, sample a noise, mix them to get <span class="math inline">\(x_t\)</span>, and ask the network to predict <span class="math inline">\(\epsilon\)</span> from <span class="math inline">\(x_t\)</span> and <span class="math inline">\(t\)</span>. A single MSE loss.</p>
+<p><strong>Training and sampling algorithms (Ho et al.&nbsp;2020).</strong></p>
+<pre class="text"><code>ALGORITHM 1 — DDPM training
+  repeat
+    x_0 ~ q(x)                                  # clean image
+    t   ~ Uniform({1, ..., T})                  # random timestep
+    eps ~ N(0, I)                               # noise
+    x_t = sqrt(alphabar_t) * x_0 + sqrt(1 - alphabar_t) * eps
+    take SGD step on || eps - eps_theta(x_t, t) ||^2
+  until converged
+
+ALGORITHM 2 — DDPM sampling
+  x_T ~ N(0, I)
+  for t = T, T-1, ..., 1:
+    z ~ N(0, I) if t &gt; 1 else z = 0
+    mu = (1/sqrt(alpha_t)) * (x_t - (1 - alpha_t)/sqrt(1 - alphabar_t) * eps_theta(x_t, t))
+    x_{t-1} = mu + sigma_t * z
+  return x_0</code></pre>
+<p><strong>Reverse variance <span class="math inline">\(\sigma_t^2\)</span>.</strong> Ho et al.&nbsp;(2020) fix it to either <span class="math inline">\(\beta_t\)</span> or <span class="math inline">\(\tilde\beta_t = \frac{1 - \bar\alpha_{t-1}}{1 - \bar\alpha_t}\, \beta_t\)</span>. Nichol &amp; Dhariwal (2021) instead let the network output a mixing logit <span class="math inline">\(v\)</span> and interpolate <span class="math inline">\(\Sigma_\theta = \exp(v \log \beta_t + (1 - v) \log \tilde\beta_t)\)</span> — this gives a small log-likelihood boost.</p>
+<p><strong><span class="math inline">\(\beta_t\)</span> schedules.</strong> Ho et al.&nbsp;(2020) use a linear schedule from <span class="math inline">\(10^{-4}\)</span> to <span class="math inline">\(0.02\)</span>. Nichol &amp; Dhariwal (2021) introduced the <strong>cosine schedule</strong>: <span class="math display">\[
+\bar\alpha_t \;=\; \frac{f(t)}{f(0)}, \qquad f(t) \;=\; \cos\!\left(\frac{t/T + s}{1 + s}\cdot \frac{\pi}{2}\right)^2,
+\]</span> with a small offset <span class="math inline">\(s\)</span> (<span class="math inline">\(\sim 0.008\)</span>). Cosine schedules destroy information more slowly near <span class="math inline">\(t = 0\)</span> and faster in the middle, which empirically improves sample quality. Most modern systems use cosine or some variant.</p>
+</section>
+<section id="the-score-perspective-and-the-sdeode-unification" class="level3">
+<h3 class="anchored" data-anchor-id="the-score-perspective-and-the-sdeode-unification">9.4 The score perspective and the SDE/ODE unification</h3>
+<p>Diffusion has an alternative — and arguably cleaner — derivation in terms of <strong>score matching</strong>. Define the score of a density <span class="math inline">\(p\)</span> as <span class="math inline">\(s(x) = \nabla_x \log p(x)\)</span>. The score is a vector field that points in the direction of increasing log-density; following it is gradient ascent on log-likelihood. For an isotropic Gaussian <span class="math inline">\(\mathcal{N}(\mu, \sigma^2 I)\)</span>, <span class="math display">\[
+\nabla_x \log p(x) \;=\; -\,\frac{x - \mu}{\sigma^2} \;=\; -\,\frac{\epsilon}{\sigma},
+\]</span></p>
+<p>where <span class="math inline">\(\epsilon = (x - \mu) / \sigma\)</span> is the standard noise. The score <em>is</em> the noise, up to scale.</p>
+<p>For the diffused <span class="math inline">\(q(x_t \mid x_0) = \mathcal{N}(\sqrt{\bar\alpha_t}\, x_0, (1 - \bar\alpha_t) I)\)</span>, the score with respect to <span class="math inline">\(x_t\)</span> (treating <span class="math inline">\(x_0\)</span> as parameter) is <span class="math display">\[
+\nabla_{x_t} \log q(x_t \mid x_0) \;=\; -\,\frac{x_t - \sqrt{\bar\alpha_t}\, x_0}{1 - \bar\alpha_t} \;=\; -\,\frac{\epsilon}{\sqrt{1 - \bar\alpha_t}}.
+\]</span> Taking the expectation over <span class="math inline">\(x_0\)</span> (Tweedie’s formula / denoising score matching by Vincent, 2011) gives <span class="math display">\[
+\nabla_{x_t} \log q(x_t) \;=\; \mathbb{E}_{q(x_0 \mid x_t)}\!\bigl[\nabla_{x_t} \log q(x_t \mid x_0)\bigr] \;=\; -\,\frac{\mathbb{E}[\epsilon \mid x_t]}{\sqrt{1 - \bar\alpha_t}}.
+\]</span></p>
+<p>If <span class="math inline">\(\epsilon_\theta(x_t, t)\)</span> is trained to predict <span class="math inline">\(\mathbb{E}[\epsilon \mid x_t]\)</span> (which is exactly the DDPM objective), then a <em>score network</em> is hiding inside DDPM: <span id="eq-score-eps"><span class="math display">\[
+\boxed{\;\;s_\theta(x_t, t) \;\approx\; -\,\frac{\epsilon_\theta(x_t, t)}{\sqrt{1 - \bar\alpha_t}}.\;\;}
+\tag{17}\]</span></span></p>
+<p>So <strong>score-based models and denoising diffusion are the same model</strong>, related by a known affine transformation of the network output.</p>
+<p><strong>Noise-Conditioned Score Networks (NCSN, Song &amp; Ermon 2019)</strong> were developed in parallel to DDPMs and arrived at essentially the same architecture from the score side. They observed that estimating <span class="math inline">\(\nabla_x \log q(x)\)</span> directly fails when data lies on a low-dimensional manifold (the score outside the manifold is essentially infinite), so they smoothed the data with Gaussian noise at multiple scales and trained one score network conditioned on the noise level. That is the score-side mirror image of conditioning the noise predictor on <span class="math inline">\(t\)</span>.</p>
+<p><strong>The continuous-time view (Song et al.&nbsp;2021).</strong> Let <span class="math inline">\(T \to \infty\)</span> and <span class="math inline">\(\beta_t \to \beta(t)\, dt\)</span>. The discrete forward chain becomes a stochastic differential equation: <span id="eq-forward-sde"><span class="math display">\[
+dx_t \;=\; -\,\tfrac{1}{2}\, \beta(t)\, x_t\, dt + \sqrt{\beta(t)}\, dW_t,
+\tag{18}\]</span></span></p>
+<p>where <span class="math inline">\(W_t\)</span> is a standard Wiener process. This is called the <strong>variance-preserving SDE</strong> because <span class="math inline">\(\mathbb{E}[\|x_t\|^2]\)</span> stays approximately constant. The reverse-time SDE (Anderson, 1982) — the process that takes you backwards from noise to data — is <span id="eq-reverse-sde"><span class="math display">\[
+dx_t \;=\; \left[-\,\tfrac{1}{2}\, \beta(t)\, x_t - \beta(t)\, \nabla_{x_t} \log p_t(x_t)\right] dt + \sqrt{\beta(t)}\, d\bar W_t,
+\tag{19}\]</span></span></p>
+<p>with <span class="math inline">\(\bar W_t\)</span> a backward-time Wiener process. The whole reverse SDE is determined by the score <span class="math inline">\(\nabla_{x_t} \log p_t(x_t)\)</span>, which we have a network for. Discretizing (<a href="#eq-reverse-sde" class="quarto-xref">Equation&nbsp;19</a>) with the Euler–Maruyama scheme recovers DDPM sampling; discretizing with higher-order solvers gives DPM-Solver and friends.</p>
+<p><strong>Probability-flow ODE.</strong> Most beautifully, Song et al.&nbsp;showed there exists an <em>ordinary</em> (deterministic) differential equation that has the same marginals <span class="math inline">\(p_t\)</span> as the reverse SDE: <span id="eq-pf-ode"><span class="math display">\[
+\frac{dx_t}{dt} \;=\; -\,\tfrac{1}{2}\, \beta(t)\, x_t - \tfrac{1}{2}\, \beta(t)\, \nabla_{x_t} \log p_t(x_t).
+\tag{20}\]</span></span></p>
+<p>Discretizing this ODE gives deterministic samplers (DDIM, Heun, DPM-Solver), which are the foundation of fast inference. We have <em>the same model</em> — the noise predictor — and choose at inference time whether to run it stochastically or deterministically.</p>
+<p>The probability-flow ODE has another surprising property: it gives <em>exact</em> log-likelihoods via the continuous change-of-variables formula. For a sample <span class="math inline">\(x_0\)</span> obtained by integrating the ODE backwards from <span class="math inline">\(t=1\)</span> to <span class="math inline">\(t=0\)</span>, <span class="math display">\[
+\log p_0(x_0) \;=\; \log p_1(x_1) - \int_0^1 \mathrm{tr}\!\left(\frac{\partial f_t}{\partial x_t}\right) dt,
+\]</span> where <span class="math inline">\(f_t\)</span> is the drift of (<a href="#eq-pf-ode" class="quarto-xref">Equation&nbsp;20</a>). The trace can be Hutchinson-estimated. So a model trained as a noise predictor (cheap MSE objective, no integration) yields exact likelihoods at evaluation time (expensive but tractable). This is the basis for the bits-per-dimension numbers reported in diffusion-model papers.</p>
+<blockquote class="blockquote">
+<p>If you only remember one thing from this section: DDPM trains a denoiser; the denoiser is a score; the score defines an SDE; the SDE has a deterministic ODE shadow with the same marginals. Everything else is bookkeeping.</p>
+</blockquote>
+</section>
+<section id="sampling-ddim-distillation-and-consistency-models" class="level3">
+<h3 class="anchored" data-anchor-id="sampling-ddim-distillation-and-consistency-models">9.5 Sampling: DDIM, distillation, and consistency models</h3>
+<p>DDPM sampling needs <span class="math inline">\(T \approx 1000\)</span> network evaluations. That is impossibly slow for production. Three lines of work have brought that down to single digits.</p>
+<p><strong>DDIM (Song et al.&nbsp;2020).</strong> Define a <em>non-Markovian</em> reverse process with adjustable variance. Specifically, let <span class="math display">\[
+q_\sigma(x_{t-1} \mid x_t, x_0) \;=\; \mathcal{N}\!\bigl(x_{t-1};\; \sqrt{\bar\alpha_{t-1}}\, x_0 + \sqrt{1 - \bar\alpha_{t-1} - \sigma_t^2}\,\epsilon_\theta(x_t, t),\; \sigma_t^2 I\bigr).
+\]</span> For any choice of <span class="math inline">\(\sigma_t \geq 0\)</span>, this distribution has the <em>same</em> marginals <span class="math inline">\(q(x_t \mid x_0)\)</span> as the DDPM forward process. Two extremes are interesting:</p>
+<ul>
+<li><span class="math inline">\(\sigma_t = \tilde\beta_t\)</span>: standard stochastic DDPM sampling.</li>
+<li><span class="math inline">\(\sigma_t = 0\)</span>: fully <strong>deterministic</strong> sampling. <span class="math inline">\(x_{t-1}\)</span> is a deterministic function of <span class="math inline">\(x_t\)</span> and the predicted noise; no fresh randomness.</li>
+</ul>
+<p>We can also parameterize as <span class="math inline">\(\sigma_t^2 = \eta \cdot \tilde\beta_t\)</span> and tune <span class="math inline">\(\eta \in [0, 1]\)</span>. The key practical observation: with <span class="math inline">\(\eta = 0\)</span>, we can <strong>skip steps</strong>. Sample on any subset <span class="math inline">\(\tau_1 &lt; \tau_2 &lt; \dots &lt; \tau_S\)</span> of timesteps: <span class="math display">\[
+x_{\tau_{s-1}} \;=\; \sqrt{\bar\alpha_{\tau_{s-1}}}\!\left(\frac{x_{\tau_s} - \sqrt{1 - \bar\alpha_{\tau_s}}\, \epsilon_\theta(x_{\tau_s}, \tau_s)}{\sqrt{\bar\alpha_{\tau_s}}}\right) + \sqrt{1 - \bar\alpha_{\tau_{s-1}}}\, \epsilon_\theta(x_{\tau_s}, \tau_s).
+\]</span> This works because deterministic DDIM is exactly the Euler discretization of the probability-flow ODE — so taking bigger steps with a higher-order solver still tracks the right ODE trajectory. DDIM with 20–50 steps is essentially indistinguishable from DDPM with 1000.</p>
+<p><strong>Consistency property and latent interpolation.</strong> Because deterministic DDIM is a bijection between <span class="math inline">\(x_T \sim \mathcal{N}(0, I)\)</span> and <span class="math inline">\(x_0\)</span>, two samples obtained from the same noise have similar high-level structure, and we can semantically interpolate by interpolating in the noise space. This is what powers all of the “smooth interpolation between two prompts” demos you’ve seen.</p>
+<p><strong>Progressive distillation (Salimans &amp; Ho 2022).</strong> Take a teacher DDIM sampler with <span class="math inline">\(N\)</span> steps. Train a student model with the same architecture but <span class="math inline">\(N/2\)</span> steps, supervising it to match the teacher’s output where each student step covers two teacher steps. Iterate. Each round halves the steps. From <span class="math inline">\(N = 256\)</span> down to <span class="math inline">\(N = 4\)</span> in eight rounds.</p>
+<div id="fig-consistency" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-consistency-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://lilianweng.github.io/posts/2021-07-11-diffusion-models/consistency-models.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-consistency-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Figure: consistency models learn to map any point on a diffusion trajectory back to its origin in a single forward pass; see Song et al.&nbsp;(2023) Fig. 1.
+</figcaption>
+</figure>
+</div>
+<p><strong>Consistency models (Song et al.&nbsp;2023).</strong> Train a network <span class="math inline">\(f_\theta(x_t, t)\)</span> that maps <em>any</em> point on the ODE trajectory directly to its origin <span class="math inline">\(x_0\)</span> — the “self-consistency” property is that <span class="math inline">\(f_\theta(x_t, t) = f_\theta(x_{t'}, t')\)</span> for any two points on the same trajectory. Then sampling becomes a single forward pass: pick <span class="math inline">\(x_T \sim \mathcal{N}(0, I)\)</span>, evaluate <span class="math inline">\(f_\theta(x_T, T)\)</span>, done.</p>
+<p>The network is parameterized to enforce the boundary condition <span class="math inline">\(f(x_\epsilon, \epsilon) = x_\epsilon\)</span> via <span class="math display">\[
+f_\theta(x, t) \;=\; c_{\mathrm{skip}}(t)\, x + c_{\mathrm{out}}(t)\, F_\theta(x, t),
+\]</span> where <span class="math inline">\(c_{\mathrm{skip}}(\epsilon) = 1\)</span> and <span class="math inline">\(c_{\mathrm{out}}(\epsilon) = 0\)</span>.</p>
+<p>Two training modes:</p>
+<ul>
+<li><strong>Consistency distillation (CD)</strong>, which uses a pre-trained diffusion model <span class="math inline">\(\Phi\)</span> as teacher: <span class="math inline">\(\mathcal{L}_{\mathrm{CD}} = \mathbb{E}[d(f_\theta(x_{t_{n+1}}, t_{n+1}), f_{\theta^-}(\hat x^\Phi_{t_n}, t_n))]\)</span>, where <span class="math inline">\(\hat x^\Phi_{t_n} = x_{t_{n+1}} - (t_n - t_{n+1}) \Phi(x_{t_{n+1}}, t_{n+1})\)</span> is one teacher ODE step, <span class="math inline">\(\theta^-\)</span> is an EMA of <span class="math inline">\(\theta\)</span>, and <span class="math inline">\(d\)</span> is LPIPS or <span class="math inline">\(\ell_2\)</span>.</li>
+<li><strong>Consistency training (CT)</strong> trains from scratch using <span class="math inline">\(\nabla \log p_t(x) \approx -(x_t - x)/t^2\)</span> as an unbiased score estimator.</li>
+</ul>
+<p>Consistency models give one-step (or 2–4-step) generation with FID competitive with multi-step DDPM, and they’re the technological ancestor of LCM-LoRA, which lets you turn any pretrained Stable Diffusion checkpoint into a 4-step sampler by adding a small low-rank adapter.</p>
+</section>
+<section id="conditional-generation-classifier-and-classifier-free-guidance" class="level3">
+<h3 class="anchored" data-anchor-id="conditional-generation-classifier-and-classifier-free-guidance">9.6 Conditional generation: classifier and classifier-free guidance</h3>
+<p>To generate samples conditioned on text or labels, we need to model <span class="math inline">\(p_\theta(x \mid y)\)</span>. There are two approaches.</p>
+<p><strong>Classifier guidance (Dhariwal &amp; Nichol 2021).</strong> Train an unconditional diffusion model. Separately train a classifier <span class="math inline">\(f_\phi(y \mid x_t, t)\)</span> on noisy images. Then at sampling time, use Bayes: <span class="math display">\[
+\nabla_{x_t} \log p(x_t \mid y) \;=\; \nabla_{x_t} \log p(x_t) + \nabla_{x_t} \log p(y \mid x_t).
+\]</span> Using <a href="#eq-score-eps" class="quarto-xref">Equation&nbsp;17</a> to convert scores to noise predictions: <span id="eq-classifier-guidance"><span class="math display">\[
+\boxed{\;\;\bar\epsilon_\theta(x_t, t, y) \;=\; \epsilon_\theta(x_t, t) - \sqrt{1 - \bar\alpha_t}\, w\, \nabla_{x_t} \log f_\phi(y \mid x_t),\;\;}
+\tag{21}\]</span></span></p>
+<p>where <span class="math inline">\(w\)</span> is a <strong>guidance scale</strong> that controls the strength of the class-conditioning. Larger <span class="math inline">\(w\)</span> means more semantically faithful, less diverse samples. This works, but requires training a classifier on noisy images at every noise level, which is a chore.</p>
+<p><strong>Classifier-free guidance (Ho &amp; Salimans 2021).</strong> Train <em>one</em> network with random label dropout — pass <span class="math inline">\(y = \varnothing\)</span> with probability <span class="math inline">\(\sim 10\%\)</span> during training, so the same network learns both <span class="math inline">\(p_\theta(x \mid y)\)</span> and the unconditional <span class="math inline">\(p_\theta(x)\)</span>. At sample time, combine the two score estimates: <span class="math display">\[
+\nabla_{x_t} \log p(y \mid x_t) \;=\; \nabla_{x_t} \log p(x_t \mid y) - \nabla_{x_t} \log p(x_t).
+\]</span> In noise-prediction terms: <span id="eq-cfg"><span class="math display">\[
+\boxed{\;\;\bar\epsilon_\theta(x_t, t, y) \;=\; (w + 1)\,\epsilon_\theta(x_t, t, y) - w\, \epsilon_\theta(x_t, t, \varnothing).\;\;}
+\tag{22}\]</span></span></p>
+<p>Classifier-free guidance has overwhelmingly won the deployment race. It needs no extra classifier, gives smooth control of the prompt–fidelity vs.&nbsp;diversity trade-off, and works across every modality. Every Stable Diffusion, every Imagen, every FLUX, every BAGEL — all of them use CFG.</p>
+<blockquote class="blockquote">
+<p><strong>CFG scale tuning.</strong> <span class="math inline">\(w = 0\)</span> is unconditional. <span class="math inline">\(w = 1\)</span> is exact conditional (one forward pass equals the conditional model). <span class="math inline">\(w &gt; 1\)</span> is “more conditional than conditional” — it amplifies the difference between conditional and unconditional, sharpening the prompt match at the cost of diversity. Production systems often use <span class="math inline">\(w \in [3, 12]\)</span>. Higher <span class="math inline">\(w\)</span> tends to produce oversaturated, contrast-blasted images, which is why Imagen introduced dynamic thresholding (clip pixel predictions to the dataset range adaptively per step).</p>
+</blockquote>
+</section>
+<section id="architectures-u-net-and-dit" class="level3">
+<h3 class="anchored" data-anchor-id="architectures-u-net-and-dit">9.7 Architectures: U-Net and DiT</h3>
+<p>The noise predictor <span class="math inline">\(\epsilon_\theta(x_t, t, y)\)</span> is a neural network that takes an image-shaped tensor (or a sequence of latent patches), a scalar timestep, and a conditioning embedding, and outputs an image-shaped noise prediction. Two architectures dominate.</p>
+<p><strong>U-Net (Ronneberger et al.&nbsp;2015).</strong> Originally for biomedical image segmentation, the U-Net has a symmetric encoder–decoder shape with skip connections at every resolution. The encoder downsamples through several stages, doubling channels at each stage; the decoder upsamples symmetrically, with skip connections from the encoder concatenated into each decoder stage. The hourglass shape gives a large receptive field at the bottleneck (where global structure is reasoned about) while preserving high-frequency detail through the skips.</p>
+<p>For diffusion, the original DDPM U-Net adds: time embeddings (a learned MLP on top of a sinusoidal positional encoding of <span class="math inline">\(t\)</span>, broadcast and added at every stage), self-attention layers at low resolutions, and (for text-conditioned models like Stable Diffusion) cross-attention layers that ingest a text embedding sequence via <span class="math inline">\(\mathrm{Attn}(Q W_Q,\; \tau(y) W_K,\; \tau(y) W_V)\)</span>.</p>
+<p><strong>ControlNet</strong> (Zhang et al.&nbsp;2023) adds spatial conditioning (Canny edges, depth, pose skeletons) to a frozen U-Net. Clone the encoder branch with trainable weights, connect to the main U-Net via <strong>zero convolutions</strong> (1×1 convolutions initialized to zero), so that at the start of training ControlNet is the identity and the original model’s behavior is preserved.</p>
+<p><strong>DiT — Diffusion Transformer (Peebles &amp; Xie 2022).</strong> Patchify the latent tensor (typically a <span class="math inline">\(32 \times 32 \times 4\)</span> or <span class="math inline">\(64 \times 64 \times 4\)</span> latent from a pre-trained VAE) into a sequence of patches; embed each patch as a token; pass through <span class="math inline">\(N\)</span> Transformer blocks; unpatchify. The big design choice is how to inject the timestep and class embeddings. DiT explored three: in-context (concatenate as extra tokens), cross-attention, and <strong>adaLN-Zero</strong>. adaLN-Zero won handily.</p>
+<p>adaLN-Zero modulates each transformer block via adaptive LayerNorm. For each block, regress six modulation parameters <span class="math inline">\((\gamma_1, \beta_1, \alpha_1, \gamma_2, \beta_2, \alpha_2)\)</span> from the sum of the timestep and class embeddings via a small MLP. Apply <span class="math inline">\(\mathrm{LN}(x) \cdot (1 + \gamma_1) + \beta_1\)</span> before attention, scale the attention output by <span class="math inline">\(\alpha_1\)</span> before the residual; same for the MLP path. Initialize the final layer of the modulation MLP to zero, so <span class="math inline">\(\alpha_1 = \alpha_2 = 0\)</span> at init — the block is exactly the identity. Training then gradually scales up the modulation.</p>
+<p>The network outputs two channels per spatial location: the noise prediction and a learned variance.</p>
+<blockquote class="blockquote">
+<p>Why adaLN-Zero beats cross-attention for conditioning on a <em>scalar</em> (timestep) or low-dimensional vector (class embedding). Cross-attention has to allocate attention heads to a single key/value, which is wasteful — there’s nothing to attend to except itself. AdaLN-Zero turns the scalar into a per-feature scale/shift modulation, which is exactly the inductive bias we want: the timestep should warp every feature uniformly, not interact with spatial structure. For <em>text</em> conditioning (a sequence of token embeddings), cross-attention does make sense, and modern systems like SD3 use both — adaLN-Zero for time, cross-attention for text. The Zero in adaLN-Zero refers to the zero-initialization of the modulation MLP’s final layer, which preserves identity at the start of training and lets the model gradually learn how much modulation to apply.</p>
+</blockquote>
+<p>For DiT models intended for video generation, the patchification scheme extends to space-time: 3D patches of size <span class="math inline">\(T_p \times H_p \times W_p\)</span> produce <span class="math inline">\(L = (T/T_p) \cdot (H/H_p) \cdot (W/W_p)\)</span> tokens. Attention costs scale as <span class="math inline">\(L^2\)</span> which becomes a bottleneck — production systems use sparse / spatiotemporal-factorized attention (e.g.&nbsp;SORA’s reported “diffusion transformer” architecture) to keep the cost manageable.</p>
+<div id="fig-dit" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-dit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://lilianweng.github.io/posts/2021-07-11-diffusion-models/DiT.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Figure: Diffusion Transformer (DiT) block with adaLN-Zero modulation; see Peebles &amp; Xie (2022) Fig. 3.
+</figcaption>
+</figure>
+</div>
+<p>DiT scales like any Transformer: more layers + more width = better samples, very smoothly. This is what powers DiT-XL/2 (the workhorse of latent diffusion research), SD3, FLUX, BAGEL, and π₀’s action expert (yes, a small DiT decides what your robot arm does next).</p>
+</section>
+<section id="latent-diffusion" class="level3">
+<h3 class="anchored" data-anchor-id="latent-diffusion">9.8 Latent diffusion</h3>
+<p>Doing diffusion in pixel space on a <span class="math inline">\(512 \times 512 \times 3\)</span> image is wasteful. Most of the bits are perceptual texture; only a small fraction carry the semantic content we care about. Latent diffusion (Rombach et al.&nbsp;2022 — the paper behind Stable Diffusion) factorizes the problem into two stages:</p>
+<ol type="1">
+<li><strong>Perceptual compression</strong> (an autoencoder): train a VAE-style encoder <span class="math inline">\(\mathcal{E}: \mathbb{R}^{H \times W \times 3} \to \mathbb{R}^{h \times w \times c}\)</span> and decoder <span class="math inline">\(\mathcal{D}: \mathbb{R}^{h \times w \times c} \to \mathbb{R}^{H \times W \times 3}\)</span> with a typical downsampling factor <span class="math inline">\(f = H/h = 8\)</span>. The encoder strips away perceptual redundancy and produces a compact latent <span class="math inline">\(z = \mathcal{E}(x)\)</span>. Two regularizations on the latent space were tried — a tiny KL toward <span class="math inline">\(\mathcal{N}(0, I)\)</span> (“KL-reg”) and a vector quantizer (“VQ-reg”). KL-reg won for SD.</li>
+<li><strong>Semantic generation</strong> (the diffusion model): train a DDPM in the latent space, with text conditioning via cross-attention.</li>
+</ol>
+<p>The arithmetic: <span class="math inline">\(512 \times 512 \times 3 = 786{,}432\)</span> values; <span class="math inline">\(64 \times 64 \times 4 = 16{,}384\)</span> values. The diffusion model operates on ~48× fewer values per sample, with proportional memory and compute savings. The decoder is run once at the end of sampling, not at every step.</p>
+<blockquote class="blockquote">
+<p>The conceptual win is bigger than the arithmetic win. The latent space is roughly <strong>semantic</strong>: linear interpolations between latents produce semantically meaningful interpolations between images, and the diffusion model gets to spend its capacity reasoning about object identity and composition rather than how to render fur or skin. This is why latent diffusion was a 50× compute reduction <em>and</em> a quality improvement.</p>
+</blockquote>
+<p>Almost every state-of-the-art image, video, and 3D generation system today is a latent diffusion (or latent flow-matching) system. Pixel-space diffusion still has niche uses — for instance, when the target distribution is structurally distinct from natural images (medical scans, depth maps, robot trajectories) — but for natural images the latent path is the only one that scales.</p>
+<hr>
+</section>
+</section>
+<section id="chapter-10-flow-matching-the-modern-successor" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-10-flow-matching-the-modern-successor">Chapter 10 — Flow Matching: The Modern Successor</h2>
+<p>We have spent forty pages building DDPM and never once said the word <em>velocity</em>. That ends now. Flow matching is a different framing of the same family of generative models, but with a cleaner mathematical structure that has overtaken diffusion in many production systems. SD3, FLUX, BAGEL’s image branch, π₀’s action expert — all of them are flow matching, not DDPM. We follow the Cambridge MLG blog by Fjelde, Mathieu, and Dutordoir.</p>
+<div id="fig-flow-matching" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-flow-matching-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://mlg.eng.cam.ac.uk/blog/public/2024/01/20/flow-matching/teaser.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-flow-matching-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Figure: flow matching transforms a simple base distribution into the data distribution along a continuous probability path; the model learns the velocity field that drives the path. Adapted from the Cambridge MLG blog.
+</figcaption>
+</figure>
+</div>
+<section id="normalizing-flows-recap" class="level3">
+<h3 class="anchored" data-anchor-id="normalizing-flows-recap">10.1 Normalizing flows recap</h3>
+<p>A normalizing flow is an invertible map <span class="math inline">\(\phi: \mathbb{R}^d \to \mathbb{R}^d\)</span> with a tractable Jacobian determinant. Push a base density <span class="math inline">\(p_0\)</span> through <span class="math inline">\(\phi\)</span> to get <span class="math inline">\(p_1(y) = p_0(\phi^{-1}(y))\, \lvert \det \partial_y \phi^{-1}(y) \rvert\)</span>. Train by maximum likelihood.</p>
+<p>A common building block is the <strong>residual flow</strong>, <span class="math inline">\(\phi(x) = x + \delta\, u(x)\)</span>, where <span class="math inline">\(u\)</span> is a Lipschitz vector field. Composing <span class="math inline">\(K\)</span> such layers gives an expressive flow, and the Jacobian determinant can be estimated unbiasedly via random projections.</p>
+</section>
+<section id="continuous-time-limit-and-cnfs" class="level3">
+<h3 class="anchored" data-anchor-id="continuous-time-limit-and-cnfs">10.2 Continuous-time limit and CNFs</h3>
+<p>Let <span class="math inline">\(\delta = 1/K\)</span> and take <span class="math inline">\(K \to \infty\)</span>. The composition <span class="math inline">\(\phi_K \circ \dots \circ \phi_1\)</span> converges to the flow of an ordinary differential equation: <span id="eq-cnf-ode"><span class="math display">\[
+\frac{dx_t}{dt} \;=\; u_t(x_t), \qquad x_0 \sim p_0,
+\tag{23}\]</span></span></p>
+<p>where <span class="math inline">\(u_t: [0,1] \times \mathbb{R}^d \to \mathbb{R}^d\)</span> is a time-dependent <strong>velocity field</strong>. The flow <span class="math inline">\(\phi_t(x_0) = x_0 + \int_0^t u_s(x_s)\, ds\)</span> maps base samples at time <span class="math inline">\(0\)</span> to data samples at time <span class="math inline">\(1\)</span>.</p>
+<p>How does the density evolve? The <strong>continuity equation</strong> (a.k.a. transport equation) says <span id="eq-continuity"><span class="math display">\[
+\frac{\partial p_t(x)}{\partial t} \;=\; -\,\nabla \cdot (u_t(x)\, p_t(x)).
+\tag{24}\]</span></span></p>
+<p>This is conservation of mass: probability mass flows along the velocity field <span class="math inline">\(u_t\)</span> at every point. The log-density along a trajectory evolves as <span class="math display">\[
+\frac{d}{dt} \log p_t(x_t) \;=\; -\,(\nabla \cdot u_t)(x_t),
+\]</span> so <span class="math inline">\(\log p_1(x_1) = \log p_0(x_0) - \int_0^1 (\nabla \cdot u_t)(x_t)\, dt\)</span>. This is the continuous change-of-variables formula.</p>
+<p>Training a <strong>continuous normalizing flow (CNF)</strong> by maximum likelihood means parameterizing <span class="math inline">\(u_\theta\)</span>, integrating the ODE forward (and the divergence along the way) to get <span class="math inline">\(\log p_\theta(x)\)</span>, and doing gradient ascent. The catch: every training step requires solving an ODE, which is slow, and the divergence trace must be Hutchinson-estimated, which is noisy. CNFs are flexible but train at glacial pace.</p>
+</section>
+<section id="the-flow-matching-idea" class="level3">
+<h3 class="anchored" data-anchor-id="the-flow-matching-idea">10.3 The flow-matching idea</h3>
+<p>What if instead of maximum-likelihood training, we just <strong>regressed</strong> <span class="math inline">\(u_\theta\)</span> onto a known target vector field <span class="math inline">\(u_t\)</span>? Define <span id="eq-fm"><span class="math display">\[
+\mathcal{L}_{\mathrm{FM}}(\theta) \;=\; \mathbb{E}_{t \sim \mathcal{U}[0, 1]}\, \mathbb{E}_{x \sim p_t(x)}\!\left[\|u_\theta(t, x) - u_t(x)\|^2\right].
+\tag{25}\]</span></span></p>
+<p>This is a simulation-free objective — no ODE integration during training. The catch: we need to know <span class="math inline">\(u_t(x)\)</span> and <span class="math inline">\(p_t(x)\)</span> to evaluate the loss, but if we knew them we wouldn’t need a learned approximation.</p>
+<p>The trick that breaks the deadlock is <strong>conditioning</strong>.</p>
+</section>
+<section id="conditional-flow-matching" class="level3">
+<h3 class="anchored" data-anchor-id="conditional-flow-matching">10.4 Conditional Flow Matching</h3>
+<p>Suppose we express <span class="math inline">\(p_t\)</span> as a mixture over a latent — say, the endpoint <span class="math inline">\(x_1\)</span> drawn from data: <span class="math display">\[
+p_t(x) \;=\; \int p_t(x \mid x_1)\, q_1(x_1)\, dx_1,
+\]</span> where <span class="math inline">\(p_t(\cdot \mid x_1)\)</span> is a <em>conditional probability path</em> that concentrates on <span class="math inline">\(x_1\)</span> as <span class="math inline">\(t \to 1\)</span> (typically <span class="math inline">\(p_1(\cdot \mid x_1) \to \delta_{x_1}\)</span>) and agrees with the base <span class="math inline">\(p_0\)</span> as <span class="math inline">\(t \to 0\)</span>.</p>
+<p>The conditional velocity <span class="math inline">\(u_t(x \mid x_1)\)</span> that generates <span class="math inline">\(p_t(\cdot \mid x_1)\)</span> is often available in closed form (we’ll see Gaussian examples in a moment). And the marginal velocity <span class="math inline">\(u_t\)</span> has a clean expression as a posterior expectation: <span id="eq-marginal-vf"><span class="math display">\[
+u_t(x) \;=\; \mathbb{E}_{p_{1 \mid t}(x_1 \mid x)}\!\bigl[u_t(x \mid x_1)\bigr].
+\tag{26}\]</span></span></p>
+<p><strong>The proof</strong> (Lipman et al.&nbsp;2023; Albergo &amp; Vanden-Eijnden 2022) is a one-line computation. The conditional satisfies its own continuity equation: <span class="math inline">\(\partial_t p_t(x \mid x_1) = -\nabla \cdot (u_t(x \mid x_1)\, p_t(x \mid x_1))\)</span>. Multiply both sides by <span class="math inline">\(q_1(x_1)\)</span> and integrate over <span class="math inline">\(x_1\)</span>: <span class="math display">\[
+\frac{\partial p_t(x)}{\partial t} \;=\; -\,\nabla \cdot \!\left[\int u_t(x \mid x_1)\, p_t(x \mid x_1)\, q_1(x_1)\, dx_1\right] \;=\; -\,\nabla \cdot \!\left[\underbrace{\int u_t(x \mid x_1) \frac{p_t(x \mid x_1) q_1(x_1)}{p_t(x)}\, dx_1}_{u_t(x)}\, p_t(x)\right].
+\]</span> By the uniqueness of the velocity field satisfying the continuity equation, <span class="math inline">\(u_t(x) = \mathbb{E}_{p_{1\mid t}}[u_t(x \mid x_1)]\)</span>. Done.</p>
+<p>The <strong>Conditional Flow Matching (CFM)</strong> loss is <span id="eq-cfm"><span class="math display">\[
+\mathcal{L}_{\mathrm{CFM}}(\theta) \;=\; \mathbb{E}_{t,\, x_1 \sim q_1,\, x \sim p_t(\cdot \mid x_1)}\!\left[\|u_\theta(t, x) - u_t(x \mid x_1)\|^2\right].
+\tag{27}\]</span></span></p>
+<p><strong>The miracle</strong> (Lipman et al.&nbsp;2023) is that <span id="eq-fm-cfm"><span class="math display">\[
+\nabla_\theta \mathcal{L}_{\mathrm{FM}}(\theta) \;=\; \nabla_\theta \mathcal{L}_{\mathrm{CFM}}(\theta).
+\tag{28}\]</span></span></p>
+<p>So we can train by regressing <span class="math inline">\(u_\theta\)</span> onto the <em>conditional</em> velocity (which we know in closed form) and the gradient is the same as if we’d regressed against the unknown marginal velocity.</p>
+<p>The proof expands the squared norms. Write <span class="math inline">\(\|u_\theta - u_t\|^2 = \|u_\theta\|^2 - 2\langle u_\theta, u_t\rangle + \|u_t\|^2\)</span>. The last term is <span class="math inline">\(\theta\)</span>-independent and drops out of the gradient. The first term is the same in both losses (the inner product with itself doesn’t depend on which way we factor the joint <span class="math inline">\(p_t\)</span>). The cross term is the interesting one. For <span class="math inline">\(\mathcal{L}_{\mathrm{FM}}\)</span>: <span class="math display">\[
+\mathbb{E}_{x \sim p_t}\!\langle u_\theta(t, x), u_t(x)\rangle \;=\; \int \langle u_\theta(t, x), \mathbb{E}_{p_{1\mid t}}[u_t(x \mid x_1)]\rangle\, p_t(x)\, dx.
+\]</span> Substitute the definition of <span class="math inline">\(u_t(x)\)</span> from (<a href="#eq-marginal-vf" class="quarto-xref">Equation&nbsp;26</a>): <span class="math display">\[
+= \int \langle u_\theta(t, x), \int u_t(x \mid x_1)\, \frac{p_t(x \mid x_1)\, q_1(x_1)}{p_t(x)}\, dx_1\rangle\, p_t(x)\, dx \;=\; \int\!\!\int \langle u_\theta(t, x), u_t(x \mid x_1)\rangle\, p_t(x \mid x_1)\, q_1(x_1)\, dx_1\, dx.
+\]</span> That last expression is exactly the cross term of <span class="math inline">\(\mathcal{L}_{\mathrm{CFM}}\)</span>. So <span class="math inline">\(\nabla_\theta \mathcal{L}_{\mathrm{FM}} = \nabla_\theta \mathcal{L}_{\mathrm{CFM}}\)</span>.</p>
+<p>We’re done. CFM is a tractable training objective with the same gradient as the unattainable FM objective.</p>
+</section>
+<section id="gaussian-probability-paths" class="level3">
+<h3 class="anchored" data-anchor-id="gaussian-probability-paths">10.5 Gaussian probability paths</h3>
+<p>Now we need a concrete conditional path. The natural choice is a Gaussian: <span class="math display">\[
+p_t(x \mid x_1) \;=\; \mathcal{N}\!\bigl(x;\; \mu_t(x_1),\; \sigma_t(x_1)^2 I\bigr),
+\]</span> with <span class="math inline">\(\mu_0(x_1) = 0\)</span>, <span class="math inline">\(\sigma_0(x_1) = 1\)</span> (so <span class="math inline">\(p_0 = \mathcal{N}(0, I)\)</span>, our base) and <span class="math inline">\(\mu_1(x_1) = x_1\)</span>, <span class="math inline">\(\sigma_1(x_1) = \sigma_{\min}\)</span> (so <span class="math inline">\(p_1(\cdot \mid x_1) \to \delta_{x_1}\)</span> as <span class="math inline">\(\sigma_{\min} \to 0\)</span>).</p>
+<p>The corresponding velocity is obtained from the reparameterization <span class="math inline">\(x_t = \mu_t(x_1) + \sigma_t(x_1)\, \epsilon\)</span> with <span class="math inline">\(\epsilon \sim \mathcal{N}(0, I)\)</span>. Differentiating in <span class="math inline">\(t\)</span>: <span class="math display">\[
+\dot x_t \;=\; \dot \mu_t(x_1) + \dot \sigma_t(x_1)\, \epsilon \;=\; \dot \mu_t(x_1) + \frac{\dot \sigma_t(x_1)}{\sigma_t(x_1)} (x_t - \mu_t(x_1)).
+\]</span> So <span id="eq-gaussian-vf"><span class="math display">\[
+\boxed{\;\;u_t(x \mid x_1) \;=\; \frac{\dot \sigma_t(x_1)}{\sigma_t(x_1)} (x - \mu_t(x_1)) + \dot \mu_t(x_1).\;\;}
+\tag{29}\]</span></span></p>
+<p><strong>Linear interpolation.</strong> Choose <span class="math inline">\(\mu_t(x_1) = t\, x_1\)</span> and <span class="math inline">\(\sigma_t(x_1) = (1 - t) + t\, \sigma_{\min}\)</span>. Plug in: <span class="math display">\[
+u_t(x \mid x_1) \;=\; \frac{-1 + \sigma_{\min}}{(1 - t) + t\sigma_{\min}} (x - t\, x_1) + x_1 \;=\; \frac{x_1 - (1 - \sigma_{\min})\, x}{1 - (1 - \sigma_{\min})\, t}.
+\]</span></p>
+<p>In the limit <span class="math inline">\(\sigma_{\min} \to 0\)</span>, <span class="math inline">\(u_t(x \mid x_1) = (x_1 - x)/(1 - t)\)</span>.</p>
+<p>A more practitioner-friendly way to write the same thing: define <span class="math inline">\(x_t = (1 - t)\, x_0 + t\, x_1\)</span> with <span class="math inline">\(x_0 \sim \mathcal{N}(0, I)\)</span> and <span class="math inline">\(x_1 \sim q\)</span>. Then <span class="math inline">\(\dot x_t = x_1 - x_0\)</span>, so the conditional velocity field along the straight line from <span class="math inline">\(x_0\)</span> to <span class="math inline">\(x_1\)</span> is simply <span id="eq-linear-vf"><span class="math display">\[
+\boxed{\;\;u_t(x_t \mid x_0, x_1) \;=\; x_1 - x_0.\;\;}
+\tag{30}\]</span></span></p>
+<p>This is the form used by π₀, BAGEL, and most modern systems. The training procedure is heart-stoppingly simple:</p>
+<pre class="text"><code>ALGORITHM 3 — Conditional flow matching with linear interpolation
+  repeat
+    x_1 ~ q                           # clean data
+    x_0 ~ N(0, I)                     # base noise
+    t   ~ Uniform[0, 1]
+    x_t = (1 - t) * x_0 + t * x_1
+    target = x_1 - x_0
+    take SGD step on || u_theta(x_t, t) - target ||^2
+  until converged
+
+ALGORITHM 4 — Sampling
+  x_0 ~ N(0, I)
+  integrate dx/dt = u_theta(x_t, t) from t=0 to t=1 with Euler or Heun
+  return x_1</code></pre>
+<p>Compare with DDPM: same data prep, same regression objective, same network architecture. The only differences are (i) we sample <span class="math inline">\(t\)</span> from a continuous uniform instead of a discrete uniform, (ii) the noise mixing schedule is linear instead of <span class="math inline">\(\sqrt{\bar\alpha_t}\)</span>-shaped, and (iii) the regression target is the <em>velocity</em> <span class="math inline">\(x_1 - x_0\)</span> instead of the <em>noise</em> <span class="math inline">\(\epsilon\)</span>. These three changes interact to give straight-line ODE trajectories at inference, which is the big win.</p>
+</section>
+<section id="the-path-crossing-problem" class="level3">
+<h3 class="anchored" data-anchor-id="the-path-crossing-problem">10.6 The path-crossing problem</h3>
+<p>The CFM loss is unbiased, but it can have <strong>high variance</strong> when conditional paths cross. Consider mapping a 2D Gaussian mixture to itself, where the two modes are mirror-symmetric across the <span class="math inline">\(x\)</span>-axis. The conditional paths from a noise sample <span class="math inline">\(x_0\)</span> to a data sample <span class="math inline">\(x_1\)</span> are straight lines, and the lines from <span class="math inline">\(x_0\)</span> to the upper mode and from <span class="math inline">\(x_0\)</span> to the lower mode cross right around <span class="math inline">\(t = 0.5\)</span>. At that crossing point, two different <span class="math inline">\(x_1\)</span> values are equally consistent with the same <span class="math inline">\(x_t\)</span>, so the conditional velocity <span class="math inline">\(u_t(x_t \mid x_1)\)</span> takes two very different values depending on which <span class="math inline">\(x_1\)</span> was sampled, while the marginal <span class="math inline">\(u_t(x_t) = \mathbb{E}[u_t(x_t \mid x_1) \mid x_t]\)</span> takes the average. The regression target jumps around; the loss has high variance; convergence is slow; and the learned marginal velocity field is curved (not straight), so sampling requires many ODE steps.</p>
+<p>In simple Gaussian-to-Gaussian cases the variance is modest; for multi-modal data it explodes.</p>
+<p><strong>Two-sided conditioning</strong> partially helps. Instead of conditioning only on <span class="math inline">\(x_1\)</span>, condition on the pair <span class="math inline">\(z = (x_0, x_1)\)</span>, so <span class="math inline">\(p_t(x_t \mid x_0, x_1) = \delta_{(1-t)x_0 + t x_1}\)</span>. The conditional velocity is deterministic (<span class="math inline">\(x_1 - x_0\)</span>) and the loss variance comes only from the choice of pairing, not from the path itself. But path crossings still happen if the pairing <span class="math inline">\((x_0, x_1)\)</span> is independent across samples.</p>
+</section>
+<section id="rectified-flow" class="level3">
+<h3 class="anchored" data-anchor-id="rectified-flow">10.7 Rectified Flow</h3>
+<p>Liu, Gong, and Liu (2022) noticed that the straight-line CFM with independent <span class="math inline">\((x_0, x_1)\)</span> couplings yields paths that, after marginalization, are <em>curved</em> — because the network is learning the average of many conflicting straight-line targets at each crossing. They proposed a <strong>rectification</strong> procedure:</p>
+<ol type="1">
+<li>Train an initial flow <span class="math inline">\(u_\theta^{(1)}\)</span> with independent coupling and linear paths.</li>
+<li>Generate paired data <span class="math inline">\((x_0, x_1^{\mathrm{model}})\)</span> by simulating the trained flow from each <span class="math inline">\(x_0\)</span>.</li>
+<li>Retrain <span class="math inline">\(u_\theta^{(2)}\)</span> on the new pairing <span class="math inline">\((x_0, x_1^{\mathrm{model}})\)</span>.</li>
+</ol>
+<p>After re-training, the marginal trajectories become much straighter, because the model is now consistent with itself — there are no crossings, just monotone interpolations. Two or three rounds of rectification produce <em>near-straight-line</em> generative trajectories, which means the ODE can be integrated accurately in a single Euler step. This is the foundation of <strong>one-step rectified flow</strong>, which is what enables fast sampling in many modern systems.</p>
+<blockquote class="blockquote">
+<p><strong>Why π₀ and BAGEL care.</strong> π₀ uses conditional flow matching for action chunks; integrating the ODE 5–10 times per chunk is fine for 50 Hz robotic control, but rectification matters when you want lower latency. BAGEL uses rectified flow for image generation, where one-step sampling is the difference between a usable interactive system and an annoying wait.</p>
+</blockquote>
+<p>A concrete instance: in π₀ (Black et al.&nbsp;2024), the conditional flow-matching probability path is <span class="math inline">\(q(A_t^\tau \mid A_t) = \mathcal{N}(\tau A_t, (1 - \tau) I)\)</span> where <span class="math inline">\(A_t\)</span> is an action chunk (50 actions at 50 Hz = 1 second of robot motion) and <span class="math inline">\(\tau \in [0, 1]\)</span> is the flow-matching time. The network <span class="math inline">\(v_\theta(A_t^\tau, o_t)\)</span> regresses on the velocity field <span class="math inline">\(u(A_t^\tau \mid A_t) = A_t - \epsilon\)</span>. This is exactly the linear-interpolation CFM from §10.5 with <span class="math inline">\(\sigma_{\min} = 0\)</span>. At inference, the ODE is integrated with 10 Euler steps to produce smooth, multi-modal action chunks that respect both the language command and the proprioceptive state.</p>
+<p>In BAGEL (Deng et al.&nbsp;2024), the image-generation branch uses <strong>rectified flow</strong> following Esser et al.&nbsp;(2024) and Liu et al.&nbsp;(2023). The model predicts a velocity field over latent image patches, with the conditional path <span class="math inline">\(p_t(x \mid x_1) = \mathcal{N}((1 - t) x_0 + t x_1, 0)\)</span> (Dirac on the straight line). One round of rectification, applied during the late stages of training, dramatically straightens the marginal trajectories, allowing BAGEL to do image generation in around four to eight ODE steps without distillation. Combined with classifier-free guidance, this yields a system that can generate a 1024² image in under a second on a single H100.</p>
+</section>
+<section id="optimal-transport-coupling" class="level3">
+<h3 class="anchored" data-anchor-id="optimal-transport-coupling">10.8 Optimal transport coupling</h3>
+<p>A better way to remove path crossings is to choose a <em>correlated</em> pairing <span class="math inline">\((x_0, x_1)\)</span> instead of an independent one. The optimal transport pairing minimizes the expected squared distance: <span class="math display">\[
+\pi^\star \;=\; \arg\!\inf_{\pi \in \Pi(p_0, q_1)} \int \|x_1 - x_0\|^2\, d\pi(x_0, x_1).
+\]</span></p>
+<p>Solving the full OT problem between two continuous distributions is intractable, but we can approximate it on each <strong>mini-batch</strong> (Tong et al.&nbsp;2023; Pooladian et al.&nbsp;2023). For a batch of <span class="math inline">\(B\)</span> noise samples and <span class="math inline">\(B\)</span> data samples, solve the discrete linear assignment problem (or the entropic-regularized version, the Sinkhorn algorithm) in <span class="math inline">\(O(B^2)\)</span> to get a permutation that pairs each <span class="math inline">\(x_0^{(i)}\)</span> with an <span class="math inline">\(x_1^{(\pi(i))}\)</span> minimizing total transport cost. Train on those pairs.</p>
+<p>The intuition is that nearby base samples get paired with nearby data samples, so conditional paths don’t have to cross. Empirically, mini-batch OT eliminates most of the variance from crossings and accelerates both training and inference.</p>
+<p>Modern flow-matching systems use a mix-and-match of these tricks: linear paths + classifier-free guidance (Esser et al.&nbsp;2024 for SD3), or two-sided conditioning + mini-batch OT, or rectified flow + distillation. The space of “good” recipes is rich and still under active exploration.</p>
+<p><strong>Sinkhorn in practice.</strong> The mini-batch OT problem for a batch of size <span class="math inline">\(B\)</span> can be solved exactly via the Hungarian algorithm in <span class="math inline">\(O(B^3)\)</span>, which is fine for <span class="math inline">\(B \leq 256\)</span> or so. For larger batches, the entropic-regularized <strong>Sinkhorn algorithm</strong> approximates the assignment in <span class="math inline">\(O(B^2 \cdot K)\)</span> where <span class="math inline">\(K\)</span> is a number of iterations (typically 50–100). Sinkhorn alternates row-normalization and column-normalization of a kernel matrix <span class="math inline">\(K_{ij} = \exp(-\|x_0^{(i)} - x_1^{(j)}\|^2 / \varepsilon)\)</span>, converging to a doubly-stochastic transport plan whose entries we sample from. As <span class="math inline">\(\varepsilon \to 0\)</span>, Sinkhorn approaches exact OT; as <span class="math inline">\(\varepsilon\)</span> grows, it approaches the independent coupling. Practitioners pick <span class="math inline">\(\varepsilon\)</span> to balance solver cost against the variance of the resulting paths. Per Tong et al.&nbsp;(2023), an aggressive enough <span class="math inline">\(\varepsilon\)</span> gives essentially the OT coupling with a few percent overhead per training step.</p>
+<p><strong>Computational anatomy of one CFM training step</strong>, for the linear-interpolation case, to make this concrete. With batch size <span class="math inline">\(B\)</span> and a DiT backbone of <span class="math inline">\(N_p\)</span> patches:</p>
+<ol type="1">
+<li>Sample <span class="math inline">\(B\)</span> pairs <span class="math inline">\((x_0^{(i)}, x_1^{(i)})\)</span> (or run mini-batch OT to permute the pairing).</li>
+<li>Sample one <span class="math inline">\(t^{(i)} \sim \mathcal{U}[0, 1]\)</span> per example (or a <em>low-discrepancy</em> set to reduce variance).</li>
+<li>Form <span class="math inline">\(x_t^{(i)} = (1 - t^{(i)}) x_0^{(i)} + t^{(i)} x_1^{(i)}\)</span> and target <span class="math inline">\(v^{(i)} = x_1^{(i)} - x_0^{(i)}\)</span>.</li>
+<li>Forward through the DiT with timestep conditioning. Cost: <span class="math inline">\(O(N_p^2 \cdot d)\)</span> for attention, <span class="math inline">\(O(N_p \cdot d^2)\)</span> for FFN.</li>
+<li>MSE loss against <span class="math inline">\(v\)</span>; backprop; AdamW update.</li>
+</ol>
+<p>That’s the entire algorithm. There is no Markov chain, no <span class="math inline">\(\bar\alpha_t\)</span> table, no <span class="math inline">\(\beta\)</span> schedule, no integration. The simplicity is the point.</p>
+</section>
+<section id="diffusion-as-a-special-case-of-flow-matching" class="level3">
+<h3 class="anchored" data-anchor-id="diffusion-as-a-special-case-of-flow-matching">10.9 Diffusion as a special case of flow matching</h3>
+<p>DDPM and flow matching are not separate worlds. With the right choice of <span class="math inline">\(\mu_t\)</span> and <span class="math inline">\(\sigma_t\)</span>, the DDPM noise-prediction loss is exactly a CFM loss for a Gaussian probability path.</p>
+<p>Recall the DDPM identity (<a href="#eq-xt-closed" class="quarto-xref">Equation&nbsp;8</a>): <span class="math inline">\(x_t = \sqrt{\bar\alpha_t}\, x_0 + \sqrt{1 - \bar\alpha_t}\, \epsilon\)</span>. Compare to the Gaussian conditional path with <span class="math inline">\(\mu_t(x_1) = \sqrt{\bar\alpha_t}\, x_1\)</span> and <span class="math inline">\(\sigma_t(x_1) = \sqrt{1 - \bar\alpha_t}\)</span>, with <span class="math inline">\(x_1 = x_0^{\mathrm{data}}\)</span> and the base <span class="math inline">\(p_0\)</span> being a unit Gaussian. The DDPM noise schedule corresponds to a particular curved trajectory in <span class="math inline">\(t\)</span>, while linear-interpolation CFM uses the straight schedule <span class="math inline">\(\mu_t = t\, x_1, \sigma_t = 1 - t\)</span>. The conditional velocity for the DDPM path is, by (<a href="#eq-gaussian-vf" class="quarto-xref">Equation&nbsp;29</a>), a known function of <span class="math inline">\(\dot{\bar\alpha}_t\)</span> and <span class="math inline">\(x, x_1\)</span>; regressing the network onto it gives the same gradients as regressing onto the noise <span class="math inline">\(\epsilon\)</span>, up to a <span class="math inline">\(t\)</span>-dependent rescaling.</p>
+<p><strong>The unified picture</strong>: pick a <em>probability path</em> (defined by <span class="math inline">\(\mu_t, \sigma_t\)</span>) and a <em>coupling</em> (independent, two-sided, OT). Then the loss is always “match the conditional velocity” — DDPM, score matching, and flow matching are three different parameterizations of the same regression problem, with three different default path choices. The choice of path matters for sample quality and speed, not for the underlying mathematics.</p>
+<p>This unification is profoundly empowering. You can:</p>
+<ul>
+<li>Train a noise-prediction model and serve it as a deterministic ODE sampler (this is what every modern system does).</li>
+<li>Train a velocity-prediction model and serve it as a stochastic SDE sampler.</li>
+<li>Swap your probability path mid-training to anneal from a curved DDPM path to a straight linear path.</li>
+<li>Apply distillation, consistency training, or rectification to any of them.</li>
+</ul>
+<p>The framework is one framework.</p>
+<hr>
+</section>
+</section>
+<section id="chapter-11-practical-engineering-notes" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-11-practical-engineering-notes">Chapter 11 — Practical Engineering Notes</h2>
+<p>Theory is theory; production is production. The following notes are what separates a working diffusion/flow system from one that loss-spikes or generates blurry slop.</p>
+<section id="sampling-tricks" class="level3">
+<h3 class="anchored" data-anchor-id="sampling-tricks">11.1 Sampling tricks</h3>
+<p><strong>Classifier-free guidance scale tuning.</strong> CFG scale <span class="math inline">\(w\)</span> trades fidelity for diversity. Production prompts usually want <span class="math inline">\(w \in [3, 10]\)</span>. Too high and you get oversaturated colors, glowing eyes, plasticky skin. Some systems use <em>prompt-aware</em> scheduling that lowers <span class="math inline">\(w\)</span> near the end of sampling to avoid the saturation.</p>
+<p><strong>Dynamic thresholding</strong> (Imagen, Saharia et al.&nbsp;2022). When CFG pushes pixel predictions outside the trained range <span class="math inline">\([-1, 1]\)</span>, clip them adaptively. At each step, compute the <span class="math inline">\(s\)</span>-th percentile (e.g.&nbsp;99.5%) of <span class="math inline">\(|x_0|\)</span> predictions; if <span class="math inline">\(s &gt; 1\)</span>, scale predictions by <span class="math inline">\(s\)</span> then clip to <span class="math inline">\([-s, s]\)</span> and divide by <span class="math inline">\(s\)</span>. This keeps the dynamic range realistic and dramatically improves color fidelity at high CFG.</p>
+<p><strong>cfg_renorm.</strong> A variant where, after applying CFG, the norm of the guided noise prediction is renormalized to match the norm of the unconditional prediction. This prevents the guidance from making the prediction monotonically blow up over the sampling trajectory. Used in several FLUX-derivative systems.</p>
+<p><strong>Timestep shift.</strong> When increasing resolution (e.g.&nbsp;fine-tuning a model originally trained at 256² to 512² or 1024²), the noise-to-signal ratio at a fixed <span class="math inline">\(t\)</span> changes — there’s more signal in a higher-resolution image. To compensate, shift the timestep distribution toward higher noise. In BAGEL, this is implemented by sampling <span class="math inline">\(t' = \mathrm{shift} \cdot t / (1 + (\mathrm{shift} - 1) t)\)</span> with <span class="math inline">\(\mathrm{shift} \in [1, 4]\)</span>. Without the shift, high-resolution training underutilizes the noisy end of the chain.</p>
+<p><strong>ODE solver choice.</strong> Euler is fastest per step but accumulates error linearly; Heun (second-order, two function evals per step) is roughly 2× more accurate; DPM-Solver and DPM-Solver++ (Lu et al.&nbsp;2022) exploit the semi-linear structure of the probability-flow ODE to take large steps with multi-step coefficients, often reaching DDPM-1000 quality in ~20 steps. Adaptive-step Runge-Kutta is rarely worth it because the high curvature near <span class="math inline">\(t = 0\)</span> wastes adaptive evaluations.</p>
+</section>
+<section id="inference-acceleration" class="level3">
+<h3 class="anchored" data-anchor-id="inference-acceleration">11.2 Inference acceleration</h3>
+<p><strong>Step skipping (DDIM).</strong> As discussed, deterministic DDIM with <span class="math inline">\(\eta = 0\)</span> on <span class="math inline">\(20–50\)</span> steps matches stochastic DDPM with <span class="math inline">\(1000\)</span>.</p>
+<p><strong>Consistency distillation / LCM-LoRA.</strong> Distill an existing diffusion model into a 4-step consistency model. LCM-LoRA (Luo et al.&nbsp;2023) achieves this with only a small low-rank adapter on top of the original weights, so you don’t lose the original capabilities and can switch between fast and slow sampling at inference.</p>
+<p><strong>Rectified-flow distillation.</strong> As in §10.7. One or two rounds give 4–8 step samplers; aggressive distillation gets to 1 step.</p>
+<p><strong>TensorRT and similar AOT compilation.</strong> Compile the U-Net or DiT to a fused kernel graph with FP16 attention, FlashAttention, fused adaLN, and CUDA graph capture. 2–5× speedup over PyTorch eager.</p>
+<p><strong>Token-level caching.</strong> For long-context conditioning (large text prompts, ControlNet, reference images), cache the encoder pass once per sample rather than re-running each denoising step. For DiT in particular, the cross-attention key/value tensors only depend on the conditioning, not on <span class="math inline">\(x_t\)</span>, so they can be precomputed.</p>
+</section>
+<section id="the-latent-vs-pixel-trade-off" class="level3">
+<h3 class="anchored" data-anchor-id="the-latent-vs-pixel-trade-off">11.3 The latent-vs-pixel trade-off</h3>
+<p>Pixel-space diffusion is dead for natural images. Every modern system uses a pre-trained VAE encoder. The VAE choice matters more than people realize:</p>
+<ul>
+<li><strong>SD-VAE</strong> (used in SD1, SD2): 8× downsampling, 4-channel latents, modest reconstruction quality.</li>
+<li><strong>SDXL-VAE</strong>: improved, still 4 channels.</li>
+<li><strong>FLUX/SD3 VAE</strong>: 16 channels, much better high-frequency reconstruction. The cost is 4× more diffusion compute per spatial location.</li>
+</ul>
+<p>Higher-channel latents preserve more detail but require the diffusion model to spend more capacity. There is no free lunch; pick the channel count to match your quality budget.</p>
+<p>For non-image modalities, you may still want pixel-space:</p>
+<ul>
+<li>Robot trajectories (π₀): the action space is already low-dimensional (~50–100 actions × 7 joint DoFs), so no VAE is needed.</li>
+<li>Audio: most modern systems use a VAE (Encodec, DAC).</li>
+<li>Video: definitely a VAE, often a temporal-3D one (CogVideo, LTX, OpenSora).</li>
+</ul>
+</section>
+<section id="numerical-stability-tricks" class="level3">
+<h3 class="anchored" data-anchor-id="numerical-stability-tricks">11.4 Numerical stability tricks</h3>
+<p><strong>Adam epsilon.</strong> The default Adam <span class="math inline">\(\epsilon = 10^{-8}\)</span> can cause loss spikes when the second-moment estimate <span class="math inline">\(v_t\)</span> has very small entries, dividing by something near machine epsilon. BAGEL (and Llama-3 before it, citing Molybog et al.&nbsp;2023) uses <span class="math inline">\(\epsilon = 10^{-15}\)</span>, which essentially eliminates the denominator from the update step and stabilizes training of large-scale models. The cost is slightly reduced regularization on small-gradient parameters; the benefit is no more 1-in-a-million catastrophic spikes.</p>
+<p><strong>QK-norm.</strong> Apply RMSNorm to <span class="math inline">\(Q\)</span> and <span class="math inline">\(K\)</span> inside the attention block before computing the attention score <span class="math inline">\(QK^\top / \sqrt{d}\)</span>. Used in Stable Diffusion 3, FLUX, BAGEL, and most contemporary DiT-style models. Without it, the dot-product can grow with the norm of activations and overflow in FP16.</p>
+<p><strong>Half-precision concerns.</strong> BF16 is the default for training — wider exponent than FP16, similar mantissa. FP16 is fine for inference but training in FP16 often diverges without GradScaler. Mixed precision: keep optimizer states and master weights in FP32; activations and gradients in BF16. For very large models, FP8 training is now production-grade (H100, Hopper transformer engine), but it requires careful tensor scaling and block-wise quantization to avoid quality regressions.</p>
+<p><strong>Logit / output clamping.</strong> Some implementations clamp the final velocity/noise prediction to a moderate range (say <span class="math inline">\([-10, 10]\)</span>) to prevent rare outlier predictions from corrupting later steps. This is cosmetic in well-tuned systems but a useful debugging knob.</p>
+<p><strong>Resolution-dependent learning rate.</strong> When fine-tuning at higher resolution, the gradient magnitudes per token can grow because each token now represents a smaller fraction of the image. Many recipes reduce the learning rate by a factor of 2–4 when doubling the resolution.</p>
+<p><strong>Gradient clipping.</strong> Almost universally used: clip the global gradient norm to 1.0 (sometimes 0.5). For DiTs, the adaLN-Zero modulation layers can spike their gradients during early training as the model learns how much to modulate; clipping prevents these spikes from destabilizing the optimizer state.</p>
+<p><strong>EMA weights for sampling.</strong> Maintain an exponential moving average of the model parameters with decay <span class="math inline">\(\sim 0.9999\)</span>, and sample from the EMA at inference. This is cheap (one extra parameter buffer) and reliably improves sample quality by 5–15% on standard FID benchmarks. Implementation gotcha: when fine-tuning or resuming, you must save and reload the EMA state separately; many spurious “fine-tuning regressions” are actually EMA mismatches.</p>
+<p><strong>Timestep distribution for training.</strong> Sampling <span class="math inline">\(t \sim \mathcal{U}[0, 1]\)</span> uniformly is the default but not always optimal. SD3 and several recent papers use a <em>logit-normal</em> distribution, <span class="math inline">\(t = \mathrm{sigmoid}(z)\)</span> with <span class="math inline">\(z \sim \mathcal{N}(\mu, \sigma^2)\)</span>, which concentrates training near the middle of the trajectory where the network is most uncertain. For rectified flow this is especially useful: the endpoints (<span class="math inline">\(t \approx 0\)</span> and <span class="math inline">\(t \approx 1\)</span>) have trivial targets (close to identity), so concentrating compute on <span class="math inline">\(t \approx 0.5\)</span> improves sample quality. The trade-off is that you may underfit the endpoints; a mixture of logit-normal and uniform sampling is a safe default.</p>
+</section>
+<section id="where-we-are-heading" class="level3">
+<h3 class="anchored" data-anchor-id="where-we-are-heading">11.5 Where we are heading</h3>
+<p>Two threads tie the rest of this article together.</p>
+<p>First, the <strong>flow matching framework</strong> with linear interpolation and (optionally) rectification is the de facto modern recipe. It’s a single MSE loss with a single hyperparameter (the noise schedule, which for linear paths reduces to nothing), gives near-straight-line trajectories that can be sampled in a handful of steps after rectification, and is what π₀ uses to produce continuous robot actions.</p>
+<p>Second, the <strong>DiT architecture with adaLN-Zero modulation</strong> is the universal noise/velocity predictor. It scales like a Transformer, accepts arbitrary conditioning (text via cross-attention, scalars via adaLN), and is what BAGEL uses for its image-generation branch.</p>
+<p>In Part C, we will see these two ideas put together — a flow-matching DiT acting as the “action expert” of a vision-language-action model — and we will dive into BAGEL hands-on. The math you have just digested is the language in which the rest of this article is written. If you can read <span class="math inline">\(\mathcal{L}_{\mathrm{CFM}}(\theta) = \mathbb{E}_{t, x_0, x_1}\|u_\theta(x_t, t) - (x_1 - x_0)\|^2\)</span> and immediately picture what’s happening — a network learning a velocity field whose ODE pushes Gaussian noise to data — then you are ready to read π₀ and BAGEL in the original.</p>
+<blockquote class="blockquote">
+<p>A final aside on intellectual lineage. The reason this chapter could be written linearly — from VAE through DDPM to flow matching — is that each idea is, in retrospect, the right generalization of the one before it. Hierarchical VAEs with fixed encoders → diffusion. Diffusion seen in continuous time → score-based SDEs → probability-flow ODEs. ODEs trained by likelihood → CNFs. CNFs trained by velocity regression → flow matching. Flow matching with the right path and the right coupling → rectified flow → one-step generation. None of this is an accident; the field has been quietly converging onto a single framework. The remaining open questions are mostly about <em>coupling</em> (what’s the right joint over <span class="math inline">\((x_0, x_1)\)</span> for a given data domain?) and <em>architecture</em> (how do we condition a billion-parameter DiT on arbitrary structured inputs?). We will see how π₀ and BAGEL answer the second question in Part C.</p>
+</blockquote>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/madhaviit\.github\.io\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Madhav Kadam, All Rights Reserved.</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/madhaviit" target="_blank">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://x.com/kpmadhav18" target="_blank">
+      <i class="bi bi-twitter-x" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://linkedin.com/in/madhav-kadam" target="_blank">
+      <i class="bi bi-linkedin" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

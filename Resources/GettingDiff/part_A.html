@@ -1,0 +1,1797 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>part_a – Madhav Kadam</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/favicon.ico" rel="icon">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-2b454536a190732ebf2f95c4f11e6530.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-9b097c31a9caec86beae4783e147e129.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-2b454536a190732ebf2f95c4f11e6530.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-B6Z44LN64S"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-B6Z44LN64S', { 'anonymize_ip': true});
+</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="Madhav Kadam">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="Madhav Kadam">
+<meta name="twitter:title" content="Madhav Kadam">
+<meta name="twitter:description" content="">
+<meta name="twitter:card" content="summary">
+</head>
+
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Madhav Kadam</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://drive.google.com/file/d/1hnqTi8Y-63If0PUq-HJ09X44cnxxqlXD/view?usp=sharing" target="_blank"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../Poems/disclaimer.html"> 
+<span class="menu-text">Poems</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../MyBlog/index.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../books.html"> 
+<span class="menu-text">Library</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../travel.html"> 
+<span class="menu-text">Atlas</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#preface-how-to-read-this-book" id="toc-preface-how-to-read-this-book" class="nav-link active" data-scroll-target="#preface-how-to-read-this-book">Preface — How to Read This Book</a>
+  <ul class="collapse">
+  <li><a href="#who-this-is-for" id="toc-who-this-is-for" class="nav-link" data-scroll-target="#who-this-is-for">Who this is for</a></li>
+  <li><a href="#the-four-threads-were-weaving" id="toc-the-four-threads-were-weaving" class="nav-link" data-scroll-target="#the-four-threads-were-weaving">The four threads we’re weaving</a></li>
+  <li><a href="#roadmap-of-the-seven-parts" id="toc-roadmap-of-the-seven-parts" class="nav-link" data-scroll-target="#roadmap-of-the-seven-parts">Roadmap of the seven parts</a></li>
+  <li><a href="#time-budget-and-how-to-read" id="toc-time-budget-and-how-to-read" class="nav-link" data-scroll-target="#time-budget-and-how-to-read">Time budget and how to read</a></li>
+  <li><a href="#glossary-of-the-most-used-symbols" id="toc-glossary-of-the-most-used-symbols" class="nav-link" data-scroll-target="#glossary-of-the-most-used-symbols">Glossary of the most-used symbols</a></li>
+  </ul></li>
+  <li><a href="#chapter-1-mathematical-and-neural-network-foundations" id="toc-chapter-1-mathematical-and-neural-network-foundations" class="nav-link" data-scroll-target="#chapter-1-mathematical-and-neural-network-foundations">Chapter 1 — Mathematical and Neural Network Foundations</a>
+  <ul class="collapse">
+  <li><a href="#tensors-and-shape-notation" id="toc-tensors-and-shape-notation" class="nav-link" data-scroll-target="#tensors-and-shape-notation">1.1 Tensors and shape notation</a></li>
+  <li><a href="#dot-products-matmuls-and-the-patterns-of-association-framing" id="toc-dot-products-matmuls-and-the-patterns-of-association-framing" class="nav-link" data-scroll-target="#dot-products-matmuls-and-the-patterns-of-association-framing">1.2 Dot products, matmuls, and the “patterns of association” framing</a></li>
+  <li><a href="#nonlinearity-mlps-and-universal-function-approximation" id="toc-nonlinearity-mlps-and-universal-function-approximation" class="nav-link" data-scroll-target="#nonlinearity-mlps-and-universal-function-approximation">1.3 Nonlinearity, MLPs, and universal function approximation</a></li>
+  <li><a href="#gradient-descent-and-backprop" id="toc-gradient-descent-and-backprop" class="nav-link" data-scroll-target="#gradient-descent-and-backprop">1.4 Gradient descent and backprop</a></li>
+  <li><a href="#softmax-cross-entropy-and-likelihood" id="toc-softmax-cross-entropy-and-likelihood" class="nav-link" data-scroll-target="#softmax-cross-entropy-and-likelihood">1.5 Softmax, cross-entropy, and likelihood</a></li>
+  <li><a href="#layernorm-rmsnorm-batchnorm-and-why-we-normalize" id="toc-layernorm-rmsnorm-batchnorm-and-why-we-normalize" class="nav-link" data-scroll-target="#layernorm-rmsnorm-batchnorm-and-why-we-normalize">1.6 LayerNorm, RMSNorm, BatchNorm, and why we normalize</a></li>
+  <li><a href="#residual-connections-and-why-they-enable-depth" id="toc-residual-connections-and-why-they-enable-depth" class="nav-link" data-scroll-target="#residual-connections-and-why-they-enable-depth">1.7 Residual connections and why they enable depth</a></li>
+  <li><a href="#adam-adamw-and-friends" id="toc-adam-adamw-and-friends" class="nav-link" data-scroll-target="#adam-adamw-and-friends">1.8 Adam, AdamW, and friends</a></li>
+  <li><a href="#activations-relu-gelu-and-swiglu" id="toc-activations-relu-gelu-and-swiglu" class="nav-link" data-scroll-target="#activations-relu-gelu-and-swiglu">1.9 Activations: ReLU, GELU, and SwiGLU</a></li>
+  </ul></li>
+  <li><a href="#chapter-2-tokenization-embeddings-and-positional-encoding" id="toc-chapter-2-tokenization-embeddings-and-positional-encoding" class="nav-link" data-scroll-target="#chapter-2-tokenization-embeddings-and-positional-encoding">Chapter 2 — Tokenization, Embeddings, and Positional Encoding</a>
+  <ul class="collapse">
+  <li><a href="#tokenization-bpe-and-sentencepiece" id="toc-tokenization-bpe-and-sentencepiece" class="nav-link" data-scroll-target="#tokenization-bpe-and-sentencepiece">2.1 Tokenization: BPE and SentencePiece</a></li>
+  <li><a href="#embeddings" id="toc-embeddings" class="nav-link" data-scroll-target="#embeddings">2.2 Embeddings</a></li>
+  <li><a href="#why-we-need-positional-information" id="toc-why-we-need-positional-information" class="nav-link" data-scroll-target="#why-we-need-positional-information">2.3 Why we need positional information</a></li>
+  <li><a href="#sinusoidal-positional-encoding" id="toc-sinusoidal-positional-encoding" class="nav-link" data-scroll-target="#sinusoidal-positional-encoding">2.4 Sinusoidal positional encoding</a></li>
+  <li><a href="#learned-absolute-positions" id="toc-learned-absolute-positions" class="nav-link" data-scroll-target="#learned-absolute-positions">2.5 Learned absolute positions</a></li>
+  <li><a href="#alibi-briefly" id="toc-alibi-briefly" class="nav-link" data-scroll-target="#alibi-briefly">2.6 ALiBi (briefly)</a></li>
+  <li><a href="#rotary-position-embeddings-rope-a-deep-dive" id="toc-rotary-position-embeddings-rope-a-deep-dive" class="nav-link" data-scroll-target="#rotary-position-embeddings-rope-a-deep-dive">2.7 Rotary Position Embeddings (RoPE) — a deep dive</a>
+  <ul class="collapse">
+  <li><a href="#the-trick-in-one-sentence" id="toc-the-trick-in-one-sentence" class="nav-link" data-scroll-target="#the-trick-in-one-sentence">2.7.1 The trick in one sentence</a></li>
+  <li><a href="#derivation-via-complex-multiplication" id="toc-derivation-via-complex-multiplication" class="nav-link" data-scroll-target="#derivation-via-complex-multiplication">2.7.2 Derivation via complex multiplication</a></li>
+  <li><a href="#code-sketch" id="toc-code-sketch" class="nav-link" data-scroll-target="#code-sketch">2.7.3 Code sketch</a></li>
+  <li><a href="#forward-reference-m-rope-and-interleaved-mrope" id="toc-forward-reference-m-rope-and-interleaved-mrope" class="nav-link" data-scroll-target="#forward-reference-m-rope-and-interleaved-mrope">2.7.4 Forward reference: M-RoPE and Interleaved-MRoPE</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#chapter-3-attention-is-all-you-need-a-full-walkthrough-of-the-transformer" id="toc-chapter-3-attention-is-all-you-need-a-full-walkthrough-of-the-transformer" class="nav-link" data-scroll-target="#chapter-3-attention-is-all-you-need-a-full-walkthrough-of-the-transformer">Chapter 3 — Attention Is All You Need: A Full Walkthrough of the Transformer</a>
+  <ul class="collapse">
+  <li><a href="#the-attention-mechanism-in-60-seconds" id="toc-the-attention-mechanism-in-60-seconds" class="nav-link" data-scroll-target="#the-attention-mechanism-in-60-seconds">3.1 The attention mechanism in 60 seconds</a></li>
+  <li><a href="#why-the-sqrtd_k-scaling" id="toc-why-the-sqrtd_k-scaling" class="nav-link" data-scroll-target="#why-the-sqrtd_k-scaling">3.2 Why the <span class="math inline">\(\sqrt{d_k}\)</span> scaling</a></li>
+  <li><a href="#multi-head-attention" id="toc-multi-head-attention" class="nav-link" data-scroll-target="#multi-head-attention">3.3 Multi-head attention</a></li>
+  <li><a href="#the-encoder-decoder-structure-and-why-most-modern-llms-are-decoder-only" id="toc-the-encoder-decoder-structure-and-why-most-modern-llms-are-decoder-only" class="nav-link" data-scroll-target="#the-encoder-decoder-structure-and-why-most-modern-llms-are-decoder-only">3.4 The encoder-decoder structure (and why most modern LLMs are decoder-only)</a></li>
+  <li><a href="#cross-attention" id="toc-cross-attention" class="nav-link" data-scroll-target="#cross-attention">3.5 Cross-attention</a></li>
+  <li><a href="#the-feed-forward-sublayer" id="toc-the-feed-forward-sublayer" class="nav-link" data-scroll-target="#the-feed-forward-sublayer">3.6 The feed-forward sublayer</a></li>
+  <li><a href="#pre-ln-vs.-post-ln" id="toc-pre-ln-vs.-post-ln" class="nav-link" data-scroll-target="#pre-ln-vs.-post-ln">3.7 Pre-LN vs.&nbsp;post-LN</a></li>
+  <li><a href="#causal-masking" id="toc-causal-masking" class="nav-link" data-scroll-target="#causal-masking">3.8 Causal masking</a></li>
+  <li><a href="#kv-cache-and-the-on-trick" id="toc-kv-cache-and-the-on-trick" class="nav-link" data-scroll-target="#kv-cache-and-the-on-trick">3.9 KV-cache and the O(n) trick</a></li>
+  <li><a href="#gqa-and-mqa" id="toc-gqa-and-mqa" class="nav-link" data-scroll-target="#gqa-and-mqa">3.10 GQA and MQA</a></li>
+  <li><a href="#flashattention" id="toc-flashattention" class="nav-link" data-scroll-target="#flashattention">3.11 FlashAttention</a></li>
+  <li><a href="#putting-it-together-pseudocode-for-a-transformer-block" id="toc-putting-it-together-pseudocode-for-a-transformer-block" class="nav-link" data-scroll-target="#putting-it-together-pseudocode-for-a-transformer-block">3.12 Putting it together: pseudocode for a transformer block</a></li>
+  </ul></li>
+  <li><a href="#chapter-4-from-transformer-to-llm" id="toc-chapter-4-from-transformer-to-llm" class="nav-link" data-scroll-target="#chapter-4-from-transformer-to-llm">Chapter 4 — From Transformer to LLM</a>
+  <ul class="collapse">
+  <li><a href="#the-autoregressive-next-token-objective" id="toc-the-autoregressive-next-token-objective" class="nav-link" data-scroll-target="#the-autoregressive-next-token-objective">4.1 The autoregressive next-token objective</a></li>
+  <li><a href="#the-gpt-lineage-and-emergent-capability" id="toc-the-gpt-lineage-and-emergent-capability" class="nav-link" data-scroll-target="#the-gpt-lineage-and-emergent-capability">4.2 The GPT lineage and emergent capability</a></li>
+  <li><a href="#pretraining-data-and-the-chinchilla-recipe" id="toc-pretraining-data-and-the-chinchilla-recipe" class="nav-link" data-scroll-target="#pretraining-data-and-the-chinchilla-recipe">4.3 Pretraining data and the Chinchilla recipe</a></li>
+  <li><a href="#supervised-fine-tuning-sft-and-instruction-following" id="toc-supervised-fine-tuning-sft-and-instruction-following" class="nav-link" data-scroll-target="#supervised-fine-tuning-sft-and-instruction-following">4.4 Supervised fine-tuning (SFT) and instruction following</a></li>
+  <li><a href="#rlhf-and-dpo" id="toc-rlhf-and-dpo" class="nav-link" data-scroll-target="#rlhf-and-dpo">4.5 RLHF and DPO</a></li>
+  <li><a href="#chain-of-thought-and-the-reasoning-revolution" id="toc-chain-of-thought-and-the-reasoning-revolution" class="nav-link" data-scroll-target="#chain-of-thought-and-the-reasoning-revolution">4.6 Chain-of-thought and the reasoning revolution</a></li>
+  <li><a href="#system-1-vs-system-2-and-a-forward-reference-to-jepa" id="toc-system-1-vs-system-2-and-a-forward-reference-to-jepa" class="nav-link" data-scroll-target="#system-1-vs-system-2-and-a-forward-reference-to-jepa">4.7 System 1 vs System 2, and a forward reference to JEPA</a></li>
+  <li><a href="#hallucination-as-a-structural-property" id="toc-hallucination-as-a-structural-property" class="nav-link" data-scroll-target="#hallucination-as-a-structural-property">4.8 Hallucination as a structural property</a></li>
+  </ul></li>
+  <li><a href="#chapter-5-vision-encoders-from-cnn-to-vit-to-clip-to-siglip" id="toc-chapter-5-vision-encoders-from-cnn-to-vit-to-clip-to-siglip" class="nav-link" data-scroll-target="#chapter-5-vision-encoders-from-cnn-to-vit-to-clip-to-siglip">Chapter 5 — Vision Encoders: From CNN to ViT to CLIP to SigLIP</a>
+  <ul class="collapse">
+  <li><a href="#the-cnn-era-alexnet-vgg-resnet" id="toc-the-cnn-era-alexnet-vgg-resnet" class="nav-link" data-scroll-target="#the-cnn-era-alexnet-vgg-resnet">5.1 The CNN era: AlexNet, VGG, ResNet</a></li>
+  <li><a href="#the-vision-transformer-vit" id="toc-the-vision-transformer-vit" class="nav-link" data-scroll-target="#the-vision-transformer-vit">5.2 The Vision Transformer (ViT)</a></li>
+  <li><a href="#clip-contrastive-image-text-pretraining" id="toc-clip-contrastive-image-text-pretraining" class="nav-link" data-scroll-target="#clip-contrastive-image-text-pretraining">5.3 CLIP: contrastive image-text pretraining</a></li>
+  <li><a href="#siglip-and-siglip-2" id="toc-siglip-and-siglip-2" class="nav-link" data-scroll-target="#siglip-and-siglip-2">5.4 SigLIP and SigLIP 2</a></li>
+  <li><a href="#dino-and-the-self-supervised-lineage" id="toc-dino-and-the-self-supervised-lineage" class="nav-link" data-scroll-target="#dino-and-the-self-supervised-lineage">5.5 DINO and the self-supervised lineage</a></li>
+  <li><a href="#the-handoff-to-chapter-6" id="toc-the-handoff-to-chapter-6" class="nav-link" data-scroll-target="#the-handoff-to-chapter-6">5.6 The handoff to Chapter 6</a></li>
+  </ul></li>
+  <li><a href="#chapter-6-vision-language-models-llava-and-the-qwen-vl-lineage" id="toc-chapter-6-vision-language-models-llava-and-the-qwen-vl-lineage" class="nav-link" data-scroll-target="#chapter-6-vision-language-models-llava-and-the-qwen-vl-lineage">Chapter 6 — Vision-Language Models: LLaVA and the Qwen-VL Lineage</a>
+  <ul class="collapse">
+  <li><a href="#the-recipe-in-one-sentence" id="toc-the-recipe-in-one-sentence" class="nav-link" data-scroll-target="#the-recipe-in-one-sentence">6.1 The recipe in one sentence</a></li>
+  <li><a href="#llava-visual-instruction-tuning-neurips-2023" id="toc-llava-visual-instruction-tuning-neurips-2023" class="nav-link" data-scroll-target="#llava-visual-instruction-tuning-neurips-2023">6.2 LLaVA: visual instruction tuning (NeurIPS 2023)</a>
+  <ul class="collapse">
+  <li><a href="#architecture" id="toc-architecture" class="nav-link" data-scroll-target="#architecture">6.2.1 Architecture</a></li>
+  <li><a href="#visual-instruction-tuning-data" id="toc-visual-instruction-tuning-data" class="nav-link" data-scroll-target="#visual-instruction-tuning-data">6.2.2 Visual instruction tuning data</a></li>
+  <li><a href="#two-stage-training" id="toc-two-stage-training" class="nav-link" data-scroll-target="#two-stage-training">6.2.3 Two-stage training</a></li>
+  </ul></li>
+  <li><a href="#qwen-vl-august-2023-the-pre-2-vl-alibaba-lineage" id="toc-qwen-vl-august-2023-the-pre-2-vl-alibaba-lineage" class="nav-link" data-scroll-target="#qwen-vl-august-2023-the-pre-2-vl-alibaba-lineage">6.3 Qwen-VL (August 2023): the pre-2-VL Alibaba lineage</a>
+  <ul class="collapse">
+  <li><a href="#architecture-1" id="toc-architecture-1" class="nav-link" data-scroll-target="#architecture-1">6.3.1 Architecture</a></li>
+  <li><a href="#bounding-box-and-ref-tokens-for-grounding" id="toc-bounding-box-and-ref-tokens-for-grounding" class="nav-link" data-scroll-target="#bounding-box-and-ref-tokens-for-grounding">6.3.2 Bounding-box and ref tokens for grounding</a></li>
+  <li><a href="#three-stage-training-pipeline" id="toc-three-stage-training-pipeline" class="nav-link" data-scroll-target="#three-stage-training-pipeline">6.3.3 Three-stage training pipeline</a></li>
+  </ul></li>
+  <li><a href="#qwen2-vl-september-2024-naive-dynamic-resolution-and-m-rope" id="toc-qwen2-vl-september-2024-naive-dynamic-resolution-and-m-rope" class="nav-link" data-scroll-target="#qwen2-vl-september-2024-naive-dynamic-resolution-and-m-rope">6.4 Qwen2-VL (September 2024): naive dynamic resolution and M-RoPE</a>
+  <ul class="collapse">
+  <li><a href="#naive-dynamic-resolution" id="toc-naive-dynamic-resolution" class="nav-link" data-scroll-target="#naive-dynamic-resolution">6.4.1 Naive Dynamic Resolution</a></li>
+  <li><a href="#m-rope-multimodal-rotary-position-embedding" id="toc-m-rope-multimodal-rotary-position-embedding" class="nav-link" data-scroll-target="#m-rope-multimodal-rotary-position-embedding">6.4.2 M-RoPE: Multimodal Rotary Position Embedding</a></li>
+  <li><a href="#unified-image-and-video-understanding" id="toc-unified-image-and-video-understanding" class="nav-link" data-scroll-target="#unified-image-and-video-understanding">6.4.3 Unified image and video understanding</a></li>
+  <li><a href="#sizes-training-and-the-lvlm-scaling-laws" id="toc-sizes-training-and-the-lvlm-scaling-laws" class="nav-link" data-scroll-target="#sizes-training-and-the-lvlm-scaling-laws">6.4.4 Sizes, training, and the LVLM scaling laws</a></li>
+  </ul></li>
+  <li><a href="#qwen2.5-vl-february-2025-native-dynamic-vit-absolute-time-agentic-capability" id="toc-qwen2.5-vl-february-2025-native-dynamic-vit-absolute-time-agentic-capability" class="nav-link" data-scroll-target="#qwen2.5-vl-february-2025-native-dynamic-vit-absolute-time-agentic-capability">6.5 Qwen2.5-VL (February 2025): native dynamic ViT, absolute time, agentic capability</a>
+  <ul class="collapse">
+  <li><a href="#window-attention-in-the-vit" id="toc-window-attention-in-the-vit" class="nav-link" data-scroll-target="#window-attention-in-the-vit">6.5.1 Window attention in the ViT</a></li>
+  <li><a href="#dynamic-fps-sampling-and-absolute-time" id="toc-dynamic-fps-sampling-and-absolute-time" class="nav-link" data-scroll-target="#dynamic-fps-sampling-and-absolute-time">6.5.2 Dynamic FPS sampling and absolute time</a></li>
+  <li><a href="#agentic-capability-and-html-omni-parsing" id="toc-agentic-capability-and-html-omni-parsing" class="nav-link" data-scroll-target="#agentic-capability-and-html-omni-parsing">6.5.3 Agentic capability and HTML omni-parsing</a></li>
+  <li><a href="#post-training-sft-dpo" id="toc-post-training-sft-dpo" class="nav-link" data-scroll-target="#post-training-sft-dpo">6.5.4 Post-training: SFT + DPO</a></li>
+  </ul></li>
+  <li><a href="#qwen3-vl-november-2025-interleaved-mrope-deepstack-and-256k-context" id="toc-qwen3-vl-november-2025-interleaved-mrope-deepstack-and-256k-context" class="nav-link" data-scroll-target="#qwen3-vl-november-2025-interleaved-mrope-deepstack-and-256k-context">6.6 Qwen3-VL (November 2025): Interleaved-MRoPE, DeepStack, and 256K context</a>
+  <ul class="collapse">
+  <li><a href="#interleaved-mrope" id="toc-interleaved-mrope" class="nav-link" data-scroll-target="#interleaved-mrope">6.6.1 Interleaved-MRoPE</a></li>
+  <li><a href="#deepstack-cross-layer-fusion" id="toc-deepstack-cross-layer-fusion" class="nav-link" data-scroll-target="#deepstack-cross-layer-fusion">6.6.2 DeepStack: cross-layer fusion</a></li>
+  <li><a href="#explicit-textual-timestamps-replace-t-rope" id="toc-explicit-textual-timestamps-replace-t-rope" class="nav-link" data-scroll-target="#explicit-textual-timestamps-replace-t-rope">6.6.3 Explicit textual timestamps replace T-RoPE</a></li>
+  <li><a href="#square-root-normalized-per-token-loss" id="toc-square-root-normalized-per-token-loss" class="nav-link" data-scroll-target="#square-root-normalized-per-token-loss">6.6.4 Square-root-normalized per-token loss</a></li>
+  <li><a href="#pretraining-and-post-training-pipeline" id="toc-pretraining-and-post-training-pipeline" class="nav-link" data-scroll-target="#pretraining-and-post-training-pipeline">6.6.5 Pretraining and post-training pipeline</a></li>
+  </ul></li>
+  <li><a href="#the-general-vlm-architecture-cheat-sheet" id="toc-the-general-vlm-architecture-cheat-sheet" class="nav-link" data-scroll-target="#the-general-vlm-architecture-cheat-sheet">6.7 The general VLM architecture cheat-sheet</a></li>
+  <li><a href="#vlm-evaluation-the-benchmarks-you-will-see" id="toc-vlm-evaluation-the-benchmarks-you-will-see" class="nav-link" data-scroll-target="#vlm-evaluation-the-benchmarks-you-will-see">6.8 VLM evaluation: the benchmarks you will see</a></li>
+  <li><a href="#closing-the-chapter-and-part-a" id="toc-closing-the-chapter-and-part-a" class="nav-link" data-scroll-target="#closing-the-chapter-and-part-a">6.9 Closing the chapter — and Part A</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+
+<section id="preface-how-to-read-this-book" class="level1">
+<h1>Preface — How to Read This Book</h1>
+<p>This article exists because the modern “AI stack” — transformers, vision encoders, diffusion models, flow matching, vision-language models, vision-language-action models for robots, and world models — has accreted into a sprawling stratigraphy of papers, blog posts, codebases, and Twitter threads that almost nobody reads end-to-end. Each layer borrows abstractions from the one below it and quietly modifies them; each tribe (NLP, vision, robotics, generative modeling, RL) has its own notation; each new model release ships with one figure and ten thousand tokens of marketing. The result is that a smart engineer with a basic Python and ML background can sit down to read about, say, BAGEL or Pi-0.5, and find themselves three Wikipedia hops deep into “what is a flow matching ODE” before they’ve gotten past the abstract.</p>
+<p>This book is the document I wish I had when I started. It is one long, opinionated, prose-heavy tour of the modern AI stack, written so that you can read it in roughly four to five hours and come out the other side with an actual mechanical understanding — not a vibes-based understanding — of how the major pieces fit together. It assumes you can read Python, that you know what a derivative is, and that you have heard the word <em>gradient descent</em> before. It does not assume you have written a transformer from scratch, that you know what RoPE is, that you have any opinion about FlashAttention, or that you can derive the diffusion loss. By the end you will have all of these.</p>
+<section id="who-this-is-for" class="level2">
+<h2 class="anchored" data-anchor-id="who-this-is-for">Who this is for</h2>
+<p>This is for the reader who is between “I have used ChatGPT and trained a small CNN on MNIST” and “I can read a robotics-foundation-model paper on arXiv and immediately tell which design choices are load-bearing.” That is a long gap. Most resources cover one slice of it — Andrej Karpathy’s <code>nanoGPT</code> is a beautiful slice; Lilian Weng’s blog is a beautiful slice; Hugging Face’s diffusion course is a beautiful slice — but the slices don’t compose into a single mental model. The promise of this article is the composition.</p>
+<p>If you are a researcher already working on, say, video diffusion, you will probably find Parts A and B too slow. Skim them; the chapter introductions are designed to let you decide quickly whether you can skip. If you are someone learning the field for a new job, a thesis, a startup, or just because the field has gotten interesting in the last 18 months, this is for you.</p>
+</section>
+<section id="the-four-threads-were-weaving" class="level2">
+<h2 class="anchored" data-anchor-id="the-four-threads-were-weaving">The four threads we’re weaving</h2>
+<p>There is no single linear story of how we got here. There are, instead, four threads that have been twisted into one rope:</p>
+<ol type="1">
+<li><strong>Sequence modeling.</strong> From RNNs through the 2017 transformer to today’s 405-billion-parameter language models. This thread is fundamentally about <em>predicting the next token given a history</em> and about discovering that, at enough scale, that simple objective produces something that looks dangerously like reasoning.</li>
+<li><strong>Generative modeling.</strong> From early autoencoders through VAEs and GANs to denoising diffusion (DDPM, 2020), score-based models, and finally to flow matching (2022–2023), which has retroactively unified the field. This thread is about <em>sampling from complicated distributions</em>, especially distributions over images and video.</li>
+<li><strong>Perception.</strong> From AlexNet through ResNet, ViT, CLIP, and SigLIP. This thread is about <em>learning representations of pixels</em> that downstream models can consume, and about the slow realization that you do not need a hand-crafted vision pipeline if you have enough image-text pairs from the open web.</li>
+<li><strong>Embodiment.</strong> A newer thread. Vision-Language-Action models (RT-2, Pi-0, OpenVLA), world models (V-JEPA 2, Sora-as-world-model, DreamerV3), and the broader question of how to bolt perception and generation onto an agent that has to <em>do things in the physical world</em>.</li>
+</ol>
+<p>These threads keep crossing each other. A VLM is just a sequence model with a vision encoder grafted on at the embedding layer. A diffusion model is a generative model whose architecture is, increasingly, a transformer. A VLA is a VLM that has been taught to output joint angles instead of just text. A world model is a generative model conditioned on actions. Once you see the four threads, the soup of acronyms starts to organize itself.</p>
+</section>
+<section id="roadmap-of-the-seven-parts" class="level2">
+<h2 class="anchored" data-anchor-id="roadmap-of-the-seven-parts">Roadmap of the seven parts</h2>
+<p>The full article is broken into seven parts, A through G, of roughly equal weight:</p>
+<ul>
+<li><strong>Part A (this part).</strong> Foundations. Neural network math, tokenization and positional encoding (with a deep dive on RoPE), the transformer architecture, the leap from transformer to LLM, vision encoders from CNN to SigLIP, and the Qwen-VL lineage of vision-language models from <code>Qwen-VL</code> (2023) through <code>Qwen3-VL</code> (2025).</li>
+<li><strong>Part B.</strong> Generative modeling I — diffusion. The forward and reverse SDEs, the DDPM training objective, score-based perspectives, conditional generation and classifier-free guidance, latent diffusion (Stable Diffusion), and the DiT architecture.</li>
+<li><strong>Part C.</strong> Generative modeling II — flow matching, and the unification of diffusion and flow under a single ODE-based view. Rectified flow, conditional flow matching, why flow matching is winning for video and audio, and the connection back to score-based diffusion.</li>
+<li><strong>Part D.</strong> World models. The Jepa lineage (I-JEPA, V-JEPA, V-JEPA 2), latent dynamics models (Dreamer, GenIE), action-conditioned video models (Sora-as-world-model, Genie 2, Cosmos), and the philosophical debate between LeCun’s “predict in representation space” school and the “predict in pixel space” school.</li>
+<li><strong>Part E.</strong> Vision-Language-Action models. RT-2, OpenVLA, Pi-0 and Pi-0.5, NVIDIA’s GR00T, the action-tokenization vs.&nbsp;continuous-action-head debate, and how robotics learned to plagiarize the LLM playbook.</li>
+<li><strong>Part F.</strong> BAGEL hands-on. A from-scratch fine-tuning walkthrough on a custom dataset, with notes on infra, evaluation, and the things that the paper does not tell you.</li>
+<li><strong>Part G.</strong> Synthesis and outlook. What is the next 18 months going to look like? What are the open problems? What should you actually build?</li>
+</ul>
+</section>
+<section id="time-budget-and-how-to-read" class="level2">
+<h2 class="anchored" data-anchor-id="time-budget-and-how-to-read">Time budget and how to read</h2>
+<p>This is a four-to-five-hour read if you read straight through. If you skim derivations and skip code blocks it is more like two hours, but I don’t recommend that for the first pass — the derivations <em>are</em> the point. The article is designed to be read sequentially, but it is also designed so that each chapter ends with a forward reference to the next, so if you have to break, break at a chapter boundary.</p>
+<p>I recommend reading with a notebook open. Not for code (although code is fine), but for notation. Every part of this field uses slightly different notation, and you will get more out of this if you commit to one set of symbols and translate everything into it as you go. The glossary below is the set I will use.</p>
+<blockquote class="blockquote">
+<p><strong>Aside on the spirit of this book.</strong> I have tried to write the thing I find most useful when I am learning a new sub-field: a long-form essay that <em>explains</em>, in prose, what is happening and why, rather than a series of bullet points that I could have gotten from skimming the abstract. If that means I take a paragraph to motivate a design choice that the original paper handles in half a sentence, so be it. Time you spend reading prose now is time you don’t have to spend reverse-engineering a codebase later.</p>
+</blockquote>
+</section>
+<section id="glossary-of-the-most-used-symbols" class="level2">
+<h2 class="anchored" data-anchor-id="glossary-of-the-most-used-symbols">Glossary of the most-used symbols</h2>
+<p>I will introduce these properly in context, but here they are in one place so you have something to point at.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Symbol</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(x, y, z\)</span></td>
+<td>Generic vectors or tensors (data, latents, outputs).</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(x_t\)</span></td>
+<td>The <span class="math inline">\(t\)</span>-th token in a sequence (Parts A, F); the diffused sample at time <span class="math inline">\(t\)</span> (Parts B, C).</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(d, d_k, d_{\text{model}}\)</span></td>
+<td>Dimensionality. <span class="math inline">\(d_k\)</span> is the per-head dimension in attention.</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(L, N\)</span></td>
+<td>Sequence length, batch size.</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(W_Q, W_K, W_V, W_O\)</span></td>
+<td>Query, key, value, output projections in attention.</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(Q, K, V\)</span></td>
+<td>The query/key/value matrices themselves: <span class="math inline">\(Q = X W_Q\)</span>, etc.</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\theta\)</span></td>
+<td>Model parameters.</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(p_\theta, q\)</span></td>
+<td>Model distribution and data distribution.</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\nabla_\theta \mathcal{L}\)</span></td>
+<td>Gradient of the loss with respect to parameters.</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\mathrm{softmax}(\cdot)\)</span></td>
+<td>The softmax function, <span class="math inline">\(\mathrm{softmax}(z)_i = e^{z_i}/\sum_j e^{z_j}\)</span>.</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\sigma(\cdot)\)</span></td>
+<td>The logistic sigmoid, <span class="math inline">\(\sigma(x) = 1/(1+e^{-x})\)</span>.</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\epsilon \sim \mathcal{N}(0, I)\)</span></td>
+<td>A standard Gaussian noise sample.</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\beta_t, \alpha_t, \bar{\alpha}_t\)</span></td>
+<td>Diffusion noise schedule and its cumulative products (Part B).</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(v_\theta(x_t, t)\)</span></td>
+<td>A learned velocity field (flow matching, Part C).</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\pi_\theta(a \mid o)\)</span></td>
+<td>A policy mapping observations to actions (Part E).</td>
+</tr>
+</tbody>
+</table>
+<p>With that out of the way, let’s get on with it.</p>
+</section>
+</section>
+<section id="chapter-1-mathematical-and-neural-network-foundations" class="level1">
+<h1>Chapter 1 — Mathematical and Neural Network Foundations</h1>
+<p>This chapter is the floor of the building. None of the math here is new in 2026, but the way it composes into modern models is worth re-grounding, because the rest of the book quietly assumes you can move fluently between “I see a tensor of shape <code>[B, L, D]</code>” and “I see a function approximator whose Jacobians are tractable on a GPU.” If you are confident about all of this, skim; if you stub your toe on any of the equations, pause.</p>
+<section id="tensors-and-shape-notation" class="level2">
+<h2 class="anchored" data-anchor-id="tensors-and-shape-notation">1.1 Tensors and shape notation</h2>
+<p>A tensor is, for our purposes, an <span class="math inline">\(n\)</span>-dimensional array of floating-point numbers. A scalar is rank-0, a vector rank-1, a matrix rank-2, and once you start stacking matrices into batches you reach rank-3 and beyond. In code, we will almost always be holding tensors of shape <code>[B, L, D]</code> — a batch of <span class="math inline">\(B\)</span> sequences, each of length <span class="math inline">\(L\)</span>, where every position carries a <span class="math inline">\(D\)</span>-dimensional feature vector. When we say “an embedding of dimension <span class="math inline">\(D = 4096\)</span>” we mean every token is mapped to a 4096-dimensional vector, and a batch of 8 sequences of length 2048 is then a <code>[8, 2048, 4096]</code> block of <code>bfloat16</code> taking roughly 128 MB.</p>
+<p>A persistent confusion for beginners is that mathematical notation and code notation disagree. Papers write things like <span class="math inline">\(y = x W\)</span> where <span class="math inline">\(W \in \mathbb{R}^{D \times D'}\)</span> and <span class="math inline">\(x \in \mathbb{R}^{D}\)</span>, but PyTorch will happily compute <code>y = x @ W</code> where <code>x.shape == (B, L, D)</code> and <code>W.shape == (D, D')</code> and broadcast over the leading axes. The math is the same; you just keep track of which axes are “real” vector-space axes (here <span class="math inline">\(D, D'\)</span>) and which are bookkeeping axes (here <span class="math inline">\(B, L\)</span>). The single most useful habit in this entire field is to write out tensor shapes in comments next to every line of model code. Code that reads <code>x = self.proj(x)</code> is much easier to debug if it reads <code>x = self.proj(x)  # [B, L, D] -&gt; [B, L, D']</code>.</p>
+</section>
+<section id="dot-products-matmuls-and-the-patterns-of-association-framing" class="level2">
+<h2 class="anchored" data-anchor-id="dot-products-matmuls-and-the-patterns-of-association-framing">1.2 Dot products, matmuls, and the “patterns of association” framing</h2>
+<p>Almost everything a neural network does, mechanically, is matrix multiplication. The intuition that I find clearest — and that Grant Sanderson’s 3blue1brown series on neural networks and transformers makes vivid — is to think of a matmul as a <em>bank of dot products against learned templates</em>.</p>
+<p>A single dot product <span class="math inline">\(a \cdot b = \sum_i a_i b_i\)</span> has an obvious geometric meaning: it is large and positive when <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> point in similar directions, and zero when they are orthogonal. A matrix-vector product <span class="math inline">\(W x\)</span> is then a <em>bank</em> of dot products: each row of <span class="math inline">\(W\)</span> is a template, and the output is a vector of similarity scores — “how much does <span class="math inline">\(x\)</span> look like the first row of <span class="math inline">\(W\)</span>? the second row? the third?” A matrix-matrix product <span class="math inline">\(X W\)</span> does the same thing for many input vectors at once.</p>
+<p>This re-framing is more than a mnemonic. When we later study attention, the query/key product <span class="math inline">\(Q K^T\)</span> is exactly a bank of dot products between every query and every key, producing a similarity matrix. When we study an MLP, the first linear layer is a bank of dot products against learned templates — and the <em>nonlinearity then keeps only those scores that survive a threshold</em>, which is why some interpretability work talks about MLPs as approximate key-value memories. The 3blue1brown phrase to remember is <em>“patterns of association”</em>. Linear algebra is just the bookkeeping for storing and retrieving those patterns.</p>
+</section>
+<section id="nonlinearity-mlps-and-universal-function-approximation" class="level2">
+<h2 class="anchored" data-anchor-id="nonlinearity-mlps-and-universal-function-approximation">1.3 Nonlinearity, MLPs, and universal function approximation</h2>
+<p>A purely linear stack is useless: any composition of linear maps is itself a linear map. To get expressiveness we need a nonlinearity. The classical Multi-Layer Perceptron (MLP) consists of an affine transformation, a pointwise nonlinearity, and another affine transformation:</p>
+<p><span class="math display">\[
+\mathrm{MLP}(x) = W_2 \, \phi(W_1 x + b_1) + b_2.
+\]</span></p>
+<p>Where <span class="math inline">\(\phi\)</span> is some pointwise nonlinear function. The universal approximation theorem says, roughly, that with enough hidden units a single-hidden-layer MLP can approximate any continuous function on a compact domain to arbitrary accuracy. This sounds powerful — and it is — but the practical lesson of the last decade is that <em>depth</em>, not just width, is what makes networks tractable to train and good at generalizing. We will see this resurface in residual connections (1.6) and in the transformer’s many-layer architecture (Chapter 3).</p>
+<p>In modern transformers the “FFN” sublayer is exactly an MLP — usually with hidden dimension <span class="math inline">\(4D\)</span> — applied independently to every token’s feature vector. It is also where the bulk of the parameters in a transformer live. For a model with hidden size <span class="math inline">\(D = 4096\)</span> and an FFN expansion factor of <span class="math inline">\(4\)</span>, each layer has about <span class="math inline">\(2 \cdot D \cdot 4D = 32 D^2\)</span> parameters in the FFN alone, dwarfing the attention block’s <span class="math inline">\(4 D^2\)</span>.</p>
+</section>
+<section id="gradient-descent-and-backprop" class="level2">
+<h2 class="anchored" data-anchor-id="gradient-descent-and-backprop">1.4 Gradient descent and backprop</h2>
+<p>Training a neural network means choosing parameters <span class="math inline">\(\theta\)</span> to minimize a scalar loss <span class="math inline">\(\mathcal{L}(\theta)\)</span>. Gradient descent does this by following the negative gradient:</p>
+<p><span class="math display">\[
+\theta_{t+1} = \theta_t - \eta \, \nabla_\theta \mathcal{L}(\theta_t),
+\]</span></p>
+<p>with learning rate <span class="math inline">\(\eta\)</span>. To compute <span class="math inline">\(\nabla_\theta \mathcal{L}\)</span> for a deep network we use <em>reverse-mode automatic differentiation</em> — what everyone calls backpropagation. The mental model is that the forward pass builds a computation graph, every node remembers its local Jacobian, and the backward pass walks the graph from the loss back to the parameters, multiplying Jacobians by the chain rule.</p>
+<blockquote class="blockquote">
+<p><strong>Intuition pump.</strong> Imagine the loss as the height of a hilly landscape over a 200-billion-dimensional parameter space. Gradient descent is a hiker who, at every step, looks at the local slope and takes a small step downhill. The fact that this works at all — that the landscape is friendly enough that a greedy local procedure finds good minima — is one of the deepest empirical facts about modern deep learning. Theory is still catching up; engineers have stopped worrying.</p>
+</blockquote>
+</section>
+<section id="softmax-cross-entropy-and-likelihood" class="level2">
+<h2 class="anchored" data-anchor-id="softmax-cross-entropy-and-likelihood">1.5 Softmax, cross-entropy, and likelihood</h2>
+<p>For classification, regression, and (especially) language modeling, the softmax-then-cross-entropy pair is everywhere. Softmax converts a vector of logits <span class="math inline">\(z \in \mathbb{R}^V\)</span> into a probability distribution over <span class="math inline">\(V\)</span> classes:</p>
+<p><span class="math display">\[
+\mathrm{softmax}(z)_i = \frac{e^{z_i}}{\sum_{j=1}^V e^{z_j}}.
+\]</span></p>
+<p>Cross-entropy between a target one-hot <span class="math inline">\(y\)</span> and the predicted distribution <span class="math inline">\(p\)</span> is</p>
+<p><span class="math display">\[
+\mathrm{CE}(y, p) = -\sum_{i=1}^V y_i \log p_i = -\log p_{y^*},
+\]</span></p>
+<p>where <span class="math inline">\(y^*\)</span> is the index of the true class. Combined, this is just <em>negative log-likelihood</em> of the data under the model. When we say “an LLM is trained by next-token prediction,” we mean it is trained to minimize <span class="math inline">\(-\log p_\theta(x_t \mid x_{&lt;t})\)</span>, summed over all positions in the corpus. Cross-entropy + softmax is also where one of the famous numerical stability tricks comes from: you implement them together as <code>log_softmax</code> followed by a gather, never as the two separate operations, because the unnormalized exponentials overflow.</p>
+</section>
+<section id="layernorm-rmsnorm-batchnorm-and-why-we-normalize" class="level2">
+<h2 class="anchored" data-anchor-id="layernorm-rmsnorm-batchnorm-and-why-we-normalize">1.6 LayerNorm, RMSNorm, BatchNorm, and why we normalize</h2>
+<p>Deep networks have a stability problem: as activations propagate through many layers, their scale drifts, and gradients either vanish or explode. Normalization layers fix this by rescaling activations to a known statistic. The three you will see:</p>
+<ul>
+<li><strong>Batch Normalization</strong> (Ioffe &amp; Szegedy, 2015) normalizes across the batch axis: for each feature, subtract the batch mean and divide by the batch standard deviation. It was the breakthrough for CNN training but has practical issues — it leaks information between examples in a batch, it behaves differently at train and test time, and it interacts badly with very small batches. Modern transformers never use it.</li>
+<li><strong>Layer Normalization</strong> (Ba, Kiros &amp; Hinton, 2016) normalizes across the <em>feature</em> axis of a single example. For a token’s feature vector <span class="math inline">\(x \in \mathbb{R}^D\)</span>, it computes mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span> over the <span class="math inline">\(D\)</span> features, then outputs <span class="math inline">\(\gamma \cdot (x - \mu)/\sqrt{\sigma^2 + \epsilon} + \beta\)</span> with learned scale <span class="math inline">\(\gamma\)</span> and shift <span class="math inline">\(\beta\)</span>. This is the normalization used in the original 2017 transformer.</li>
+<li><strong>RMS Normalization</strong> (Zhang &amp; Sennrich, 2019) is a simpler variant that drops the mean-subtraction and shift, keeping only the scale: <span class="math inline">\(\mathrm{RMSNorm}(x) = \gamma \cdot x / \mathrm{RMS}(x)\)</span>, where <span class="math inline">\(\mathrm{RMS}(x) = \sqrt{\frac{1}{D}\sum_i x_i^2 + \epsilon}\)</span>. Empirically it works as well as LayerNorm, costs less compute, and has become the default in Llama-2/3, Qwen, DeepSeek, and basically every transformer trained after 2022.</li>
+</ul>
+<p>So: when you see a modern transformer and it says “Norm,” assume RMSNorm unless told otherwise. The Qwen2.5-VL technical report, for example, explicitly says it uses “RMSNorm for normalization and SwiGLU as the activation function” in both the LLM and (now) the vision encoder.</p>
+</section>
+<section id="residual-connections-and-why-they-enable-depth" class="level2">
+<h2 class="anchored" data-anchor-id="residual-connections-and-why-they-enable-depth">1.7 Residual connections and why they enable depth</h2>
+<p>A residual connection is the trivial-looking trick of having a layer output <span class="math inline">\(x + f(x)\)</span> rather than <span class="math inline">\(f(x)\)</span>. The idea is from He et al.’s 2015 ResNet paper, which won everything for years. The point is twofold. First, the identity path makes it easy for a network to learn to <em>do nothing</em> — early in training, <span class="math inline">\(f\)</span> is small, so the network output is approximately the input, and gradients flow unimpeded back to early layers. Second, residuals turn the network into an iterated refinement: each layer adds a small correction to a running representation rather than recomputing it from scratch.</p>
+<p>Without residuals, training a 24- or 32-layer transformer is essentially impossible; gradients die. With residuals, depth becomes a free parameter you can scale. Every transformer block you will ever see has two residual streams — one wrapping attention, one wrapping the FFN.</p>
+</section>
+<section id="adam-adamw-and-friends" class="level2">
+<h2 class="anchored" data-anchor-id="adam-adamw-and-friends">1.8 Adam, AdamW, and friends</h2>
+<p>Plain SGD is a tank: slow and reliable. For training large neural networks, we use <em>adaptive</em> optimizers that maintain per-parameter statistics. Adam (Kingma &amp; Ba, 2014) keeps an exponential moving average of the gradient (<span class="math inline">\(m_t\)</span>) and of the gradient squared (<span class="math inline">\(v_t\)</span>), and the update is</p>
+<p><span class="math display">\[
+\theta_{t+1} = \theta_t - \eta \cdot \frac{\hat{m}_t}{\sqrt{\hat{v}_t} + \epsilon},
+\]</span></p>
+<p>with bias-corrected moments <span class="math inline">\(\hat{m}_t, \hat{v}_t\)</span>. The intuition is “step further along axes where the gradient has been consistent and steady, and shorter along axes where it has been noisy.” AdamW (Loshchilov &amp; Hutter, 2017) decouples the weight decay term from the gradient, applying it as a separate <span class="math inline">\(\theta \leftarrow \theta - \eta \lambda \theta\)</span> step rather than folding it into the loss. This sounds boring; it is, in fact, one of the most important details in modern training, because it lets you tune weight decay independently of the gradient noise.</p>
+<p>Hyperparameters that have become conventional for large transformer training: <span class="math inline">\(\beta_1 = 0.9\)</span>, <span class="math inline">\(\beta_2 = 0.95\)</span> or <span class="math inline">\(0.98\)</span>, weight decay <span class="math inline">\(\sim 0.05\)</span> to <span class="math inline">\(0.1\)</span>, learning rate around <span class="math inline">\(1\)</span>–<span class="math inline">\(5 \times 10^{-4}\)</span> at peak with a cosine decay to <span class="math inline">\(10\%\)</span> of peak. We will see exactly these numbers in the Qwen-VL training configs.</p>
+</section>
+<section id="activations-relu-gelu-and-swiglu" class="level2">
+<h2 class="anchored" data-anchor-id="activations-relu-gelu-and-swiglu">1.9 Activations: ReLU, GELU, and SwiGLU</h2>
+<p>The choice of nonlinearity has a surprisingly large effect on training quality.</p>
+<ul>
+<li><strong>ReLU</strong> (<span class="math inline">\(\phi(x) = \max(0, x)\)</span>). Cheap, simple, made deep learning practical in 2012. Suffers from “dying ReLU” — units stuck in the zero region forever.</li>
+<li><strong>GELU</strong> (Hendrycks &amp; Gimpel, 2016, <span class="math inline">\(\phi(x) = x \cdot \Phi(x)\)</span>, where <span class="math inline">\(\Phi\)</span> is the Gaussian CDF). A smooth gating-like nonlinearity that became standard in BERT and the original GPT family. Approximately <span class="math inline">\(0.5 x (1 + \tanh(\sqrt{2/\pi}(x + 0.044715 x^3)))\)</span>.</li>
+<li><strong>SwiGLU</strong> (Shazeer, 2020) is the activation that conquered the modern transformer FFN. It is not a pointwise nonlinearity but a <em>gated linear unit</em>: rather than <span class="math inline">\(W_2 \, \phi(W_1 x)\)</span>, the FFN computes <span class="math display">\[
+\mathrm{SwiGLU}(x) = W_3 \cdot \big(\mathrm{Swish}(W_1 x) \odot (W_2 x)\big),
+\]</span> where <span class="math inline">\(\mathrm{Swish}(x) = x \cdot \sigma(x)\)</span>, <span class="math inline">\(\odot\)</span> is elementwise product, and <span class="math inline">\(W_1, W_2\)</span> are two separate projections used as the “gate” and “value.” This costs you one extra matmul per FFN — and the convention is to shrink the hidden dimension by <span class="math inline">\(2/3\)</span> to keep the parameter count constant — but it consistently improves perplexity and downstream performance. Every modern open-source model (Llama, Qwen, DeepSeek, Mistral) uses SwiGLU.</li>
+</ul>
+<p>The intuition for why SwiGLU helps is that <em>gates are expressive</em>: a gating mechanism lets the network learn input-dependent multiplicative interactions, which a pure pointwise nonlinearity cannot. It is also a small reason why FFN-heavy models like dense Llama-style transformers tend to outperform attention-heavy designs on language tasks.</p>
+<blockquote class="blockquote">
+<p><strong>One-paragraph summary of Chapter 1.</strong> Neural networks are stacks of matrix multiplications (which we view as banks of dot-product templates) interleaved with nonlinearities, normalized to stay stable, connected by residuals so gradients can flow, and trained by AdamW against a cross-entropy loss. Every modern transformer you read about — Llama, Qwen, GPT-5, Gemini — is some variation on this recipe with the hyperparameters tuned and the data scaled.</p>
+</blockquote>
+</section>
+</section>
+<section id="chapter-2-tokenization-embeddings-and-positional-encoding" class="level1">
+<h1>Chapter 2 — Tokenization, Embeddings, and Positional Encoding</h1>
+<p>A transformer cannot read text. Before any of the architecture in Chapter 3 applies, the input has to be converted into a sequence of <em>tokens</em>, those tokens have to be mapped to <em>embeddings</em>, and the embeddings have to be annotated with <em>position</em> information so the model knows what came first. This chapter walks through each step, and ends with a deep dive on rotary position embeddings (RoPE), because RoPE is the single most important little equation to understand if you want to read modern model papers without getting lost.</p>
+<section id="tokenization-bpe-and-sentencepiece" class="level2">
+<h2 class="anchored" data-anchor-id="tokenization-bpe-and-sentencepiece">2.1 Tokenization: BPE and SentencePiece</h2>
+<p>Models cannot operate on raw Unicode bytes (well — they can, but it is expensive). Instead, text is broken into <em>subword units</em> by a tokenizer. The dominant family is Byte-Pair Encoding (BPE), originally a compression algorithm and adapted to NLP by Sennrich et al.&nbsp;(2015) and popularized by GPT-2. The procedure is:</p>
+<ol type="1">
+<li>Start with a vocabulary of single bytes (or characters).</li>
+<li>Count all adjacent pairs in the training corpus.</li>
+<li>Merge the most frequent pair into a new token. Add it to the vocabulary.</li>
+<li>Repeat until the vocabulary reaches the desired size.</li>
+</ol>
+<p>The result is a vocabulary where common words (“the,” “and”) are single tokens, less common words are split into a few subword pieces (“transformer” might be “transform” + “er”), and rare strings (Klingon, base64, novel chemical names) become longer sequences of bytes. SentencePiece (Kudo &amp; Richardson, 2018) is a tokenizer training tool that does BPE (or Unigram) on raw text streams without requiring whitespace-pretokenization, which is what made it practical for languages like Chinese and Japanese where there are no spaces.</p>
+<p>Vocabulary sizes have crept up over time. GPT-2 used ~50k tokens; Llama-2 used 32k; Llama-3 jumped to 128k; the Qwen2 and Qwen2.5 tokenizers use <strong>151,646 tokens</strong> (the Qwen2.5-VL paper makes this explicit in its config table). Bigger vocabularies mean shorter sequences for the same text, which means longer effective context windows and faster inference — at the cost of a larger embedding matrix. For Qwen2.5-VL-72B with <span class="math inline">\(D = 8192\)</span> and <span class="math inline">\(V = 151{,}646\)</span>, the embedding matrix alone is <span class="math inline">\(V \cdot D \approx 1.24\)</span> billion parameters.</p>
+<blockquote class="blockquote">
+<p><strong>Aside.</strong> “Token count” is the universal unit of LLM economics. When a paper says “we trained on 4.1T tokens,” and the Qwen2.5 tokenizer is in use, that translates very roughly to <em>several trillion words</em> of text — more than every book ever written, plus every web page, scientific paper, and code repository the team could clean.</p>
+</blockquote>
+</section>
+<section id="embeddings" class="level2">
+<h2 class="anchored" data-anchor-id="embeddings">2.2 Embeddings</h2>
+<p>After tokenization, every token is an integer in <span class="math inline">\(\{0, 1, \dots, V-1\}\)</span>. The embedding layer is a lookup table <span class="math inline">\(E \in \mathbb{R}^{V \times D}\)</span> — the <span class="math inline">\(i\)</span>-th row is the <span class="math inline">\(D\)</span>-dimensional vector representing token <span class="math inline">\(i\)</span>. Embeddings are learnable parameters and start out random; the model learns, over training, to map related tokens to nearby points in <span class="math inline">\(\mathbb{R}^D\)</span>. Famously, embedding spaces tend to have linear structure — the “king − man + woman ≈ queen” property of word2vec generalizes loosely to learned LLM embeddings, though for large vocabularies this is much harder to verify cleanly.</p>
+<p>Tied embeddings (“weight tying”) use the same matrix <span class="math inline">\(E\)</span> for the input embedding and the output unembedding head (the final linear layer that produces logits over the vocabulary). This saves <span class="math inline">\(V \cdot D\)</span> parameters and slightly improves perplexity for smaller models. The Qwen2.5-VL-3B model ties; the 7B and 72B variants do not, because at scale the asymmetry in input/output statistics matters.</p>
+</section>
+<section id="why-we-need-positional-information" class="level2">
+<h2 class="anchored" data-anchor-id="why-we-need-positional-information">2.3 Why we need positional information</h2>
+<p>Here is the crucial fact about the self-attention layer we are about to meet: <em>it is permutation-equivariant</em>. If you shuffle the tokens of the input, the attention outputs shuffle correspondingly, but the <em>content</em> of each output is unchanged. To attention, the sequence “the cat sat on the mat” and “mat the on sat cat the” are indistinguishable. This is not a bug — it is a deliberate inductive bias that makes attention as expressive as it is — but it means we have to <em>add positional information</em> somewhere else if we want the model to know what came first.</p>
+<p>There are roughly four schools of how to do this:</p>
+<ol type="1">
+<li><strong>Sinusoidal absolute positions</strong> (original Vaswani 2017).</li>
+<li><strong>Learned absolute positions</strong> (BERT, GPT-2).</li>
+<li><strong>Bias-based relative positions</strong> (T5, ALiBi).</li>
+<li><strong>Rotary position embeddings (RoPE)</strong>, which apply position information <em>inside</em> the attention layer by rotating queries and keys. This is what every modern open-source transformer uses.</li>
+</ol>
+<p>We’ll cover each, then dwell on RoPE.</p>
+</section>
+<section id="sinusoidal-positional-encoding" class="level2">
+<h2 class="anchored" data-anchor-id="sinusoidal-positional-encoding">2.4 Sinusoidal positional encoding</h2>
+<p>The original “Attention Is All You Need” paper added a fixed positional encoding to the token embedding before feeding it into the network. For position <span class="math inline">\(p\)</span> and embedding dimension <span class="math inline">\(i\)</span>:</p>
+<p><span class="math display">\[
+\mathrm{PE}(p, 2i) = \sin\!\left(\frac{p}{10000^{2i/d}}\right), \qquad
+\mathrm{PE}(p, 2i+1) = \cos\!\left(\frac{p}{10000^{2i/d}}\right).
+\]</span></p>
+<p>Every pair of adjacent dimensions <span class="math inline">\((2i, 2i+1)\)</span> holds a sine and cosine at frequency <span class="math inline">\(10000^{-2i/d}\)</span>. The lowest-index dimensions oscillate fast (encoding fine position differences), the highest-index dimensions oscillate slowly (encoding coarse position differences). The clever property is that <em>any positional offset <span class="math inline">\(\Delta p\)</span> can be expressed as a linear transformation of <span class="math inline">\(\mathrm{PE}(p)\)</span></em>, because <span class="math inline">\(\sin(p + \Delta p) = \sin(p)\cos(\Delta p) + \cos(p)\sin(\Delta p)\)</span>. The hope was that the model could learn to use this for relative positioning. In practice, the model did learn it, but the encoding was rigid and never reached the popularity of learned embeddings — and was eventually superseded entirely by RoPE.</p>
+</section>
+<section id="learned-absolute-positions" class="level2">
+<h2 class="anchored" data-anchor-id="learned-absolute-positions">2.5 Learned absolute positions</h2>
+<p>The BERT and GPT-2 approach is even simpler: allocate a learned embedding for each absolute position up to some max length <span class="math inline">\(L_{\max}\)</span>, and add it to the token embedding. This is what people mean by “GPT-2 had a max context of 1024” — the position embedding table only had 1024 rows. The problem is that learned absolute positions do not extrapolate: you cannot run the model on a longer sequence than it was trained on without random embeddings for the new positions.</p>
+</section>
+<section id="alibi-briefly" class="level2">
+<h2 class="anchored" data-anchor-id="alibi-briefly">2.6 ALiBi (briefly)</h2>
+<p>ALiBi (Press, Smith &amp; Lewis, 2021) skips position embeddings entirely and instead adds a <em>position-dependent bias</em> to the attention logits. The bias is a linear penalty for distant tokens — attention from position <span class="math inline">\(i\)</span> to position <span class="math inline">\(j\)</span> is biased by <span class="math inline">\(-m \cdot |i - j|\)</span> for a head-specific slope <span class="math inline">\(m\)</span>. ALiBi has the very pleasant property of generalizing to longer sequences than seen at training time, and it was used in MPT-7B and Falcon. But it has lost ground to RoPE, which has similar extrapolation behavior with better empirical performance.</p>
+</section>
+<section id="rotary-position-embeddings-rope-a-deep-dive" class="level2">
+<h2 class="anchored" data-anchor-id="rotary-position-embeddings-rope-a-deep-dive">2.7 Rotary Position Embeddings (RoPE) — a deep dive</h2>
+<p>RoPE, introduced by Su et al.&nbsp;in the RoFormer paper (2021) and now ubiquitous (Llama-2/3, Qwen, DeepSeek, Mistral, virtually every open-source LLM since 2023) is, I claim, the single most-important little equation in modern transformer architecture. Once you see how it works you will understand the M-RoPE / Interleaved-MRoPE variants in Qwen2-VL and Qwen3-VL essentially for free.</p>
+<section id="the-trick-in-one-sentence" class="level3">
+<h3 class="anchored" data-anchor-id="the-trick-in-one-sentence">2.7.1 The trick in one sentence</h3>
+<p>RoPE applies position to a query or key vector by <em>rotating its 2D sub-vectors by an angle that depends on the absolute position</em>. Because rotations compose by addition, the dot product between a query at position <span class="math inline">\(m\)</span> and a key at position <span class="math inline">\(n\)</span> then depends only on <span class="math inline">\((m - n)\)</span>. You get <em>relative</em> positioning for free, with no learned parameters.</p>
+</section>
+<section id="derivation-via-complex-multiplication" class="level3">
+<h3 class="anchored" data-anchor-id="derivation-via-complex-multiplication">2.7.2 Derivation via complex multiplication</h3>
+<p>Let <span class="math inline">\(q, k \in \mathbb{R}^d\)</span> be a query and a key. Group the <span class="math inline">\(d\)</span> entries into pairs: <span class="math inline">\(q = (q^{(0)}, q^{(1)}, \dots, q^{(d/2-1)})\)</span> where each <span class="math inline">\(q^{(i)} \in \mathbb{R}^2\)</span>, and identify each <span class="math inline">\(\mathbb{R}^2\)</span> with <span class="math inline">\(\mathbb{C}\)</span>:</p>
+<p><span class="math display">\[
+q^{(i)} \leftrightarrow q^{(i)}_0 + i \, q^{(i)}_1 \in \mathbb{C}.
+\]</span></p>
+<p>Define <span class="math inline">\(d/2\)</span> frequencies <span class="math inline">\(\theta_i = 10000^{-2i/d}\)</span> (so <span class="math inline">\(\theta_0 = 1\)</span> is the highest frequency, <span class="math inline">\(\theta_{d/2-1}\)</span> the lowest). Position-encode by complex multiplication:</p>
+<p><span class="math display">\[
+\mathrm{RoPE}(q, m)^{(i)} = e^{i m \theta_i} \cdot q^{(i)}.
+\]</span></p>
+<p>Equivalently, in real coordinates, each <span class="math inline">\(q^{(i)}\)</span> is rotated by angle <span class="math inline">\(m \theta_i\)</span>:</p>
+<p><span class="math display">\[
+\begin{pmatrix} \tilde{q}^{(i)}_0 \\ \tilde{q}^{(i)}_1 \end{pmatrix}
+= \begin{pmatrix} \cos m\theta_i &amp; -\sin m\theta_i \\ \sin m\theta_i &amp; \cos m\theta_i \end{pmatrix}
+\begin{pmatrix} q^{(i)}_0 \\ q^{(i)}_1 \end{pmatrix}.
+\]</span></p>
+<p>The whole vector <span class="math inline">\(q\)</span> is thus rotated block-by-block. Do the same to the key <span class="math inline">\(k\)</span> with its position <span class="math inline">\(n\)</span>. Now look at the resulting dot product:</p>
+<p><span class="math display">\[
+\langle \mathrm{RoPE}(q, m), \mathrm{RoPE}(k, n) \rangle
+= \sum_i \Re \Big( e^{i m \theta_i} q^{(i)} \cdot \overline{e^{i n \theta_i} k^{(i)}} \Big)
+= \sum_i \Re \Big( e^{i (m-n) \theta_i} \, q^{(i)} \overline{k^{(i)}} \Big).
+\]</span></p>
+<p>The dot product depends on <span class="math inline">\(m - n\)</span>, not on <span class="math inline">\(m\)</span> and <span class="math inline">\(n\)</span> separately. This is the magic.</p>
+<blockquote class="blockquote">
+<p><strong>Why this matters.</strong> No learned parameters; no max-length limit; relative positions emerge from absolute positions through a simple algebraic identity. You can train at sequence length 8k and run inference at 32k or 128k with various interpolation tricks (NTK-aware RoPE, YaRN). Long-context LLMs ride on this.</p>
+</blockquote>
+</section>
+<section id="code-sketch" class="level3">
+<h3 class="anchored" data-anchor-id="code-sketch">2.7.3 Code sketch</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> apply_rope(x, freqs):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># x:     [B, H, L, D]  (D must be even)</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># freqs: [L, D/2]      (precomputed m * theta_i)</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    x_real, x_imag <span class="op">=</span> x[..., ::<span class="dv">2</span>], x[..., <span class="dv">1</span>::<span class="dv">2</span>]  <span class="co"># split pairs</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    cos, sin <span class="op">=</span> freqs.cos(), freqs.sin()         <span class="co"># [L, D/2]</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    y_real <span class="op">=</span> x_real <span class="op">*</span> cos <span class="op">-</span> x_imag <span class="op">*</span> sin</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    y_imag <span class="op">=</span> x_real <span class="op">*</span> sin <span class="op">+</span> x_imag <span class="op">*</span> cos</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> torch.stack([y_real, y_imag], dim<span class="op">=-</span><span class="dv">1</span>).flatten(<span class="op">-</span><span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="forward-reference-m-rope-and-interleaved-mrope" class="level3">
+<h3 class="anchored" data-anchor-id="forward-reference-m-rope-and-interleaved-mrope">2.7.4 Forward reference: M-RoPE and Interleaved-MRoPE</h3>
+<p>Now we earn the forward references promised at the top of the chapter. In Qwen2-VL (September 2024), the team noticed that the 1D-RoPE formulation above is wasteful for multimodal inputs, because text is 1D, images are 2D (height × width), and videos are 3D (time × height × width). Their solution, <strong>Multimodal Rotary Position Embedding (M-RoPE)</strong>, partitions the embedding dimension into three groups — <em>temporal</em>, <em>height</em>, and <em>width</em> — and applies a separate RoPE rotation to each group with its own position index. For a video token at time <span class="math inline">\(t\)</span>, row <span class="math inline">\(h\)</span>, column <span class="math inline">\(w\)</span>, the rotation angles are <span class="math inline">\((t \theta_i, h \theta_j, w \theta_k)\)</span> for <span class="math inline">\(i, j, k\)</span> ranging over the three sub-dimension groups. For pure text, all three indices coincide and M-RoPE collapses back to 1D-RoPE.</p>
+<p>Qwen2.5-VL kept M-RoPE but added an extra wrinkle: <strong>align the temporal IDs to absolute time</strong> rather than to frame indices. So if a 2 FPS video and a 0.5 FPS video both cover 8 seconds, the model sees the same temporal IDs at the same wall-clock time. This is what enables hour-long video understanding with second-level temporal grounding.</p>
+<p>Qwen3-VL (November 2025) noticed that M-RoPE’s three-way partition created an <em>imbalanced frequency spectrum</em>: temporal, height, and width axes each got their own slice of low and high frequencies, and the slicing hurt long-video performance. Their fix is <strong>Interleaved-MRoPE</strong>: instead of contiguous blocks of “temporal then height then width,” distribute the three components uniformly across the full embedding dimension so every axis sees the full low-to-high frequency range. They also drop the absolute-time RoPE in favor of <em>explicit text-based timestamp tokens</em> (e.g., a literal <code>&lt;3.0 seconds&gt;</code> token before each video frame group), because the absolute-time approach produced excessively large position indices for long videos.</p>
+<p>You will see all three variants in Chapter 6. For now, the takeaway is: RoPE is a flexible building block, and the way you assign position IDs is a real degree of freedom that VLM designers actively tune.</p>
+<div id="fig-rope" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rope-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://example.com/rope-schematic.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rope-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Figure 2.1: Schematic of RoPE rotating 2D sub-vectors of a query, and of the M-RoPE extension to (temporal, height, width) groups for video. See Su et al.&nbsp;2021 and Wang et al.&nbsp;2024.
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
+</section>
+<section id="chapter-3-attention-is-all-you-need-a-full-walkthrough-of-the-transformer" class="level1">
+<h1>Chapter 3 — Attention Is All You Need: A Full Walkthrough of the Transformer</h1>
+<p>The 2017 paper <em>Attention Is All You Need</em> by Vaswani et al.&nbsp;(<a href="https://arxiv.org/abs/1706.03762">arXiv:1706.03762</a>) is the most important machine learning paper of the last decade. Before it, sequence modeling meant RNNs and convolutions; after it, the transformer ate the field. This chapter walks through Vaswani’s architecture end-to-end, then catches up with the modifications that the post-2020 transformer ecosystem has accreted — KV-cache, grouped-query attention, FlashAttention, pre-LN — so that by the end you can read modern code without surprises.</p>
+<div id="fig-transformer" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-transformer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://lilianweng.github.io/posts/2018-06-24-attention/transformer.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-transformer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Figure 3.1: The original transformer architecture (Vaswani et al.&nbsp;2017). Encoder on the left, decoder on the right.
+</figcaption>
+</figure>
+</div>
+<section id="the-attention-mechanism-in-60-seconds" class="level2">
+<h2 class="anchored" data-anchor-id="the-attention-mechanism-in-60-seconds">3.1 The attention mechanism in 60 seconds</h2>
+<p>Given a sequence of <span class="math inline">\(L\)</span> token embeddings <span class="math inline">\(X \in \mathbb{R}^{L \times d_{\text{model}}}\)</span>, attention works like this:</p>
+<ol type="1">
+<li>Compute three projections: <span class="math inline">\(Q = X W_Q\)</span>, <span class="math inline">\(K = X W_K\)</span>, <span class="math inline">\(V = X W_V\)</span>. Each <span class="math inline">\(W_* \in \mathbb{R}^{d_{\text{model}} \times d_k}\)</span>, giving <span class="math inline">\(Q, K, V \in \mathbb{R}^{L \times d_k}\)</span>.</li>
+<li>Compute pairwise scores: <span class="math inline">\(S = Q K^T \in \mathbb{R}^{L \times L}\)</span>. Entry <span class="math inline">\(S_{ij}\)</span> is the unnormalized “how much should position <span class="math inline">\(i\)</span> attend to position <span class="math inline">\(j\)</span>?”</li>
+<li>Scale and softmax: <span class="math inline">\(A = \mathrm{softmax}(S / \sqrt{d_k})\)</span>. Each row of <span class="math inline">\(A\)</span> is a probability distribution over the <span class="math inline">\(L\)</span> positions.</li>
+<li>Weighted sum of values: <span class="math inline">\(\mathrm{Attn}(Q, K, V) = A V \in \mathbb{R}^{L \times d_k}\)</span>.</li>
+</ol>
+<p>Compactly:</p>
+<p><span class="math display">\[
+\mathrm{Attn}(Q, K, V) = \mathrm{softmax}\!\left(\frac{Q K^T}{\sqrt{d_k}}\right) V.
+\]</span></p>
+<p>That’s the whole equation. The mechanism is sometimes called “scaled dot-product attention” because of the <span class="math inline">\(\sqrt{d_k}\)</span> scaling.</p>
+</section>
+<section id="why-the-sqrtd_k-scaling" class="level2">
+<h2 class="anchored" data-anchor-id="why-the-sqrtd_k-scaling">3.2 Why the <span class="math inline">\(\sqrt{d_k}\)</span> scaling</h2>
+<p>Without the scaling, the dot product <span class="math inline">\(q \cdot k = \sum_{i=1}^{d_k} q_i k_i\)</span> for random <span class="math inline">\(q, k\)</span> with i.i.d. components of unit variance has variance <span class="math inline">\(d_k\)</span>. As <span class="math inline">\(d_k\)</span> grows — and in modern models it is typically 64 or 128 — the softmax inputs become enormous, pushing the softmax into a near-one-hot regime where gradients vanish. Dividing by <span class="math inline">\(\sqrt{d_k}\)</span> normalizes the variance back to a constant, keeping softmax in a regime where small differences in logits still produce meaningful gradient signal. This is a small but load-bearing detail — Vaswani notes it explicitly in section 3.2.1 of the paper.</p>
+</section>
+<section id="multi-head-attention" class="level2">
+<h2 class="anchored" data-anchor-id="multi-head-attention">3.3 Multi-head attention</h2>
+<p>A single attention head can only project queries and keys into one shared subspace. Multi-head attention runs <span class="math inline">\(h\)</span> independent heads in parallel — each with its own <span class="math inline">\(W_Q, W_K, W_V\)</span> matrices and its own dimensionality <span class="math inline">\(d_k = d_{\text{model}} / h\)</span> — and concatenates the outputs:</p>
+<p><span class="math display">\[
+\mathrm{MHA}(X) = \mathrm{Concat}(\mathrm{head}_1, \dots, \mathrm{head}_h) W_O,
+\]</span></p>
+<p>with each <span class="math inline">\(\mathrm{head}_i = \mathrm{Attn}(X W_Q^{(i)}, X W_K^{(i)}, X W_V^{(i)})\)</span> and <span class="math inline">\(W_O \in \mathbb{R}^{d_{\text{model}} \times d_{\text{model}}}\)</span>. The point of multiple heads is interpretability and capacity: different heads can specialize in different kinds of relations (subject-verb, anaphora, syntactic adjacency, etc.). For a model with <span class="math inline">\(d_{\text{model}} = 4096\)</span> and <span class="math inline">\(h = 32\)</span>, each head’s dimension is <span class="math inline">\(d_k = 128\)</span>.</p>
+<div id="fig-mha" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-mha-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://example.com/multihead-attention.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mha-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Figure 3.2: Scaled dot-product attention and multi-head attention. Vaswani et al.&nbsp;2017, Figure 2.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="the-encoder-decoder-structure-and-why-most-modern-llms-are-decoder-only" class="level2">
+<h2 class="anchored" data-anchor-id="the-encoder-decoder-structure-and-why-most-modern-llms-are-decoder-only">3.4 The encoder-decoder structure (and why most modern LLMs are decoder-only)</h2>
+<p>The original transformer was an <em>encoder-decoder</em> model for machine translation. The encoder is a stack of <span class="math inline">\(N\)</span> identical layers, each containing a self-attention sublayer and an FFN sublayer. The decoder is also <span class="math inline">\(N\)</span> identical layers but has <em>three</em> sublayers: causally-masked self-attention, cross-attention (queries from the decoder, keys/values from the encoder), and an FFN. Translation works by encoding the source sentence into a memory and then auto-regressively generating the target tokens, with each new target token cross-attending to the entire source.</p>
+<p>Modern LLMs (GPT, Llama, Qwen) are <em>decoder-only</em>: there is no separate encoder, just a stack of layers each doing causal self-attention followed by an FFN. Cross-attention reappears in VLMs (Chapter 6) and in encoder-decoder models like T5, but for pure language modeling, decoder-only won.</p>
+</section>
+<section id="cross-attention" class="level2">
+<h2 class="anchored" data-anchor-id="cross-attention">3.5 Cross-attention</h2>
+<p>In the decoder, cross-attention uses queries from the current decoder layer’s hidden states and keys/values from the encoder output. The math is identical to self-attention; only the source of <span class="math inline">\(K\)</span> and <span class="math inline">\(V\)</span> changes. This pattern reappears everywhere in modern multimodal models: text queries cross-attending to vision features, latent queries cross-attending to a long context, etc. The Qwen-VL v1 adapter (Chapter 6) is essentially one cross-attention layer with learned queries.</p>
+</section>
+<section id="the-feed-forward-sublayer" class="level2">
+<h2 class="anchored" data-anchor-id="the-feed-forward-sublayer">3.6 The feed-forward sublayer</h2>
+<p>Sandwiched between attention blocks, every transformer layer has an MLP applied identically to every position:</p>
+<p><span class="math display">\[
+\mathrm{FFN}(x) = W_2 \, \phi(W_1 x + b_1) + b_2,
+\]</span></p>
+<p>with hidden dimension typically <span class="math inline">\(4 d_{\text{model}}\)</span> in the original transformer. In modern models, this is replaced by SwiGLU (see 1.9), and the hidden dimension is shrunk by <span class="math inline">\(2/3\)</span> to keep parameter count constant. The Qwen2.5 LLM at 72B has <span class="math inline">\(d_{\text{model}} = 8192\)</span> and FFN intermediate size <span class="math inline">\(29568 \approx 3.6 \cdot d_{\text{model}}\)</span>, consistent with the SwiGLU shrink.</p>
+</section>
+<section id="pre-ln-vs.-post-ln" class="level2">
+<h2 class="anchored" data-anchor-id="pre-ln-vs.-post-ln">3.7 Pre-LN vs.&nbsp;post-LN</h2>
+<p>The original transformer puts LayerNorm <em>after</em> each residual addition: <span class="math inline">\(x \leftarrow \mathrm{LN}(x + \mathrm{Sublayer}(x))\)</span>. This is “post-LN” and turns out to be unstable for very deep networks — gradients explode without careful warmup. Around 2019, people realized that putting the norm <em>before</em> the sublayer — <span class="math inline">\(x \leftarrow x + \mathrm{Sublayer}(\mathrm{LN}(x))\)</span> — is much more stable and removes the need for an extensive warmup schedule. This is “pre-LN.” Every modern transformer uses pre-LN. (You can read the explicit argument in Xiong et al.&nbsp;2020, “On Layer Normalization in the Transformer Architecture.”)</p>
+</section>
+<section id="causal-masking" class="level2">
+<h2 class="anchored" data-anchor-id="causal-masking">3.8 Causal masking</h2>
+<p>For an autoregressive decoder, position <span class="math inline">\(i\)</span> must only attend to positions <span class="math inline">\(\leq i\)</span>. We enforce this by adding a mask <span class="math inline">\(M\)</span> to the attention logits before softmax, where <span class="math inline">\(M_{ij} = -\infty\)</span> for <span class="math inline">\(j &gt; i\)</span> and <span class="math inline">\(0\)</span> otherwise:</p>
+<p><span class="math display">\[
+A = \mathrm{softmax}\!\left(\frac{Q K^T}{\sqrt{d_k}} + M\right).
+\]</span></p>
+<p>In practice, this is a single triangular boolean operation in code, but conceptually it is what makes an LLM able to generate text one token at a time.</p>
+</section>
+<section id="kv-cache-and-the-on-trick" class="level2">
+<h2 class="anchored" data-anchor-id="kv-cache-and-the-on-trick">3.9 KV-cache and the O(n) trick</h2>
+<p>At inference time, generating a new token only requires computing one new query, one new key, and one new value. The keys and values from all previous positions are unchanged — so we cache them. The KV-cache is an array of shape <code>[B, L, H, d_k]</code> per layer (one each for K and V) that we append to as we generate. The cost per generated token then becomes <span class="math inline">\(O(L \cdot d)\)</span> (one query times <span class="math inline">\(L\)</span> cached keys) rather than <span class="math inline">\(O(L^2 \cdot d)\)</span>. For long-context inference this is the difference between viable and unviable.</p>
+<p>The KV-cache also dominates inference memory. For a 70B model with 80 layers, <span class="math inline">\(H = 64\)</span>, <span class="math inline">\(d_k = 128\)</span>, the KV-cache for a single sequence at 32k tokens is roughly <span class="math inline">\(2 \cdot 80 \cdot 32000 \cdot 64 \cdot 128 \cdot 2\)</span> bytes ≈ 80 GB. This is why Llama-3 70B and Qwen2.5-72B don’t actually serve 128k context to many concurrent users — your VRAM runs out long before your compute does.</p>
+</section>
+<section id="gqa-and-mqa" class="level2">
+<h2 class="anchored" data-anchor-id="gqa-and-mqa">3.10 GQA and MQA</h2>
+<p>The fix for that KV-cache problem is to have fewer key/value heads than query heads. <strong>Multi-Query Attention (MQA)</strong> uses one shared key and value across all heads. <strong>Grouped-Query Attention (GQA)</strong> (Ainslie et al.&nbsp;2023) splits the difference: <span class="math inline">\(H\)</span> query heads share <span class="math inline">\(G\)</span> key/value heads, with <span class="math inline">\(G \ll H\)</span>. Llama-2-70B uses <span class="math inline">\(H = 64\)</span>, <span class="math inline">\(G = 8\)</span>; Qwen2.5 follows the same template. The Qwen2.5-VL table earlier shows “# KV Heads” = 2/4/8 for the 3B/7B/72B variants, with <span class="math inline">\(H\)</span> implied by the head size (128) and hidden size — i.e., aggressive GQA. The KV-cache shrinks by a factor of <span class="math inline">\(H/G\)</span>, which for Llama-2 is <span class="math inline">\(8\times\)</span>.</p>
+<p>GQA is essentially free: there is a tiny capacity hit, but the inference memory savings are enormous, and at the scales we care about (7B+) the capacity hit is unmeasurable.</p>
+</section>
+<section id="flashattention" class="level2">
+<h2 class="anchored" data-anchor-id="flashattention">3.11 FlashAttention</h2>
+<p>The attention operation <span class="math inline">\(\mathrm{softmax}(Q K^T / \sqrt{d_k}) V\)</span> is, naively, an <span class="math inline">\(L \times L\)</span> matrix that you materialize, normalize, and multiply by <span class="math inline">\(V\)</span>. For <span class="math inline">\(L = 8192\)</span> and <code>float16</code>, that’s 256 MB <em>per head per batch</em>, and you have many heads and batches. The bottleneck is not FLOPs — it is <em>memory bandwidth</em>: shuttling the <span class="math inline">\(L \times L\)</span> logits from HBM (GPU main memory) to SRAM (on-chip cache) and back.</p>
+<p>FlashAttention (Dao et al.&nbsp;2022) is the algorithmic insight that you can compute exact attention <em>without ever materializing the <span class="math inline">\(L \times L\)</span> matrix in HBM</em>. The trick is to tile the computation: read a block of <span class="math inline">\(Q\)</span> and a block of <span class="math inline">\(K\)</span> into SRAM, compute their dot products and a running max/sum for the softmax, accumulate into a partial output, and proceed to the next block. The numerically stable streaming softmax lets you compose blocks correctly. The result is exact attention, with 2–4× speedup and dramatic memory savings, especially at long sequence length. FlashAttention-2 and FlashAttention-3 incrementally improved this, and now it is the default kernel in PyTorch’s <code>scaled_dot_product_attention</code>.</p>
+<blockquote class="blockquote">
+<p><strong>Editorial note.</strong> FlashAttention is the kind of paper that changes everything by changing very little — the math is unchanged, only the implementation is rethought. Almost every long-context LLM you see today (Qwen2.5-VL with 128k, Qwen3-VL with 256k, Llama-3 with 128k) depends on it. If you write a transformer from scratch today and skip FlashAttention, you have a teaching toy, not a useful model.</p>
+</blockquote>
+</section>
+<section id="putting-it-together-pseudocode-for-a-transformer-block" class="level2">
+<h2 class="anchored" data-anchor-id="putting-it-together-pseudocode-for-a-transformer-block">3.12 Putting it together: pseudocode for a transformer block</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> transformer_block(x, layer_idx):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># x: [B, L, D]</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ----- attention sublayer (pre-LN, GQA, RoPE) -----</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    h <span class="op">=</span> rms_norm(x)                              <span class="co"># [B, L, D]</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    q <span class="op">=</span> h <span class="op">@</span> W_q[layer_idx]                       <span class="co"># [B, L, H * d_k]</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    k <span class="op">=</span> h <span class="op">@</span> W_k[layer_idx]                       <span class="co"># [B, L, G * d_k]</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    v <span class="op">=</span> h <span class="op">@</span> W_v[layer_idx]                       <span class="co"># [B, L, G * d_k]</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    q, k <span class="op">=</span> apply_rope(q), apply_rope(k)          <span class="co"># rotate by position</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    k <span class="op">=</span> k.repeat_interleave(H <span class="op">//</span> G, dim<span class="op">=-</span><span class="dv">2</span>)      <span class="co"># broadcast GQA keys</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    v <span class="op">=</span> v.repeat_interleave(H <span class="op">//</span> G, dim<span class="op">=-</span><span class="dv">2</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> flash_attention(q, k, v, causal<span class="op">=</span><span class="va">True</span>)    <span class="co"># [B, L, H * d_k]</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> x <span class="op">+</span> a <span class="op">@</span> W_o[layer_idx]                   <span class="co"># residual</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ----- FFN sublayer (pre-LN, SwiGLU) -----</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    h <span class="op">=</span> rms_norm(x)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    gate <span class="op">=</span> swish(h <span class="op">@</span> W_gate[layer_idx])          <span class="co"># [B, L, D_ffn]</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    up   <span class="op">=</span> h <span class="op">@</span> W_up[layer_idx]                   <span class="co"># [B, L, D_ffn]</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> x <span class="op">+</span> (gate <span class="op">*</span> up) <span class="op">@</span> W_down[layer_idx]      <span class="co"># residual</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This single function, repeated <span class="math inline">\(N\)</span> times (e.g.&nbsp;32 layers for a 7B model, 80 for 70B), with an embedding lookup at the start and an unembedding linear at the end, is the entire modern decoder-only transformer. There is nothing else.</p>
+</section>
+</section>
+<section id="chapter-4-from-transformer-to-llm" class="level1">
+<h1>Chapter 4 — From Transformer to LLM</h1>
+<p>A transformer is an architecture. A <em>large language model</em> is a transformer trained at scale on a next-token-prediction objective, then aligned and instruction-tuned. The leap from the 2017 transformer to GPT-3 (2020) to GPT-4 (2023) to the o1/R1-style reasoning models (2024–2025) was not driven by clever architecture changes — the architecture barely changed. It was driven by <strong>scale</strong>: more parameters, more data, more compute. And then by <strong>post-training</strong>: SFT, RLHF, DPO, and the long chain-of-thought revolution. This chapter walks through that arc.</p>
+<section id="the-autoregressive-next-token-objective" class="level2">
+<h2 class="anchored" data-anchor-id="the-autoregressive-next-token-objective">4.1 The autoregressive next-token objective</h2>
+<p>The training objective for an LLM is laughably simple. Take a corpus <span class="math inline">\(\mathcal{D}\)</span> of tokenized text. For each sequence <span class="math inline">\(x_1, \dots, x_T\)</span>, minimize the negative log-likelihood</p>
+<p><span class="math display">\[
+\mathcal{L}(\theta) = -\sum_{t=1}^{T} \log p_\theta(x_t \mid x_1, \dots, x_{t-1}).
+\]</span></p>
+<p>That’s it. There is no clever auxiliary loss, no contrastive term, no reconstruction penalty. Just: predict the next token given the previous ones. The transformer with causal masking gives us <span class="math inline">\(p_\theta(x_t \mid x_{&lt;t})\)</span> at every position simultaneously, and we sum the cross-entropies. A 7-billion-parameter model trained on 2 trillion tokens of high-quality text will see roughly <span class="math inline">\(2 \times 10^{12}\)</span> next-token-prediction problems, and the gradient signal from each one nudges the model toward a slightly better next-token guess.</p>
+</section>
+<section id="the-gpt-lineage-and-emergent-capability" class="level2">
+<h2 class="anchored" data-anchor-id="the-gpt-lineage-and-emergent-capability">4.2 The GPT lineage and emergent capability</h2>
+<p>GPT-1 (2018, 110M parameters) showed that transformer pretraining transfers to downstream tasks. GPT-2 (2019, 1.5B) showed that scaling the same recipe up gave you a model that could do zero-shot translation and summarization without ever being fine-tuned. GPT-3 (2020, 175B) showed <em>in-context learning</em>: feed the model a few examples in the prompt and it would generalize to new examples of the same task. GPT-4 (2023) cranked the recipe one more notch and produced something that could pass the bar exam.</p>
+<p>The recurring lesson, articulated as the “scaling hypothesis,” is that <em>capabilities emerge from scale</em>. Subjectively, the model goes from autocomplete to writer to research assistant as you turn the dial on parameters × data × compute. Why this happens is still partly a mystery; the empirical fact is robust enough that every major lab has rebuilt their roadmap around it.</p>
+<blockquote class="blockquote">
+<p><strong>3blue1brown framing.</strong> Sanderson’s “What does GPT actually learn?” video makes a useful point: the MLP sublayers can be read as approximate <em>key-value memories</em>. The first linear layer of the FFN matches incoming activations against a bank of learned “key patterns” — for example, “the input looks like the name of a U.S. president followed by ‘was born in.’” If the match is strong, the nonlinearity passes the score through, and the second linear layer adds back a “value vector” — perhaps the embedding of “Virginia” or “Illinois.” Attention layers then route information between positions: pulling the right name forward, sending the year backward. Networks of this form can store an astonishing amount of factual knowledge in their weights, because there are billions of (key, value) memory cells distributed across hundreds of FFN layers. This is the cleanest mental model I have seen for what a trained LLM <em>is</em>.</p>
+</blockquote>
+</section>
+<section id="pretraining-data-and-the-chinchilla-recipe" class="level2">
+<h2 class="anchored" data-anchor-id="pretraining-data-and-the-chinchilla-recipe">4.3 Pretraining data and the Chinchilla recipe</h2>
+<p>The Chinchilla paper (Hoffmann et al., 2022) shifted the conventional wisdom about scaling. For a given compute budget <span class="math inline">\(C\)</span>, what should you spend it on — more parameters or more data? The old answer was “more parameters.” Chinchilla showed that for compute-optimal training, parameters and data should be scaled roughly <em>equally</em> — each doubling of compute should buy you a <span class="math inline">\(\sqrt{2}\times\)</span> in both. Their target ratio was ~20 tokens per parameter for optimal training. Llama-1 ran “Chinchilla-optimal”; Llama-2 went past it (more tokens per parameter); Llama-3 went much further (15T tokens for a 70B model is over 200 tokens per parameter), because <em>inference compute matters too</em> — a smaller model trained on more data is cheaper to serve forever.</p>
+<p>The Qwen lineage tells the same story. Qwen2-VL trained on 1.2T multimodal tokens; Qwen2.5-VL scaled to 4.1T; Qwen3-VL’s pretraining proceeds in four phases — alignment (67B), multimodal pretraining (~1T at 8k), long-context (~1T at 32k), and ultra-long-context (100B at 256k). The total token budget is north of 2T, but spread across multiple stages and modalities.</p>
+</section>
+<section id="supervised-fine-tuning-sft-and-instruction-following" class="level2">
+<h2 class="anchored" data-anchor-id="supervised-fine-tuning-sft-and-instruction-following">4.4 Supervised fine-tuning (SFT) and instruction following</h2>
+<p>A model trained purely on raw next-token prediction is a <em>base model</em>. It can generate text fluently but it is not an assistant — it will continue your prompt rather than answer it, and it has no sense of dialogue, refusal, or helpfulness. To turn a base model into an assistant, you fine-tune it on <em>(instruction, response)</em> pairs:</p>
+<pre><code>&lt;|im_start|&gt;user
+Explain photosynthesis to a 10-year-old.&lt;|im_end|&gt;
+&lt;|im_start|&gt;assistant
+Plants are like little green factories...&lt;|im_end|&gt;</code></pre>
+<p>The training objective is the same — cross-entropy on the next token — but the <em>loss is only applied to the assistant turn</em>, not to the user turn. This teaches the model to follow the chat template and to produce responses that look like the curated dataset.</p>
+<p>Modern SFT datasets are large — Qwen2.5-VL’s SFT mix has ~2 million examples, evenly split between text and multimodal — and heavily filtered. Quality dominates quantity at the SFT stage; a few hundred thousand well-curated examples often beat a million scraped ones.</p>
+</section>
+<section id="rlhf-and-dpo" class="level2">
+<h2 class="anchored" data-anchor-id="rlhf-and-dpo">4.5 RLHF and DPO</h2>
+<p>SFT teaches the model to imitate human-written responses. It does not teach the model to <em>prefer</em> one response over another. For that, we use preference data: pairs of responses <span class="math inline">\((y_w, y_l)\)</span> to the same prompt, where <span class="math inline">\(y_w\)</span> is “preferred” (chosen) and <span class="math inline">\(y_l\)</span> is “rejected.” This data is collected from human annotators or from a stronger LLM acting as judge.</p>
+<p><strong>RLHF</strong> (Christiano et al.&nbsp;2017, applied to LLMs by InstructGPT, Ouyang et al.&nbsp;2022) trains a <em>reward model</em> <span class="math inline">\(r_\phi(x, y)\)</span> to predict the human preference (high reward for <span class="math inline">\(y_w\)</span>, low reward for <span class="math inline">\(y_l\)</span>), and then uses reinforcement learning (typically PPO) to optimize the LLM to maximize the reward while staying close to the SFT model via a KL penalty:</p>
+<p><span class="math display">\[
+\max_\theta \, \mathbb{E}_{x, y \sim \pi_\theta} \big[\, r_\phi(x, y) - \beta \, \mathrm{KL}(\pi_\theta(\cdot \mid x) \,\|\, \pi_{\text{SFT}}(\cdot \mid x))\,\big].
+\]</span></p>
+<p>RLHF works, but it’s a pain — you need to train and maintain the reward model, the PPO loop is finicky, and the reward model itself is a moving target.</p>
+<p><strong>DPO</strong> (Direct Preference Optimization, Rafailov et al.&nbsp;2023) is a beautiful closed-form alternative. The Bradley-Terry preference model says the probability that <span class="math inline">\(y_w\)</span> is preferred over <span class="math inline">\(y_l\)</span> is <span class="math inline">\(\sigma(r(x, y_w) - r(x, y_l))\)</span>. If we parameterize the reward implicitly as <span class="math inline">\(r(x, y) = \beta \log (\pi_\theta(y \mid x) / \pi_{\text{ref}}(y \mid x))\)</span>, then we can train the model directly on the preference data without ever instantiating a reward model:</p>
+<p><span class="math display">\[
+\mathcal{L}_{\text{DPO}}(\theta) = -\mathbb{E}_{(x, y_w, y_l)} \big[\,\log \sigma\big(\beta \log \tfrac{\pi_\theta(y_w \mid x)}{\pi_{\text{ref}}(y_w \mid x)} - \beta \log \tfrac{\pi_\theta(y_l \mid x)}{\pi_{\text{ref}}(y_l \mid x)}\big)\,\big].
+\]</span></p>
+<p>This is just a logistic loss on the <em>log-probability gap</em> between the chosen and rejected responses, with the reference policy <span class="math inline">\(\pi_{\text{ref}}\)</span> (the SFT model) acting as a regularizer. No PPO, no reward model, much more stable. Most open-source post-training in 2024–2025 uses DPO or a close variant (IPO, KTO, ORPO, SimPO). Qwen2.5-VL’s post-training is SFT + DPO; Qwen3-VL adds a reinforcement-learning stage (SAPO) on top of distillation.</p>
+</section>
+<section id="chain-of-thought-and-the-reasoning-revolution" class="level2">
+<h2 class="anchored" data-anchor-id="chain-of-thought-and-the-reasoning-revolution">4.6 Chain-of-thought and the reasoning revolution</h2>
+<p>Around 2022, Wei et al.&nbsp;noticed that prompting an LLM with “let’s think step by step” before the final answer produced dramatically better results on math and reasoning tasks. This is <em>chain-of-thought (CoT) prompting</em>. The model is, mechanically, still doing next-token prediction — but it is using its own intermediate tokens as scratch space, expanding the effective compute per token by emitting many tokens of work before committing to an answer.</p>
+<p>The 2024–2025 <em>reasoning revolution</em> (OpenAI’s o1, DeepSeek’s R1, Qwen’s QwQ, Anthropic’s extended thinking) takes this further by <em>training the model to produce long chains of thought</em>. You generate many CoT traces, score them by whether the final answer is correct, and fine-tune (or RL-train) the model to produce more of the traces that worked. The result is a model that can spend tens of thousands of tokens “thinking” before answering, dramatically improving performance on math, code, and STEM benchmarks.</p>
+<p>Qwen3-VL explicitly ships <em>thinking</em> and <em>non-thinking</em> variants. The thinking variant achieves much higher scores on MathVision (74.6 vs.&nbsp;66.5 on the 235B-A22B model) and similar reasoning benchmarks. The post-training pipeline now includes a “long-CoT cold start” SFT stage followed by RL — a recipe that has rapidly become standard.</p>
+</section>
+<section id="system-1-vs-system-2-and-a-forward-reference-to-jepa" class="level2">
+<h2 class="anchored" data-anchor-id="system-1-vs-system-2-and-a-forward-reference-to-jepa">4.7 System 1 vs System 2, and a forward reference to JEPA</h2>
+<p>Daniel Kahneman’s “Thinking, Fast and Slow” splits cognition into System 1 (fast, automatic, pattern-matching) and System 2 (slow, deliberate, planning). The standard LLM is almost entirely System 1: it has phenomenal pattern completion, but it does not <em>plan</em>. CoT and the reasoning revolution are attempts to bolt a kind of System 2 onto System 1 via long, deliberate token sequences.</p>
+<p>Yann LeCun’s well-known critique (we will revisit in Part C and Part D) is that this whole approach is on the wrong track. Predicting tokens, he argues, will never give you a model that understands the world — only one that has memorized how text talks about the world. His positive proposal is JEPA (Joint Embedding Predictive Architecture): predict <em>latent representations</em> of future inputs rather than raw inputs, and use that as the foundation for both perception and planning. We will look at I-JEPA, V-JEPA, and V-JEPA 2 in Part D. For now, hold the question: <em>is next-token prediction enough, or do we need a structurally different objective for the embodied / world-model side of AI?</em></p>
+</section>
+<section id="hallucination-as-a-structural-property" class="level2">
+<h2 class="anchored" data-anchor-id="hallucination-as-a-structural-property">4.8 Hallucination as a structural property</h2>
+<p>A model trained by likelihood maximization is, fundamentally, <em>trying to be a good language model</em>, not <em>trying to be truthful</em>. Truthful answers are rewarded only insofar as they appear more often in the training data than untruthful ones — which they often do, but not always. The result is hallucination: confident, fluent, plausible-sounding text that is also wrong.</p>
+<p>You cannot RLHF this out entirely. You can suppress it in well-covered topics, you can make the model refuse to answer when uncertain, you can ground it on retrieval. But the structural failure mode — that an LLM has no privileged way to know what it does and does not know — is a property of the training objective. Any honest discussion of LLMs in 2026 has to acknowledge this; it is the thing that, more than anything else, separates “this can pass the bar exam” from “this can be trusted as a junior associate.”</p>
+</section>
+</section>
+<section id="chapter-5-vision-encoders-from-cnn-to-vit-to-clip-to-siglip" class="level1">
+<h1>Chapter 5 — Vision Encoders: From CNN to ViT to CLIP to SigLIP</h1>
+<p>To build a vision-language model, you need a vision encoder: a function that takes an image and produces a sequence of feature vectors that a language model can consume. This chapter traces the encoder lineage from the CNN era through ViT, CLIP, and SigLIP, with a brief tour of the DINO self-supervised lineage. By the end you will see why modern VLMs (LLaVA, Qwen-VL, all of them) reach for <em>some flavor of contrastively pretrained ViT</em> as their vision encoder essentially by default.</p>
+<section id="the-cnn-era-alexnet-vgg-resnet" class="level2">
+<h2 class="anchored" data-anchor-id="the-cnn-era-alexnet-vgg-resnet">5.1 The CNN era: AlexNet, VGG, ResNet</h2>
+<p>For most of the 2010s, computer vision meant <em>convolutional</em> neural networks. A convolution applies a small filter (3×3 or 5×5) at every spatial position, producing a feature map. Two properties matter:</p>
+<ol type="1">
+<li><strong>Weight sharing.</strong> The same filter is applied everywhere — so a cat-detector filter trained on one part of the image works for cats anywhere in the image.</li>
+<li><strong>Translation equivariance.</strong> If you shift the input, the output shifts correspondingly. This is the right inductive bias for natural images.</li>
+</ol>
+<p>AlexNet (Krizhevsky et al.&nbsp;2012) was the model that won ImageNet by a huge margin and started the deep learning revolution. VGG (2014) showed that going deeper with small filters helped. ResNet (He et al.&nbsp;2015) introduced residual connections and made 50-, 101-, even 152-layer CNNs trainable.</p>
+<p>For nearly a decade, the question “what feature extractor should I use?” had a default answer: ResNet-50 or ResNet-101, pretrained on ImageNet. Everything from object detection to image captioning bolted onto a pretrained ResNet trunk. CNNs are still excellent — and still used widely in mobile and edge deployments — but for foundation-model-scale work, they have been displaced.</p>
+</section>
+<section id="the-vision-transformer-vit" class="level2">
+<h2 class="anchored" data-anchor-id="the-vision-transformer-vit">5.2 The Vision Transformer (ViT)</h2>
+<p>Dosovitskiy et al.’s 2020 paper “An Image is Worth 16×16 Words” asked a question that, in retrospect, was obvious: what if we just <em>tokenize the image</em> and feed it to a transformer? Their procedure:</p>
+<ol type="1">
+<li>Split the image into non-overlapping 16×16 (or 14×14) patches.</li>
+<li>Flatten each patch and linearly project it into a <span class="math inline">\(d\)</span>-dimensional embedding. A 224×224 image at 16×16 patches gives <span class="math inline">\(14 \times 14 = 196\)</span> patch tokens.</li>
+<li>Prepend a learned <code>[CLS]</code> token whose final representation will be the image-level classifier output.</li>
+<li>Add a learned positional embedding (one per spatial position).</li>
+<li>Feed the resulting sequence of 197 tokens into a standard transformer encoder.</li>
+</ol>
+<p>That’s it. There is <em>no convolutional inductive bias</em>. The model has to learn locality, translation equivariance, and everything else from scratch. The price: ViT only works with a lot of data. On ImageNet alone it underperforms ResNets, but pretrained on JFT-300M (Google’s internal 300-million-image dataset), it crushes them. Subsequent work showed ViTs scale better than CNNs both with data and with parameters — the 2022 ViT-G/14 has 2 billion parameters.</p>
+<p>The 14×14 patch size has stuck. Qwen-VL uses ViT-bigG/14; Qwen2-VL uses a 675M DFN-ViT with stride 14; Qwen2.5-VL trains its own ViT from scratch with 14×14 patches and 32 layers; Qwen3-VL uses SigLIP-2-SO-400M. The patch grid is the universal input format for modern vision encoders.</p>
+<div id="fig-vit" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-vit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://example.com/vit-architecture.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-vit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Figure 5.1: The Vision Transformer turns an image into a sequence of 16×16 patch tokens, then runs a standard transformer encoder over them. Dosovitskiy et al.&nbsp;2020.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="clip-contrastive-image-text-pretraining" class="level2">
+<h2 class="anchored" data-anchor-id="clip-contrastive-image-text-pretraining">5.3 CLIP: contrastive image-text pretraining</h2>
+<p>The 2021 paper “Learning Transferable Visual Models From Natural Language Supervision” by Radford et al.&nbsp;(OpenAI) was a phase change. The setup is dead simple:</p>
+<ul>
+<li>Scrape ~400 million (image, caption) pairs from the open web.</li>
+<li>Train two encoders in parallel: a ViT for images, a text transformer for captions.</li>
+<li>For a batch of <span class="math inline">\(N\)</span> pairs, compute all <span class="math inline">\(N \times N\)</span> similarities between image embeddings and text embeddings.</li>
+<li>Optimize a <em>contrastive</em> loss: the diagonal of the similarity matrix (correctly-paired images and captions) should have high similarity, the off-diagonal (mismatched) pairs should have low similarity.</li>
+</ul>
+<p>The contrastive loss is <strong>InfoNCE</strong> (van den Oord et al.&nbsp;2018):</p>
+<p><span class="math display">\[
+\mathcal{L}_{\text{img}\to\text{txt}} = -\frac{1}{N}\sum_{i=1}^{N} \log \frac{\exp(\langle z^{\text{img}}_i, z^{\text{txt}}_i \rangle / \tau)}{\sum_{j=1}^{N} \exp(\langle z^{\text{img}}_i, z^{\text{txt}}_j \rangle / \tau)},
+\]</span></p>
+<p>with a learnable temperature <span class="math inline">\(\tau\)</span>. A symmetric loss <span class="math inline">\(\mathcal{L}_{\text{txt}\to\text{img}}\)</span> is added; the total loss is their average. Mechanically, this is exactly a <span class="math inline">\(2N\)</span>-way classification problem (image classifies caption, caption classifies image) implemented with a softmax over the batch.</p>
+<p>The magic is what falls out for free. By training on web-scale alt-text — captions are <em>noisy</em> but they are <em>aligned to images</em> and they are <em>plentiful</em> — the model learns a joint embedding space where an image’s embedding is close to its caption’s embedding. You can then do:</p>
+<ul>
+<li><strong>Zero-shot classification.</strong> To classify an image, encode it once with the image encoder; encode the candidate labels (e.g., “a photo of a cat,” “a photo of a dog”) with the text encoder; pick the label whose text embedding is closest to the image embedding. ImageNet zero-shot accuracy in CLIP’s original release was 76% — competitive with a <em>supervised</em> ResNet-50, without ever seeing an ImageNet label.</li>
+<li><strong>Image-text retrieval.</strong> Free, in both directions.</li>
+<li><strong>A pretrained image encoder for downstream tasks.</strong> Just throw away the text tower.</li>
+</ul>
+<p>The CLIP-ViT-L/14 image encoder, in particular, became the de facto vision backbone for early VLMs. LLaVA used it; MiniGPT-4 used it; Flamingo used a variant. The Qwen-VL v1 paper specifically initializes from OpenCLIP’s ViT-bigG.</p>
+<blockquote class="blockquote">
+<p><strong>Editorial note.</strong> The deepest lesson of CLIP is not the contrastive loss. It is that <em>the open-web image-caption corpus is one of the most valuable training signals in machine learning history</em>, and that nobody had previously thought to use it at scale. The data was the breakthrough; the architecture was almost a side effect.</p>
+</blockquote>
+</section>
+<section id="siglip-and-siglip-2" class="level2">
+<h2 class="anchored" data-anchor-id="siglip-and-siglip-2">5.4 SigLIP and SigLIP 2</h2>
+<p>CLIP’s softmax-over-the-batch is computationally awkward at very large batch sizes — you need an all-to-all gather of embeddings across GPUs, and the softmax normalizer involves the entire batch. SigLIP (Zhai et al.&nbsp;2023, “Sigmoid Loss for Language Image Pre-training”) replaces the softmax with a <em>pointwise sigmoid</em> loss:</p>
+<p><span class="math display">\[
+\mathcal{L} = -\frac{1}{N}\sum_{i,j} \log \sigma\big(z_{ij} \cdot (\langle z^{\text{img}}_i, z^{\text{txt}}_j \rangle / \tau + b)\big),
+\]</span></p>
+<p>where <span class="math inline">\(z_{ij} = +1\)</span> if <span class="math inline">\(i = j\)</span> and <span class="math inline">\(-1\)</span> otherwise. Each pair contributes independently; there is no batch-wide normalizer. This decouples the loss from the batch size — you can use very large batches without expensive gathers — and empirically gives slightly better encoders.</p>
+<p>SigLIP-2 (Tschannen et al.&nbsp;2025) extends SigLIP with multi-task pretraining (captioning + contrastive + dense self-supervised objectives), longer training, and better data curation. The SigLIP-2 SO-400M (“SoViT” with 400M parameters) is the vision encoder Qwen3-VL ships with, replacing the DFN-ViT used in Qwen2-VL and Qwen2.5-VL.</p>
+</section>
+<section id="dino-and-the-self-supervised-lineage" class="level2">
+<h2 class="anchored" data-anchor-id="dino-and-the-self-supervised-lineage">5.5 DINO and the self-supervised lineage</h2>
+<p>In parallel, a different school built vision encoders without any text. DINO (Caron et al.&nbsp;2021) and DINOv2 (Oquab et al.&nbsp;2023) train ViTs with self-distillation on unlabeled images: a student network and a teacher network see different augmentations of the same image and have to agree, with a centering trick to avoid collapse. The resulting representations have remarkable emergent properties — attention maps that segment objects without any supervision, features that transfer to dense prediction tasks like segmentation and depth.</p>
+<p>DINO encoders are excellent for tasks that need spatial structure (segmentation, robotics, world models). For VLMs they have lost to CLIP / SigLIP descendants, because contrastive vision-language pretraining gives the encoder a semantic “language-aligned” structure that pure self-supervision does not.</p>
+<p>The Meta JEPA family (I-JEPA, V-JEPA, V-JEPA 2 — covered in Part D) extends this self-supervised lineage with a <em>latent-space prediction</em> objective, designed for world modeling rather than perception per se.</p>
+</section>
+<section id="the-handoff-to-chapter-6" class="level2">
+<h2 class="anchored" data-anchor-id="the-handoff-to-chapter-6">5.6 The handoff to Chapter 6</h2>
+<p>By 2023, the field had converged on a recipe: take a CLIP-style ViT, freeze it (or partially train it), and bolt it to a large language model via a small adapter. The next chapter walks through this bolt-on in detail — first with LLaVA, then with the full Qwen-VL lineage. Hold this thought: <em>the vision encoder produces a sequence of patch token embeddings; we just have to teach the LLM to read them.</em></p>
+</section>
+</section>
+<section id="chapter-6-vision-language-models-llava-and-the-qwen-vl-lineage" class="level1">
+<h1>Chapter 6 — Vision-Language Models: LLaVA and the Qwen-VL Lineage</h1>
+<p>This chapter is the keystone of Part A. We have spent five chapters preparing the ground; here we put it together into the architecture that drives every multimodal frontier model in 2026. The plot is a slow zoom from a single sentence to a full architectural cheat sheet, with the Qwen-VL family (versions 1 through 3) as the worked example.</p>
+<section id="the-recipe-in-one-sentence" class="level2">
+<h2 class="anchored" data-anchor-id="the-recipe-in-one-sentence">6.1 The recipe in one sentence</h2>
+<blockquote class="blockquote">
+<p>Use a (frozen or partially trained) vision encoder to embed image patches into the LLM’s token space, then train the whole thing on multimodal instruction data.</p>
+</blockquote>
+<p>That is, structurally, every VLM you will ever read about. The variations are:</p>
+<ul>
+<li><em>Which vision encoder?</em> (CLIP, SigLIP, DINO, custom-trained.)</li>
+<li><em>How do you bridge from vision feature space to LLM token space?</em> (Linear projection, MLP, Q-Former cross-attention, DeepStack cross-layer fusion.)</li>
+<li><em>Which LLM backbone?</em> (Llama, Qwen, Vicuna, Mistral, DeepSeek.)</li>
+<li><em>What’s the training schedule?</em> (Pretrain only the adapter; then unfreeze; then SFT; then DPO; then RL.)</li>
+<li><em>What is the training data?</em> (Web alt-text; OCR; documents; charts; videos; agent traces.)</li>
+</ul>
+<p>Once you can fill in those five blanks for any new paper, you can read the paper.</p>
+</section>
+<section id="llava-visual-instruction-tuning-neurips-2023" class="level2">
+<h2 class="anchored" data-anchor-id="llava-visual-instruction-tuning-neurips-2023">6.2 LLaVA: visual instruction tuning (NeurIPS 2023)</h2>
+<p>LLaVA — <em>Large Language and Vision Assistant</em> — by Liu, Li, Wu, and Lee (NeurIPS 2023, project page at <a href="https://llava-vl.github.io/" class="uri">https://llava-vl.github.io/</a>) was the paper that did the simplest possible bolt-on and showed that it worked beautifully. It is the spiritual reference architecture for everything that came after.</p>
+<div id="fig-llava" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-llava-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://llava-vl.github.io/images/llava_logo.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-llava-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Figure 6.1: LLaVA’s architecture — a frozen CLIP vision encoder, a learned projection matrix, and a Vicuna LLM. See Liu et al.&nbsp;2023.
+</figcaption>
+</figure>
+</div>
+<section id="architecture" class="level3">
+<h3 class="anchored" data-anchor-id="architecture">6.2.1 Architecture</h3>
+<p>LLaVA has three components:</p>
+<ol type="1">
+<li><strong>Vision encoder.</strong> CLIP ViT-L/14, frozen.</li>
+<li><strong>Projection.</strong> A <em>single linear layer</em> <span class="math inline">\(W \in \mathbb{R}^{d_{\text{vision}} \times d_{\text{text}}}\)</span> that maps each patch token’s CLIP feature into the Vicuna embedding space.</li>
+<li><strong>LLM.</strong> Vicuna-7B or Vicuna-13B (a Llama-derivative SFT’d on ShareGPT data).</li>
+</ol>
+<p>That’s it. There is no Q-Former, no cross-attention, no learnable query tokens — just a linear projection. The image tokens are concatenated with the text tokens, and the whole sequence is fed into the LLM as a single autoregressive stream.</p>
+</section>
+<section id="visual-instruction-tuning-data" class="level3">
+<h3 class="anchored" data-anchor-id="visual-instruction-tuning-data">6.2.2 Visual instruction tuning data</h3>
+<p>The real contribution of LLaVA was not the architecture. It was the <em>training data</em>. The authors used a <em>language-only</em> GPT-4 (no vision) and showed that you can prompt it with the <em>captions and bounding-box annotations</em> of an image — i.e., a structured text description — to generate high-quality multimodal instruction-following dialogues <em>about</em> the image. They built a 158k-example dataset this way, with three sub-types:</p>
+<ul>
+<li><strong>Conversation (58k).</strong> Multi-turn questions and answers about the image.</li>
+<li><strong>Detailed description (23k).</strong> A single long descriptive answer.</li>
+<li><strong>Complex reasoning (77k).</strong> Step-by-step reasoning chains over the image content.</li>
+</ul>
+<p>This data, despite being synthetic, was enough to teach a Llama-derivative to follow visual instructions remarkably well. LLaVA hit state-of-the-art on Science QA when combined with GPT-4 ensembling, validating the recipe.</p>
+</section>
+<section id="two-stage-training" class="level3">
+<h3 class="anchored" data-anchor-id="two-stage-training">6.2.3 Two-stage training</h3>
+<p>LLaVA trains in two stages:</p>
+<ol type="1">
+<li><strong>Feature alignment pretraining.</strong> Freeze both the vision encoder and the LLM. Train only the projection matrix on a large set of caption-style image-text pairs. This teaches <span class="math inline">\(W\)</span> to map CLIP space into Vicuna’s embedding space.</li>
+<li><strong>End-to-end instruction fine-tuning.</strong> Unfreeze the LLM (keep the vision encoder frozen). Train on the 158k visual instruction dataset with cross-entropy on the assistant tokens only.</li>
+</ol>
+<p>The whole thing trains in a day on 8 A100s. LLaVA-1.5 (October 2023) improved on this with a small MLP projector (instead of a single linear layer), higher resolution input, and more academic VQA data, and remained competitive with much larger models.</p>
+</section>
+</section>
+<section id="qwen-vl-august-2023-the-pre-2-vl-alibaba-lineage" class="level2">
+<h2 class="anchored" data-anchor-id="qwen-vl-august-2023-the-pre-2-vl-alibaba-lineage">6.3 Qwen-VL (August 2023): the pre-2-VL Alibaba lineage</h2>
+<p>While LLaVA was minimalist, Alibaba’s Qwen team built a slightly heavier-weight VLM around the same time — Qwen-VL (<a href="https://arxiv.org/abs/2308.12966">arXiv:2308.12966</a>, Bai et al.). It is worth covering in detail because it set the template for the next four years of Qwen-VL releases.</p>
+<section id="architecture-1" class="level3">
+<h3 class="anchored" data-anchor-id="architecture-1">6.3.1 Architecture</h3>
+<p>Three components, more elaborate than LLaVA:</p>
+<ol type="1">
+<li><strong>Vision encoder.</strong> OpenCLIP ViT-bigG, with stride-14 patches. Input images resized to 224×224 in stage 1, 448×448 in stages 2/3.</li>
+<li><strong>Position-aware vision-language adapter.</strong> A <em>single cross-attention layer</em> that compresses the variable-length image feature sequence to a fixed 256 tokens. Queries are 256 learned embeddings; keys and values are the ViT patch features. 2D absolute positional encodings are injected into the queries and keys so spatial information survives the compression. This is the “Q-Former-lite” design — much simpler than BLIP-2’s full Q-Former, much more capable than LLaVA’s linear projection.</li>
+<li><strong>LLM.</strong> Qwen-7B, initialized from a slightly older Qwen-LM checkpoint.</li>
+</ol>
+<p>Total parameters: 1.9B (ViT) + 0.08B (adapter) + 7.7B (LLM) = 9.6B.</p>
+</section>
+<section id="bounding-box-and-ref-tokens-for-grounding" class="level3">
+<h3 class="anchored" data-anchor-id="bounding-box-and-ref-tokens-for-grounding">6.3.2 Bounding-box and ref tokens for grounding</h3>
+<p>Qwen-VL made a deliberate bet on <em>grounding</em> — connecting language to specific image regions. They introduced four special tokens — <code>&lt;box&gt;</code>, <code>&lt;/box&gt;</code>, <code>&lt;ref&gt;</code>, <code>&lt;/ref&gt;</code> — and represented bounding boxes as strings of normalized coordinates in <span class="math inline">\([0, 1000)\)</span>: <code>&lt;box&gt;(123,456),(789,321)&lt;/box&gt;</code>. The LLM tokenizer just treats these as ordinary text; no special embedding pathway. The training data is augmented with image-caption-box tuples from datasets like RefCOCO, RefCOCO+, RefCOCOg, GRIT, and Visual Genome.</p>
+<p>The result is a model that can output bounding boxes mid-conversation: “The cat is located at <code>&lt;box&gt;(140,210),(380,470)&lt;/box&gt;</code>.” This was an unusual capability at the time and is one of the reasons Qwen-VL stuck around in academic comparisons.</p>
+</section>
+<section id="three-stage-training-pipeline" class="level3">
+<h3 class="anchored" data-anchor-id="three-stage-training-pipeline">6.3.3 Three-stage training pipeline</h3>
+<p>Stage 1 (Pretraining): freeze the LLM, train ViT + adapter, on 1.4B image-text pairs cleaned from LAION/COCO/Coyo/DataComp. 50k steps, batch size 30720, LR 2e-4. 224×224 input. Cross-entropy on text tokens only.</p>
+<p>Stage 2 (Multi-task Pretraining): unfreeze everything, train on a mixture of 7 tasks — captioning, VQA, grounding, ref grounding, grounded captioning, OCR, and pure-text autoregression — totaling ~76M examples. Bump resolution to 448×448. 19k steps.</p>
+<p>Stage 3 (Supervised Fine-Tuning): freeze ViT, unfreeze the LLM and adapter, train on 350k multimodal instruction-following examples in ChatML format. This produces Qwen-VL-Chat. 8k steps, batch size 128.</p>
+<p>Why this matters: Qwen-VL established that the <em>staging</em> — first align the modalities, then jointly pretrain on diverse tasks, then SFT on instructions — was the right pattern. Every subsequent Qwen-VL release follows variants of this template.</p>
+</section>
+</section>
+<section id="qwen2-vl-september-2024-naive-dynamic-resolution-and-m-rope" class="level2">
+<h2 class="anchored" data-anchor-id="qwen2-vl-september-2024-naive-dynamic-resolution-and-m-rope">6.4 Qwen2-VL (September 2024): naive dynamic resolution and M-RoPE</h2>
+<p>A year later, the Qwen2-VL paper (<a href="https://arxiv.org/abs/2409.12191">arXiv:2409.12191</a>) tore up the resolution problem at the root. Where Qwen-VL had a fixed 448×448 input — which means high-resolution charts get downsampled to mush, and tall mobile screenshots get squished — Qwen2-VL introduced <em>naive dynamic resolution</em>: process every image at <em>its own native aspect ratio and resolution</em>, producing a variable number of visual tokens.</p>
+<section id="naive-dynamic-resolution" class="level3">
+<h3 class="anchored" data-anchor-id="naive-dynamic-resolution">6.4.1 Naive Dynamic Resolution</h3>
+<p>The mechanism is surprisingly clean. The ViT is modified to:</p>
+<ol type="1">
+<li>Drop the original absolute position embeddings.</li>
+<li>Use <strong>2D-RoPE</strong> on the patch tokens, so position information is injected via rotation (Chapter 2) rather than a learned lookup. This lets the encoder handle any (H, W) pair without retraining.</li>
+<li>Pack images of different resolutions into a single sequence for efficient batching, controlling total sequence length to respect GPU memory.</li>
+</ol>
+<p>After the ViT, an <strong>MLP merger</strong> compresses each 2×2 group of adjacent patch tokens into a single visual token. This cuts the per-image token count by 4× at the cost of one small MLP — a much simpler bridge than Qwen-VL’s cross-attention adapter, and one that <em>adapts to image size</em> automatically (more pixels → more tokens, after 4× compression).</p>
+<p>For Qwen2-VL, a 1280×800 image produces <span class="math inline">\(1280/14 \times 800/14 \approx 5200\)</span> ViT tokens, which the merger compresses to ~1300 visual tokens fed to the LLM. A 28×224 thumbnail produces just 8 tokens. This <em>variable-length</em> visual representation is what enables Qwen2-VL to do real document OCR — full-page scans go in at native resolution and the model actually sees the text.</p>
+</section>
+<section id="m-rope-multimodal-rotary-position-embedding" class="level3">
+<h3 class="anchored" data-anchor-id="m-rope-multimodal-rotary-position-embedding">6.4.2 M-RoPE: Multimodal Rotary Position Embedding</h3>
+<p>We previewed M-RoPE in Chapter 2; here is the full story. The LLM’s 1D RoPE assumes position is a scalar, but visual tokens have 2D spatial structure (height, width) and video tokens have 3D structure (time, height, width). M-RoPE partitions the RoPE embedding dimension into three component groups — <strong>temporal</strong>, <strong>height</strong>, <strong>width</strong> — and applies each component’s rotation with its own position index. For text, all three components share the same position ID (so M-RoPE collapses to 1D-RoPE). For images, temporal is constant; height and width vary across patches. For video, all three vary.</p>
+<p>The practical consequence is that the LLM sees a unified positional embedding scheme across text, image, and video — no special tokens or branching code paths. The model just <em>knows</em> that visual tokens are 2D-structured and that video frames have a temporal axis.</p>
+</section>
+<section id="unified-image-and-video-understanding" class="level3">
+<h3 class="anchored" data-anchor-id="unified-image-and-video-understanding">6.4.3 Unified image and video understanding</h3>
+<p>Qwen2-VL processes video by sampling at 2 FPS and using <strong>3D convolutions with depth 2</strong> at the ViT input — so two consecutive frames are merged into a single “3D tube” patch token, halving the temporal token count. Each image, for symmetry, is treated as two identical frames. The maximum tokens per video is capped at 16,384, with the per-frame resolution dynamically reduced for very long videos.</p>
+</section>
+<section id="sizes-training-and-the-lvlm-scaling-laws" class="level3">
+<h3 class="anchored" data-anchor-id="sizes-training-and-the-lvlm-scaling-laws">6.4.4 Sizes, training, and the LVLM scaling laws</h3>
+<p>Qwen2-VL ships in three sizes — 2B, 8B (released as Qwen2-VL-7B), and 72B — all using the <em>same</em> 675M-parameter ViT. The constant ViT across scales is a deliberate choice: it isolates the LLM scale as the main variable, and it keeps the encoder cheap to run.</p>
+<p>Pretraining is two-phase: 600B tokens of image-text alignment, followed by 800M <em>examples</em> (a mixture-of-tasks phase) at 1.2T tokens total. SFT follows. The paper is one of the first to explicitly study <strong>scaling laws for LVLMs</strong> — how performance scales with model size and data — and shows the same Chinchilla-style behavior you see in pure-text LLMs.</p>
+<blockquote class="blockquote">
+<p><strong>Editorial note.</strong> Qwen2-VL is the moment vision-language models stopped being “LLMs with a vision tax” and started being <em>the same architecture you’d use for text, just with the input pipeline upgraded</em>. Naive dynamic resolution, in particular, was the design choice that retired the entire “what input resolution should I use?” question.</p>
+</blockquote>
+</section>
+</section>
+<section id="qwen2.5-vl-february-2025-native-dynamic-vit-absolute-time-agentic-capability" class="level2">
+<h2 class="anchored" data-anchor-id="qwen2.5-vl-february-2025-native-dynamic-vit-absolute-time-agentic-capability">6.5 Qwen2.5-VL (February 2025): native dynamic ViT, absolute time, agentic capability</h2>
+<p>The Qwen2.5-VL technical report (<a href="https://arxiv.org/abs/2502.13923">arXiv:2502.13923</a>) is six months later but a substantial jump. Sizes are now 3B / 7B / 32B / 72B. Pretraining tokens scaled from 1.2T to <strong>4.1T</strong>. The headline architectural changes are about <em>the ViT itself</em> and about <em>time</em>.</p>
+<div id="fig-qwen25vl" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-qwen25vl-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://raw.githubusercontent.com/QwenLM/Qwen2.5-VL/main/assets/qwen2.5vl_arc.jpeg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-qwen25vl-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Figure 6.2: Qwen2.5-VL architecture. Native-resolution vision encoder with window attention and 2D RoPE, MLP merger, M-RoPE aligned to absolute time. From the Qwen2.5-VL technical report.
+</figcaption>
+</figure>
+</div>
+<section id="window-attention-in-the-vit" class="level3">
+<h3 class="anchored" data-anchor-id="window-attention-in-the-vit">6.5.1 Window attention in the ViT</h3>
+<p>The 2D-RoPE’d ViT from Qwen2-VL processes images at native resolution, but that means very large images produce very long ViT sequences — and ViT’s attention is <span class="math inline">\(O(L^2)\)</span>. Qwen2.5-VL fixes this by <strong>windowing the ViT’s attention</strong>: in most layers, attention is local within a 112×112 (= 8×8 patches) window; only a handful of layers (4 out of 32) use full attention.</p>
+<p>The implementation detail is nice: regions smaller than 112×112 are <em>not padded</em> — the windowed attention just runs at native size. This preserves the dynamic-resolution property while making the ViT’s compute scale roughly linearly in pixel count rather than quadratically. Window attention has been a standard trick in the CNN-to-ViT transition (Swin Transformer, etc.); applying it to the VLM vision encoder is what unlocks practical full-document-page processing.</p>
+<p>The ViT is also retrained <em>from scratch</em> (not initialized from a CLIP/DFN checkpoint) and is aligned with modern LLM design choices: RMSNorm instead of LayerNorm, SwiGLU instead of GELU. The architecture is now genuinely homogeneous from pixels to tokens.</p>
+</section>
+<section id="dynamic-fps-sampling-and-absolute-time" class="level3">
+<h3 class="anchored" data-anchor-id="dynamic-fps-sampling-and-absolute-time">6.5.2 Dynamic FPS sampling and absolute time</h3>
+<p>Videos in Qwen2-VL sampled at a fixed 2 FPS. Qwen2.5-VL adds <strong>dynamic FPS training</strong>: during training, the sampling rate is varied (0.5/1/2 FPS), and the model has to handle all of them. Combined with this is the key architectural change:</p>
+<p><strong>M-RoPE aligned to absolute time.</strong> Where Qwen2-VL’s temporal IDs incremented per frame, Qwen2.5-VL’s temporal IDs are aligned to wall-clock seconds. A frame at <span class="math inline">\(t = 3.5\)</span> s gets temporal ID corresponding to 3.5, regardless of the FPS. The result is that the <em>intervals between temporal IDs encode the actual elapsed time</em>. The model can learn to do timestamp-grounded tasks — “what happens at 1:23?” — directly, without ad-hoc text timestamps or auxiliary heads. On Charades-STA the 72B variant achieves 50.9 mIoU on temporal grounding, surpassing GPT-4o.</p>
+</section>
+<section id="agentic-capability-and-html-omni-parsing" class="level3">
+<h3 class="anchored" data-anchor-id="agentic-capability-and-html-omni-parsing">6.5.3 Agentic capability and HTML omni-parsing</h3>
+<p>Two other notable bets:</p>
+<ul>
+<li><strong>Computer/mobile control.</strong> Qwen2.5-VL is explicitly trained on screenshots, UI element grounding, and multi-step action traces from desktop, mobile, and web environments. The post-training data engineering is significant — synthesized screenshot captions, UI grounding annotations, function-call-formatted action trajectories with chain-of-thought rationales. The 72B variant on ScreenSpot Pro (a hard professional-tool GUI benchmark) hits 43.6%, dramatically above Qwen2-VL-72B’s 1.6%.</li>
+<li><strong>HTML-format omni-document parsing.</strong> All document parsing (paragraphs, tables, charts, formulas, music sheets, chemical formulas) is unified under a single QwenVL-HTML schema with element-level bounding boxes. The model outputs <em>the entire document as structured HTML</em> in one pass, no separate layout/OCR/parse pipeline. This is the kind of capability that, when it works, replaces an entire vendor stack.</li>
+</ul>
+</section>
+<section id="post-training-sft-dpo" class="level3">
+<h3 class="anchored" data-anchor-id="post-training-sft-dpo">6.5.4 Post-training: SFT + DPO</h3>
+<p>Qwen2.5-VL’s post-training is <strong>SFT + DPO</strong> with the ViT frozen. The SFT mix is ~2M samples evenly split between text and multimodal. The DPO stage uses preference data on image-text and pure-text only, with each sample seen once. This dual-stage alignment recipe was carried over from Qwen2-VL but with more attention to data quality — a two-stage filtering pipeline (domain-tagging by Qwen2-VL-Instag, then rule- and model-based filters per domain).</p>
+</section>
+</section>
+<section id="qwen3-vl-november-2025-interleaved-mrope-deepstack-and-256k-context" class="level2">
+<h2 class="anchored" data-anchor-id="qwen3-vl-november-2025-interleaved-mrope-deepstack-and-256k-context">6.6 Qwen3-VL (November 2025): Interleaved-MRoPE, DeepStack, and 256K context</h2>
+<p>Nine months later, Qwen3-VL arrives (<a href="https://arxiv.org/abs/2511.21631">arXiv:2511.21631</a>) and the architecture takes another step. Sizes now span <strong>Dense 2B / 4B / 8B / 32B</strong> plus <strong>MoE 30B-A3B / 235B-A22B</strong> — the largest activates 22B of 235B total parameters per token. Native context goes from 32K (Qwen2.5-VL) to <strong>256K</strong> for both text and interleaved multimodal inputs.</p>
+<div id="fig-qwen3vl" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-qwen3vl-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://qianwen-res.oss-accelerate.aliyuncs.com/Qwen3-VL/qwen3vl_arc.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-qwen3vl-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: Figure 6.3: Qwen3-VL architecture. Interleaved-MRoPE, DeepStack injection of ViT features into multiple LLM layers, and explicit textual timestamp tokens. From the Qwen3-VL technical report.
+</figcaption>
+</figure>
+</div>
+<section id="interleaved-mrope" class="level3">
+<h3 class="anchored" data-anchor-id="interleaved-mrope">6.6.1 Interleaved-MRoPE</h3>
+<p>The Qwen3-VL team identified a quiet problem with the M-RoPE design from Qwen2/2.5-VL: chunking the embedding dimension into temporal, height, and width blocks creates an <em>imbalanced frequency spectrum</em>. Each spatial-temporal axis only sees the frequencies of its block, hurting long-video understanding. The fix is <strong>Interleaved-MRoPE</strong>: rather than three contiguous chunks (t-block, h-block, w-block), distribute the t/h/w assignments uniformly across the entire embedding dimension, so each axis sees the full range of low-to-high frequencies. This is a subtle change but it materially improves long-context video benchmarks.</p>
+</section>
+<section id="deepstack-cross-layer-fusion" class="level3">
+<h3 class="anchored" data-anchor-id="deepstack-cross-layer-fusion">6.6.2 DeepStack: cross-layer fusion</h3>
+<p>A more visible change is <strong>DeepStack</strong> (the idea is from Meng et al.&nbsp;2024). In Qwen2/2.5-VL, vision tokens enter the LLM at the input embedding layer and propagate through the transformer alongside text tokens. DeepStack adds <em>additional injections of visual information at later LLM layers</em>. Specifically, Qwen3-VL extracts ViT features from three different layers of the vision encoder, projects each through its own MLP merger, and adds the resulting visual tokens to the hidden states of the corresponding first three LLM layers via lightweight residual connections.</p>
+<p>The intuition: a ViT has low-level features in its early layers and high-level features in its late layers. By piping early ViT features into early LLM layers (where the LLM is still doing low-level integration) and late ViT features into later LLM layers, you preserve a richer spread of visual information without adding context-length cost.</p>
+</section>
+<section id="explicit-textual-timestamps-replace-t-rope" class="level3">
+<h3 class="anchored" data-anchor-id="explicit-textual-timestamps-replace-t-rope">6.6.3 Explicit textual timestamps replace T-RoPE</h3>
+<p>Qwen2.5-VL’s absolute-time temporal RoPE turned out to have a subtle scaling problem. For very long videos (hours), the temporal position IDs become enormous and sparse, degrading the model’s ability to model long temporal contexts. Qwen3-VL retires this and switches to <strong>explicit text-based timestamp tokens</strong>: each frame group is prefixed with a literal text token like <code>&lt;3.0 seconds&gt;</code> (and an HMS-format equivalent for very long videos). The model just learns to read timestamps as ordinary tokens.</p>
+<p>This loses some elegance — you go from a clever positional encoding to a literal string of text — but the trade-off is favorable. Temporal grounding becomes more accurate, the data construction is simpler (no need for FPS-balanced training), and the small increase in context length is dwarfed by the 256K window.</p>
+</section>
+<section id="square-root-normalized-per-token-loss" class="level3">
+<h3 class="anchored" data-anchor-id="square-root-normalized-per-token-loss">6.6.4 Square-root-normalized per-token loss</h3>
+<p>A subtler but important change: where typical training averages loss <em>per sample</em>, Qwen3-VL switches to a <strong>square-root-normalized per-token loss</strong> to balance text and multimodal contributions. A long image-rich sample naturally has thousands of vision tokens, which would otherwise dominate the gradient. The sqrt normalization keeps both modalities pulling in proportion. This is the kind of detail that gets one paragraph in the paper and matters enormously to the final benchmark numbers.</p>
+</section>
+<section id="pretraining-and-post-training-pipeline" class="level3">
+<h3 class="anchored" data-anchor-id="pretraining-and-post-training-pipeline">6.6.5 Pretraining and post-training pipeline</h3>
+<p>Pretraining has four phases:</p>
+<ul>
+<li><strong>S0 — Alignment</strong> (67B tokens, sequence 8k). Train only the MLP merger, freeze ViT and LLM. Bridge the modality gap cheaply.</li>
+<li><strong>S1 — Multimodal pretraining</strong> (~1T tokens, sequence 8k). Unfreeze everything. Full mixture of VL + text-only data.</li>
+<li><strong>S2 — Long-context</strong> (~1T tokens, sequence 32k). Quadruple sequence length; more video and agent data.</li>
+<li><strong>S3 — Ultra-long-context adaptation</strong> (100B tokens, sequence 262144). Specialized for long video and long document.</li>
+</ul>
+<p>Post-training: SFT (32k then 256k), strong-to-weak distillation, then RL (Reasoning RL and General RL using a SAPO policy gradient). And — new — both <strong>thinking</strong> and <strong>non-thinking</strong> variants are released, distinguished by whether the SFT data contained long chain-of-thought traces.</p>
+</section>
+</section>
+<section id="the-general-vlm-architecture-cheat-sheet" class="level2">
+<h2 class="anchored" data-anchor-id="the-general-vlm-architecture-cheat-sheet">6.7 The general VLM architecture cheat-sheet</h2>
+<p>Let’s zoom out. Every VLM you encounter has three components, however dressed:</p>
+<ol type="1">
+<li><strong>Vision encoder.</strong> A ViT (CLIP, SigLIP, SigLIP-2, DINO, or a custom one trained with the model). It turns an image into a sequence of patch token features.</li>
+<li><strong>Vision-language merger.</strong> The bridge that maps vision features into the LLM’s token space. The lineage:
+<ul>
+<li>LLaVA: a single linear layer.</li>
+<li>LLaVA-1.5: a small MLP.</li>
+<li>BLIP-2 / Qwen-VL v1: a cross-attention adapter (Q-Former) with learned queries, compressing to a fixed number of tokens.</li>
+<li>Qwen2-VL onward: an MLP that merges 2×2 patch groups into single tokens, with vision input sequence length dynamically determined by the image.</li>
+<li>Qwen3-VL: the same MLP merger, plus <em>additional mergers</em> feeding intermediate ViT features into multiple LLM layers via DeepStack.</li>
+</ul></li>
+<li><strong>Large language model.</strong> The transformer decoder. Qwen, Llama, Vicuna, etc. Receives the visual tokens, treats them like ordinary embeddings (with M-RoPE / Interleaved-MRoPE for position), and decodes text autoregressively.</li>
+</ol>
+<p>The arc from LLaVA to Qwen3-VL is one of <em>progressive tightening of the bridge</em> between vision and language: a linear layer in 2023, an MLP in 2024, an MLP plus cross-layer fusion in 2025. The vision encoder also shrinks in relative importance — Qwen2-VL deliberately uses the same 675M ViT across all LLM sizes, treating the LLM as the main scaling axis.</p>
+<blockquote class="blockquote">
+<p><strong>Mental image.</strong> Think of the vision encoder as a <em>foreign-language speaker</em> whose embeddings are tokens in a foreign vocabulary. The merger is a <em>translator</em> that converts those tokens into the LLM’s vocabulary. Early VLMs used a literal-word-for-word translator (linear projection). Modern VLMs use a richer translator (MLP, sometimes with cross-layer fusion) that preserves more nuance. The LLM doesn’t actually care that the tokens started life as pixels — once they are in its embedding space, they are just tokens.</p>
+</blockquote>
+</section>
+<section id="vlm-evaluation-the-benchmarks-you-will-see" class="level2">
+<h2 class="anchored" data-anchor-id="vlm-evaluation-the-benchmarks-you-will-see">6.8 VLM evaluation: the benchmarks you will see</h2>
+<p>You cannot read a VLM paper without seeing benchmark tables. Here is a quick map of the canonical ones, what they measure, and how they fail:</p>
+<ul>
+<li><strong>MMMU</strong> (Yue et al.&nbsp;2023). “Massive Multi-discipline Multimodal Understanding.” College-level questions from 30 academic subjects — biology, art history, chemistry, etc. Requires both visual understanding and domain knowledge. The hardest benchmark in common use; current leaders (GPT-5, Gemini 2.5 Pro Thinking, Qwen3-VL-235B-Thinking) sit in the 78–84% range.</li>
+<li><strong>MMMU-Pro.</strong> A harder, contamination-cleaned version. Drops by 10+ percentage points vs MMMU.</li>
+<li><strong>MMBench</strong> (Liu et al.&nbsp;2023). Broad multimodal QA with multiple-choice format. EN and CN variants. Frontier models around 88–90.</li>
+<li><strong>MathVista</strong> (Lu et al.&nbsp;2024). Math problems with visual context — geometry diagrams, function plots, statistical charts. The ‘mini’ subset is the most-cited number.</li>
+<li><strong>DocVQA</strong>. Question answering over scanned documents. Tests OCR + reading comprehension. Qwen2.5-VL and Qwen3-VL hit 96%+ here.</li>
+<li><strong>ChartQA</strong>. QA over charts and graphs. Specifically targets the “can the model read this chart?” failure mode.</li>
+<li><strong>InfoVQA</strong>. QA over infographics — the worst case of dense text + visuals + layout.</li>
+<li><strong>OCRBench / OCRBench_v2</strong>. Pure OCR ability, including non-Latin scripts. Qwen3-VL leads OCRBench_v2 by wide margins.</li>
+<li><strong>RealWorldQA</strong> (xAI). Real-world photographs with everyday questions. Tests practical visual understanding.</li>
+<li><strong>MMVet</strong> and <strong>MM-MT-Bench</strong>. LLM-as-judge style open-ended multimodal benchmarks; closer to user-facing quality than multiple-choice scores.</li>
+<li><strong>HallusionBench</strong>. Tests image-context hallucination — does the model refuse to invent things that aren’t in the image?</li>
+<li><strong>RefCOCO / RefCOCO+ / RefCOCOg / GRIT</strong>. Refer expression grounding — “the cup on the left” → bounding box. The Qwen-VL lineage particularly emphasizes these.</li>
+<li><strong>Video-MME, MVBench, LongVideoBench, LVBench</strong>. Video understanding at various length scales. LongVideoBench / LVBench specifically test multi-hour video.</li>
+<li><strong>ScreenSpot, ScreenSpot Pro, AndroidWorld, OSWorld</strong>. GUI agent benchmarks — can the model identify the correct button to click, complete a multi-step task on a mobile/desktop interface?</li>
+</ul>
+<p>When you see a paper table, the trick is to look at <em>which subset of benchmarks the authors chose to lead with</em>. A paper that leads with DocVQA and ChartQA is selling document understanding; a paper that leads with MMMU is selling reasoning; a paper that leads with ScreenSpot is selling agentic capability.</p>
+<blockquote class="blockquote">
+<p><strong>Editorial note on benchmark fatigue.</strong> The 2024–2026 VLM landscape has produced more benchmarks than is healthy. Most of them are saturated by the frontier — a 90 on MMBench tells you almost nothing about the model. The honest signal these days comes from (a) tasks the model wasn’t trained on directly (true out-of-distribution generalization), (b) human-judged open-ended quality on real user tasks, and (c) cost-per-token at deployment. Treat the leaderboard scores as marketing material; treat the qualitative examples and the open-source release as the actual product.</p>
+</blockquote>
+</section>
+<section id="closing-the-chapter-and-part-a" class="level2">
+<h2 class="anchored" data-anchor-id="closing-the-chapter-and-part-a">6.9 Closing the chapter — and Part A</h2>
+<p>We have now covered the entire ground floor of the modern AI stack. We’ve gone from the basic math of MLPs and matmuls (Chapter 1) through the tokenization/embedding/positional-encoding pipeline (Chapter 2), the transformer architecture and its modern extensions (Chapter 3), the leap from raw transformer to capable LLM via scale + SFT + RLHF/DPO + CoT (Chapter 4), the vision encoder lineage from CNN to SigLIP-2 (Chapter 5), and the bolt-on that turns an LLM into a VLM, via the LLaVA recipe and the four-generation Qwen-VL arc (Chapter 6).</p>
+<p>In Part B we will leave the “predict the next token” world for a moment and dive into the parallel universe of <strong>generative modeling</strong>, where the goal is not to score the next token but to <em>sample from a complicated distribution over images, audio, or video</em>. The two main characters there are <strong>diffusion models</strong> — which start with noise and iteratively denoise into a sample — and <strong>flow matching</strong>, which is a recent reformulation that elegantly unifies diffusion with a broader family of ODE-based generative models. The architectures will be familiar (still transformers, mostly), but the training objectives are quite different from the cross-entropy of Chapters 3 and 4.</p>
+<p>Then in Part C we’ll come back to the language side with <strong>world models</strong> and the JEPA family, which is where the threads of sequence modeling, generative modeling, and perception start to twist toward embodied AI. Part D and onward push into <strong>vision-language-action models</strong> and the BAGEL hands-on.</p>
+<p>For now: take a break, get coffee, and re-read any chapter where you felt your eyes glaze over. The rest of the book leans heavily on this foundation. If you can recite, from memory, the equation for scaled dot-product attention, the rough shape of the LLaVA architecture, and the difference between Qwen2-VL’s M-RoPE and Qwen3-VL’s Interleaved-MRoPE, you are ready for Part B.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/madhaviit\.github\.io\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Madhav Kadam, All Rights Reserved.</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/madhaviit" target="_blank">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://x.com/kpmadhav18" target="_blank">
+      <i class="bi bi-twitter-x" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://linkedin.com/in/madhav-kadam" target="_blank">
+      <i class="bi bi-linkedin" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

@@ -1,0 +1,13 @@
+/* Shrinks the TOC container text */
+#TOC {
+  font-size: 0.75rem; 
+}
+
+/* Shrinks the list items and padding for a compact look */
+.toc-actions, .nav-sidebar .nav-item {
+  font-size: 0.07rem;
+}
+
+#quarto-sidebar-glass {
+  display: none;
+}
