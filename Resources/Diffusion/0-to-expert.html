@@ -78,6 +78,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-bb0cb1cdd73958ab18321ffa37d8451d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/watermark-1.0.11/watermark.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -178,12 +179,48 @@ window.Quarto = {
 
 <div id="quarto-search-results"></div>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<header id="title-block-header" class="quarto-title-block default page-columns">
+<div id="title-block-header-title" class="quarto-title page-columns page-full page-layout-full featured-image p-4" style="background-image: url(featured.png), url(featured.jpg), url(../featured.jpg);">
+<h1 class="title">From Bits to Behavior</h1>
+<p class="subtitle lead">A 0-to-Expert Tour of the Modern AI Stack: Transformers, LLMs, VLMs, Diffusion, Flow Matching, VLAs, World Models, and a Hands-On Unified Model</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>A textually rich, mathematically honest survey (~55,000–60,000 words; 5–6 hour read) </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 1, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+<div>
+  <div class="abstract">
+    <div class="block-title">Abstract</div>
+    <p>This is a single, self-contained article that takes a reader with basic Python and ML background all the way to expertise across the modern AI stack: Transformers and Large Language Models, Vision-Language Models (the LLaVA → Qwen-VL lineage), Variational Auto-Encoders, Diffusion Models (DDPM, score, DDIM, consistency, latent diffusion, DiT), Flow Matching (CFM, Rectified Flow, OT coupling), Vision-Language-Action models (the π₀ family, FAST tokenization, π₀.7), World Models (the RL-dreamer lineage, the video-generation lineage, JEPA, LeJEPA/SIGReg), and finally a practical hands-on case study with the open-source unified BAGEL model. Every concept is derived from first principles; every claim points to a primary source; every chapter ends by handing off to the next.</p>
+  </div>
+</div>
+
+
+
+</header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+    <h2 id="toc-title">Table of contents</h2>
    
   <ul>
   <li><a href="#preface-how-to-read-this-book" id="toc-preface-how-to-read-this-book" class="nav-link active" data-scroll-target="#preface-how-to-read-this-book">Preface — How to Read This Book</a>
@@ -194,7 +231,8 @@ window.Quarto = {
   <li><a href="#time-budget-and-how-to-read" id="toc-time-budget-and-how-to-read" class="nav-link" data-scroll-target="#time-budget-and-how-to-read">Time budget and how to read</a></li>
   <li><a href="#glossary-of-the-most-used-symbols" id="toc-glossary-of-the-most-used-symbols" class="nav-link" data-scroll-target="#glossary-of-the-most-used-symbols">Glossary of the most-used symbols</a></li>
   </ul></li>
-  <li><a href="#part-i-foundations-transformers-llms-and-vision-language-models" id="toc-part-i-foundations-transformers-llms-and-vision-language-models" class="nav-link" data-scroll-target="#part-i-foundations-transformers-llms-and-vision-language-models">Part I — Foundations: Transformers, LLMs, and Vision-Language Models</a>
+  <li><a href="#part-i-foundations-transformers-llms-and-vision-language-models" id="toc-part-i-foundations-transformers-llms-and-vision-language-models" class="nav-link" data-scroll-target="#part-i-foundations-transformers-llms-and-vision-language-models">Part I — Foundations: Transformers, LLMs, and Vision-Language Models</a></li>
+  <li><a href="#chapter-1-mathematical-and-neural-network-foundations" id="toc-chapter-1-mathematical-and-neural-network-foundations" class="nav-link" data-scroll-target="#chapter-1-mathematical-and-neural-network-foundations">Chapter 1 — Mathematical and Neural Network Foundations</a>
   <ul class="collapse">
   <li><a href="#tensors-and-shape-notation" id="toc-tensors-and-shape-notation" class="nav-link" data-scroll-target="#tensors-and-shape-notation">1.1 Tensors and shape notation</a></li>
   <li><a href="#dot-products-matmuls-and-the-patterns-of-association-framing" id="toc-dot-products-matmuls-and-the-patterns-of-association-framing" class="nav-link" data-scroll-target="#dot-products-matmuls-and-the-patterns-of-association-framing">1.2 Dot products, matmuls, and the “patterns of association” framing</a></li>
@@ -438,44 +476,16 @@ window.Quarto = {
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
+<!-- source: https://github.com/gadenbuie/garrickadenbuie-com/blob/main/_partials/title-block-link-buttons/title-block.html -->
+<!-- 
 <header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">From Bits to Behavior</h1>
-<p class="subtitle lead">A 0-to-Expert Tour of the Modern AI Stack: Transformers, LLMs, VLMs, Diffusion, Flow Matching, VLAs, World Models, and a Hands-On Unified Model</p>
-</div>
+<div class="quarto-title"> 
+-->
+<!-- <header id="title-block-header" class="quarto-title-block default page-columns"> -->
+<!-- <div class="quarto-title page-columns page-full featured-image p-4" style="background-image: url(featured.png), url(featured.jpg), url(../featured.jpg);"> -->
 
-
-
-<div class="quarto-title-meta">
-
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>A textually rich, mathematically honest survey (~55,000–60,000 words; 5–6 hour read) </p>
-          </div>
-  </div>
-    
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">May 1, 2026</p>
-    </div>
-  </div>
-  
-    
-  </div>
-  
-<div>
-  <div class="abstract">
-    <div class="block-title">Abstract</div>
-    <p>This is a single, self-contained article that takes a reader with basic Python and ML background all the way to expertise across the modern AI stack: Transformers and Large Language Models, Vision-Language Models (the LLaVA → Qwen-VL lineage), Variational Auto-Encoders, Diffusion Models (DDPM, score, DDIM, consistency, latent diffusion, DiT), Flow Matching (CFM, Rectified Flow, OT coupling), Vision-Language-Action models (the π₀ family, FAST tokenization, π₀.7), World Models (the RL-dreamer lineage, the video-generation lineage, JEPA, LeJEPA/SIGReg), and finally a practical hands-on case study with the open-source unified BAGEL model. Every concept is derived from first principles; every claim points to a primary source; every chapter ends by handing off to the next.</p>
-  </div>
-</div>
-
-
-</header>
 
 
 <section id="preface-how-to-read-this-book" class="level1">
@@ -601,7 +611,10 @@ window.Quarto = {
 </section>
 <section id="part-i-foundations-transformers-llms-and-vision-language-models" class="level1">
 <h1>Part I — Foundations: Transformers, LLMs, and Vision-Language Models</h1>
-<p>The first six chapters lay the groundwork for everything else in the book. We start from tensors and gradients (Chapter 1), build up through tokenization and position embeddings (Chapter 2), derive the full Transformer (Chapter 3), turn that Transformer into a Large Language Model (Chapter 4), bolt a vision encoder onto its side (Chapter 5), and finally walk through the entire LLaVA → Qwen-VL → Qwen3-VL lineage of state-of-the-art open Vision-Language Models (Chapter 6). By the time you finish Part I, you will have a complete mental model of how a modern multimodal language model is built and trained — and you will be ready for the generative-modeling mathematics of Part II and the embodied agents of Part III. # Chapter 1 — Mathematical and Neural Network Foundations</p>
+<p>The first six chapters lay the groundwork for everything else in the book. We start from tensors and gradients (Chapter 1), build up through tokenization and position embeddings (Chapter 2), derive the full Transformer (Chapter 3), turn that Transformer into a Large Language Model (Chapter 4), bolt a vision encoder onto its side (Chapter 5), and finally walk through the entire LLaVA → Qwen-VL → Qwen3-VL lineage of state-of-the-art open Vision-Language Models (Chapter 6). By the time you finish Part I, you will have a complete mental model of how a modern multimodal language model is built and trained — and you will be ready for the generative-modeling mathematics of Part II and the embodied agents of Part III.</p>
+</section>
+<section id="chapter-1-mathematical-and-neural-network-foundations" class="level1">
+<h1>Chapter 1 — Mathematical and Neural Network Foundations</h1>
 <p>This chapter is the floor of the building. None of the math here is new in 2026, but the way it composes into modern models is worth re-grounding, because the rest of the book quietly assumes you can move fluently between “I see a tensor of shape <code>[B, L, D]</code>” and “I see a function approximator whose Jacobians are tractable on a GPU.” If you are confident about all of this, skim; if you stub your toe on any of the equations, pause.</p>
 <section id="tensors-and-shape-notation" class="level2">
 <h2 class="anchored" data-anchor-id="tensors-and-shape-notation">1.1 Tensors and shape notation</h2>
@@ -4074,7 +4087,11 @@ Note
 </section>
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-textually_rich,_mathematically_honest_survey_(~55,000–60,000_words;_5–6_hour_read)2026" class="csl-entry quarto-appendix-citeas" role="listitem">
+rich, mathematically honest survey (~55,000–60,000 words; 5–6 hour
+read), A textually. 2026. <span>“From Bits to Behavior.”</span> May 1,
+2026. <a href="https://madhaviit.github.io/Resources/Diffusion/0-to-expert.html">https://madhaviit.github.io/Resources/Diffusion/0-to-expert.html</a>.
+</div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -4480,6 +4497,8 @@ Note
     }
   });
   </script>
+<script src="https://utteranc.es/client.js" repo="madhaviit/madhaviit" issue-term="title" theme="boxy-light" crossorigin="anonymous" async="">
+</script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -4513,6 +4532,26 @@ Note
     </div>
   </div>
 </footer>
+<script>
+    const baseFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+    const watermark = new XWatermark.XWatermark();
+    watermark.init("Madhav Kadam", {
+      parentSelector: "body",
+      prevent: true,
+      observer: true,
+      mode: "normal",
+      font: "monospace-ui, -apple-system, system-ui, ‘Segoe UI’, Roboto, ‘Helvetica Neue’, ‘Noto Sans’, ‘Liberation Sans’, Arial, sans-serif, ‘Apple Color Emoji’, ‘Segoe UI Emoji’, ‘Segoe UI Symbol’, ‘Noto Color Emoji’",
+      fontsize: baseFontSize * 1.000000,
+      angle: -20.000000,
+      color: "#463325",
+      alpha: 0.025000,
+      cols: 15,
+      rows: 70,
+      xSpace: baseFontSize * 3.000000,
+      ySpace: baseFontSize * 3.000000,
+      zIndex: -4
+    });
+    </script>
 
 
 

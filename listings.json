@@ -41,5 +41,33 @@
       "/Resources/Projects/Adobe Behaviour Simulation Challenge/index.html",
       "/Resources/Projects/Vitals/index.html"
     ]
+  },
+  {
+    "listing": "/Resources/index.html",
+    "items": [
+      "/Resources/Projects/index.html",
+      "/Resources/Core4/DGM/index.html",
+      "/Resources/Core4/IR/index.html",
+      "/Resources/Core4/LLM/index.html",
+      "/Resources/Core4/LVM/index.html",
+      "/Resources/Core5/Architecture/index.html",
+      "/Resources/Core5/Deployment/index.html",
+      "/Resources/Core5/Optimization/index.html",
+      "/Resources/Core4/RAG/index.html",
+      "/Resources/Diffusion/index.html",
+      "/Resources/Projects/Adobe Behaviour Simulation Challenge/index.html",
+      "/Resources/Seniors-talk/index.html",
+      "/Resources/Projects/Vitals/index.html",
+      "/Resources/CleanIndia/index.html",
+      "/Resources/Core3/BAF/index.html",
+      "/Resources/Core3/CVF/index.html",
+      "/Resources/Core3/MLOPSF/index.html",
+      "/Resources/Core3/NAT/index.html",
+      "/Resources/Core3/NLP/index.html",
+      "/Resources/Core3/RAI/index.html",
+      "/Resources/Core3/SEC/index.html",
+      "/Resources/Core3/SR/index.html",
+      "/Resources/DLA/index.html"
+    ]
   }
 ]

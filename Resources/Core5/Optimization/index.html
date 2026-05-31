@@ -82,6 +82,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../../site_libs/bootstrap/bootstrap-2b454536a190732ebf2f95c4f11e6530.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../../../site_libs/bootstrap/bootstrap-dark-9b097c31a9caec86beae4783e147e129.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../../../site_libs/bootstrap/bootstrap-2b454536a190732ebf2f95c4f11e6530.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-contrib/watermark-1.0.11/watermark.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -321,7 +322,7 @@ window.Quarto = {
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -368,12 +369,53 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns">
+<div id="title-block-header-title" class="quarto-title page-columns page-full page-layout-full featured-image p-4" style="background-image: url(featured.png), url(featured.jpg), url(../featured.jpg);">
+<div class="quarto-title-block"><div><h1 class="title"><span class="hindi-kalam">VLM Optimization</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+    <div class="quarto-categories">
+        <div class="quarto-category">Study</div>
+        <div class="quarto-category">VLM</div>
+        <div class="quarto-category">PyTorch</div>
+        <div class="quarto-category">Optimization</div>
+      </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Madhav Kadam </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 22, 2026</p>
+    </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">May 22, 2026</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+
+
+</header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+    <h2 id="toc-title">Table of contents</h2>
    
   <ul>
   <li><a href="#vision-language-model-optimization-with-pytorch-the-complete-expert-guide" id="toc-vision-language-model-optimization-with-pytorch-the-complete-expert-guide" class="nav-link active" data-scroll-target="#vision-language-model-optimization-with-pytorch-the-complete-expert-guide"><span class="header-section-number">1</span> Vision-Language Model Optimization with PyTorch — The Complete Expert Guide</a>
@@ -504,50 +546,17 @@ window.Quarto = {
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
+<!-- source: https://github.com/gadenbuie/garrickadenbuie-com/blob/main/_partials/title-block-link-buttons/title-block.html -->
+<!-- 
 <header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title"><span class="hindi-kalam">VLM Optimization</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
-  <div class="quarto-categories">
-    <div class="quarto-category">Study</div>
-    <div class="quarto-category">VLM</div>
-    <div class="quarto-category">PyTorch</div>
-    <div class="quarto-category">Optimization</div>
-  </div>
-  </div>
+<div class="quarto-title"> 
+-->
+<!-- <header id="title-block-header" class="quarto-title-block default page-columns"> -->
+<!-- <div class="quarto-title page-columns page-full featured-image p-4" style="background-image: url(featured.png), url(featured.jpg), url(../featured.jpg);"> -->
 
-
-
-<div class="quarto-title-meta">
-
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Madhav Kadam </p>
-          </div>
-  </div>
-    
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">May 22, 2026</p>
-    </div>
-  </div>
-  
-    <div>
-    <div class="quarto-title-meta-heading">Modified</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date-modified">May 22, 2026</p>
-    </div>
-  </div>
-    
-  </div>
-  
-
-
-</header>
 
 
 <section id="vision-language-model-optimization-with-pytorch-the-complete-expert-guide" class="level1" data-number="1">
@@ -2017,7 +2026,11 @@ Y = X \cdot W = (X \cdot \mathrm{diag}(s)^{-1})(\mathrm{diag}(s) \cdot W).
 </section>
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-kadam2026" class="csl-entry quarto-appendix-citeas" role="listitem">
+Kadam, Madhav. 2026. <span>“&lt;Span
+Class=<span>‘hindi-Kalam’</span>&gt;VLM
+Optimization&lt;/Span&gt;.”</span> May 22, 2026. <a href="https://madhaviit.github.io/Resources/Core5/Optimization/">https://madhaviit.github.io/Resources/Core5/Optimization/</a>.
+</div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -2481,7 +2494,9 @@ Y = X \cdot W = (X \cdot \mathrm{diag}(s)^{-1})(\mathrm{diag}(s) \cdot W).
       }
     }
   });
-  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+  </script>
+<script src="https://utteranc.es/client.js" repo="madhaviit/madhaviit" issue-term="title" theme="boxy-light" crossorigin="anonymous" async="">
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co">  &lt;span class="hindi-kalam"&gt;VLM Optimization&lt;/span&gt;</span></span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> Madhav Kadam</span></span>
@@ -3787,6 +3802,26 @@ Y = X \cdot W = (X \cdot \mathrm{diag}(s)^{-1})(\mathrm{diag}(s) \cdot W).
     </div>
   </div>
 </footer>
+<script>
+    const baseFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+    const watermark = new XWatermark.XWatermark();
+    watermark.init("Madhav Kadam", {
+      parentSelector: "body",
+      prevent: true,
+      observer: true,
+      mode: "normal",
+      font: "monospace-ui, -apple-system, system-ui, ‘Segoe UI’, Roboto, ‘Helvetica Neue’, ‘Noto Sans’, ‘Liberation Sans’, Arial, sans-serif, ‘Apple Color Emoji’, ‘Segoe UI Emoji’, ‘Segoe UI Symbol’, ‘Noto Color Emoji’",
+      fontsize: baseFontSize * 1.000000,
+      angle: -20.000000,
+      color: "#463325",
+      alpha: 0.025000,
+      cols: 15,
+      rows: 70,
+      xSpace: baseFontSize * 3.000000,
+      ySpace: baseFontSize * 3.000000,
+      zIndex: -4
+    });
+    </script>
 
 
 

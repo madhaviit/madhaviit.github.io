@@ -48,6 +48,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/bootstrap/bootstrap-2b454536a190732ebf2f95c4f11e6530.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/bootstrap/bootstrap-dark-9b097c31a9caec86beae4783e147e129.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../../site_libs/bootstrap/bootstrap-2b454536a190732ebf2f95c4f11e6530.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/watermark-1.0.11/watermark.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -915,6 +916,26 @@ Madhav Kadam
     </div>
   </div>
 </footer>
+<script>
+    const baseFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+    const watermark = new XWatermark.XWatermark();
+    watermark.init("Madhav Kadam", {
+      parentSelector: "body",
+      prevent: true,
+      observer: true,
+      mode: "normal",
+      font: "monospace-ui, -apple-system, system-ui, ‘Segoe UI’, Roboto, ‘Helvetica Neue’, ‘Noto Sans’, ‘Liberation Sans’, Arial, sans-serif, ‘Apple Color Emoji’, ‘Segoe UI Emoji’, ‘Segoe UI Symbol’, ‘Noto Color Emoji’",
+      fontsize: baseFontSize * 1.000000,
+      angle: -20.000000,
+      color: "#463325",
+      alpha: 0.025000,
+      cols: 15,
+      rows: 70,
+      xSpace: baseFontSize * 3.000000,
+      ySpace: baseFontSize * 3.000000,
+      zIndex: -4
+    });
+    </script>
 
 
 

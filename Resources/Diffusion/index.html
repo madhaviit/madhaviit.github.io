@@ -78,6 +78,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-bb0cb1cdd73958ab18321ffa37d8451d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/watermark-1.0.11/watermark.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -162,82 +163,77 @@ window.Quarto = {
 
 <meta property="og:title" content="From Bits to Behavior – Madhav Kadam">
 <meta property="og:description" content="This is a single, self-contained article that takes a reader with basic Python and ML background all the way to expertise across the modern AI stack: Transformers and Large Language Models, Vision-Language Models (the LLaVA → Qwen-VL lineage), Variational Auto-Encoders, Diffusion Models (DDPM, score, DDIM, consistency, latent diffusion, DiT), Flow Matching (CFM, Rectified Flow, OT coupling), Vision-Language-Action models (the π₀ family, FAST tokenization, π₀.7), World Models (the RL-dreamer lineage, the video-generation lineage, JEPA, LeJEPA/SIGReg), and finally a practical hands-on case study with the open-source unified BAGEL model. Every concept is derived from first principles; every claim points to a primary source; every chapter ends by handing off to the next.">
-<meta property="og:image" content="https://storage.googleapis.com/deepmind-media/Blog/Genie/genie_thumbnail.jpg">
+<meta property="og:image" content="https://madhaviit.github.io/Resources/Diffusion/dsr1.png">
 <meta property="og:site_name" content="Madhav Kadam">
+<meta property="og:image:height" content="998">
+<meta property="og:image:width" content="1688">
 <meta name="twitter:title" content="From Bits to Behavior – Madhav Kadam">
 <meta name="twitter:description" content="This is a single, self-contained article that takes a reader with basic Python and ML background all the way to expertise across the modern AI stack: Transformers and Large Language Models, Vision-Language Models (the LLaVA → Qwen-VL lineage), Variational Auto-Encoders, Diffusion Models (DDPM, score, DDIM, consistency, latent diffusion, DiT), Flow Matching (CFM, Rectified Flow, OT coupling), Vision-Language-Action models (the π₀ family, FAST tokenization, π₀.7), World Models (the RL-dreamer lineage, the video-generation lineage, JEPA, LeJEPA/SIGReg), and finally a practical hands-on case study with the open-source unified BAGEL model. Every concept is derived from first principles; every claim points to a primary source; every chapter ends by handing off to the next.">
-<meta name="twitter:image" content="https://storage.googleapis.com/deepmind-media/Blog/Genie/genie_thumbnail.jpg">
+<meta name="twitter:image" content="https://madhaviit.github.io/Resources/Diffusion/dsr1.png">
+<meta name="twitter:image-height" content="998">
+<meta name="twitter:image-width" content="1688">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">Madhav Kadam</span>
-    </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
-<span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="https://drive.google.com/file/d/1hnqTi8Y-63If0PUq-HJ09X44cnxxqlXD/view?usp=sharing" target="_blank"> 
-<span class="menu-text">CV</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../Poems/disclaimer.html"> 
-<span class="menu-text">Poems</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../MyBlog/index.html"> 
-<span class="menu-text">Blog</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../books.html"> 
-<span class="menu-text">Library</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../travel.html"> 
-<span class="menu-text">Atlas</span></a>
-  </li>  
-</ul>
-          </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-</div>
-      </div> <!-- /container-fluid -->
-    </nav>
-</header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns">
+<div id="title-block-header-title" class="quarto-title page-columns page-full page-layout-full featured-image p-4" style="background-image: url(featured.png), url(featured.jpg), url(../featured.jpg);">
+<h1 class="title">From Bits to Behavior</h1>
+<p class="subtitle lead">A 0-to-Expert Tour of the Modern AI Stack: Transformers, LLMs, VLMs, Diffusion, Flow Matching, VLAs, World Models, and a Hands-On Unified Model</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>A textually rich, mathematically honest survey (~55,000–60,000 words; 5–6 hour read) </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 1, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+<div>
+  <div class="abstract">
+    <div class="block-title">Abstract</div>
+    <p>This is a single, self-contained article that takes a reader with basic Python and ML background all the way to expertise across the modern AI stack: Transformers and Large Language Models, Vision-Language Models (the LLaVA → Qwen-VL lineage), Variational Auto-Encoders, Diffusion Models (DDPM, score, DDIM, consistency, latent diffusion, DiT), Flow Matching (CFM, Rectified Flow, OT coupling), Vision-Language-Action models (the π₀ family, FAST tokenization, π₀.7), World Models (the RL-dreamer lineage, the video-generation lineage, JEPA, LeJEPA/SIGReg), and finally a practical hands-on case study with the open-source unified BAGEL model. Every concept is derived from first principles; every claim points to a primary source; every chapter ends by handing off to the next.</p>
+  </div>
+</div>
+
+
+
+</header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+    <h2 id="toc-title">Table of contents</h2>
    
   <ul>
   <li><a href="#preface-how-to-read-this-book" id="toc-preface-how-to-read-this-book" class="nav-link active" data-scroll-target="#preface-how-to-read-this-book">Preface — How to Read This Book</a>
-  <ul>
+  <ul class="collapse">
   <li><a href="#who-this-is-for" id="toc-who-this-is-for" class="nav-link" data-scroll-target="#who-this-is-for">Who this is for</a></li>
   <li><a href="#the-four-threads-were-weaving" id="toc-the-four-threads-were-weaving" class="nav-link" data-scroll-target="#the-four-threads-were-weaving">The four threads we’re weaving</a></li>
   <li><a href="#roadmap-of-the-seven-parts" id="toc-roadmap-of-the-seven-parts" class="nav-link" data-scroll-target="#roadmap-of-the-seven-parts">Roadmap of the seven parts</a></li>
   <li><a href="#time-budget-and-how-to-read" id="toc-time-budget-and-how-to-read" class="nav-link" data-scroll-target="#time-budget-and-how-to-read">Time budget and how to read</a></li>
   <li><a href="#glossary-of-the-most-used-symbols" id="toc-glossary-of-the-most-used-symbols" class="nav-link" data-scroll-target="#glossary-of-the-most-used-symbols">Glossary of the most-used symbols</a></li>
   </ul></li>
-  <li><a href="#part-i-foundations-transformers-llms-and-vision-language-models" id="toc-part-i-foundations-transformers-llms-and-vision-language-models" class="nav-link" data-scroll-target="#part-i-foundations-transformers-llms-and-vision-language-models">Part I — Foundations: Transformers, LLMs, and Vision-Language Models</a>
-  <ul>
+  <li><a href="#part-i-foundations-transformers-llms-and-vision-language-models" id="toc-part-i-foundations-transformers-llms-and-vision-language-models" class="nav-link" data-scroll-target="#part-i-foundations-transformers-llms-and-vision-language-models">Part I — Foundations: Transformers, LLMs, and Vision-Language Models</a></li>
+  <li><a href="#chapter-1-mathematical-and-neural-network-foundations" id="toc-chapter-1-mathematical-and-neural-network-foundations" class="nav-link" data-scroll-target="#chapter-1-mathematical-and-neural-network-foundations">Chapter 1 — Mathematical and Neural Network Foundations</a>
+  <ul class="collapse">
   <li><a href="#tensors-and-shape-notation" id="toc-tensors-and-shape-notation" class="nav-link" data-scroll-target="#tensors-and-shape-notation">1.1 Tensors and shape notation</a></li>
   <li><a href="#dot-products-matmuls-and-the-patterns-of-association-framing" id="toc-dot-products-matmuls-and-the-patterns-of-association-framing" class="nav-link" data-scroll-target="#dot-products-matmuls-and-the-patterns-of-association-framing">1.2 Dot products, matmuls, and the “patterns of association” framing</a></li>
   <li><a href="#nonlinearity-mlps-and-universal-function-approximation" id="toc-nonlinearity-mlps-and-universal-function-approximation" class="nav-link" data-scroll-target="#nonlinearity-mlps-and-universal-function-approximation">1.3 Nonlinearity, MLPs, and universal function approximation</a></li>
@@ -249,7 +245,7 @@ window.Quarto = {
   <li><a href="#activations-relu-gelu-and-swiglu" id="toc-activations-relu-gelu-and-swiglu" class="nav-link" data-scroll-target="#activations-relu-gelu-and-swiglu">1.9 Activations: ReLU, GELU, and SwiGLU</a></li>
   </ul></li>
   <li><a href="#chapter-2-tokenization-embeddings-and-positional-encoding" id="toc-chapter-2-tokenization-embeddings-and-positional-encoding" class="nav-link" data-scroll-target="#chapter-2-tokenization-embeddings-and-positional-encoding">Chapter 2 — Tokenization, Embeddings, and Positional Encoding</a>
-  <ul>
+  <ul class="collapse">
   <li><a href="#tokenization-bpe-and-sentencepiece" id="toc-tokenization-bpe-and-sentencepiece" class="nav-link" data-scroll-target="#tokenization-bpe-and-sentencepiece">2.1 Tokenization: BPE and SentencePiece</a></li>
   <li><a href="#embeddings" id="toc-embeddings" class="nav-link" data-scroll-target="#embeddings">2.2 Embeddings</a></li>
   <li><a href="#why-we-need-positional-information" id="toc-why-we-need-positional-information" class="nav-link" data-scroll-target="#why-we-need-positional-information">2.3 Why we need positional information</a></li>
@@ -265,7 +261,7 @@ window.Quarto = {
   </ul></li>
   </ul></li>
   <li><a href="#chapter-3-attention-is-all-you-need-a-full-walkthrough-of-the-transformer" id="toc-chapter-3-attention-is-all-you-need-a-full-walkthrough-of-the-transformer" class="nav-link" data-scroll-target="#chapter-3-attention-is-all-you-need-a-full-walkthrough-of-the-transformer">Chapter 3 — Attention Is All You Need: A Full Walkthrough of the Transformer</a>
-  <ul>
+  <ul class="collapse">
   <li><a href="#the-attention-mechanism-in-60-seconds" id="toc-the-attention-mechanism-in-60-seconds" class="nav-link" data-scroll-target="#the-attention-mechanism-in-60-seconds">3.1 The attention mechanism in 60 seconds</a></li>
   <li><a href="#why-the-sqrtd_k-scaling" id="toc-why-the-sqrtd_k-scaling" class="nav-link" data-scroll-target="#why-the-sqrtd_k-scaling">3.2 Why the <span class="math inline">\sqrt{d_k}</span> scaling</a></li>
   <li><a href="#multi-head-attention" id="toc-multi-head-attention" class="nav-link" data-scroll-target="#multi-head-attention">3.3 Multi-head attention</a></li>
@@ -288,7 +284,7 @@ window.Quarto = {
   </ul></li>
   </ul></li>
   <li><a href="#chapter-4-from-transformer-to-llm" id="toc-chapter-4-from-transformer-to-llm" class="nav-link" data-scroll-target="#chapter-4-from-transformer-to-llm">Chapter 4 — From Transformer to LLM</a>
-  <ul>
+  <ul class="collapse">
   <li><a href="#the-autoregressive-next-token-objective" id="toc-the-autoregressive-next-token-objective" class="nav-link" data-scroll-target="#the-autoregressive-next-token-objective">4.1 The autoregressive next-token objective</a></li>
   <li><a href="#the-gpt-lineage-and-emergent-capability" id="toc-the-gpt-lineage-and-emergent-capability" class="nav-link" data-scroll-target="#the-gpt-lineage-and-emergent-capability">4.2 The GPT lineage and emergent capability</a>
   <ul class="collapse">
@@ -318,7 +314,7 @@ window.Quarto = {
   <li><a href="#hallucination-as-a-structural-property" id="toc-hallucination-as-a-structural-property" class="nav-link" data-scroll-target="#hallucination-as-a-structural-property">4.8 Hallucination as a structural property</a></li>
   </ul></li>
   <li><a href="#chapter-5-vision-encoders-from-cnn-to-vit-to-clip-to-siglip" id="toc-chapter-5-vision-encoders-from-cnn-to-vit-to-clip-to-siglip" class="nav-link" data-scroll-target="#chapter-5-vision-encoders-from-cnn-to-vit-to-clip-to-siglip">Chapter 5 — Vision Encoders: From CNN to ViT to CLIP to SigLIP</a>
-  <ul>
+  <ul class="collapse">
   <li><a href="#the-cnn-era-alexnet-vgg-resnet" id="toc-the-cnn-era-alexnet-vgg-resnet" class="nav-link" data-scroll-target="#the-cnn-era-alexnet-vgg-resnet">5.1 The CNN era: AlexNet, VGG, ResNet</a></li>
   <li><a href="#the-vision-transformer-vit" id="toc-the-vision-transformer-vit" class="nav-link" data-scroll-target="#the-vision-transformer-vit">5.2 The Vision Transformer (ViT)</a></li>
   <li><a href="#clip-contrastive-image-text-pretraining" id="toc-clip-contrastive-image-text-pretraining" class="nav-link" data-scroll-target="#clip-contrastive-image-text-pretraining">5.3 CLIP: contrastive image-text pretraining</a></li>
@@ -327,7 +323,7 @@ window.Quarto = {
   <li><a href="#the-handoff-to-chapter-6" id="toc-the-handoff-to-chapter-6" class="nav-link" data-scroll-target="#the-handoff-to-chapter-6">5.6 The handoff to Chapter 6</a></li>
   </ul></li>
   <li><a href="#chapter-6-vision-language-models-llava-and-the-qwen-vl-lineage" id="toc-chapter-6-vision-language-models-llava-and-the-qwen-vl-lineage" class="nav-link" data-scroll-target="#chapter-6-vision-language-models-llava-and-the-qwen-vl-lineage">Chapter 6 — Vision-Language Models: LLaVA and the Qwen-VL Lineage</a>
-  <ul>
+  <ul class="collapse">
   <li><a href="#the-recipe-in-one-sentence" id="toc-the-recipe-in-one-sentence" class="nav-link" data-scroll-target="#the-recipe-in-one-sentence">6.1 The recipe in one sentence</a></li>
   <li><a href="#llava-visual-instruction-tuning-neurips-2023" id="toc-llava-visual-instruction-tuning-neurips-2023" class="nav-link" data-scroll-target="#llava-visual-instruction-tuning-neurips-2023">6.2 LLaVA: visual instruction tuning (NeurIPS 2023)</a>
   <ul class="collapse">
@@ -368,7 +364,7 @@ window.Quarto = {
   <li><a href="#closing-the-chapter-and-part-a" id="toc-closing-the-chapter-and-part-a" class="nav-link" data-scroll-target="#closing-the-chapter-and-part-a">6.9 Closing the chapter — and Part A</a></li>
   </ul></li>
   <li><a href="#part-ii-generative-modeling-from-vae-to-diffusion-to-flow-matching" id="toc-part-ii-generative-modeling-from-vae-to-diffusion-to-flow-matching" class="nav-link" data-scroll-target="#part-ii-generative-modeling-from-vae-to-diffusion-to-flow-matching">Part II — Generative Modeling: From VAE to Diffusion to Flow Matching</a>
-  <ul>
+  <ul class="collapse">
   <li><a href="#chapter-7-why-generative-modeling-is-hard-and-the-probability-refresher" id="toc-chapter-7-why-generative-modeling-is-hard-and-the-probability-refresher" class="nav-link" data-scroll-target="#chapter-7-why-generative-modeling-is-hard-and-the-probability-refresher">Chapter 7 — Why Generative Modeling Is Hard, and the Probability Refresher</a>
   <ul class="collapse">
   <li><a href="#the-shape-of-the-problem" id="toc-the-shape-of-the-problem" class="nav-link" data-scroll-target="#the-shape-of-the-problem">7.1 The shape of the problem</a></li>
@@ -415,47 +411,28 @@ window.Quarto = {
   </ul></li>
   </ul></li>
   <li><a href="#part-iii-from-pixels-to-action-vlas-world-models-and-a-hands-on-unified-model" id="toc-part-iii-from-pixels-to-action-vlas-world-models-and-a-hands-on-unified-model" class="nav-link" data-scroll-target="#part-iii-from-pixels-to-action-vlas-world-models-and-a-hands-on-unified-model">Part III — From Pixels to Action: VLAs, World Models, and a Hands-On Unified Model</a>
-  <ul>
+  <ul class="collapse">
   <li><a href="#chapter-12-vision-language-action-models-how-robots-inherit-web-knowledge" id="toc-chapter-12-vision-language-action-models-how-robots-inherit-web-knowledge" class="nav-link" data-scroll-target="#chapter-12-vision-language-action-models-how-robots-inherit-web-knowledge">Chapter 12 — Vision-Language-Action Models: How Robots Inherit Web Knowledge</a>
   <ul class="collapse">
   <li><a href="#the-robot-data-problem" id="toc-the-robot-data-problem" class="nav-link" data-scroll-target="#the-robot-data-problem">12.1 The robot data problem</a></li>
   <li><a href="#the-basic-vla-recipe-from-rt-2-to-openvla" id="toc-the-basic-vla-recipe-from-rt-2-to-openvla" class="nav-link" data-scroll-target="#the-basic-vla-recipe-from-rt-2-to-openvla">12.2 The basic VLA recipe: from RT-2 to OpenVLA</a></li>
   <li><a href="#action-chunking-and-act" id="toc-action-chunking-and-act" class="nav-link" data-scroll-target="#action-chunking-and-act">12.3 Action chunking and ACT</a></li>
-  <li><a href="#pi_0-a-vision-language-action-flow-model" id="toc-pi_0-a-vision-language-action-flow-model" class="nav-link" data-scroll-target="#pi_0-a-vision-language-action-flow-model">12.4 <span class="math inline">\pi_0</span>: a Vision-Language-Action Flow Model</a>
-  <ul class="collapse">
-  <li><a href="#architecture-paligemma-a-300m-action-expert" id="toc-architecture-paligemma-a-300m-action-expert" class="nav-link" data-scroll-target="#architecture-paligemma-a-300m-action-expert">Architecture: PaliGemma + a 300M action expert</a></li>
-  <li><a href="#conditional-flow-matching-for-continuous-actions" id="toc-conditional-flow-matching-for-continuous-actions" class="nav-link" data-scroll-target="#conditional-flow-matching-for-continuous-actions">Conditional flow matching for continuous actions</a></li>
-  <li><a href="#inference-10-euler-steps" id="toc-inference-10-euler-steps" class="nav-link" data-scroll-target="#inference-10-euler-steps">Inference: 10 Euler steps</a></li>
-  <li><a href="#cross-embodiment-training" id="toc-cross-embodiment-training" class="nav-link" data-scroll-target="#cross-embodiment-training">Cross-embodiment training</a></li>
-  <li><a href="#pre-training-then-post-training" id="toc-pre-training-then-post-training" class="nav-link" data-scroll-target="#pre-training-then-post-training">Pre-training then post-training</a></li>
-  <li><a href="#the-bottom-line-on-pi_0" id="toc-the-bottom-line-on-pi_0" class="nav-link" data-scroll-target="#the-bottom-line-on-pi_0">The bottom line on <span class="math inline">\pi_0</span></a></li>
-  </ul></li>
+  <li><a href="#pi_0-a-vision-language-action-flow-model" id="toc-pi_0-a-vision-language-action-flow-model" class="nav-link" data-scroll-target="#pi_0-a-vision-language-action-flow-model">12.4 <span class="math inline">\pi_0</span>: a Vision-Language-Action Flow Model</a></li>
   <li><a href="#the-pi_0-family-evolution" id="toc-the-pi_0-family-evolution" class="nav-link" data-scroll-target="#the-pi_0-family-evolution">12.5 The <span class="math inline">\pi_0</span> family evolution</a></li>
   <li><a href="#b-the-fast-action-tokenizer-discrete-actions-for-autoregressive-vlas" id="toc-b-the-fast-action-tokenizer-discrete-actions-for-autoregressive-vlas" class="nav-link" data-scroll-target="#b-the-fast-action-tokenizer-discrete-actions-for-autoregressive-vlas">12.5b The FAST action tokenizer — discrete actions for autoregressive VLAs</a></li>
   <li><a href="#b.1-why-naive-action-discretization-fails" id="toc-b.1-why-naive-action-discretization-fails" class="nav-link" data-scroll-target="#b.1-why-naive-action-discretization-fails">12.5b.1 Why naive action discretization fails</a></li>
   <li><a href="#b.2-the-fast-pipeline-dct-sparsification-bpe" id="toc-b.2-the-fast-pipeline-dct-sparsification-bpe" class="nav-link" data-scroll-target="#b.2-the-fast-pipeline-dct-sparsification-bpe">12.5b.2 The FAST pipeline: DCT, sparsification, BPE</a></li>
-  <li><a href="#b.3-pi_0-fast-autoregressive-vla-with-fast-tokens" id="toc-b.3-pi_0-fast-autoregressive-vla-with-fast-tokens" class="nav-link" data-scroll-target="#b.3-pi_0-fast-autoregressive-vla-with-fast-tokens">12.5b.3 <span class="math inline">\pi_0</span>-FAST: autoregressive VLA with FAST tokens</a>
-  <ul class="collapse">
-  <li><a href="#fast-universal-tokenizer-and-custom-training" id="toc-fast-universal-tokenizer-and-custom-training" class="nav-link" data-scroll-target="#fast-universal-tokenizer-and-custom-training">FAST+ universal tokenizer and custom training</a></li>
-  </ul></li>
+  <li><a href="#b.3-pi_0-fast-autoregressive-vla-with-fast-tokens" id="toc-b.3-pi_0-fast-autoregressive-vla-with-fast-tokens" class="nav-link" data-scroll-target="#b.3-pi_0-fast-autoregressive-vla-with-fast-tokens">12.5b.3 <span class="math inline">\pi_0</span>-FAST: autoregressive VLA with FAST tokens</a></li>
   <li><a href="#b.4-knowledge-insulation-why-fast-survives-inside-pi_0.7" id="toc-b.4-knowledge-insulation-why-fast-survives-inside-pi_0.7" class="nav-link" data-scroll-target="#b.4-knowledge-insulation-why-fast-survives-inside-pi_0.7">12.5b.4 Knowledge insulation: why FAST survives inside <span class="math inline">\pi_{0.7}</span></a></li>
   <li><a href="#c-π₀.7-deep-dive-compositional-generalization-through-hybrid-vla-world-model" id="toc-c-π₀.7-deep-dive-compositional-generalization-through-hybrid-vla-world-model" class="nav-link" data-scroll-target="#c-π₀.7-deep-dive-compositional-generalization-through-hybrid-vla-world-model">12.5c π₀.7 deep-dive: compositional generalization through hybrid VLA + world model</a></li>
   <li><a href="#c.1-the-core-insight-steer-with-context-not-just-captions" id="toc-c.1-the-core-insight-steer-with-context-not-just-captions" class="nav-link" data-scroll-target="#c.1-the-core-insight-steer-with-context-not-just-captions">12.5c.1 The core insight: steer with context, not just captions</a></li>
-  <li><a href="#c.2-architecture-pi_0.6-mem-gemma-3-subgoal-images" id="toc-c.2-architecture-pi_0.6-mem-gemma-3-subgoal-images" class="nav-link" data-scroll-target="#c.2-architecture-pi_0.6-mem-gemma-3-subgoal-images">12.5c.2 Architecture: <span class="math inline">\pi_{0.6}</span>-MEM + Gemma 3 + subgoal images</a>
-  <ul class="collapse">
-  <li><a href="#training-data-the-mixture-that-makes-composition-possible" id="toc-training-data-the-mixture-that-makes-composition-possible" class="nav-link" data-scroll-target="#training-data-the-mixture-that-makes-composition-possible">Training data: the mixture that makes composition possible</a></li>
-  </ul></li>
-  <li><a href="#c.3-the-world-model-bagel-derived-subgoal-generation" id="toc-c.3-the-world-model-bagel-derived-subgoal-generation" class="nav-link" data-scroll-target="#c.3-the-world-model-bagel-derived-subgoal-generation">12.5c.3 The world model: BAGEL-derived subgoal generation</a>
-  <ul class="collapse">
-  <li><a href="#world-model-training-details-appendix-a-c" id="toc-world-model-training-details-appendix-a-c" class="nav-link" data-scroll-target="#world-model-training-details-appendix-a-c">World-model training details (Appendix A-C)</a></li>
-  </ul></li>
+  <li><a href="#c.2-architecture-pi_0.6-mem-gemma-3-subgoal-images" id="toc-c.2-architecture-pi_0.6-mem-gemma-3-subgoal-images" class="nav-link" data-scroll-target="#c.2-architecture-pi_0.6-mem-gemma-3-subgoal-images">12.5c.2 Architecture: <span class="math inline">\pi_{0.6}</span>-MEM + Gemma 3 + subgoal images</a></li>
+  <li><a href="#c.3-the-world-model-bagel-derived-subgoal-generation" id="toc-c.3-the-world-model-bagel-derived-subgoal-generation" class="nav-link" data-scroll-target="#c.3-the-world-model-bagel-derived-subgoal-generation">12.5c.3 The world model: BAGEL-derived subgoal generation</a></li>
   <li><a href="#c.4-prompt-dropout-metadata-and-learning-from-failure" id="toc-c.4-prompt-dropout-metadata-and-learning-from-failure" class="nav-link" data-scroll-target="#c.4-prompt-dropout-metadata-and-learning-from-failure">12.5c.4 Prompt dropout, metadata, and learning from failure</a></li>
   <li><a href="#c.5-runtime-workflow-algorithm-1-and-asynchronous-inference" id="toc-c.5-runtime-workflow-algorithm-1-and-asynchronous-inference" class="nav-link" data-scroll-target="#c.5-runtime-workflow-algorithm-1-and-asynchronous-inference">12.5c.5 Runtime workflow: Algorithm 1 and asynchronous inference</a></li>
-  <li><a href="#c.6-what-pi_0.7-actually-demonstrates" id="toc-c.6-what-pi_0.7-actually-demonstrates" class="nav-link" data-scroll-target="#c.6-what-pi_0.7-actually-demonstrates">12.5c.6 What <span class="math inline">\pi_{0.7}</span> actually demonstrates</a>
-  <ul class="collapse">
-  <li><a href="#human-baseline-for-cross-embodiment-shirt-folding-appendix-a-f" id="toc-human-baseline-for-cross-embodiment-shirt-folding-appendix-a-f" class="nav-link" data-scroll-target="#human-baseline-for-cross-embodiment-shirt-folding-appendix-a-f">Human baseline for cross-embodiment shirt folding (Appendix A-F)</a></li>
-  </ul></li>
+  <li><a href="#c.6-what-pi_0.7-actually-demonstrates" id="toc-c.6-what-pi_0.7-actually-demonstrates" class="nav-link" data-scroll-target="#c.6-what-pi_0.7-actually-demonstrates">12.5c.6 What <span class="math inline">\pi_{0.7}</span> actually demonstrates</a></li>
   <li><a href="#c.7-ablations-what-actually-matters" id="toc-c.7-ablations-what-actually-matters" class="nav-link" data-scroll-target="#c.7-ablations-what-actually-matters">12.5c.7 Ablations: what actually matters</a></li>
+  <li><a href="#adarmsnorm-and-the-inference-time-hardware-story" id="toc-adarmsnorm-and-the-inference-time-hardware-story" class="nav-link" data-scroll-target="#adarmsnorm-and-the-inference-time-hardware-story">12.6 AdaRMSNorm and the inference-time hardware story</a></li>
   <li><a href="#the-eth-robot-learning-perspective" id="toc-the-eth-robot-learning-perspective" class="nav-link" data-scroll-target="#the-eth-robot-learning-perspective">12.7 The ETH Robot Learning perspective</a></li>
   </ul></li>
   <li><a href="#chapter-13-world-models-machines-that-dream-the-future" id="toc-chapter-13-world-models-machines-that-dream-the-future" class="nav-link" data-scroll-target="#chapter-13-world-models-machines-that-dream-the-future">Chapter 13 — World Models: Machines That Dream the Future</a>
@@ -464,24 +441,13 @@ window.Quarto = {
   <li><a href="#thread-a-learning-to-dream-rl-world-models-19902025" id="toc-thread-a-learning-to-dream-rl-world-models-19902025" class="nav-link" data-scroll-target="#thread-a-learning-to-dream-rl-world-models-19902025">13.2 Thread A — Learning to Dream (RL world models, 1990–2025)</a></li>
   <li><a href="#thread-b-learning-from-watching-20162025" id="toc-thread-b-learning-from-watching-20162025" class="nav-link" data-scroll-target="#thread-b-learning-from-watching-20162025">13.3 Thread B — Learning from Watching (2016–2025)</a></li>
   <li><a href="#the-convergence-20242026" id="toc-the-convergence-20242026" class="nav-link" data-scroll-target="#the-convergence-20242026">13.4 The Convergence (2024–2026)</a></li>
-  <li><a href="#jepa-the-contrarian-bet" id="toc-jepa-the-contrarian-bet" class="nav-link" data-scroll-target="#jepa-the-contrarian-bet">13.5 JEPA — The Contrarian Bet</a>
-  <ul class="collapse">
-  <li><a href="#the-collapse-problem-and-its-standard-fix" id="toc-the-collapse-problem-and-its-standard-fix" class="nav-link" data-scroll-target="#the-collapse-problem-and-its-standard-fix">The collapse problem and its standard fix</a></li>
-  <li><a href="#i-jepa-the-first-vision-instantiation" id="toc-i-jepa-the-first-vision-instantiation" class="nav-link" data-scroll-target="#i-jepa-the-first-vision-instantiation">I-JEPA — the first vision instantiation</a></li>
-  <li><a href="#v-jepa-extension-to-video" id="toc-v-jepa-extension-to-video" class="nav-link" data-scroll-target="#v-jepa-extension-to-video">V-JEPA — extension to video</a></li>
-  <li><a href="#v-jepa-2-a-world-model-on-real-robots" id="toc-v-jepa-2-a-world-model-on-real-robots" class="nav-link" data-scroll-target="#v-jepa-2-a-world-model-on-real-robots">V-JEPA 2 — a world model on real robots</a></li>
-  <li><a href="#the-variant-zoo-and-lejepa" id="toc-the-variant-zoo-and-lejepa" class="nav-link" data-scroll-target="#the-variant-zoo-and-lejepa">The variant zoo and LeJEPA</a></li>
-  <li><a href="#open-problems-with-jepa" id="toc-open-problems-with-jepa" class="nav-link" data-scroll-target="#open-problems-with-jepa">Open problems with JEPA</a></li>
-  </ul></li>
+  <li><a href="#jepa-the-contrarian-bet" id="toc-jepa-the-contrarian-bet" class="nav-link" data-scroll-target="#jepa-the-contrarian-bet">13.5 JEPA — The Contrarian Bet</a></li>
   <li><a href="#b-lejepas-sigreg-why-isotropic-gaussian-embeddings-are-optimal" id="toc-b-lejepas-sigreg-why-isotropic-gaussian-embeddings-are-optimal" class="nav-link" data-scroll-target="#b-lejepas-sigreg-why-isotropic-gaussian-embeddings-are-optimal">13.5b LeJEPA’s SIGReg — why isotropic Gaussian embeddings are optimal</a></li>
   <li><a href="#b.1-the-collapse-problem-re-stated" id="toc-b.1-the-collapse-problem-re-stated" class="nav-link" data-scroll-target="#b.1-the-collapse-problem-re-stated">13.5b.1 The collapse problem re-stated</a></li>
   <li><a href="#b.2-why-isotropic-gaussian-is-optimal-intuition-and-theorem" id="toc-b.2-why-isotropic-gaussian-is-optimal-intuition-and-theorem" class="nav-link" data-scroll-target="#b.2-why-isotropic-gaussian-is-optimal-intuition-and-theorem">13.5b.2 Why isotropic Gaussian is optimal (intuition and theorem)</a></li>
   <li><a href="#b.3-sigreg-cramér-wold-via-random-projections" id="toc-b.3-sigreg-cramér-wold-via-random-projections" class="nav-link" data-scroll-target="#b.3-sigreg-cramér-wold-via-random-projections">13.5b.3 SIGReg: Cramér-Wold via random projections</a></li>
   <li><a href="#b.4-what-you-can-remove-when-sigreg-is-present" id="toc-b.4-what-you-can-remove-when-sigreg-is-present" class="nav-link" data-scroll-target="#b.4-what-you-can-remove-when-sigreg-is-present">13.5b.4 What you can remove when SIGReg is present</a></li>
-  <li><a href="#b.5-empirical-highlights-and-open-questions" id="toc-b.5-empirical-highlights-and-open-questions" class="nav-link" data-scroll-target="#b.5-empirical-highlights-and-open-questions">13.5b.5 Empirical highlights and open questions</a>
-  <ul class="collapse">
-  <li><a href="#sigreg-variants-and-implementation-notes" id="toc-sigreg-variants-and-implementation-notes" class="nav-link" data-scroll-target="#sigreg-variants-and-implementation-notes">SIGReg variants and implementation notes</a></li>
-  </ul></li>
+  <li><a href="#b.5-empirical-highlights-and-open-questions" id="toc-b.5-empirical-highlights-and-open-questions" class="nav-link" data-scroll-target="#b.5-empirical-highlights-and-open-questions">13.5b.5 Empirical highlights and open questions</a></li>
   <li><a href="#reality-check" id="toc-reality-check" class="nav-link" data-scroll-target="#reality-check">13.7 Reality check</a></li>
   </ul></li>
   <li><a href="#chapter-14-bagel-a-hands-on-unified-multimodal-foundation-model" id="toc-chapter-14-bagel-a-hands-on-unified-multimodal-foundation-model" class="nav-link" data-scroll-target="#chapter-14-bagel-a-hands-on-unified-multimodal-foundation-model">Chapter 14 — BAGEL: A Hands-On Unified Multimodal Foundation Model</a>
@@ -507,47 +473,19 @@ window.Quarto = {
   </ul></li>
   </ul></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="0-to-expert.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
+<!-- source: https://github.com/gadenbuie/garrickadenbuie-com/blob/main/_partials/title-block-link-buttons/title-block.html -->
+<!-- 
 <header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">From Bits to Behavior</h1>
-<p class="subtitle lead">A 0-to-Expert Tour of the Modern AI Stack: Transformers, LLMs, VLMs, Diffusion, Flow Matching, VLAs, World Models, and a Hands-On Unified Model</p>
-</div>
+<div class="quarto-title"> 
+-->
+<!-- <header id="title-block-header" class="quarto-title-block default page-columns"> -->
+<!-- <div class="quarto-title page-columns page-full featured-image p-4" style="background-image: url(featured.png), url(featured.jpg), url(../featured.jpg);"> -->
 
-
-
-<div class="quarto-title-meta">
-
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>A textually rich, mathematically honest survey (~55,000–60,000 words; 5–6 hour read) </p>
-          </div>
-  </div>
-    
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">May 1, 2026</p>
-    </div>
-  </div>
-  
-    
-  </div>
-  
-<div>
-  <div class="abstract">
-    <div class="block-title">Abstract</div>
-    <p>This is a single, self-contained article that takes a reader with basic Python and ML background all the way to expertise across the modern AI stack: Transformers and Large Language Models, Vision-Language Models (the LLaVA → Qwen-VL lineage), Variational Auto-Encoders, Diffusion Models (DDPM, score, DDIM, consistency, latent diffusion, DiT), Flow Matching (CFM, Rectified Flow, OT coupling), Vision-Language-Action models (the π₀ family, FAST tokenization, π₀.7), World Models (the RL-dreamer lineage, the video-generation lineage, JEPA, LeJEPA/SIGReg), and finally a practical hands-on case study with the open-source unified BAGEL model. Every concept is derived from first principles; every claim points to a primary source; every chapter ends by handing off to the next.</p>
-  </div>
-</div>
-
-
-</header>
 
 
 <section id="preface-how-to-read-this-book" class="level1">
@@ -673,7 +611,10 @@ window.Quarto = {
 </section>
 <section id="part-i-foundations-transformers-llms-and-vision-language-models" class="level1">
 <h1>Part I — Foundations: Transformers, LLMs, and Vision-Language Models</h1>
-<p>The first six chapters lay the groundwork for everything else in the book. We start from tensors and gradients (Chapter 1), build up through tokenization and position embeddings (Chapter 2), derive the full Transformer (Chapter 3), turn that Transformer into a Large Language Model (Chapter 4), bolt a vision encoder onto its side (Chapter 5), and finally walk through the entire LLaVA → Qwen-VL → Qwen3-VL lineage of state-of-the-art open Vision-Language Models (Chapter 6). By the time you finish Part I, you will have a complete mental model of how a modern multimodal language model is built and trained — and you will be ready for the generative-modeling mathematics of Part II and the embodied agents of Part III. # Chapter 1 — Mathematical and Neural Network Foundations</p>
+<p>The first six chapters lay the groundwork for everything else in the book. We start from tensors and gradients (Chapter 1), build up through tokenization and position embeddings (Chapter 2), derive the full Transformer (Chapter 3), turn that Transformer into a Large Language Model (Chapter 4), bolt a vision encoder onto its side (Chapter 5), and finally walk through the entire LLaVA → Qwen-VL → Qwen3-VL lineage of state-of-the-art open Vision-Language Models (Chapter 6). By the time you finish Part I, you will have a complete mental model of how a modern multimodal language model is built and trained — and you will be ready for the generative-modeling mathematics of Part II and the embodied agents of Part III.</p>
+</section>
+<section id="chapter-1-mathematical-and-neural-network-foundations" class="level1">
+<h1>Chapter 1 — Mathematical and Neural Network Foundations</h1>
 <p>This chapter is the floor of the building. None of the math here is new in 2026, but the way it composes into modern models is worth re-grounding, because the rest of the book quietly assumes you can move fluently between “I see a tensor of shape <code>[B, L, D]</code>” and “I see a function approximator whose Jacobians are tractable on a GPU.” If you are confident about all of this, skim; if you stub your toe on any of the equations, pause.</p>
 <section id="tensors-and-shape-notation" class="level2">
 <h2 class="anchored" data-anchor-id="tensors-and-shape-notation">1.1 Tensors and shape notation</h2>
@@ -864,7 +805,7 @@ q^{(i)} \leftrightarrow q^{(i)}_0 + i \, q^{(i)}_1 \in \mathbb{C}.
 <div id="fig-rope" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-rope-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://example.com/rope-schematic.png" class="img-fluid figure-img">
+<img src="https://arxiv.org/html/2502.11664v1/x1.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rope-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Figure 2.1: Schematic of RoPE rotating 2D sub-vectors of a query, and of the M-RoPE extension to (temporal, height, width) groups for video. See Su et al.&nbsp;2021 and Wang et al.&nbsp;2024.
@@ -916,7 +857,7 @@ Figure&nbsp;2: Figure 3.1: The original transformer architecture (Vaswani et al.
 <div id="fig-mha" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-mha-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://example.com/multihead-attention.png" class="img-fluid figure-img">
+<img src="https://arxiv.org/html/1706.03762v7/Figures/ModalNet-20.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mha-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;3: Figure 3.2: Scaled dot-product attention and multi-head attention. Vaswani et al.&nbsp;2017, Figure 2.
@@ -1036,7 +977,7 @@ x_\ell \;\leftarrow\; x_\ell \;+\; \tanh(\alpha_\ell) \cdot \mathrm{XAttn}(x_\el
 <div id="fig-qformer" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-qformer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://www.salesforce.com/blog/wp-content/uploads/2023/02/blip2_architecture.png" class="img-fluid figure-img">
+<img src="https://arxiv.org/html/2301.12597v3/x2.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-qformer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4: Figure: BLIP-2’s Q-Former architecture; learnable query tokens cross-attending into frozen vision features; see Li et al.&nbsp;2023, Fig. 1
@@ -1302,7 +1243,7 @@ Plants are like little green factories...&lt;|im_end|&gt;</code></pre>
 <div id="fig-r1-aha" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-r1-aha-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://github.com/deepseek-ai/DeepSeek-R1/raw/main/figures/plot_aha_moment.png" class="img-fluid figure-img">
+<img src="./dsr1.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-r1-aha-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;6: Figure: R1-Zero’s emergent “aha moment” during training; verifier reward and response length grow together as the model learns to self-correct; see DeepSeek 2025, Fig. 3
@@ -1348,7 +1289,7 @@ Figure&nbsp;6: Figure: R1-Zero’s emergent “aha moment” during training; ve
 <div id="fig-vit" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-vit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://example.com/vit-architecture.png" class="img-fluid figure-img">
+<img src="https://arxiv.org/html/2010.11929v2/x1.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-vit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;7: Figure 5.1: The Vision Transformer turns an image into a sequence of 16×16 patch tokens, then runs a standard transformer encoder over them. Dosovitskiy et al.&nbsp;2020.
@@ -1425,7 +1366,7 @@ Figure&nbsp;7: Figure 5.1: The Vision Transformer turns an image into a sequence
 <div id="fig-llava" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-llava-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://llava-vl.github.io/images/llava_logo.png" class="img-fluid figure-img">
+<img src="https://arxiv.org/html/2304.08485v2/x1.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-llava-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;8: Figure 6.1: LLaVA’s architecture — a frozen CLIP vision encoder, a learned projection matrix, and a Vicuna LLM. See Liu et al.&nbsp;2023.
@@ -1526,7 +1467,7 @@ Figure&nbsp;8: Figure 6.1: LLaVA’s architecture — a frozen CLIP vision encod
 <div id="fig-qwen25vl" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-qwen25vl-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://raw.githubusercontent.com/QwenLM/Qwen2.5-VL/main/assets/qwen2.5vl_arc.jpeg" class="img-fluid figure-img">
+<img src="./qwen2.5.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-qwen25vl-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;9: Figure 6.2: Qwen2.5-VL architecture. Native-resolution vision encoder with window attention and 2D RoPE, MLP merger, M-RoPE aligned to absolute time. From the Qwen2.5-VL technical report.
@@ -2124,7 +2065,7 @@ x_{t_{i+1}} \;=\; \frac{\sigma_{t_{i+1}}}{\sigma_{t_i}}\, x_{t_i} \;+\; \alpha_{
 <div id="fig-dpm-solver" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-dpm-solver-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://lilianweng.github.io/posts/2021-07-11-diffusion-models/dpm-solver-comparison.png" class="img-fluid figure-img">
+<img src="https://arxiv.org/html/2211.01095v3/x6.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dpm-solver-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;14: Figure: NFE-vs-FID for various samplers on CIFAR-10/LSUN; DPM-Solver++ Pareto-dominates DDIM at every step count; see Lu et al.&nbsp;(2022), Fig. 1.
@@ -2207,7 +2148,7 @@ Figure&nbsp;15: Figure: Diffusion Transformer (DiT) block with adaLN-Zero modula
 <div id="fig-flow-matching" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-flow-matching-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://mlg.eng.cam.ac.uk/blog/public/2024/01/20/flow-matching/teaser.png" class="img-fluid figure-img">
+<img src="https://mlg.eng.cam.ac.uk/blog/assets/images/flow-matching/representative.gif" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-flow-matching-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;16: Figure: flow matching transforms a simple base distribution into the data distribution along a continuous probability path; the model learns the velocity field that drives the path. Adapted from the Cambridge MLG blog.
@@ -2951,16 +2892,7 @@ Q_t(x, y) \;=\; \mathbb{E}_{p_{1\mid t}(x_1 \mid x)}\!\bigl[Q_t(x, y \mid x_1)\b
 </tbody>
 </table>
 <p>The cliff between NFE 4 and NFE 8 is the regime where distilled / consistency-based samplers shine. Above NFE 15, DPM-Solver++ is essentially at the FID floor and additional NFE gives diminishing returns.</p>
-<div id="fig-fid-nfe" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-fid-nfe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://placehold.co/800x500?text=FID-NFE+Pareto+front+%28Karras+et+al.+EDM2%29" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fid-nfe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;17: Figure (placeholder): representative FID-NFE Pareto front showing how each modern sampler dominates an earlier baseline; see Karras et al.&nbsp;2024 EDM2 paper Fig. 2 (arXiv:2312.02696).
-</figcaption>
-</figure>
-</div>
+<!-- #TODO ![Figure (placeholder): representative FID-NFE Pareto front showing how each modern sampler dominates an earlier baseline; see Karras et al. 2024 EDM2 paper Fig. 2 (arXiv:2312.02696).](https://placehold.co/800x500?text=FID-NFE+Pareto+front+%28Karras+et+al.+EDM2%29){#fig-fid-nfe} -->
 <p><strong>Editorial: which numbers are trustworthy, which are gameable.</strong> Two paragraphs of operator caveats.</p>
 <p><em>FID is gameable.</em> It is computed against Inception-V3 features, an ImageNet-trained classifier from 2016. Any optimization signal that improves the Inception-V3 feature alignment without improving perceived image quality counts as “improving FID.” Most notoriously, SDXL-Lightning (Ren et al.&nbsp;2024) — a 4-step distilled SDXL — reports better MS-COCO zero-shot FID than the SDXL teacher it was distilled from. This is not because the student produces better images; it is because the student’s outputs sit slightly more centrally in Inception-V3 feature space, and Inception-V3 has well-known biases. Modern papers responsibly accompany FID with one or more of: CLIPScore (CLIP text-image alignment), VQAScore, human-preference ELO from Chatbot Arena Image, ImageReward, PickScore, or the venue-mandated “human study with 200 raters.” Treat single-number FID claims like single-number language model evaluations: useful as a coarse sanity check, dangerous as a deciding criterion.</p>
 <p><em>BPD is sturdier but narrower.</em> Reported BPD numbers are reproducible — they come from a closed-form log-likelihood evaluation on a known test set — and are not gameable in the same way FID is. The catch is that BPD only measures one slice of model quality (compression / likelihood), not perceptual quality. A model can have great BPD and produce blurry samples, or great samples and mediocre BPD. The two correlate weakly. If you are doing scientific work where likelihood-comparability to autoregressive baselines matters (e.g., compression, anomaly detection, evidential reasoning), BPD is the right number to track. For sample quality work, FID + a perceptual metric + a human study remains the gold standard. <em>Wall-clock numbers</em> are reproducible if you also report the hardware, the attention implementation, the precision (BF16 vs FP16 vs FP8), and whether CUDA graphs are enabled — the variance from those four knobs is roughly 3×, so anyone reporting “Stable Diffusion runs at <span class="math inline">X</span> images per second” without that context is either being sloppy or being deliberately optimistic.</p>
@@ -3013,10 +2945,10 @@ Figure&nbsp;17: Figure (placeholder): representative FID-NFE Pareto front showin
 <div id="fig-pi0" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-pi0-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://www.physicalintelligence.company/blog/pi0/pi0-fig3.png" class="img-fluid figure-img">
+<img src="https://arxiv.org/html/2410.24164v1/x1.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pi0-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;18: Figure: <span class="math inline">\pi_0</span> architecture — a PaliGemma VLM backbone (left) plus a small action expert (right), sharing self-attention via a generalised causal mask. The action expert receives the noised action chunk and proprioceptive state and outputs the flow-matching vector field. See PI 2024, Figure 3.
+Figure&nbsp;17: Figure: <span class="math inline">\pi_0</span> architecture — a PaliGemma VLM backbone (left) plus a small action expert (right), sharing self-attention via a generalised causal mask. The action expert receives the noised action chunk and proprioceptive state and outputs the flow-matching vector field. See PI 2024, Figure 3.
 </figcaption>
 </figure>
 </div>
@@ -3204,10 +3136,10 @@ L^\tau(\theta) = \mathbb{E}_{p(\mathbf{A}_t \mid \mathbf{o}_t),\, q(\mathbf{A}_t
 <div id="fig-fast" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-fast-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://www.physicalintelligence.company/download/fast-fig4.png" class="img-fluid figure-img">
+<img src="https://arxiv.org/html/2501.09747v1/x2.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fast-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;19: Figure: FAST tokenisation pipeline — normalise, DCT per dimension, quantise/sparsify, flatten, BPE compress. See Pertsch et al.&nbsp;2025, Figure 4.
+Figure&nbsp;18: Figure: FAST tokenisation pipeline — normalise, DCT per dimension, quantise/sparsify, flatten, BPE compress. See Pertsch et al.&nbsp;2025, Figure 4.
 </figcaption>
 </figure>
 </div>
@@ -3401,7 +3333,19 @@ Figure&nbsp;19: Figure: FAST tokenisation pipeline — normalise, DCT per dimens
 <blockquote class="blockquote">
 <p><strong>Editorial note.</strong> The thin summary in §12.5 above is deliberately brief; this section is the authoritative treatment. When the <span class="math inline">\pi_0</span> family evolution paragraph mentions <span class="math inline">\pi_{0.7}</span> as “hybrid VLA + world model”, the mechanism is exactly the async subgoal loop described here — not a full Dreamer-style latent planner (Chapter 13), but a pragmatic composition of tools the rest of this book has already built up: flow matching (Chapter 10), BAGEL-style unified generation (Chapter 14), and the LLM playbook’s context-steering lesson (Chapter 4).</p>
 </blockquote>
-<p><img src="https://www.pi.website/assets/pi07-teaser.png" id="fig-pi07" class="img-fluid" alt="Figure: \pi_{0.7} system diagram — VLA conditioned on language, metadata, and world-model subgoal images; high-level policy decomposes tasks. See Physical Intelligence 2026, Figure 1."> ### 12.6 AdaRMSNorm and the inference-time hardware story</p>
+<div id="fig-pi07" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pi07-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./pi.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pi07-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;19: Figure: <span class="math inline">\pi_{0.7}</span> system diagram — VLA conditioned on language, metadata, and world-model subgoal images; high-level policy decomposes tasks. See Physical Intelligence 2026, Figure 1.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="adarmsnorm-and-the-inference-time-hardware-story" class="level3">
+<h3 class="anchored" data-anchor-id="adarmsnorm-and-the-inference-time-hardware-story">12.6 AdaRMSNorm and the inference-time hardware story</h3>
 <p>One detail of the action expert deserves a paragraph because it is genuinely unusual and matters for anyone trying to deploy this on edge hardware. The flow-matching head conditions on the integration step <span class="math inline">\tau</span> — at <span class="math inline">\tau = 0.1</span> the model is denoising heavily, at <span class="math inline">\tau = 0.9</span> it is making small refinements — and the standard trick is <strong>adaptive normalisation</strong>: scale and shift the activations of each layer by a function of <span class="math inline">\tau</span>. Most diffusion transformers (DiTs) use AdaLN, where the LayerNorm gain and bias are predicted from a <span class="math inline">\tau</span> embedding. The <span class="math inline">\pi_0</span> action expert uses <strong>AdaRMSNorm</strong>: the same idea but applied to RMSNorm, which is the normalisation Gemma uses internally. The conditioning vector is computed once per chunk and broadcast across all layers and tokens of the expert.</p>
 <p>The reason this matters is that AdaRMSNorm is <em>not</em> a standard primitive on most production NPUs. Mainstream inference stacks have heavily optimised paths for vanilla RMSNorm; conditioning the norm parameters per step adds a small but real bottleneck that is often the single largest contributor to action-expert latency once everything else is fused. A SemiEngineering teardown of <span class="math inline">\pi_0</span>’s inference path noted exactly this — the AdaRMSNorm step is what stops the model from running at full pipeline efficiency on certain edge accelerators, and is one of the reasons NVIDIA’s Blackwell GB200 (with more flexible elementwise paths) ships the action expert faster than nominally-comparable H100 configurations. The lesson is the usual one: small architectural choices made for training stability or quality can become the dominant inference cost on hardware that was not co-designed for them.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -3466,7 +3410,7 @@ Tip
 <div id="fig-dreamer" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-dreamer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://danijar.com/asset/dreamerv3/header.png" class="img-fluid figure-img">
+<img src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-025-08744-2/MediaObjects/41586_2025_8744_Fig1_HTML.png?as=webp" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dreamer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;20: Figure: Dreamer architecture — RSSM with deterministic recurrent state <span class="math inline">h_t</span> plus stochastic latent <span class="math inline">z_t</span>; a decoder reconstructs observations as a training signal; the actor and critic train entirely on rollouts in latent space (the “dream”). See Hafner et al., DreamerV3.
@@ -3492,7 +3436,7 @@ Figure&nbsp;20: Figure: Dreamer architecture — RSSM with deterministic recurre
 <div id="fig-genie" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-genie-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://storage.googleapis.com/deepmind-media/Blog/Genie/genie_thumbnail.jpg" class="img-fluid figure-img">
+<img src="https://arxiv.org/html/2402.15391v1/figures/genie_architecture.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-genie-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;21: Figure: Genie schematic — paired-frame encoder produces a latent action; conditional generator predicts the next frame from prior frames + latent action. Latent actions are learned without labels, then exposed as the user control surface. See Bruce et al., 2024.
@@ -3527,7 +3471,7 @@ Figure&nbsp;21: Figure: Genie schematic — paired-frame encoder produces a late
 <div id="fig-jepa" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-jepa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://ai.meta.com/static-resources/ijepa-arch.png" class="img-fluid figure-img">
+<img src="./image.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-jepa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;22: Figure: JEPA template — context encoder <span class="math inline">f_\theta</span>, target encoder <span class="math inline">f_\phi</span> updated by EMA from the context encoder, predictor <span class="math inline">g_\psi</span> producing <span class="math inline">\hat s_y</span> from <span class="math inline">s_x</span> and a position token. The stop-gradient sits on the target side. See I-JEPA, Figure 2.
@@ -3576,7 +3520,7 @@ Figure&nbsp;22: Figure: JEPA template — context encoder <span class="math inli
 <div id="fig-vjepa2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-vjepa2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://scontent-iad3-1.xx.fbcdn.net/v/t39.2365-6/vjepa2_diagram.png" class="img-fluid figure-img">
+<img src="./img2.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-vjepa2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;23: Figure: V-JEPA 2 two-stage recipe — Stage 1 trains a ViT-g/16 encoder + predictor on 1M+ hours of internet video with the standard JEPA latent-prediction loss; Stage 2 freezes the encoder and trains a small action-conditioned predictor on 62 hours of robot data, used at deployment time inside a CEM planning loop. See Assran et al., 2025.
@@ -3800,7 +3744,7 @@ Figure&nbsp;23: Figure: V-JEPA 2 two-stage recipe — Stage 1 trains a ViT-g/16 
 <div id="fig-bagel" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-bagel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://github.com/ByteDance-Seed/Bagel/raw/main/assets/qualitative.png" class="img-fluid figure-img">
+<img src="https://arxiv.org/html/2505.14683v3/x2.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bagel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;24: Figure: BAGEL architecture — Mixture-of-Transformer-Experts. One understanding expert handles text + ViT tokens, one generation expert handles VAE tokens, both share self-attention at every layer. See BAGEL paper, Figure 2.
@@ -4143,7 +4087,11 @@ Note
 </section>
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-textually_rich,_mathematically_honest_survey_(~55,000–60,000_words;_5–6_hour_read)2026" class="csl-entry quarto-appendix-citeas" role="listitem">
+rich, mathematically honest survey (~55,000–60,000 words; 5–6 hour
+read), A textually. 2026. <span>“From Bits to Behavior.”</span> May 1,
+2026. <a href="https://madhaviit.github.io/Resources/Diffusion/">https://madhaviit.github.io/Resources/Diffusion/</a>.
+</div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -4549,6 +4497,8 @@ Note
     }
   });
   </script>
+<script src="https://utteranc.es/client.js" repo="madhaviit/madhaviit" issue-term="title" theme="boxy-light" crossorigin="anonymous" async="">
+</script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -4582,6 +4532,26 @@ Note
     </div>
   </div>
 </footer>
+<script>
+    const baseFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+    const watermark = new XWatermark.XWatermark();
+    watermark.init("Madhav Kadam", {
+      parentSelector: "body",
+      prevent: true,
+      observer: true,
+      mode: "normal",
+      font: "monospace-ui, -apple-system, system-ui, ‘Segoe UI’, Roboto, ‘Helvetica Neue’, ‘Noto Sans’, ‘Liberation Sans’, Arial, sans-serif, ‘Apple Color Emoji’, ‘Segoe UI Emoji’, ‘Segoe UI Symbol’, ‘Noto Color Emoji’",
+      fontsize: baseFontSize * 1.000000,
+      angle: -20.000000,
+      color: "#463325",
+      alpha: 0.025000,
+      cols: 15,
+      rows: 70,
+      xSpace: baseFontSize * 3.000000,
+      ySpace: baseFontSize * 3.000000,
+      zIndex: -4
+    });
+    </script>
 
 
 
